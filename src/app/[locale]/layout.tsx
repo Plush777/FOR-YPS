@@ -2,6 +2,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import MoneyCursor from "@/components/nurui/money-cursor";
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -40,6 +41,7 @@ export default async function RootLayout({
             <Header />
             {children}
           </div>
+          <MoneyCursor />
         </NextIntlClientProvider>
       </body>
     </html>

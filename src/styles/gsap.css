@@ -1,0 +1,8 @@
+#smooth-wrapper {
+  height: 100vh;
+}
+
+#smooth-content {
+  position: relative;
+  height: 4000px;
+}

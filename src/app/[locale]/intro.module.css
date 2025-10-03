@@ -1,7 +1,5 @@
 .introBackground {
   position: relative;
-  display: grid;
-  place-items: center;
 }
 
 .introSectionLogoBox {
@@ -27,17 +25,30 @@
 }
 
 .introSection {
-  position: relative;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
   height: 100vh;
-  transition: all 0.8s ease;
 }
 
-.introSection.first {
+.firstSection {
   display: flex;
   justify-content: center;
   flex-direction: column;
   row-gap: 40px;
+}
+
+.secondSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.secondTextBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .introContentBox {
@@ -45,14 +56,6 @@
   align-items: center;
   justify-content: center;
 }
-
-/* .introTitle {
-  font-size: 68px;
-  font-weight: 700;
-  font-family: "RecipeKorea";
-  color: var(--color-white);
-  text-transform: uppercase;
-} */
 
 .introTitleBox {
   display: flex;
@@ -80,6 +83,23 @@
   height: 100%;
   object-fit: cover;
   z-index: -1;
+}
+
+.introScrollDownArrow {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 6px;
+}
+
+.introScrollDownArrow .introDescription {
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .introLinkButton {
