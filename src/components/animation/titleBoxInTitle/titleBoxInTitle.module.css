@@ -1,0 +1,32 @@
+.titleBoxInTitle {
+  position: relative;
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--color-white);
+  text-align: center;
+  white-space: pre-wrap;
+  word-break: keep-all;
+}
+
+.regularText {
+  font-weight: 400;
+}
+
+.gradationText {
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text !important;
+  background: linear-gradient(to right, #851fd8, #ffc314 70%);
+}
+
+.gradationText::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% + 14px);
+  height: calc(100% + 8px);
+  background-color: var(--color-white);
+  z-index: -1;
+}

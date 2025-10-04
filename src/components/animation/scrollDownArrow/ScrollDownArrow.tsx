@@ -3,9 +3,12 @@ import { gsap } from "gsap";
 
 import styles from "./scrollDownArrow.module.css";
 import { useRef } from "react";
+import { useTranslations } from "next-intl";
 
 export default function ScrollDownArrow() {
   const scrollDownArrow = useRef<SVGSVGElement>(null);
+  const tSection1 = useTranslations("IntroPage.section1");
+
   useGSAP(() => {
     gsap.to(scrollDownArrow.current, {
       y: 8,
@@ -17,15 +20,18 @@ export default function ScrollDownArrow() {
   });
 
   return (
-    <svg
-      viewBox="0 0 512 512"
-      className={styles.scrollDownArrow}
-      ref={scrollDownArrow}
-    >
-      <path
-        fill="white"
-        d="M483.2,192.2c-20.5-20.5-53.5-20.8-73.7-0.6L257,344.1L104.5,191.6c-20.2-20.2-53.2-19.9-73.7,0.6  c-20.5,20.5-20.8,53.5-0.6,73.7l190,190c10.1,10.1,23.4,15.1,36.8,15c13.3,0.1,26.7-4.9,36.8-15l190-190  C503.9,245.7,503.7,212.7,483.2,192.2z"
-      />
-    </svg>
+    <div className={`${styles.pageScrollDownArrow}`}>
+      <p className={styles.pageDescription}>{tSection1("description4")}</p>
+      <svg
+        viewBox="0 0 512 512"
+        className={styles.scrollDownArrow}
+        ref={scrollDownArrow}
+      >
+        <path
+          fill="white"
+          d="M483.2,192.2c-20.5-20.5-53.5-20.8-73.7-0.6L257,344.1L104.5,191.6c-20.2-20.2-53.2-19.9-73.7,0.6  c-20.5,20.5-20.8,53.5-0.6,73.7l190,190c10.1,10.1,23.4,15.1,36.8,15c13.3,0.1,26.7-4.9,36.8-15l190-190  C503.9,245.7,503.7,212.7,483.2,192.2z"
+        />
+      </svg>
+    </div>
   );
 }

@@ -1,0 +1,33 @@
+.sectionTitle {
+  position: relative;
+  width: fit-content;
+  margin-top: 150px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 40px;
+  padding-right: 16px;
+  font-size: 60px;
+  font-weight: 700;
+  color: var(--color-white);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 199, 16, 1) 0%,
+    rgba(250, 68, 166, 1) 35%,
+    rgba(152, 7, 246, 1) 59%,
+    rgba(97, 195, 34, 1) 84%,
+    rgba(70, 148, 221, 1) 100%
+  );
+}
+
+.sectionTitle::after {
+  content: "";
+  position: absolute;
+  right: -57px;
+  top: 3.5px;
+  width: 0;
+  height: 0;
+  border-top: 67.5px solid transparent;
+  border-bottom: 67.5px solid transparent;
+  border-left: 67.5px solid #4694dd;
+  transform: rotate(135deg);
+}

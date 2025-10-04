@@ -4,41 +4,36 @@
       "description1": "FOR YPS 에 오신 것을 환영합니다! ",
       "description2": "이 곳은 YOUNG POSSE 만을 위한 팬 사이트예요.",
       "description3": "잠깐, YOUNG POSSE 가 누구인지 아직도 모른다구요?",
-      "description4": "아래로 스크롤하여 바로 확인해봐요."
+      "description4": "아래로 스크롤 하세요."
     },
 
     "section2": {
       "text1": "제가 하나만 여쭤볼게요.",
       "text2": "혹시... 힙합 음악 좋아하시나요?",
 
-      "choice": {
-        "yes": "네! 좋아해요!",
-        "no": "아니요, 별로예요."
+      "positive": {
+        "text1": "좋아하신다면... 잘 됐네요 ☺️",
+        "text2": "YOUNG POSSE가 추구하는 음악이 완전 힙합이거든요? 😎",
+        "text3": "제가 YOUNG POSSE에 대해 소개를 해드릴게요. ",
+        "text4": "분명 좋아하실거에요 🥰"
       },
-
-      "answers": {
-        "positive": {
-          "text1": "오 진짜요? 😲 잘 됐네요 ☺️",
-          "text2": "YOUNG POSSE가 추구하는 음악이 완전 힙합이거든요? 😎",
-          "text3": "제가 YOUNG POSSE에 대해 소개를 해드릴게요. 분명 좋아하실거에요 🥰"
-        },
-        "negative": {
-          "text1": "이런, 아쉽네요 😭",
-          "text2": "YOUNG POSSE에 대해 소개할건데, 한번만 들어봐주시면 안될까요... 🥺",
-          "text3": "제 얘기를 들으시면 마음이 바뀌실 수도 있을거에요. 🤔"
-        }
+      "negative": {
+        "text1": "안좋아하신다면... 아쉽네요 😭",
+        "text2": "YOUNG POSSE에 대해 소개할건데, 그래도 한번만 들어봐주시면 안될까요... 🥺",
+        "text3": "제 얘기를 들으시면 마음이 바뀌실 수도 있을거에요. 🤔"
       }
     },
 
     "section3": {
-      "title": "Who is YOUNG POSSE",
+      "title": "Who is YOUNG POSSE?",
       "text1": "YOUNG POSSE",
       "text2": "는",
       "text3": "2023년 10월에 데뷔한 5인조 걸그룹이에요.",
       "text4": "DSP 미디어",
       "text5": "와",
       "text6": "비츠엔터테인먼트",
-      "text7": "가 공동으로 제작하는 그룹입니다.",
+      "text7": "가",
+      "text8": "공동으로 제작하는 그룹입니다.",
       "info": {
         "text1": "DSP 미디어는 젝스키스, 핑클, SS501, 카라, 레인보우, 에이프릴, KARD 등 많은 그룹들을 탄생시킨 소속사예요.",
         "text2": "비츠엔터테인먼트는 키겐이 설립한 연예 기획사로, YOUNG POSSE 앨범 프로듀싱을 담당하고 있어요.",

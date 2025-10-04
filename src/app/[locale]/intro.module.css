@@ -24,33 +24,6 @@
   pointer-events: none;
 }
 
-.introSection {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  height: 100vh;
-}
-
-.firstSection {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  row-gap: 40px;
-}
-
-.secondSection {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.secondTextBox {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .introContentBox {
   display: flex;
   align-items: center;
@@ -65,16 +38,6 @@
   width: 100%;
 }
 
-.introDescription {
-  font-size: 24px;
-  font-weight: 500;
-  color: var(--color-white);
-}
-
-.introDescription + .introDescription {
-  margin-top: 8px;
-}
-
 .introVideo {
   position: fixed;
   top: 0;
@@ -83,23 +46,6 @@
   height: 100%;
   object-fit: cover;
   z-index: -1;
-}
-
-.introScrollDownArrow {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  row-gap: 6px;
-}
-
-.introScrollDownArrow .introDescription {
-  font-size: 16px;
-  font-weight: 400;
 }
 
 .introLinkButton {

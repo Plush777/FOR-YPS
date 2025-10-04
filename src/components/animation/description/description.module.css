@@ -1,0 +1,9 @@
+.introDescription {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--color-white);
+}
+
+.introDescription + .introDescription {
+  margin-top: 8px;
+}
