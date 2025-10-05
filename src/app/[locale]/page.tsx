@@ -212,21 +212,22 @@ export default function IntroPage() {
             <ColoredLogoHoriz />
           </div>
 
-          <TextBox isRowGap="sm" isHeightFull={false}>
+          <TextBox
+            childrenStyleClassName="fzSmall color-white"
+            isRowGap="sm"
+            isHeightFull={false}
+          >
             <Description
               text={tSection1("description1")}
               gsapClassName={`tl2`}
-              isDot={false}
             />
             <Description
               text={tSection1("description2")}
               gsapClassName={`tl3`}
-              isDot={false}
             />
             <Description
               text={tSection1("description3")}
               gsapClassName={`tl4`}
-              isDot={false}
             />
           </TextBox>
         </Section>
@@ -328,18 +329,18 @@ export default function IntroPage() {
                 <TitleBoxInTitle text={tSection3("text8")} />
               </TitleBox>
 
-              <DescriptionBox direction="column" gsapClassName="fifth-text-5">
+              <DescriptionBox
+                childrenStyleClassName="color-gray fzSmall hasDot"
+                direction="column"
+                gsapClassName="fifth-text-5"
+              >
                 <Description
                   text={tSection3("info.text1")}
                   gsapClassName="tl5"
-                  color="gray"
-                  size="sm"
                 />
                 <Description
                   text={tSection3("info.text2")}
                   gsapClassName="tl5"
-                  color="gray"
-                  size="sm"
                 />
               </DescriptionBox>
             </TextBox>
@@ -386,6 +387,8 @@ export default function IntroPage() {
               text={tSection5("title")}
               className={`${styles.sectionTitle}`}
             />
+
+            {/* image 들어갈예정 */}
 
             <TextBox
               childrenStyleClassName="fzSmall wrap regularText"

@@ -5,7 +5,7 @@ import { routing } from "@/i18n/routing";
 import MoneyCursor from "@/components/nurui/money-cursor";
 import type { Metadata } from "next";
 import "../../styles/globals.css";
-import "../../styles/fontSize.css";
+import "../../styles/globalComponents.css";
 
 import Header from "@/components/header/Header";
 

@@ -1,0 +1,51 @@
+.textBox.regularText .titleBoxInTitle:not(.gradationText) {
+  font-weight: 400;
+}
+
+.textBox.fzLarge .titleBoxInTitle {
+  font-size: 48px;
+}
+
+.textBox.fzSmall .titleBoxInTitle {
+  font-size: 22px;
+}
+
+.textBox.fzSmall .description {
+  font-size: 24px;
+}
+
+.textBox.color-white .description {
+  color: var(--color-white);
+}
+
+.textBox.wrap .titleBox {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.descriptionBox.hasDot .description::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+.descriptionBox.color-white .description {
+  color: var(--color-white);
+}
+
+.descriptionBox.color-gray .description {
+  color: var(--color-gray-200);
+}
+
+.descriptionBox.fzMedium .description {
+  font-size: 24px;
+}
+
+.descriptionBox.fzSmall .description {
+  font-size: 16px;
+}

@@ -15,19 +15,3 @@
   border-radius: 50%;
   background-color: currentColor;
 }
-
-.introDescription.md {
-  font-size: 24px;
-}
-
-.introDescription.sm {
-  font-size: 16px;
-}
-
-.introDescription.white {
-  color: var(--color-white);
-}
-
-.introDescription.gray {
-  color: var(--color-gray-200);
-}
