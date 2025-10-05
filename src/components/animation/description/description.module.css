@@ -1,9 +1,33 @@
 .introDescription {
-  font-size: 24px;
+  position: relative;
   font-weight: 500;
+  word-break: keep-all;
+  padding-left: 18px;
+}
+
+.introDescription.dot::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+.introDescription.md {
+  font-size: 24px;
+}
+
+.introDescription.sm {
+  font-size: 16px;
+}
+
+.introDescription.white {
   color: var(--color-white);
 }
 
-.introDescription + .introDescription {
-  margin-top: 8px;
+.introDescription.gray {
+  color: var(--color-gray-200);
 }

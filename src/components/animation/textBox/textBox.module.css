@@ -1,8 +1,44 @@
 .textBox {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  row-gap: 20px;
   padding: 0 24px;
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.rowGapMd {
+  row-gap: 20px;
+}
+
+.rowGapSm {
+  row-gap: 8px;
+}
+
+.horizontalStart {
+  justify-content: flex-start;
+}
+
+.horizontalCenter {
+  justify-content: center;
+}
+
+.horizontalEnd {
+  justify-content: flex-end;
+}
+
+.verticalStart {
+  align-items: flex-start;
+}
+
+.verticalCenter {
+  align-items: center;
+}
+
+.verticalEnd {
+  align-items: flex-end;
+}
+
+.heightFull {
+  height: 100%;
 }

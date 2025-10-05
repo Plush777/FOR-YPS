@@ -4,7 +4,8 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import MoneyCursor from "@/components/nurui/money-cursor";
 import type { Metadata } from "next";
-import "./globals.css";
+import "../../styles/globals.css";
+import "../../styles/fontSize.css";
 
 import Header from "@/components/header/Header";
 

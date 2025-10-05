@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import styles from "./intro.module.css";
 import ColoredLogoHoriz from "@/components/svg/ColoredLogoHoriz";
-import React, { useRef } from "react";
+import React, { useCallback, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { ScrollSmoother } from "gsap/dist/ScrollSmoother";
@@ -18,6 +18,7 @@ import TitleBox from "@/components/animation/titleBox/TitleBox";
 import TitleBoxInTitle from "@/components/animation/titleBoxInTitle/TitleBoxInTitle";
 import Description from "@/components/animation/description/Description";
 import SmoothWrapper from "@/components/gsap/smooth/SmoothWrapper";
+import DescriptionBox from "@/components/animation/description/DescriptionBox";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -36,132 +37,164 @@ export default function IntroPage() {
 
   const main = useRef<HTMLDivElement>(null);
   const smoother = useRef<ScrollSmoother>(null);
-  const sectionTitleRef = useRef<HTMLHeadingElement>(null);
+  const sectionTitleRefs = useRef<HTMLHeadingElement[]>([]);
 
-  useGSAP(
-    () => {
-      smoother.current = ScrollSmoother.create({
-        smooth: 2,
-        effects: true,
-      });
+  const setSectionTitleRef = useCallback((el: HTMLHeadingElement | null) => {
+    if (!el) {
+      return;
+    }
 
-      ScrollTrigger.create({
-        trigger: ".first",
-        pin: true,
-        start: "center center",
-        end: "+=400",
-        markers: false,
-      });
+    if (!sectionTitleRefs.current.includes(el)) {
+      sectionTitleRefs.current.push(el);
+    }
+  }, []);
 
-      const tl = gsap.timeline();
+  useGSAP(() => {
+    smoother.current = ScrollSmoother.create({
+      smooth: 2,
+      effects: true,
+    });
 
-      tl.from(".tl1", { duration: 1, opacity: 0, y: 50 });
-      tl.from(".tl2", { duration: 1, opacity: 0, y: 50 });
-      tl.from(".tl3", { duration: 1, opacity: 0, y: 50 });
-      tl.from(".tl4", { duration: 1, opacity: 0, y: 50 });
-      tl.from(".tl5", { duration: 1, opacity: 0 });
+    ScrollTrigger.create({
+      trigger: ".first",
+      pin: true,
+      start: "center center",
+      end: "+=400",
+      markers: false,
+    });
 
-      const createTextAnimation = (
-        selector: string,
-        trigger: string,
-        endOffset: number
-      ) => {
-        gsap.set(selector, { opacity: 0 });
+    const tl = gsap.timeline();
 
-        gsap.fromTo(
-          selector,
-          { opacity: 0 },
-          {
-            opacity: 1,
-            duration: 1,
-            ease: "power4.out",
-            scrollTrigger: {
-              trigger: trigger,
-              start: "center center",
-              end: `+=${endOffset}`,
-              scrub: 3,
-              markers: false,
-              toggleActions: "play none none reverse",
-            },
-          }
-        );
-      };
+    tl.from(".tl1", { duration: 1, opacity: 0, y: 50 });
+    tl.from(".tl2", { duration: 1, opacity: 0, y: 50 });
+    tl.from(".tl3", { duration: 1, opacity: 0, y: 50 });
+    tl.from(".tl4", { duration: 1, opacity: 0, y: 50 });
+    tl.from(".tl5", { duration: 1, opacity: 0 });
 
-      createTextAnimation(".second-text-1", ".second", 800);
-      createTextAnimation(".second-text-2", ".second", 800);
+    const createTextAnimation = (
+      selector: string,
+      trigger: string,
+      endOffset: number
+    ) => {
+      gsap.set(selector, { opacity: 0 });
 
-      createTextAnimation(".third-text-1", ".third", 800);
-      createTextAnimation(".third-text-2", ".third", 800);
-      createTextAnimation(".third-text-3", ".third", 800);
-      createTextAnimation(".third-text-4", ".third", 800);
-
-      createTextAnimation(".fourth-text-1", ".fourth", 800);
-      createTextAnimation(".fourth-text-2", ".fourth", 800);
-      createTextAnimation(".fourth-text-3", ".fourth", 800);
-
-      createTextAnimation(".fifth-text-1", ".fifth", 800);
-      createTextAnimation(".fifth-text-2", ".fifth", 800);
-      createTextAnimation(".fifth-text-3", ".fifth", 800);
-      createTextAnimation(".fifth-text-4", ".fifth", 800);
-
-      if (sectionTitleRef.current) {
-        gsap.set(sectionTitleRef.current, {
-          x: "-100%",
-          opacity: 0,
-        });
-
-        gsap.to(sectionTitleRef.current, {
-          x: "0%",
+      gsap.fromTo(
+        selector,
+        { opacity: 0 },
+        {
           opacity: 1,
-          duration: 1.2,
-          ease: "power3.out",
+          duration: 1,
+          ease: "power4.out",
           scrollTrigger: {
-            trigger: ".fifth",
+            trigger: trigger,
             start: "center center",
-            end: "+=400",
-            scrub: 1,
+            end: `+=${endOffset}`,
+            scrub: 3,
             markers: false,
             toggleActions: "play none none reverse",
           },
-        });
+        }
+      );
+    };
+
+    createTextAnimation(".second-text-1", ".second", 800);
+    createTextAnimation(".second-text-2", ".second", 800);
+
+    createTextAnimation(".third-text-1", ".third", 800);
+    createTextAnimation(".third-text-2", ".third", 800);
+    createTextAnimation(".third-text-3", ".third", 800);
+    createTextAnimation(".third-text-4", ".third", 800);
+
+    createTextAnimation(".fourth-text-1", ".fourth", 800);
+    createTextAnimation(".fourth-text-2", ".fourth", 800);
+    createTextAnimation(".fourth-text-3", ".fourth", 800);
+
+    createTextAnimation(".fifth-text-1", ".fifth", 800);
+    createTextAnimation(".fifth-text-2", ".fifth", 800);
+    createTextAnimation(".fifth-text-3", ".fifth", 800);
+    createTextAnimation(".fifth-text-4", ".fifth", 800);
+    createTextAnimation(".fifth-text-5", ".fifth", 1200);
+
+    createTextAnimation(".sixth-text-1", ".sixth", 800);
+
+    createTextAnimation(".seventh-text-1", ".seventh", 800);
+
+    sectionTitleRefs.current.forEach((title) => {
+      const triggerElement = title.closest("section");
+
+      if (!triggerElement) {
+        return;
       }
 
-      ScrollTrigger.create({
-        trigger: ".second",
-        pin: true,
-        start: "center center",
-        end: "+=600",
-        markers: false,
+      gsap.set(title, {
+        x: "-100%",
+        opacity: 0,
       });
 
-      ScrollTrigger.create({
-        trigger: ".third",
-        pin: true,
-        start: "center center",
-        end: "+=800",
-        markers: false,
+      gsap.to(title, {
+        x: "0%",
+        opacity: 1,
+        duration: 1.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: triggerElement,
+          start: "center center",
+          end: "+=400",
+          scrub: 1,
+          markers: false,
+          toggleActions: "play none none reverse",
+        },
       });
+    });
 
-      ScrollTrigger.create({
-        trigger: ".fourth",
-        pin: true,
-        start: "center center",
-        end: "+=1000",
-        markers: false,
-      });
+    ScrollTrigger.create({
+      trigger: ".second",
+      pin: true,
+      start: "center center",
+      end: "+=600",
+      markers: false,
+    });
 
-      ScrollTrigger.create({
-        trigger: ".fifth",
-        pin: true,
-        start: "center center",
-        end: "+=1200",
-        markers: false,
-      });
-    },
-    {
-      scope: main,
-    }
-  );
+    ScrollTrigger.create({
+      trigger: ".third",
+      pin: true,
+      start: "center center",
+      end: "+=800",
+      markers: false,
+    });
+
+    ScrollTrigger.create({
+      trigger: ".fourth",
+      pin: true,
+      start: "center center",
+      end: "+=1000",
+      markers: false,
+    });
+
+    ScrollTrigger.create({
+      trigger: ".fifth",
+      pin: true,
+      start: "center center",
+      end: "+=1200",
+      markers: false,
+    });
+
+    ScrollTrigger.create({
+      trigger: ".sixth",
+      pin: true,
+      start: "center center",
+      end: "+=1400",
+      markers: false,
+    });
+
+    ScrollTrigger.create({
+      trigger: ".seventh",
+      pin: true,
+      start: "center center",
+      end: "+=1600",
+      markers: false,
+    });
+  });
 
   return (
     <div className={styles.introBackground}>
@@ -179,15 +212,27 @@ export default function IntroPage() {
             <ColoredLogoHoriz />
           </div>
 
-          <div className={styles.introTitleBox}>
-            <Description text={tSection1("description1")} className={`tl2`} />
-            <Description text={tSection1("description2")} className={`tl3`} />
-            <Description text={tSection1("description3")} className={`tl4`} />
-          </div>
+          <TextBox isRowGap="sm" isHeightFull={false}>
+            <Description
+              text={tSection1("description1")}
+              gsapClassName={`tl2`}
+              isDot={false}
+            />
+            <Description
+              text={tSection1("description2")}
+              gsapClassName={`tl3`}
+              isDot={false}
+            />
+            <Description
+              text={tSection1("description3")}
+              gsapClassName={`tl4`}
+              isDot={false}
+            />
+          </TextBox>
         </Section>
 
         <Section sectionName="textSection" gsapClassName="second">
-          <TextBox>
+          <TextBox childrenStyleClassName="fzLarge">
             <TitleBoxInTitle
               text={tSection2("text1")}
               gsapClassName={`second-text-1`}
@@ -200,7 +245,7 @@ export default function IntroPage() {
         </Section>
 
         <Section sectionName="textSection" gsapClassName="third">
-          <TextBox>
+          <TextBox childrenStyleClassName="fzLarge">
             <TitleBoxInTitle
               text={tSection2Positive("text1")}
               gsapClassName={`third-text-1`}
@@ -224,7 +269,7 @@ export default function IntroPage() {
         </Section>
 
         <Section sectionName="textSection" gsapClassName="fourth">
-          <TextBox>
+          <TextBox childrenStyleClassName="fzLarge">
             <TitleBoxInTitle
               text={tSection2Negative("text1")}
               gsapClassName={`fourth-text-1`}
@@ -245,43 +290,140 @@ export default function IntroPage() {
         <Section sectionName="textSection" gsapClassName="fifth">
           <SectionInner>
             <SectionTitle
-              ref={sectionTitleRef}
+              ref={setSectionTitleRef}
               text={tSection3("title")}
               className={`${styles.sectionTitle}`}
             />
 
-            <TextBox>
-              <TitleBox className="fifth-text-1">
+            <TextBox childrenStyleClassName="fzLarge regularText">
+              <TitleBox gsapClassName="fifth-text-1">
                 <TitleBoxInTitle
                   text={tSection3("text1")}
                   gradationText={true}
                 />
 
-                <TitleBoxInTitle regularText={true} text={tSection3("text2")} />
+                <TitleBoxInTitle text={tSection3("text2")} />
               </TitleBox>
 
               <TitleBoxInTitle
                 text={tSection3("text3")}
-                regularText={true}
                 gsapClassName={`fifth-text-2`}
               />
 
-              <TitleBox className="fifth-text-3">
+              <TitleBox gsapClassName="fifth-text-3">
                 <TitleBoxInTitle
                   text={tSection3("text4")}
                   gradationText={true}
                 />
 
-                <TitleBoxInTitle regularText={true} text={tSection3("text5")} />
+                <TitleBoxInTitle text={tSection3("text5")} />
                 <TitleBoxInTitle
                   text={tSection3("text6")}
                   gradationText={true}
                 />
-                <TitleBoxInTitle text={tSection3("text7")} regularText={true} />
+                <TitleBoxInTitle text={tSection3("text7")} />
               </TitleBox>
 
-              <TitleBox className="fifth-text-4">
-                <TitleBoxInTitle text={tSection3("text8")} regularText={true} />
+              <TitleBox gsapClassName="fifth-text-4">
+                <TitleBoxInTitle text={tSection3("text8")} />
+              </TitleBox>
+
+              <DescriptionBox direction="column" gsapClassName="fifth-text-5">
+                <Description
+                  text={tSection3("info.text1")}
+                  gsapClassName="tl5"
+                  color="gray"
+                  size="sm"
+                />
+                <Description
+                  text={tSection3("info.text2")}
+                  gsapClassName="tl5"
+                  color="gray"
+                  size="sm"
+                />
+              </DescriptionBox>
+            </TextBox>
+          </SectionInner>
+        </Section>
+
+        <Section sectionName="textSection" gsapClassName="sixth">
+          <SectionInner>
+            <SectionTitle
+              ref={setSectionTitleRef}
+              text={tSection4("title")}
+              className={`${styles.sectionTitle}`}
+            />
+
+            <TextBox
+              childrenStyleClassName="wrap regularText fzLarge"
+              horizontal="start"
+              gsapClassName="sixth-text-1"
+            >
+              <TitleBox>
+                <TitleBoxInTitle text={tSection4("text1")} />
+                <TitleBoxInTitle
+                  text={tSection4("text2")}
+                  gradationText={true}
+                />
+                <TitleBoxInTitle text={tSection4("text3")} />
+              </TitleBox>
+
+              <TitleBox>
+                <TitleBoxInTitle
+                  text={tSection4("text4")}
+                  gradationText={true}
+                />
+                <TitleBoxInTitle text={tSection4("text5")} />
+              </TitleBox>
+            </TextBox>
+          </SectionInner>
+        </Section>
+
+        <Section sectionName="textSection" gsapClassName="seventh">
+          <SectionInner>
+            <SectionTitle
+              ref={setSectionTitleRef}
+              text={tSection5("title")}
+              className={`${styles.sectionTitle}`}
+            />
+
+            <TextBox
+              childrenStyleClassName="fzSmall wrap regularText"
+              horizontal="start"
+              gsapClassName="seventh-text-1"
+            >
+              <TitleBox>
+                <TitleBoxInTitle
+                  text={tSection5("text1")}
+                  gradationText={true}
+                />
+                <TitleBoxInTitle
+                  text={tSection5("text2")}
+                  gradationText={true}
+                />
+                <TitleBoxInTitle
+                  text={tSection5("text3")}
+                  gradationText={true}
+                />
+                <TitleBoxInTitle text={tSection5("text4")} />
+              </TitleBox>
+              <TitleBoxInTitle text={tSection5("text5")} />
+
+              <TitleBox>
+                <TitleBoxInTitle text={tSection5("text6")} />
+                <TitleBoxInTitle
+                  text={tSection5("text7")}
+                  gradationText={true}
+                />
+                <TitleBoxInTitle text={tSection5("text8")} />
+              </TitleBox>
+
+              <TitleBox>
+                <TitleBoxInTitle
+                  text={tSection5("text9")}
+                  gradationText={true}
+                />
+                <TitleBoxInTitle text={tSection5("text10")} />
               </TitleBox>
             </TextBox>
           </SectionInner>

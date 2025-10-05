@@ -2,9 +2,28 @@ import styles from "./titleBox.module.css";
 
 type Props = {
   children: React.ReactNode;
-  className?: string;
+  direction?: string;
+  gsapClassName?: string;
+
+  childrenType?: string;
 };
 
-export default function TitleBox({ children, className = "" }: Props) {
-  return <div className={`${styles.titleBox} ${className}`}>{children}</div>;
+export default function TitleBox({
+  children,
+  direction = "row",
+  gsapClassName = "",
+}: Props) {
+  return (
+    <div
+      className={`
+        ${styles.titleBox} 
+       
+        ${styles[direction]} 
+        ${gsapClassName}
+        titleBox
+      `}
+    >
+      {children}
+    </div>
+  );
 }

@@ -2,23 +2,23 @@ import styles from "./titleBoxInTitle.module.css";
 
 type Props = {
   text: string;
-  regularText?: boolean;
   gradationText?: boolean;
   gsapClassName?: string;
 };
 
 export default function TitleBoxInTitle({
   text,
-  regularText = false,
   gradationText = false,
   gsapClassName = "",
 }: Props) {
-  const regularTextClass = regularText ? styles.regularText : "";
-  const gradationTextClass = gradationText ? styles.gradationText : "";
+  const gradationTextClass = gradationText
+    ? `${styles.gradationText} gradationText`
+    : "";
 
   return (
+    // prettier-ignore
     <p
-      className={`${styles.titleBoxInTitle} ${regularTextClass} ${gsapClassName} ${gradationTextClass}`}
+      className={`${styles.titleBoxInTitle} ${gsapClassName} ${gradationTextClass} titleBoxInTitle`}
     >
       {text}
     </p>

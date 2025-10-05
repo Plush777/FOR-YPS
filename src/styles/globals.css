@@ -192,14 +192,14 @@ input {
 
 @font-face {
   font-family: "RecipeKorea";
-  src: url("../../static/fonts/RecipeKorea.woff2") format("woff2");
+  src: url("../static/fonts/RecipeKorea.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: "PretendardVariable";
-  src: url("../../static/fonts/PretendardVariable.woff2") format("woff2");
+  src: url("../static/fonts/PretendardVariable.woff2") format("woff2");
   font-style: normal;
   font-display: swap;
 }
