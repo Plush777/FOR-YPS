@@ -9,6 +9,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { ScrollSmoother } from "gsap/dist/ScrollSmoother";
 import { useGSAP } from "@gsap/react";
+
 import ScrollDownArrow from "@/components/animation/scrollDownArrow/ScrollDownArrow";
 import Section from "@/components/animation/section/Section";
 import TextBox from "@/components/animation/textBox/TextBox";
@@ -19,6 +20,8 @@ import TitleBoxInTitle from "@/components/animation/titleBoxInTitle/TitleBoxInTi
 import Description from "@/components/animation/description/Description";
 import SmoothWrapper from "@/components/gsap/smooth/SmoothWrapper";
 import DescriptionBox from "@/components/animation/description/DescriptionBox";
+import ImageArea from "@/components/animation/imageArea/ImageArea";
+import GlowingCard from "@/components/nurui/glowing-card/glowing-card";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -361,6 +364,12 @@ export default function IntroPage() {
               gsapClassName="sixth-text-1"
             >
               <TitleBox>
+                <GlowingCard>
+                  <ImageArea
+                    src="/icons/logo/logo-official-yougposse-white-horiz.svg"
+                    alt="Young posse 화이트 버전 로고"
+                  />
+                </GlowingCard>
                 <TitleBoxInTitle text={tSection4("text1")} />
                 <TitleBoxInTitle
                   text={tSection4("text2")}
@@ -389,6 +398,13 @@ export default function IntroPage() {
             />
 
             {/* image 들어갈예정 */}
+
+            {/* <GlowingCard>
+              <ImageArea
+                src="/icons/logo/logo-official-yougposse-white-horiz.svg"
+                alt="Young posse 화이트 버전 로고"
+              />
+            </GlowingCard> */}
 
             <TextBox
               childrenStyleClassName="fzSmall wrap regularText"

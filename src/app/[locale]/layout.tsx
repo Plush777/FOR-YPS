@@ -2,8 +2,10 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-import MoneyCursor from "@/components/nurui/money-cursor";
+import MoneyCursor from "@/components/nurui/money-cursor/money-cursor";
 import type { Metadata } from "next";
+
+import "../../styles/tailwindCopy.css";
 import "../../styles/globals.css";
 import "../../styles/globalComponents.css";
 
