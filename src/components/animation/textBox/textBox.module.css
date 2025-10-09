@@ -1,4 +1,5 @@
 .textBox {
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: 0 24px;
@@ -7,12 +8,8 @@
   margin: 0 auto;
 }
 
-.rowGapMd {
-  row-gap: 20px;
-}
-
-.rowGapSm {
-  row-gap: 8px;
+.textBox.pt110 {
+  padding: 110px 24px 0 24px;
 }
 
 .horizontalStart {

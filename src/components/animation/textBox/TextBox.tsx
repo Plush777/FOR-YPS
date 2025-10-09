@@ -23,6 +23,8 @@ export default function TextBox({
     if (horizontal === "start") return styles.horizontalStart;
     if (horizontal === "center") return styles.horizontalCenter;
     if (horizontal === "end") return styles.horizontalEnd;
+    if (horizontal.includes("start") && horizontal.includes("pt-110"))
+      return `${styles.horizontalStart} ${styles.pt110}`;
   }
 
   function verticalAlign() {
@@ -32,8 +34,9 @@ export default function TextBox({
   }
 
   function rowGap() {
-    if (isRowGap === "md") return styles.rowGapMd;
-    if (isRowGap === "sm") return styles.rowGapSm;
+    if (isRowGap === "md") return "rowGapMd";
+    if (isRowGap === "sm") return "rowGapSm";
+    if (isRowGap === "xs") return "rowGapXs";
   }
 
   return (

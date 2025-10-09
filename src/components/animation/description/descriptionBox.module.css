@@ -1,6 +1,6 @@
 .descriptionBox {
-  margin-top: auto;
-  margin-bottom: 120px;
+  position: absolute;
+  bottom: 100px;
   max-width: 900px;
   line-height: 1.5;
 }

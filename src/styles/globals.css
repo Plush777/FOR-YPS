@@ -212,6 +212,7 @@ input {
 
 :root {
   --header-height: 64px;
+  --arrow-border-size: 57px;
 }
 
 :root {

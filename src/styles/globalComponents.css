@@ -6,6 +6,14 @@
   font-size: 48px;
 }
 
+.textBox.fzMedium .titleBoxInTitle {
+  font-size: 36px;
+}
+
+.textBox.fzXSmall .titleBoxInTitle {
+  font-size: 18px;
+}
+
 .textBox.fzSmall .titleBoxInTitle {
   font-size: 22px;
 }
@@ -16,6 +24,26 @@
 
 .textBox.color-white .description {
   color: var(--color-white);
+}
+
+.rowGapXs {
+  row-gap: 12px;
+}
+
+.rowGapMd {
+  row-gap: 20px;
+}
+
+.rowGapSm {
+  row-gap: 14px;
+}
+
+.titleBoxGapXs .titleBox {
+  column-gap: 16px;
+}
+
+.titleBoxGapSm .titleBox {
+  column-gap: 20px;
 }
 
 .textBox.wrap .titleBox {
@@ -48,4 +76,44 @@
 
 .descriptionBox.fzSmall .description {
   font-size: 16px;
+}
+
+.seventhSectionSwiper {
+  width: 100%;
+
+  max-width: 800px;
+}
+
+.seventhSectionSwiper .swiper-wrapper {
+  width: 100%;
+}
+
+.seventhSectionSwiper .swiper-slide {
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
+[class*="swiper-button"] {
+  top: 50% !important;
+  transform: translateY(calc(-50% + 63px)) !important;
+  margin: 0 !important;
+  color: var(--color-violet-800);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--color-white);
+}
+
+[class*="swiper-button"] svg {
+  width: 32px;
+  height: 32px;
+}
+
+.swiper-button-prev {
+  left: -80px !important;
+}
+
+.swiper-button-next {
+  right: -80px !important;
 }

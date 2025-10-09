@@ -57,3 +57,40 @@
   color: var(--color-black);
   background-color: var(--color-white);
 }
+
+.hasSwiperBox {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+}
+
+.slideBox {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  text-align: center;
+  height: 94px;
+}
+
+.slideTitle {
+  margin-bottom: 8px;
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--color-white);
+  word-break: keep-all;
+}
+
+.slideDesc {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--color-white);
+  word-break: keep-all;
+}
+
+.titleBoxWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 20px;
+}

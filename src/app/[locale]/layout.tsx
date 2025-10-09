@@ -2,9 +2,13 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-import MoneyCursor from "@/components/nurui/money-cursor/money-cursor";
 import type { Metadata } from "next";
 
+import MoneyCursor from "@/components/nurui/money-cursor/money-cursor";
+
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 import "../../styles/globals.css";
 import "../../styles/globalComponents.css";
 
@@ -44,6 +48,7 @@ export default async function RootLayout({
             {children}
           </div>
           <MoneyCursor />
+          <div id="portal" />
         </NextIntlClientProvider>
       </body>
     </html>
