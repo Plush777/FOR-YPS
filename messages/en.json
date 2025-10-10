@@ -1,5 +1,171 @@
 {
-  "MainPage": {
-    "title": "Welcome to the Main Page"
+  "IntroPage": {
+    "section1": {
+      "description1": "Welcome to FOR YPS!",
+      "description2": "This is a fan site made just for YOUNG POSSE.",
+      "description3": "Wait, you don’t know who YOUNG POSSE is yet?",
+      "description4": "Scroll down to find out!"
+    },
+
+    "section2": {
+      "text1": "Let me ask you one thing.",
+      "text2": "Do you like hip-hop music? 🎶",
+
+      "positive": {
+        "text1": "If you do, that’s great! ☺️",
+        "text2": "Because YOUNG POSSE is all about hip-hop. 😎",
+        "text3": "Let me introduce you to them.",
+        "text4": "I’m sure you’ll love them! 🥰"
+      },
+      "negative": {
+        "text1": "If not... that’s a shame 😭",
+        "text2": "But still, could you give me a moment to tell you about YOUNG POSSE? 🥺",
+        "text3": "You might just change your mind after hearing their story. 🤔"
+      }
+    },
+
+    "section3": {
+      "title": "Who is YOUNG POSSE?",
+      "text1": "YOUNG POSSE",
+      "text2": "is a",
+      "text3": "five-member girl group that debuted in October 2023.",
+      "text4": "They’re a joint project between",
+      "text5": "DSP Media",
+      "text6": "and",
+      "text7": "Beats Entertainment.",
+      "text8": "",
+      "info": {
+        "text1": "DSP Media is known for creating legendary groups like Sechs Kies, Fin.K.L, SS501, KARA, Rainbow, APRIL, and KARD.",
+        "text2": "Beats Entertainment, founded by producer Kiggen, is in charge of producing YOUNG POSSE’s albums. He has also worked with top K-pop acts such as Shinhwa, SEVENTEEN, TWICE, and Wanna One."
+      }
+    },
+
+    "section4": {
+      "title": "Group Name",
+      "text1": "The name ‘POSSE’ comes from the Latin word meaning",
+      "text2": "‘to be able to’ or ‘can do.’",
+      "text3": "",
+      "text4": "It carries a strong message that success is achieved not alone, but together as a team—",
+      "text5": "symbolizing",
+      "text6": "confidence, ambition, and unity."
+    },
+
+    "section5": {
+      "title": "Concept",
+      "text1": "YOUNG POSSE’s sound revolves around",
+      "text2": "drill,",
+      "text3": "jersey club,",
+      "text4": "and",
+      "text5": "rage-style beats — a bold hip-hop sound that’s rare among girl groups.",
+      "text6": "They’ve caught the attention of hip-hop communities for their authenticity and energy.",
+      "text7": "Since debut,",
+      "text8": "YOUNG POSSE",
+      "text9": "has stayed true to hip-hop, earning the nickname",
+      "text10": "“K-hiphop’s daughters.”"
+    },
+
+    "section6": {
+      "title": "Members",
+
+      "members": {
+        "member1": {
+          "name": "Jeong Sunhye",
+          "dateofbirth": "April 12, 2004",
+          "nationality": "South Korea",
+          "position": {
+            "text1": "Leader",
+            "text2": "Main Rapper"
+          }
+        },
+        "member2": {
+          "name": "Wi Yeonjeong",
+          "dateofbirth": "September 1, 2004",
+          "nationality": "South Korea",
+          "position": {
+            "text1": "Main Dancer"
+          }
+        },
+        "member3": {
+          "name": "Jianna",
+          "dateofbirth": "February 2, 2006",
+          "nationality": "South Korea",
+          "position": {
+            "text1": "Main Vocalist"
+          }
+        },
+        "member4": {
+          "name": "Doeun",
+          "dateofbirth": "December 24, 2007",
+          "nationality": "South Korea",
+          "position": {
+            "text1": "Rapper / Vocalist"
+          }
+        },
+        "member5": {
+          "name": "Han Ji-eun",
+          "dateofbirth": "November 5, 2009",
+          "nationality": "South Korea",
+          "position": {
+            "text1": "Vocalist"
+          }
+        }
+      }
+    },
+
+    "section7": {
+      "title": "Albums",
+
+      "albums": {
+        "album1": {
+          "name": "MACARONI CHEESE",
+          "type": "1st EP",
+          "date": "October 18, 2023"
+        },
+        "album2": {
+          "name": "YOUNG POSSE UP",
+          "type": "Digital Single",
+          "date": "February 4, 2024"
+        },
+        "album3": {
+          "name": "XXL",
+          "type": "2nd EP",
+          "date": "March 20, 2024"
+        },
+        "album4": {
+          "name": "On My Scars",
+          "type": "Digital Single",
+          "date": "June 26, 2024"
+        },
+        "album5": {
+          "name": "ATE THAT",
+          "type": "3rd EP",
+          "date": "August 21, 2024"
+        },
+        "album6": {
+          "name": "Year 1 : We Still Loading",
+          "type": "Digital Album",
+          "date": "October 18, 2024"
+        },
+        "album7": {
+          "name": "From the Street (ㄱㅓ리에서...)",
+          "type": "Digital Single",
+          "date": "December 13, 2024"
+        },
+        "album8": {
+          "name": "COLD",
+          "type": "Special Album",
+          "date": "March 2, 2025"
+        },
+        "album9": {
+          "name": "Growing Pain pt.1 : FREE",
+          "type": "4th EP",
+          "date": "August 14, 2025"
+        }
+      }
+    },
+
+    "section8": {
+      "title": "Media"
+    }
   }
 }

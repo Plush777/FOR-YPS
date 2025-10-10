@@ -20,17 +20,15 @@ export default function TextBox({
   gsapClassName = "",
 }: Props) {
   function horizonAlign() {
-    if (horizontal === "start") return styles.horizontalStart;
-    if (horizontal === "center") return styles.horizontalCenter;
-    if (horizontal === "end") return styles.horizontalEnd;
-    if (horizontal.includes("start") && horizontal.includes("pt-110"))
-      return `${styles.horizontalStart} ${styles.pt110}`;
+    if (horizontal === "start") return "horizontalStart";
+    if (horizontal === "center") return "horizontalCenter";
+    if (horizontal === "end") return "horizontalEnd";
   }
 
   function verticalAlign() {
-    if (vertical === "start") return styles.verticalStart;
-    if (vertical === "center") return styles.verticalCenter;
-    if (vertical === "end") return styles.verticalEnd;
+    if (vertical === "start") return "verticalStart";
+    if (vertical === "center") return "verticalCenter";
+    if (vertical === "end") return "verticalEnd";
   }
 
   function rowGap() {

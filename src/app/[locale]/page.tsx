@@ -1,15 +1,17 @@
 "use client";
 
+import React, { useCallback, useRef } from "react";
+import styles from "./page.module.css";
+
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
-import styles from "./intro.module.css";
-import ColoredLogoHoriz from "@/components/svg/ColoredLogoHoriz";
-import React, { useCallback, useRef } from "react";
+
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { ScrollSmoother } from "gsap/dist/ScrollSmoother";
 import { useGSAP } from "@gsap/react";
 
+import ColoredLogoHoriz from "@/components/svg/ColoredLogoHoriz";
 import ScrollDownArrow from "@/components/animation/scrollDownArrow/ScrollDownArrow";
 import Section from "@/components/animation/section/Section";
 import TextBox from "@/components/animation/textBox/TextBox";
@@ -22,12 +24,16 @@ import SmoothWrapper from "@/components/gsap/smooth/SmoothWrapper";
 import DescriptionBox from "@/components/animation/description/DescriptionBox";
 import ImageArea from "@/components/animation/imageArea/ImageArea";
 import GlowingCard from "@/components/nurui/glowing-card/glowing-card";
+import SwiperPrevButton from "@/components/swiper/navigations/SwiperPrevButton";
+import SwiperNextButton from "@/components/swiper/navigations/SwiperNextButton";
+import SlideNameBox from "@/components/swiper/slide/SlideNameBox";
+import { VideoModal } from "@/components/nurui/video-modal/video-modal";
+import { GlowCard } from "@/components/nurui/spotlight-card/spotlight-card";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
-import { VideoModal } from "@/components/nurui/video-modal/video-modal";
-import Prev from "@/components/swiper/Prev";
-import Next from "@/components/swiper/Next";
+import type { MembersByKey, MemberWithImage } from "@/types/members";
+import KoreaFlag from "@/components/svg/KoreaFlag";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -42,11 +48,40 @@ export default function IntroPage() {
   const tSection6 = useTranslations("IntroPage.section6");
   const tSection7 = useTranslations("IntroPage.section7");
   const tSection8 = useTranslations("IntroPage.section8");
-  const tSection9 = useTranslations("IntroPage.section9");
 
   const main = useRef<HTMLDivElement>(null);
   const smoother = useRef<ScrollSmoother>(null);
   const sectionTitleRefs = useRef<HTMLHeadingElement[]>([]);
+
+  const colorMap = {
+    sunhye: "#ffc710",
+    yeonjung: "#fa44a6",
+    jiana: "#9807f6",
+    doeun: "#61c322",
+    jieun: "#4694dd",
+  } as const;
+
+  type ColorKey = keyof typeof colorMap;
+  const colorList: ColorKey[] = [
+    "sunhye",
+    "yeonjung",
+    "jiana",
+    "doeun",
+    "jieun",
+  ];
+
+  // section6.members를 원본(JSON) 형태로 안전하게 가져와 타입 적용
+  const membersObject = tSection6.raw("members") as MembersByKey;
+  const membersList: MemberWithImage[] = Object.keys(membersObject)
+    .sort() // member1, member2 ... 순서 보장
+    .map((key, index) => {
+      const member = membersObject[key];
+      return {
+        id: key,
+        ...member,
+        imageSrc: `/members/img-member1-${index + 1}.webp`,
+      };
+    });
 
   const setSectionTitleRef = useCallback((el: HTMLHeadingElement | null) => {
     if (!el) {
@@ -202,6 +237,14 @@ export default function IntroPage() {
       end: "+=1600",
       markers: false,
     });
+
+    ScrollTrigger.create({
+      trigger: ".eightth",
+      pin: true,
+      start: "center center",
+      end: "+=1800",
+      markers: false,
+    });
   });
 
   return (
@@ -305,7 +348,7 @@ export default function IntroPage() {
             />
 
             <TextBox
-              horizontal="start pt-110"
+              horizontal="center"
               childrenStyleClassName="fzLarge regularText"
             >
               <div className={styles.titleBoxWrapper}>
@@ -401,7 +444,7 @@ export default function IntroPage() {
         </Section>
 
         <Section sectionName="textSection" gsapClassName="seventh">
-          <SectionInner>
+          <SectionInner horizontal="center">
             <SectionTitle
               ref={setSectionTitleRef}
               text={tSection5("title")}
@@ -409,7 +452,7 @@ export default function IntroPage() {
             />
 
             <div className={styles.hasSwiperBox}>
-              <Prev />
+              <SwiperPrevButton />
 
               <Swiper
                 modules={[Pagination, Navigation]}
@@ -425,14 +468,10 @@ export default function IntroPage() {
                 loop={true}
               >
                 <SwiperSlide>
-                  <div className={styles.slideBox}>
-                    <p className={styles.slideTitle}>
-                      YOUNG POSSE UP (feat.Verbal Jint, NSW yoon, Token)
-                    </p>
-                    <p className={styles.slideDesc}>
-                      Jersey Drill (Jersey Club + Drill)
-                    </p>
-                  </div>
+                  <SlideNameBox
+                    title="YOUNG POSSE UP (feat.Verbal Jint, NSW yoon, Token)"
+                    desc="Jersey Drill (Jersey Club + Drill)"
+                  />
 
                   <VideoModal
                     animationStyle="from-center"
@@ -442,10 +481,7 @@ export default function IntroPage() {
                   />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <div className={styles.slideBox}>
-                    <p className={styles.slideTitle}>Skyline</p>
-                    <p className={styles.slideDesc}>Jersey Club + Dnb</p>
-                  </div>
+                  <SlideNameBox title="Skyline" desc="Jersey Club + Dnb" />
 
                   <VideoModal
                     animationStyle="from-center"
@@ -455,12 +491,8 @@ export default function IntroPage() {
                   />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <div className={styles.slideBox}>
-                    <p className={styles.slideTitle}>
-                      Same Shit 中 Another One
-                    </p>
-                    <p className={styles.slideDesc}>Rage</p>
-                  </div>
+                  <SlideNameBox title="Same Shit 中 Another One" desc="Rage" />
+
                   <VideoModal
                     animationStyle="from-center"
                     videoSrc="https://www.youtube.com/embed/o16aOeWMGOk?si=P1cTZgCip_ID3Gl-"
@@ -470,10 +502,7 @@ export default function IntroPage() {
                 </SwiperSlide>
 
                 <SwiperSlide>
-                  <div className={styles.slideBox}>
-                    <p className={styles.slideTitle}>Blue Dot</p>
-                    <p className={styles.slideDesc}>Rage</p>
-                  </div>
+                  <SlideNameBox title="Blue Dot" desc="Rage" />
                   <VideoModal
                     animationStyle="from-center"
                     videoSrc="https://www.youtube.com/embed/r374CxtQHpM?si=5JLD2X7x7bw7AjXE"
@@ -482,10 +511,7 @@ export default function IntroPage() {
                   />
                 </SwiperSlide>
                 <SwiperSlide>
-                  <div className={styles.slideBox}>
-                    <p className={styles.slideTitle}>YSSR</p>
-                    <p className={styles.slideDesc}>Rage</p>
-                  </div>
+                  <SlideNameBox title="YSSR" desc="Rage" />
                   <VideoModal
                     animationStyle="from-center"
                     videoSrc="https://www.youtube.com/embed/DmZi8TOLN_I?si=j-L15LrMGtS7bPz_"
@@ -495,10 +521,11 @@ export default function IntroPage() {
                 </SwiperSlide>
               </Swiper>
 
-              <Next />
+              <SwiperNextButton />
             </div>
 
             <TextBox
+              isHeightFull={false}
               childrenStyleClassName="fzXSmall wrap regularText titleBoxGapXs"
               horizontal="start"
               gsapClassName="seventh-text-1"
@@ -538,6 +565,49 @@ export default function IntroPage() {
                 <TitleBoxInTitle text={tSection5("text10")} />
               </TitleBox>
             </TextBox>
+          </SectionInner>
+        </Section>
+
+        <Section sectionName="textSection" gsapClassName="eightth">
+          <SectionInner horizontal="center">
+            <SectionTitle
+              ref={setSectionTitleRef}
+              text={tSection6("title")}
+              className={`${styles.sectionTitle}`}
+            />
+
+            <div className="cardWrapper">
+              {membersList.map((member, i) => (
+                <GlowCard className={colorList[i]} key={member.id}>
+                  <div className="cardTop">
+                    <ImageArea
+                      type="card"
+                      src={member.imageSrc}
+                      alt={member.name}
+                    />
+                  </div>
+
+                  <div className="cardBottom">
+                    <div className="cardTitleArea">
+                      <KoreaFlag />
+                      <strong className="cardTitle">{member.name}</strong>
+                    </div>
+                    <div className="cardColumn">
+                      <p className="cardText">{member.dateofbirth}</p>
+                    </div>
+
+                    <div className="cardColumn list">
+                      {member.position?.text1 && (
+                        <p className="cardText">{member.position.text1}</p>
+                      )}
+                      {member.position?.text2 && (
+                        <p className="cardText">{member.position.text2}</p>
+                      )}
+                    </div>
+                  </div>
+                </GlowCard>
+              ))}
+            </div>
           </SectionInner>
         </Section>
       </SmoothWrapper>

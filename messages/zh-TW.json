@@ -1,0 +1,171 @@
+{
+  "IntroPage": {
+    "section1": {
+      "description1": "歡迎來到 FOR YPS！",
+      "description2": "這裡是專屬於 YOUNG POSSE 的粉絲網站。",
+      "description3": "等等，你還不知道 YOUNG POSSE 是誰嗎？",
+      "description4": "請往下滑看看吧。"
+    },
+
+    "section2": {
+      "text1": "我想問你一個問題。",
+      "text2": "你喜歡嘻哈音樂嗎？🎶",
+
+      "positive": {
+        "text1": "如果喜歡的話……太好了 ☺️",
+        "text2": "因為 YOUNG POSSE 所追求的音樂可是超級嘻哈的！😎",
+        "text3": "讓我來介紹一下 YOUNG POSSE 吧～",
+        "text4": "你一定會喜歡她們的 🥰"
+      },
+      "negative": {
+        "text1": "如果不喜歡……真可惜 😭",
+        "text2": "我還是想介紹一下 YOUNG POSSE，不介意聽我說一下嗎？🥺",
+        "text3": "聽完之後，也許你會改變想法喔 🤔"
+      }
+    },
+
+    "section3": {
+      "title": "誰是 YOUNG POSSE？",
+      "text1": "YOUNG POSSE",
+      "text2": "是",
+      "text3": "於 2023 年 10 月出道的五人女子團體。",
+      "text4": "由 DSP 媒體",
+      "text5": "與",
+      "text6": "Beats 娛樂公司",
+      "text7": "共同製作。",
+      "text8": "",
+      "info": {
+        "text1": "DSP 媒體曾經打造過 Sechs Kies、Fin.K.L、SS501、KARA、Rainbow、APRIL、KARD 等許多知名團體。",
+        "text2": "Beats 娛樂由製作人 Kigen 所創立，負責 YOUNG POSSE 的專輯製作。Kigen 過去也曾為神話、SEVENTEEN、TWICE、Wanna One 等多個韓團製作歌曲。"
+      }
+    },
+
+    "section4": {
+      "title": "團名由來",
+      "text1": "團名取自拉丁語中代表「能夠、可以」的字詞",
+      "text2": "「POSSE」。",
+      "text3": "",
+      "text4": "名字中包含著「與其一個人，不如大家一起合作才能達成目標」",
+      "text5": "的",
+      "text6": "堅定抱負與強烈意志。"
+    },
+
+    "section5": {
+      "title": "概念",
+      "text1": "YOUNG POSSE 以 Drill、",
+      "text2": "Jersey Club、",
+      "text3": "Rage",
+      "text4": "等風格的強烈嘻哈音樂為主要概念，",
+      "text5": "在女子團體中極少見地堅持嘻哈路線，因此在嘻哈圈中受到廣泛關注。",
+      "text6": "此外，",
+      "text7": "YOUNG POSSE",
+      "text8": "自出道以來一直專注於嘻哈風格，粉絲們甚至給她們取了個暱稱——",
+      "text9": "「韓嘻女兒」",
+      "text10": "。"
+    },
+
+    "section6": {
+      "title": "成員",
+
+      "members": {
+        "member1": {
+          "name": "鄭善惠",
+          "dateofbirth": "2004.04.12",
+          "nationality": "韓國",
+          "position": {
+            "text1": "隊長",
+            "text2": "主饒舌"
+          }
+        },
+        "member2": {
+          "name": "魏妍靜",
+          "dateofbirth": "2004.09.01",
+          "nationality": "韓國",
+          "position": {
+            "text1": "主舞"
+          }
+        },
+        "member3": {
+          "name": "Gianna",
+          "dateofbirth": "2006.02.02",
+          "nationality": "韓國",
+          "position": {
+            "text1": "主唱"
+          }
+        },
+        "member4": {
+          "name": "道恩",
+          "dateofbirth": "2007.12.24",
+          "nationality": "韓國",
+          "position": {
+            "text1": "饒舌 / 主唱"
+          }
+        },
+        "member5": {
+          "name": "韓智恩",
+          "dateofbirth": "2009.11.05",
+          "nationality": "韓國",
+          "position": {
+            "text1": "主唱"
+          }
+        }
+      }
+    },
+
+    "section7": {
+      "title": "專輯",
+
+      "albums": {
+        "album1": {
+          "name": "MACARONI CHEESE",
+          "type": "第 1 張 EP",
+          "date": "2023.10.18"
+        },
+        "album2": {
+          "name": "YOUNG POSSE UP",
+          "type": "數位單曲",
+          "date": "2024.02.04"
+        },
+        "album3": {
+          "name": "XXL",
+          "type": "第 2 張 EP",
+          "date": "2024.03.20"
+        },
+        "album4": {
+          "name": "On My Scars",
+          "type": "數位單曲",
+          "date": "2024.06.26"
+        },
+        "album5": {
+          "name": "ATE THAT",
+          "type": "第 3 張 EP",
+          "date": "2024.08.21"
+        },
+        "album6": {
+          "name": "Year 1 : We Still Loading",
+          "type": "數位專輯",
+          "date": "2024.10.18"
+        },
+        "album7": {
+          "name": "在街頭…",
+          "type": "數位單曲",
+          "date": "2024.12.13"
+        },
+        "album8": {
+          "name": "COLD",
+          "type": "特別專輯",
+          "date": "2025.03.02"
+        },
+        "album9": {
+          "name": "Growing Pain pt.1 : FREE",
+          "type": "第 4 張 EP",
+          "date": "2025.08.14"
+        }
+      }
+    },
+
+    "section8": {
+      "title": "媒體"
+    }
+  }
+}

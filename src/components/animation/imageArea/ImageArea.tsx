@@ -9,7 +9,7 @@ type Props = {
 export default function ImageArea({ src, alt, type = "icon" }: Props) {
   function imageSizeClass() {
     if (type === "icon") return styles.iconSize;
-    if (type === "bg") return styles.bgSize;
+    if (type === "card") return styles.cardSize;
 
     return undefined;
   }

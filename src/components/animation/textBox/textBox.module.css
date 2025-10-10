@@ -8,34 +8,6 @@
   margin: 0 auto;
 }
 
-.textBox.pt110 {
-  padding: 110px 24px 0 24px;
-}
-
-.horizontalStart {
-  justify-content: flex-start;
-}
-
-.horizontalCenter {
-  justify-content: center;
-}
-
-.horizontalEnd {
-  justify-content: flex-end;
-}
-
-.verticalStart {
-  align-items: flex-start;
-}
-
-.verticalCenter {
-  align-items: center;
-}
-
-.verticalEnd {
-  align-items: flex-end;
-}
-
 .heightFull {
   height: 100%;
 }

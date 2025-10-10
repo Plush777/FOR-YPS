@@ -1,3 +1,8 @@
+:root {
+  --border-angle: 0deg;
+  --border-bg: #000;
+}
+
 .textBox.regularText .titleBoxInTitle:not(.gradationText) {
   font-weight: 400;
 }
@@ -116,4 +121,198 @@
 
 .swiper-button-next {
   right: -80px !important;
+}
+
+.horizontalStart {
+  justify-content: flex-start;
+}
+
+.horizontalCenter {
+  justify-content: center;
+}
+
+.horizontalEnd {
+  justify-content: flex-end;
+}
+
+.verticalStart {
+  align-items: flex-start;
+}
+
+.verticalCenter {
+  align-items: center;
+}
+
+.verticalEnd {
+  align-items: flex-end;
+}
+
+.w-48 {
+  width: 192px;
+}
+
+.w-64 {
+  width: 256px;
+}
+
+.w-80 {
+  width: 320px;
+}
+
+.h-64 {
+  height: 256px;
+}
+
+.h-80 {
+  height: 320px;
+}
+
+.h-96 {
+  height: 384px;
+}
+
+.cardWrapper {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, 310px);
+  gap: 16px;
+  width: 100%;
+  padding: 0 22px;
+}
+
+.cardTitleArea {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 6px;
+  height: 48px;
+  border-top: 3px solid var(--color-black);
+}
+
+.cardTitle {
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--color-white);
+}
+
+.cardBottom {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardText {
+  text-align: center;
+  font-size: 16px;
+  color: var(--color-white);
+  padding: 8.5px 0;
+  font-weight: 600;
+}
+
+.cardColumn {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--color-zinc-700);
+}
+
+.cardColumn.list {
+  row-gap: 6px;
+  padding-top: 8.5px;
+}
+
+.cardColumn.list .cardText {
+  padding: 0;
+}
+
+.cardTitleArea + .cardColumn {
+  border-top: 0;
+}
+
+.spotlightCard {
+  box-shadow: 0px 2px 4px hsl(0 0% 0% / 25%);
+  animation: border-angle-rotate 2s infinite linear;
+  border: 0.5rem solid transparent;
+  height: 444px;
+}
+
+.spotlightCard.sunhye {
+  background: linear-gradient(var(--color-zinc-900), var(--color-zinc-900))
+      padding-box,
+    conic-gradient(
+        from var(--border-angle),
+        var(--border-bg) 50%,
+        var(--sunhye)
+      )
+      border-box;
+}
+
+.spotlightCard.yeonjung {
+  background: linear-gradient(var(--color-zinc-900), var(--color-zinc-900))
+      padding-box,
+    conic-gradient(
+        from var(--border-angle),
+        var(--border-bg) 50%,
+        var(--yeonjung)
+      )
+      border-box;
+}
+
+.spotlightCard.jiana {
+  background: linear-gradient(var(--color-zinc-900), var(--color-zinc-900))
+      padding-box,
+    conic-gradient(from var(--border-angle), var(--border-bg) 50%, var(--jiana))
+      border-box;
+}
+
+.spotlightCard.doeun {
+  background: linear-gradient(var(--color-zinc-900), var(--color-zinc-900))
+      padding-box,
+    conic-gradient(from var(--border-angle), var(--border-bg) 50%, var(--doeun))
+      border-box;
+}
+
+.spotlightCard.jieun {
+  background: linear-gradient(var(--color-zinc-900), var(--color-zinc-900))
+      padding-box,
+    conic-gradient(from var(--border-angle), var(--border-bg) 50%, var(--jieun))
+      border-box;
+}
+
+.spotlightCard.sunhye .cardTitleArea {
+  background-color: var(--sunhye);
+}
+
+.spotlightCard.sunhye .cardTitleArea .cardTitle {
+  color: var(--color-black);
+}
+
+.spotlightCard.yeonjung .cardTitleArea {
+  background-color: var(--yeonjung);
+}
+
+.spotlightCard.jiana .cardTitleArea {
+  background-color: var(--jiana);
+}
+
+.spotlightCard.doeun .cardTitleArea {
+  background-color: var(--doeun);
+}
+
+.spotlightCard.jieun .cardTitleArea {
+  background-color: var(--jieun);
+}
+
+@keyframes border-angle-rotate {
+  from {
+    --border-angle: 0deg;
+  }
+  to {
+    --border-angle: 360deg;
+  }
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
 }

@@ -167,6 +167,7 @@ img {
   -moz-user-drag: none;
   -o-user-drag: none;
   border: none;
+  pointer-events: none;
 }
 
 em,
@@ -213,6 +214,11 @@ input {
 :root {
   --header-height: 64px;
   --arrow-border-size: 57px;
+  --sunhye: #ffc710;
+  --yeonjung: #fa44a6;
+  --jiana: #9807f6;
+  --doeun: #61c322;
+  --jieun: #4694dd;
 }
 
 :root {

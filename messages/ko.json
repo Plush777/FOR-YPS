@@ -47,7 +47,7 @@
       "text3": "를 따와 만들어진 그룹명이에요.",
       "text4": "혼자보다는 모두가 함께 힘을 합쳐야 원하는 바를 이룰 수 있다",
       "text5": "는",
-       "text6": "당찬 포부와 강렬한 의지를 내포하고 있습니다."
+      "text6": "당찬 포부와 강렬한 의지를 내포하고 있습니다."
     },
 
     "section5": {
@@ -165,71 +165,7 @@
     },
 
     "section8": {
-      "title": "Media",
-
-      "media": {
-        "media1": {
-          "name": "SLOPPY FREESTYLE",
-          "date": "2024. 05. 08.",
-          "url": "https://youtu.be/ad6WZa49Ero"
-        },
-        "media2": {
-          "name": "MACARONI CHEESE MV",
-          "date": "2023. 10. 18.",
-          "url": "https://youtu.be/-6HWMkyTAaA?si=1hJqgTqlS49hTm53"
-        },
-        "media3": {
-          "name": "ATE THAT MV",
-          "date": "2024. 08. 21.",
-          "url": "https://youtu.be/wT5UmjgSdLc?si=7WrRmFbFfxlYRvPG"
-        },
-        "media4": {
-          "name": "XXL MV",
-          "date": "2024. 3. 20.",
-          "url": "https://youtu.be/MbclRNm_ANY?si=Q-J54MLO4mVU0It_"
-        },
-        "media5": {
-          "name": "YOUNG POSSE UP(feat. Verbal Jint, NSW yoon, Token) Official MV",
-          "date": "2024. 2. 4.",
-          "url": "https://youtu.be/eaGsVrnH-5k?si=yHP-MLSPlGkwqnfA"
-        },
-        "media6": {
-          "name": "COLD (feat.10CM) MV",
-          "date": "2025. 3. 2.",
-          "url": "https://youtu.be/2HZbPz-r2UA?si=qvW3itfkMZMo6tVI"
-        }
-      }
-    },
-
-    "section9": {
-      "title": "Profile",
-
-      "profile": {
-        "profile1": {
-          "name": "MACARONI CHEESE EP",
-          "url": "/profile/img-MACARONI CHEESE-profile.webp"
-        },
-        "profile2": {
-          "name": "YOUNG POSSE UP",
-          "url": "/profile/img-YOUNGPOSSEUP-profile.webp"
-        },
-        "profile3": {
-          "name": "XXL EP",
-          "url": "/profile/img-XXL-profile.webp"
-        },
-        "profile4": {
-          "name": "ATE THAT EP",
-          "url": "/profile/img-ATETHAT-profile.webp"
-        },
-        "profile5": {
-          "name": "COLD",
-          "url": "/profile/img-COLD-profile.webp"
-        },
-        "profile6": {
-          "name": "Growing Pain pt.1 : FREE",
-          "url": "/profile/img-GrowingPainpt1FREE-profile.webp"
-        }
-      }
+      "title": "Media"
     }
   }
 }

@@ -17,6 +17,7 @@
   border-style: solid;
   box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 0 #0000;
   transition: 0.3s all;
+  aspect-ratio: 16 / 9;
 }
 
 .absoluteBox {

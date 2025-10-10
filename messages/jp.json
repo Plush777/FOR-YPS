@@ -1,5 +1,169 @@
 {
-  "MainPage": {
-    "title": "メインページにようこそ"
+  "IntroPage": {
+    "section1": {
+      "description1": "ようこそ、FOR YPSへ！",
+      "description2": "ここはYOUNG POSSEを愛する人のためのファンサイトです💖",
+      "description3": "「YOUNG POSSEって誰？」と思った方は、",
+      "description4": "スクロールして一緒に知っていきましょう✨"
+    },
+
+    "section2": {
+      "text1": "ひとつだけ質問してもいいですか？",
+      "text2": "ヒップホップ、好きですか？🎶",
+
+      "positive": {
+        "text1": "それなら最高です！☺️",
+        "text2": "YOUNG POSSEはヒップホップを全力で追いかけるグループなんです😎",
+        "text3": "少しだけ、彼女たちの魅力を紹介させてください💫",
+        "text4": "きっとハマってしまうはずです🥰"
+      },
+      "negative": {
+        "text1": "そうなんですね…ちょっと残念😭",
+        "text2": "でもね、YOUNG POSSEのことを少しだけ聞いてみませんか？🥺",
+        "text3": "もしかしたら、考えが変わるかもしれませんよ🤔"
+      }
+    },
+
+    "section3": {
+      "title": "Who is YOUNG POSSE?",
+      "text1": "YOUNG POSSE",
+      "text2": "は、",
+      "text3": "2023年10月にデビューした5人組のガールズグループ。",
+      "text4": "K-POPの名門",
+      "text5": "DSPメディア",
+      "text6": "と",
+      "text7": "BEATSエンターテインメント",
+      "text8": "が手を組み、共同プロデュースした注目のユニットです。",
+      "info": {
+        "text1": "DSPメディアは、Sechs Kies、Fin.K.L、SS501、KARA、Rainbow、APRIL、KARDなど、多くの伝説的グループを輩出してきた事務所。",
+        "text2": "BEATSエンターテインメントは、プロデューサーKiggenが設立した会社で、YOUNG POSSEのサウンドを手がけています。これまでにSHINHWA、SEVENTEEN、TWICE、Wanna Oneなど数多くのK-POPアーティストをプロデュースしてきました。"
+      }
+    },
+
+    "section4": {
+      "title": "Group name",
+      "text1": "グループ名の「POSSE」は、ラテン語で「できる」「可能だ」という意味。",
+      "text2": "",
+      "text3": "“ひとりではなく、仲間と共に力を合わせれば夢は叶う”",
+      "text4": "そんな前向きな想いと強い意志が込められています🔥"
+    },
+
+    "section5": {
+      "title": "Concept",
+      "text1": "YOUNG POSSEの音楽は、",
+      "text2": "ドリル、",
+      "text3": "ジャージークラブ、",
+      "text4": "レイジ",
+      "text5": "といったサウンドをベースにしたパワフルなヒップホップ。",
+      "text6": "ガールズグループの中でも異彩を放つ存在として、ヒップホップファンの間でも注目を集めています。",
+      "text7": "デビュー以来、",
+      "text8": "彼女たちはブレずにヒップホップを貫き、",
+      "text9": "ファンからは「韓国ヒップホップの娘たち」",
+      "text10": "と呼ばれています💥"
+    },
+
+    "section6": {
+      "title": "Members",
+
+      "members": {
+        "member1": {
+          "name": "ジョン・ソネ",
+          "dateofbirth": "2004年4月12日",
+          "nationality": "韓国",
+          "position": {
+            "text1": "リーダー",
+            "text2": "メインラッパー"
+          }
+        },
+        "member2": {
+          "name": "ウィ・ヨンジョン",
+          "dateofbirth": "2004年9月1日",
+          "nationality": "韓国",
+          "position": {
+            "text1": "メインダンサー"
+          }
+        },
+        "member3": {
+          "name": "ジアナ",
+          "dateofbirth": "2006年2月2日",
+          "nationality": "韓国",
+          "position": {
+            "text1": "メインボーカル"
+          }
+        },
+        "member4": {
+          "name": "ドウン",
+          "dateofbirth": "2007年12月24日",
+          "nationality": "韓国",
+          "position": {
+            "text1": "ラッパー／ボーカル"
+          }
+        },
+        "member5": {
+          "name": "ハン・ジウン",
+          "dateofbirth": "2009年11月5日",
+          "nationality": "韓国",
+          "position": {
+            "text1": "ボーカル"
+          }
+        }
+      }
+    },
+
+    "section7": {
+      "title": "Albums",
+
+      "albums": {
+        "album1": {
+          "name": "MACARONI CHEESE",
+          "type": "1st EP",
+          "date": "2023年10月18日"
+        },
+        "album2": {
+          "name": "YOUNG POSSE UP",
+          "type": "デジタルシングル",
+          "date": "2024年2月4日"
+        },
+        "album3": {
+          "name": "XXL",
+          "type": "2nd EP",
+          "date": "2024年3月20日"
+        },
+        "album4": {
+          "name": "On My Scars",
+          "type": "デジタルシングル",
+          "date": "2024年6月26日"
+        },
+        "album5": {
+          "name": "ATE THAT",
+          "type": "3rd EP",
+          "date": "2024年8月21日"
+        },
+        "album6": {
+          "name": "Year 1 : We Still Loading",
+          "type": "デジタルアルバム",
+          "date": "2024年10月18日"
+        },
+        "album7": {
+          "name": "通りで… (ㄱㅓ리에서...)",
+          "type": "デジタルシングル",
+          "date": "2024年12月13日"
+        },
+        "album8": {
+          "name": "COLD",
+          "type": "スペシャルアルバム",
+          "date": "2025年3月2日"
+        },
+        "album9": {
+          "name": "Growing Pain pt.1 : FREE",
+          "type": "4th EP",
+          "date": "2025年8月14日"
+        }
+      }
+    },
+
+    "section8": {
+      "title": "Media"
+    }
   }
 }

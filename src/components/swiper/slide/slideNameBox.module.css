@@ -1,0 +1,22 @@
+.slideBox {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  text-align: center;
+  height: 94px;
+}
+
+.slideTitle {
+  margin-bottom: 8px;
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--color-white);
+  word-break: keep-all;
+}
+
+.slideDesc {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--color-white);
+  word-break: keep-all;
+}

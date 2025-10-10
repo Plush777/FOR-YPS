@@ -1,0 +1,171 @@
+{
+  "IntroPage": {
+    "section1": {
+      "description1": "欢迎来到 FOR YPS！",
+      "description2": "这里是专属于 YOUNG POSSE 的粉丝网站。",
+      "description3": "等等，你还不知道 YOUNG POSSE 是谁吗？",
+      "description4": "请向下滚动。"
+    },
+
+    "section2": {
+      "text1": "我想问你一个问题。",
+      "text2": "你喜欢嘻哈音乐吗？🎶",
+
+      "positive": {
+        "text1": "如果喜欢……那太好了 ☺️",
+        "text2": "因为 YOUNG POSSE 的音乐就是纯正的嘻哈 😎",
+        "text3": "让我来为你介绍一下 YOUNG POSSE。",
+        "text4": "你一定会喜欢她们的 🥰"
+      },
+      "negative": {
+        "text1": "如果不喜欢……那真遗憾 😭",
+        "text2": "我还是想介绍一下 YOUNG POSSE，你能听我说一下吗？🥺",
+        "text3": "听完之后，也许你会改变主意哦 🤔"
+      }
+    },
+
+    "section3": {
+      "title": "谁是 YOUNG POSSE？",
+      "text1": "YOUNG POSSE",
+      "text2": "是",
+      "text3": "于 2023 年 10 月出道的五人女子组合。",
+      "text4": "由 DSP 媒体",
+      "text5": "与",
+      "text6": "BEATS 娱乐公司",
+      "text7": "共同制作。",
+      "text8": "",
+      "info": {
+        "text1": "DSP 媒体曾打造过 Sechs Kies、Fin.K.L、SS501、KARA、Rainbow、APRIL、KARD 等众多组合。",
+        "text2": "BEATS 娱乐是由制作人 Kigen 创立的经纪公司，负责 YOUNG POSSE 的专辑制作。Kigen 过去曾为 SHINHWA、SEVENTEEN、TWICE、Wanna One 等多个韩团制作歌曲。"
+      }
+    },
+
+    "section4": {
+      "title": "组合名称",
+      "text1": "组合名取自拉丁语中意为“能够”、“可以”的单词",
+      "text2": "“POSSE”。",
+      "text3": "",
+      "text4": "名字蕴含着“比起一个人，大家齐心协力才能实现目标”",
+      "text5": "的",
+      "text6": "坚定抱负与强烈意志。"
+    },
+
+    "section5": {
+      "title": "概念",
+      "text1": "YOUNG POSSE 的音乐以 Drill、",
+      "text2": "Jersey Club、",
+      "text3": "Rage",
+      "text4": "等音色构成的强烈嘻哈风格为主，",
+      "text5": "在女团中极为罕见地坚持嘻哈路线，因此在嘻哈圈也备受关注。",
+      "text6": "此外，",
+      "text7": "YOUNG POSSE",
+      "text8": "自出道以来一直坚持嘻哈风格，粉丝们甚至给她们取了个昵称——",
+      "text9": "“国嘻女儿”",
+      "text10": "。"
+    },
+
+    "section6": {
+      "title": "成员",
+
+      "members": {
+        "member1": {
+          "name": "郑善惠",
+          "dateofbirth": "2004.04.12",
+          "nationality": "韩国",
+          "position": {
+            "text1": "队长",
+            "text2": "主 Rapper"
+          }
+        },
+        "member2": {
+          "name": "魏妍静",
+          "dateofbirth": "2004.09.01",
+          "nationality": "韩国",
+          "position": {
+            "text1": "主舞"
+          }
+        },
+        "member3": {
+          "name": "Gianna",
+          "dateofbirth": "2006.02.02",
+          "nationality": "韩国",
+          "position": {
+            "text1": "主唱"
+          }
+        },
+        "member4": {
+          "name": "道恩",
+          "dateofbirth": "2007.12.24",
+          "nationality": "韩国",
+          "position": {
+            "text1": "说唱 / 主唱"
+          }
+        },
+        "member5": {
+          "name": "韩智恩",
+          "dateofbirth": "2009.11.05",
+          "nationality": "韩国",
+          "position": {
+            "text1": "主唱"
+          }
+        }
+      }
+    },
+
+    "section7": {
+      "title": "专辑",
+
+      "albums": {
+        "album1": {
+          "name": "MACARONI CHEESE",
+          "type": "首张 EP",
+          "date": "2023.10.18"
+        },
+        "album2": {
+          "name": "YOUNG POSSE UP",
+          "type": "数位单曲",
+          "date": "2024.02.04"
+        },
+        "album3": {
+          "name": "XXL",
+          "type": "第二张 EP",
+          "date": "2024.03.20"
+        },
+        "album4": {
+          "name": "On My Scars",
+          "type": "数位单曲",
+          "date": "2024.06.26"
+        },
+        "album5": {
+          "name": "ATE THAT",
+          "type": "第三张 EP",
+          "date": "2024.08.21"
+        },
+        "album6": {
+          "name": "Year 1 : We Still Loading",
+          "type": "数位专辑",
+          "date": "2024.10.18"
+        },
+        "album7": {
+          "name": "在街头…",
+          "type": "数位单曲",
+          "date": "2024.12.13"
+        },
+        "album8": {
+          "name": "COLD",
+          "type": "特别专辑",
+          "date": "2025.03.02"
+        },
+        "album9": {
+          "name": "Growing Pain pt.1 : FREE",
+          "type": "第四张 EP",
+          "date": "2025.08.14"
+        }
+      }
+    },
+
+    "section8": {
+      "title": "媒体"
+    }
+  }
+}
