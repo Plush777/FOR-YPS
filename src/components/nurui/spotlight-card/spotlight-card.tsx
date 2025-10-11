@@ -10,17 +10,15 @@ interface GlowCardProps {
 
 const GlowCard: React.FC<GlowCardProps> = ({ children, className = "" }) => {
   return (
-    <>
-      <div
-        className={`
+    <div
+      className={`
           ${styles.wrap}
           ${className}
           spotlightCard
         `}
-      >
-        {children}
-      </div>
-    </>
+    >
+      {children}
+    </div>
   );
 };
 
