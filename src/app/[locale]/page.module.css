@@ -58,13 +58,6 @@
   background-color: var(--color-white);
 }
 
-.hasSwiperBox {
-  position: relative;
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto 40px auto;
-}
-
 .titleBoxWrapper {
   display: flex;
   flex-direction: column;

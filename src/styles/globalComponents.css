@@ -1,6 +1,9 @@
 :root {
   --border-angle: 0deg;
   --border-bg: #000;
+  --media-card-height: 400px;
+  --card-album-height: 412px;
+  --card-default-height: 444px;
 }
 
 .textBox.regularText .titleBoxInTitle:not(.gradationText) {
@@ -85,7 +88,6 @@
 
 .seventhSectionSwiper {
   width: 100%;
-
   max-width: 800px;
 }
 
@@ -97,6 +99,11 @@
   display: flex;
   flex-direction: column;
   z-index: 1;
+}
+
+.ninethSectionSwiper,
+.tenSectionSwiper {
+  width: 100%;
 }
 
 [class*="swiper-button"] {
@@ -171,29 +178,48 @@
   height: 384px;
 }
 
-.cardWrapper {
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  grid-template-columns: repeat(auto-fill, 310px);
-  gap: 16px;
-  width: 100%;
-  padding: 0 22px;
-}
-
 .cardTitleArea {
   display: flex;
   align-items: center;
   justify-content: center;
   column-gap: 6px;
-  height: 48px;
+  padding: 0 16px;
+  min-height: 48px;
   border-top: 3px solid var(--color-black);
+  text-align: center;
 }
 
 .cardTitle {
   font-weight: 700;
   font-size: 20px;
   color: var(--color-white);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.cardTop {
+  position: relative;
+}
+
+.cardLabel {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  padding: 0 8px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-white);
+  background-color: currentColor;
+  z-index: 1;
 }
 
 .cardBottom {
@@ -207,6 +233,11 @@
   color: var(--color-white);
   padding: 8.5px 0;
   font-weight: 600;
+}
+
+.cardText.date {
+  font-weight: 400;
+  font-size: 14px;
 }
 
 .cardColumn {
@@ -232,10 +263,132 @@
   box-shadow: 0px 2px 4px hsl(0 0% 0% / 25%);
   animation: border-angle-rotate 2s infinite linear;
   border: 0.5rem solid transparent;
-  height: 444px;
+  height: var(--card-default-height);
+}
+
+.spotlightCard.album {
+  height: var(--card-album-height);
+}
+
+.spotlightCard.media {
+  height: var(--media-card-height);
+}
+
+.spotlightCard.media .cardBottom {
+  height: calc(100% - 275px);
+  justify-content: space-between;
+}
+
+.spotlightCard.media .cardText {
+  padding: 0 12px 12px 0;
+  margin-left: auto;
+}
+
+.spotlightCard.media .cardTitle {
+  font-size: 16px;
+}
+
+.spotlightCard.macaroniCheeze {
+  background: linear-gradient(var(--color-zinc-900), var(--color-zinc-900))
+      padding-box,
+    conic-gradient(
+        from var(--border-angle),
+        var(--border-bg) 50%,
+        var(--macaroni-cheeze-album)
+      )
+      border-box;
+}
+
+.spotlightCard.youngPosseUp {
+  background: linear-gradient(var(--color-zinc-900), var(--color-zinc-900))
+      padding-box,
+    conic-gradient(
+        from var(--border-angle),
+        var(--border-bg) 50%,
+        var(--young-posse-up-album)
+      )
+      border-box;
+}
+
+.spotlightCard.xxl {
+  background: linear-gradient(var(--color-zinc-900), var(--color-zinc-900))
+      padding-box,
+    conic-gradient(
+        from var(--border-angle),
+        var(--border-bg) 50%,
+        var(--xxl-album)
+      )
+      border-box;
+}
+
+.spotlightCard.onMyScars {
+  background: linear-gradient(var(--color-zinc-900), var(--color-zinc-900))
+      padding-box,
+    conic-gradient(
+        from var(--border-angle),
+        var(--border-bg) 50%,
+        var(--on-my-scars-album)
+      )
+      border-box;
+}
+
+.spotlightCard.ateThat {
+  background: linear-gradient(var(--color-zinc-900), var(--color-zinc-900))
+      padding-box,
+    conic-gradient(
+        from var(--border-angle),
+        var(--border-bg) 50%,
+        var(--ate-that-album)
+      )
+      border-box;
+}
+
+.spotlightCard.weStillLoading {
+  background: linear-gradient(var(--color-zinc-900), var(--color-zinc-900))
+      padding-box,
+    conic-gradient(
+        from var(--border-angle),
+        var(--border-bg) 50%,
+        var(--we-still-loading-album)
+      )
+      border-box;
+}
+
+.spotlightCard.streetCarol {
+  background: linear-gradient(var(--color-zinc-900), var(--color-zinc-900))
+      padding-box,
+    conic-gradient(
+        from var(--border-angle),
+        var(--border-bg) 50%,
+        var(--street-carol-album)
+      )
+      border-box;
+}
+
+.spotlightCard.cold {
+  background: linear-gradient(var(--color-zinc-900), var(--color-zinc-900))
+      padding-box,
+    conic-gradient(
+        from var(--border-angle),
+        var(--border-bg) 50%,
+        var(--cold-album)
+      )
+      border-box;
+}
+
+.spotlightCard.growingPain {
+  background: linear-gradient(var(--color-zinc-900), var(--color-zinc-900))
+      padding-box,
+    conic-gradient(
+        from var(--border-angle),
+        var(--border-bg) 50%,
+        var(--growing-pain-album)
+      )
+      border-box;
 }
 
 .spotlightCard.sunhye {
+  color: var(--sunhye);
   background: linear-gradient(var(--color-zinc-900), var(--color-zinc-900))
       padding-box,
     conic-gradient(
@@ -282,7 +435,7 @@
   background-color: var(--sunhye);
 }
 
-.spotlightCard.sunhye .cardTitleArea .cardTitle {
+.spotlightCard.sunhye .cardTitle {
   color: var(--color-black);
 }
 
@@ -300,6 +453,124 @@
 
 .spotlightCard.jieun .cardTitleArea {
   background-color: var(--jieun);
+}
+
+.spotlightCard.macaroniCheeze .cardTitleArea {
+  background-color: var(--macaroni-cheeze-album);
+}
+
+.spotlightCard.macaroniCheeze .cardTitle {
+  color: var(--color-black);
+}
+
+.spotlightCard.youngPosseUp .cardTitleArea {
+  background-color: var(--young-posse-up-album);
+}
+
+.spotlightCard.xxl .cardTitleArea {
+  background-color: var(--xxl-album);
+}
+
+.spotlightCard.onMyScars .cardTitleArea {
+  background-color: var(--on-my-scars-album);
+}
+
+.spotlightCard.ateThat .cardTitleArea {
+  background-color: var(--ate-that-album);
+}
+
+.spotlightCard.weStillLoading .cardTitleArea {
+  background-color: var(--we-still-loading-album);
+}
+
+.spotlightCard.streetCarol .cardTitleArea {
+  background-color: var(--street-carol-album);
+}
+
+.spotlightCard.streetCarol .cardTitle {
+  color: var(--color-black);
+}
+
+.spotlightCard.cold .cardTitleArea {
+  background-color: var(--cold-album);
+}
+
+.spotlightCard.growingPain .cardTitleArea {
+  background-color: var(--growing-pain-album);
+}
+
+.spotlightCard.sunhye {
+  background: linear-gradient(var(--color-zinc-900), var(--color-zinc-900))
+      padding-box,
+    conic-gradient(
+        from var(--border-angle),
+        var(--border-bg) 50%,
+        var(--sunhye)
+      )
+      border-box;
+}
+
+.spotlightCard.sunhye .cardLabel {
+  color: var(--color-black);
+  background-color: var(--sunhye);
+}
+
+.spotlightCard.yeonjung {
+  background: linear-gradient(var(--color-zinc-900), var(--color-zinc-900))
+      padding-box,
+    conic-gradient(
+        from var(--border-angle),
+        var(--border-bg) 50%,
+        var(--yeonjung)
+      )
+      border-box;
+}
+
+.spotlightCard.yeonjung .cardLabel {
+  background-color: var(--yeonjung);
+}
+
+.spotlightCard.jiana {
+  background: linear-gradient(var(--color-zinc-900), var(--color-zinc-900))
+      padding-box,
+    conic-gradient(from var(--border-angle), var(--border-bg) 50%, var(--jiana))
+      border-box;
+}
+
+.spotlightCard.jiana .cardLabel {
+  background-color: var(--jiana);
+}
+
+.spotlightCard.doeun {
+  background: linear-gradient(var(--color-zinc-900), var(--color-zinc-900))
+      padding-box,
+    conic-gradient(from var(--border-angle), var(--border-bg) 50%, var(--doeun))
+      border-box;
+}
+
+.spotlightCard.doeun .cardLabel {
+  background-color: var(--doeun);
+}
+
+.spotlightCard.jieun {
+  background: linear-gradient(var(--color-zinc-900), var(--color-zinc-900))
+      padding-box,
+    conic-gradient(from var(--border-angle), var(--border-bg) 50%, var(--jieun))
+      border-box;
+}
+
+.spotlightCard.jieun .cardLabel {
+  background-color: var(--jieun);
+}
+
+.hasSwiperBox.swiper2 {
+  max-width: none;
+  margin: 0;
+}
+
+.cardWrapper.noGrid {
+  display: revert;
+  margin: 0;
 }
 
 @keyframes border-angle-rotate {

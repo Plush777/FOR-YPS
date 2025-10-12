@@ -33,3 +33,14 @@
 .headerInner img {
   object-position: 0 -3px;
 }
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  column-gap: 62px;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+}

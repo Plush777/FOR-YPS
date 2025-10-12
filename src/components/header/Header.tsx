@@ -3,8 +3,9 @@
 import { useState, useEffect } from "react";
 import styles from "./header.module.css";
 import Image from "next/image";
-
 import Nav from "@/components/nav/Nav";
+import LocaleDropdown from "@/components/form/LocaleDropdown/LocaleDropdown";
+
 import { Link } from "@/i18n/routing";
 
 export default function Header() {
@@ -30,19 +31,25 @@ export default function Header() {
     <>
       <header className={`${styles.header} ${isScrolled ? styles.active : ""}`}>
         <div className={styles.headerInner}>
-          <h1>
-            <Link href="/">
-              <Image
-                width={120}
-                height={46}
-                src="/icons/logo/logo-for-yps.svg"
-                alt="for yps logo"
-                priority
-              />
-            </Link>
-          </h1>
+          <div className={styles.headerLeft}>
+            <h1>
+              <Link href="/">
+                <Image
+                  width={120}
+                  height={46}
+                  src="/icons/logo/logo-for-yps.svg"
+                  alt="for yps logo"
+                  priority
+                />
+              </Link>
+            </h1>
 
-          <Nav />
+            <Nav />
+          </div>
+
+          <div className={styles.headerRight}>
+            <LocaleDropdown />
+          </div>
         </div>
       </header>
     </>

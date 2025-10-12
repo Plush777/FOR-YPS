@@ -71,6 +71,7 @@ html {
   padding: 0;
   letter-spacing: 0;
   font-family: "PretendardVariable";
+  user-select: none;
 }
 
 ol,
@@ -167,7 +168,6 @@ img {
   -moz-user-drag: none;
   -o-user-drag: none;
   border: none;
-  pointer-events: none;
 }
 
 em,
@@ -219,6 +219,15 @@ input {
   --jiana: #9807f6;
   --doeun: #61c322;
   --jieun: #4694dd;
+  --macaroni-cheeze-album: #fbb70a;
+  --young-posse-up-album: #6a0101;
+  --xxl-album: #ea1d24;
+  --on-my-scars-album: #b2aa0a;
+  --ate-that-album: #07470d;
+  --we-still-loading-album: #71133f;
+  --street-carol-album: #9cd7e3;
+  --cold-album: #853036;
+  --growing-pain-album: #577d31;
 }
 
 :root {
