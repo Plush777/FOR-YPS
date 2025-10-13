@@ -64,3 +64,10 @@
   align-items: center;
   row-gap: 20px;
 }
+
+.scaleBg {
+  transform-origin: center center;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}

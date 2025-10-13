@@ -339,6 +339,33 @@ export default function HomePage({
       markers: false,
     });
 
+    ScrollTrigger.create({
+      trigger: ".eleven",
+      pin: true,
+      start: "center center",
+      end: "+=2400",
+      markers: false,
+    });
+
+    // 먼저 이미지를 아래로 숨김
+    gsap.set(`.${styles.scaleBg}`, {
+      y: "100%", // 이미지를 아래로 완전히 숨김
+      scale: 1, // 초기 스케일
+    });
+
+    // 이미지가 아래에서 위로 나타나는 애니메이션
+    gsap.to(`.${styles.scaleBg}`, {
+      y: "0%", // 원래 위치로 이동
+      scale: 0.6, // 최종 크기
+      ease: "none",
+      scrollTrigger: {
+        trigger: `.${styles.scaleBg}`,
+        start: "top bottom", // 요소 상단이 화면 하단에 도달하면 시작
+        end: "bottom center", // 요소 하단이 화면 중앙에 도달하면 끝
+        scrub: true, // 스크롤 위치와 애니메이션 동기화
+      },
+    });
+
     // GlowCard 컴포넌트들에 순차적 애니메이션 적용
     gsap.set(".glow-card", { opacity: 0, y: 50 });
 
@@ -866,6 +893,17 @@ export default function HomePage({
                 </Swiper>
               </SwiperWrapper>
             </CardWrapper>
+          </SectionInner>
+        </Section>
+
+        <Section sectionName="textSection" gsapClassName="eleven">
+          <SectionInner horizontal="center">
+            <img
+              src="/bg/bg-last-young-posse.webp"
+              className={styles.scaleBg}
+              alt=""
+            />
+            {/* <></> */}
           </SectionInner>
         </Section>
       </SmoothWrapper>
