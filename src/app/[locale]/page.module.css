@@ -70,4 +70,11 @@
   width: 100%;
   height: auto;
   overflow: hidden;
+  object-fit: cover;
+}
+
+.backgroundBlack {
+  width: 100%;
+  height: 911px;
+  background-color: var(--color-black);
 }

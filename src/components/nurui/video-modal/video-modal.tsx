@@ -88,6 +88,7 @@ export function VideoModal({
           height={0}
           width={0}
           unoptimized
+          priority={true}
         />
         <div className={styles.absoluteBox}>
           <div className={styles.blurBox}>
