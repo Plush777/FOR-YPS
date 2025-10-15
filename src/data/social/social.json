@@ -1,11 +1,40 @@
 {
-  "youtube": "https://www.youtube.com/channel/UCYvGSZPvQj09LgpcziCszyA",
-  "bStage": "https://youngposse.bstage.in/",
-  "instagram": "https://www.instagram.com/youngposseup/",
-  "kakaotalk": "https://open.kakao.com/o/g1mpLjOf",
-  "blip": "https://blip.kr/artists/YOUNGPOSSE",
-  "spotify": "https://open.spotify.com/artist/5bxwvIM9PX0CkpS6f1L2Ff",
-  "tiktok": "https://www.tiktok.com/@youngposseup",
-  "twitter": "https://x.com/youngposseup",
-  "twitter_members": "https://x.com/yps_members"
+  "item": [
+    {
+      "url": "https://open.kakao.com/o/g1mpLjOf",
+      "name": "테리 오픈채팅방"
+    },
+    {
+      "url": "https://www.youtube.com/channel/UCYvGSZPvQj09LgpcziCszyA",
+      "name": "공식 유튜브"
+    },
+    {
+      "url": "https://x.com/youngposseup",
+      "name": "공식 트위터"
+    },
+    {
+      "url": "https://x.com/yps_members",
+      "name": "공식 멤버 트위터"
+    },
+    {
+      "url": "https://youngposse.bstage.in/",
+      "name": "비스테이지"
+    },
+    {
+      "url": "https://blip.kr/artists/YOUNGPOSSE",
+      "name": "블립"
+    },
+    {
+      "url": "https://www.instagram.com/youngposseup/",
+      "name": "공식 인스타그램"
+    },
+    {
+      "url": "https://open.spotify.com/artist/5bxwvIM9PX0CkpS6f1L2Ff",
+      "name": "스포티파이"
+    },
+    {
+      "url": "https://www.tiktok.com/@youngposseup",
+      "name": "공식 틱톡"
+    }
+  ]
 }

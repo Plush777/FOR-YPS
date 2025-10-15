@@ -2,7 +2,6 @@
 
 import React, { useCallback, useRef, useMemo } from "react";
 import styles from "@/app/[locale]/page.module.css";
-import socialData from "../data/social/social.json";
 
 import { useTranslations } from "next-intl";
 
@@ -37,7 +36,6 @@ import type { AlbumsByKey, AlbumWithImage } from "@/types/albums";
 import KoreaFlag from "@/components/svg/KoreaFlag";
 import SwiperWrapper from "@/components/swiper/wrapper/SwiperWrapper";
 import CardWrapper from "@/components/card/CardWrapper";
-import Anchor from "@/components/anchor/Anchor";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -51,9 +49,10 @@ interface RssItem {
 
 export default function HomePage({
   initialItems,
-}: {
+  children,
+}: React.PropsWithChildren<{
   initialItems: RssItem[];
-}) {
+}>) {
   console.log(initialItems);
 
   const rssDate = initialItems.map((item) => item.pubDate);
@@ -345,7 +344,7 @@ export default function HomePage({
       trigger: ".eleven",
       pin: true,
       start: "center center",
-      end: "+=2400",
+      end: "+=2200",
       markers: false,
     });
 
@@ -923,6 +922,8 @@ export default function HomePage({
             </div>
           </SectionInner>
         </Section>
+
+        {children}
       </SmoothWrapper>
 
       <ScrollDownArrow />
