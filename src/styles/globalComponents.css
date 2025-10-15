@@ -573,6 +573,80 @@
   margin: 0;
 }
 
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttonHasIcon::before {
+  content: "";
+  width: 36px;
+  height: 36px;
+  background-size: 36px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.buttonSizeLg {
+  height: 60px;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 0 16px;
+  column-gap: 8px;
+}
+
+.buttonBgWhite {
+  border: 1px solid var(--color-black);
+  color: var(--color-zinc-900);
+  background-color: var(--color-white);
+}
+
+.roundedFull {
+  border-radius: 9999px;
+}
+
+.roundedLg {
+  border-radius: 12px;
+}
+
+.roundedMd {
+  border-radius: 8px;
+}
+
+.buttonHasIcon.spotify::before {
+  background-image: url("/icons/socialLogo/logo-spotify.png");
+}
+
+.buttonHasIcon.bstage::before {
+  background-image: url("/icons/socialLogo/logo-bstage.svg");
+}
+
+.buttonHasIcon.instagram::before {
+  background-image: url("/icons/socialLogo/logo-instagram.webp");
+}
+
+.buttonHasIcon.kakaotalk::before {
+  background-image: url("/icons/socialLogo/logo-kakaotalk.png");
+}
+
+.buttonHasIcon.tiktok::before {
+  background-image: url("/icons/socialLogo/logo-tiktok.jpg");
+}
+
+.buttonHasIcon.twitter::before {
+  background-image: url("/icons/socialLogo/logo-x.svg");
+}
+
+.buttonHasIcon.youtube::before {
+  background-image: url("/icons/socialLogo/logo-youtube.png");
+}
+
+.buttonHasIcon.blip::before {
+  border-radius: 20%;
+  background-image: url("/icons/socialLogo/logo-blip.png");
+}
+
 @keyframes border-angle-rotate {
   from {
     --border-angle: 0deg;

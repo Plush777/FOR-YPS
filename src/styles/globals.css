@@ -212,7 +212,8 @@ input {
 }
 
 :root {
-  --header-height: 64px;
+  --header-height: 100px;
+  --layout-max-width: 1600px;
   --arrow-border-size: 57px;
   --sunhye: #ffc710;
   --yeonjung: #fa44a6;

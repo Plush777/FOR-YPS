@@ -7,8 +7,6 @@
   height: var(--header-height);
   transform: translateY(-64px);
   transition: transform 0.8s;
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(4px);
 }
 
 .header.active {
@@ -19,7 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1600px;
+  max-width: var(--layout-max-width);
   margin: 0 auto;
   height: 100%;
   padding: 0 24px;
@@ -38,9 +36,11 @@
   display: flex;
   align-items: center;
   column-gap: 62px;
+  height: 100%;
 }
 
 .headerRight {
   display: flex;
   align-items: center;
+  height: 100%;
 }

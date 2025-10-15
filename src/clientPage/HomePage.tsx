@@ -2,9 +2,9 @@
 
 import React, { useCallback, useRef, useMemo } from "react";
 import styles from "@/app/[locale]/page.module.css";
+import socialData from "../data/social/social.json";
 
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/routing";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -37,6 +37,7 @@ import type { AlbumsByKey, AlbumWithImage } from "@/types/albums";
 import KoreaFlag from "@/components/svg/KoreaFlag";
 import SwiperWrapper from "@/components/swiper/wrapper/SwiperWrapper";
 import CardWrapper from "@/components/card/CardWrapper";
+import Anchor from "@/components/anchor/Anchor";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -82,6 +83,7 @@ export default function HomePage({
   const tSection6 = useTranslations("IntroPage.section6");
   const tSection7 = useTranslations("IntroPage.section7");
   const tSection8 = useTranslations("IntroPage.section8");
+  const tSection9 = useTranslations("IntroPage.section9");
 
   const main = useRef<HTMLDivElement>(null);
   const smoother = useRef<ScrollSmoother>(null);
@@ -400,7 +402,7 @@ export default function HomePage({
     });
 
     gsap.fromTo(
-      ".eleven img", // ← 셀렉터 문자열 그대로 사용
+      ".eleven .backgroundBlackInner", // ← 셀렉터 문자열 그대로 사용
       {
         clipPath: "inset(50% round 0px)", // 초기값
       },
@@ -902,11 +904,22 @@ export default function HomePage({
         <Section sectionName="textSection" gsapClassName="eleven">
           <SectionInner horizontal="center">
             <div className={styles.backgroundBlack}>
-              <img
-                src="/bg/bg-last-young-posse.webp"
-                className={styles.scaleBg}
-                alt=""
-              />
+              <div
+                className={`${styles.backgroundBlackInner} backgroundBlackInner`}
+              >
+                <img
+                  src="/bg/bg-last-young-posse.webp"
+                  className={styles.scaleBg}
+                  alt=""
+                />
+
+                <div className={styles.backgroundBlackInnerContents}>
+                  <div className={`${styles.endingTextBox} eleven-text`}>
+                    <p className={styles.endingText}>{tSection9("text1")}</p>
+                    <p className={styles.endingText}>{tSection9("text2")}</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </SectionInner>
         </Section>
