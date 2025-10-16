@@ -36,7 +36,7 @@ export default function Header() {
               <Link href="/">
                 <Image
                   width={150}
-                  height={35.5}
+                  height={36}
                   src="/icons/logo/logo-for-yps.svg"
                   alt="for yps logo"
                   priority

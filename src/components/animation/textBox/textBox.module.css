@@ -2,10 +2,12 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 0 24px;
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+}
+
+.textBoxInner {
+  width: 100%;
+  padding: 0 24px;
 }
 
 .heightFull {

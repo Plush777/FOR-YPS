@@ -1,10 +1,5 @@
 .sectionTitle {
-  position: absolute;
-  left: 0;
-  top: 60px;
-  /* header 높이 */
-  margin-top: 64px;
-  /* --- */
+  margin-right: auto;
   width: fit-content;
   padding: 8px 154px 8px 22px;
   font-size: 44px;

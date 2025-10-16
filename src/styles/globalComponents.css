@@ -569,7 +569,7 @@
 }
 
 .cardWrapper.noGrid {
-  display: revert;
+  display: flex;
   margin: 0;
 }
 

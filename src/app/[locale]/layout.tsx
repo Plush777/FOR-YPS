@@ -13,6 +13,7 @@ import "../../styles/globals.css";
 import "../../styles/globalComponents.css";
 
 import Header from "@/components/header/Header";
+import Footer from "@/components/footer/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -45,7 +46,7 @@ export default async function RootLayout({
         <NextIntlClientProvider messages={messages}>
           <div id="app">
             <Header />
-            {children}
+            <main>{children}</main>
           </div>
           <MoneyCursor />
           <div id="portal" />

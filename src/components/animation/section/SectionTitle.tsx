@@ -9,7 +9,10 @@ type Props = {
 const SectionTitle = forwardRef<HTMLHeadingElement, Props>(
   ({ text, className = "" }, ref) => {
     return (
-      <h2 ref={ref} className={`${styles.sectionTitle} ${className}`}>
+      <h2
+        ref={ref}
+        className={`${styles.sectionTitle} ${className} sectionTitle`}
+      >
         {text}
       </h2>
     );

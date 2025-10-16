@@ -171,6 +171,75 @@
     "section9": {
       "text1": "TELE POSSE UP!",
       "text2": "지금 당장 입덕할 준비 되셨나요?"
+    },
+
+    "footer": {
+      "title1": "소셜 미디어",
+      "title2": "앨범 및 굿즈",
+      "title3": "이용 안내",
+      "notice": "POSSE UP, YOUNG POSSE",
+      "notice2": "테리가 항상 응원해!",
+
+      "social": [
+        {
+          "url": "https://open.kakao.com/o/g1mpLjOf",
+          "name": "테리 오픈채팅방"
+        },
+        {
+          "url": "https://www.youtube.com/channel/UCYvGSZPvQj09LgpcziCszyA",
+          "name": "공식 유튜브"
+        },
+        {
+          "url": "https://x.com/youngposseup",
+          "name": "공식 트위터"
+        },
+        {
+          "url": "https://x.com/yps_members",
+          "name": "공식 멤버 트위터"
+        },
+        {
+          "url": "https://youngposse.bstage.in/",
+          "name": "비스테이지"
+        },
+        {
+          "url": "https://blip.kr/artists/YOUNGPOSSE",
+          "name": "블립"
+        },
+        {
+          "url": "https://www.instagram.com/youngposseup/",
+          "name": "공식 인스타그램"
+        },
+        {
+          "url": "https://open.spotify.com/artist/5bxwvIM9PX0CkpS6f1L2Ff",
+          "name": "스포티파이"
+        },
+        {
+          "url": "https://www.tiktok.com/@youngposseup",
+          "name": "공식 틱톡"
+        }
+      ],
+
+      "footerMenu": [
+        {
+          "url": "/privacy",
+          "name": "개인정보처리방침"
+        },
+        {
+          "url": "/inquiry",
+          "name": "문의하기"
+        }
+      ],
+
+      "footerLink": [
+        {
+          "url": "https://kr.ktown4u.com/searchList?goodsTextSearch=young%20posse",
+          "name": "ktown4u"
+        },
+        {
+          "url": "https://www.bizent.co.kr/index.html",
+          "name": "bizent"
+        }
+      ]
     }
   }
 }

@@ -10,7 +10,7 @@ export default function Section({
   return (
     <section
       data-speed={dataSpeed}
-      className={`${styles.introSection} introSection ${styles[sectionName]} ${gsapClassName}`}
+      className={`${styles.section} section ${styles[sectionName]} ${gsapClassName}`}
     >
       {children}
     </section>

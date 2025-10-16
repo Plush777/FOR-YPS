@@ -1,31 +1,47 @@
 .footer {
+  position: relative;
+  padding: 36px 0;
   background-color: var(--color-black);
 }
 
 .footerInner {
-  max-width: var(--layout-max-width);
-  margin: 0 auto;
-  padding: 24px;
+  padding: 0 24px;
 }
 
 .footerLinkBox {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   padding-bottom: 20px;
-  border-bottom: 1px solid #ffffff1a;
+}
+
+.footerLinkBoxInner {
+  display: flex;
+  justify-content: space-between;
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+}
+
+.footerNoticeBox {
+  display: flex;
+  flex-direction: column;
+  row-gap: 6px;
+}
+
+.footerLogoArea {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+.footerLinkItem svg {
+  width: 18px;
+  height: 18px;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .footerBottomBox {
   padding-top: 20px;
-}
-
-.footerBottomBox + .footerBottomBox {
-  margin-top: 20px;
-}
-
-.footerBottomBox:last-child {
-  padding-top: 0;
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
 }
 
 .warningText {
@@ -36,6 +52,7 @@
 .warningText.copyright {
   font-size: 14px;
   opacity: 0.6;
+  text-transform: uppercase;
 }
 
 .warningText.copyContents {
@@ -43,16 +60,37 @@
   opacity: 0.45;
 }
 
+.footerLinkWrapper {
+  display: flex;
+  column-gap: 100px;
+}
+
+.footerLinkSection {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  flex: 1;
+}
+
 .footerLinkList {
   display: flex;
   align-items: center;
-  column-gap: 20px;
+  flex-direction: column;
+  row-gap: 16px;
 }
 
 .footerLinkItem {
   display: flex;
   align-items: center;
   column-gap: 4px;
+  min-width: 127px;
+}
+
+.footerLinkSectionTitle {
+  font-size: 20px;
+  font-weight: 600;
+  opacity: 0.9;
+  color: var(--color-white);
 }
 
 .footerLinkText {
@@ -60,4 +98,21 @@
   font-weight: 400;
   opacity: 0.8;
   color: var(--color-white);
+}
+
+.footerNotice {
+  font-size: 16px;
+  font-weight: 400;
+  opacity: 0.8;
+  color: var(--color-white);
+}
+
+@media (hover: hover) {
+  .footerLinkItem:hover .footerLinkText {
+    opacity: 1;
+  }
+
+  .footerLinkItem:hover svg {
+    color: var(--color-white);
+  }
 }

@@ -36,6 +36,7 @@ import type { AlbumsByKey, AlbumWithImage } from "@/types/albums";
 import KoreaFlag from "@/components/svg/KoreaFlag";
 import SwiperWrapper from "@/components/swiper/wrapper/SwiperWrapper";
 import CardWrapper from "@/components/card/CardWrapper";
+import TitleBoxWrapper from "@/components/animation/titleBoxWrapper/TitleBoxWrapper";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -181,7 +182,7 @@ export default function HomePage({
       trigger: ".first",
       pin: true,
       start: "center center",
-      end: "+=400",
+      end: "+=500",
       markers: false,
     });
 
@@ -280,7 +281,7 @@ export default function HomePage({
       trigger: ".third",
       pin: true,
       start: "center center",
-      end: "+=800",
+      end: "+=700",
       markers: false,
     });
 
@@ -288,7 +289,7 @@ export default function HomePage({
       trigger: ".fourth",
       pin: true,
       start: "center center",
-      end: "+=1000",
+      end: "+=800",
       markers: false,
     });
 
@@ -296,7 +297,7 @@ export default function HomePage({
       trigger: ".fifth",
       pin: true,
       start: "center center",
-      end: "+=1200",
+      end: "+=900",
       markers: false,
     });
 
@@ -304,7 +305,7 @@ export default function HomePage({
       trigger: ".sixth",
       pin: true,
       start: "center center",
-      end: "+=1400",
+      end: "+=1000",
       markers: false,
     });
 
@@ -312,7 +313,7 @@ export default function HomePage({
       trigger: ".seventh",
       pin: true,
       start: "center center",
-      end: "+=1600",
+      end: "+=1100",
       markers: false,
     });
 
@@ -320,7 +321,7 @@ export default function HomePage({
       trigger: ".eightth",
       pin: true,
       start: "center center",
-      end: "+=1800",
+      end: "+=1200",
       markers: false,
     });
 
@@ -328,7 +329,7 @@ export default function HomePage({
       trigger: ".nineth",
       pin: true,
       start: "center center",
-      end: "+=2000",
+      end: "+=1300",
       markers: false,
     });
 
@@ -336,7 +337,7 @@ export default function HomePage({
       trigger: ".ten",
       pin: true,
       start: "center center",
-      end: "+=2200",
+      end: "+=1400",
       markers: false,
     });
 
@@ -344,7 +345,7 @@ export default function HomePage({
       trigger: ".eleven",
       pin: true,
       start: "center center",
-      end: "+=2200",
+      end: "+=1500",
       markers: false,
     });
 
@@ -419,7 +420,7 @@ export default function HomePage({
   });
 
   return (
-    <div className={styles.introBackground}>
+    <div className={styles.pageBackground}>
       <video
         src="/video/intro-video.mp4"
         autoPlay
@@ -430,7 +431,7 @@ export default function HomePage({
 
       <SmoothWrapper ref={main}>
         <Section sectionName="firstSection" gsapClassName="first">
-          <div className={`${styles.introSectionLogoBox} tl1`}>
+          <div className={`${styles.sectionLogoBox} tl1`}>
             <ColoredLogoHoriz />
           </div>
 
@@ -512,17 +513,16 @@ export default function HomePage({
 
         <Section sectionName="textSection" gsapClassName="fifth">
           <SectionInner>
-            <SectionTitle
-              ref={setSectionTitleRef}
-              text={tSection3("title")}
-              className={`${styles.sectionTitle}`}
-            />
-
             <TextBox
               horizontal="center"
               childrenStyleClassName="fzLarge regularText"
             >
-              <div className={styles.titleBoxWrapper}>
+              <SectionTitle
+                ref={setSectionTitleRef}
+                text={tSection3("title")}
+                className={`${styles.sectionTitle}`}
+              />
+              <TitleBoxWrapper sectionName="fifth">
                 <TitleBox gsapClassName="fifth-text-1">
                   <TitleBoxInTitle
                     text={tSection3("text1")}
@@ -554,7 +554,7 @@ export default function HomePage({
                 <TitleBox gsapClassName="fifth-text-4">
                   <TitleBoxInTitle text={tSection3("text8")} />
                 </TitleBox>
-              </div>
+              </TitleBoxWrapper>
 
               <DescriptionBox
                 childrenStyleClassName="color-gray fzSmall hasDot"
@@ -570,46 +570,48 @@ export default function HomePage({
 
         <Section sectionName="textSection" gsapClassName="sixth">
           <SectionInner>
-            <SectionTitle
-              ref={setSectionTitleRef}
-              text={tSection4("title")}
-              className={`${styles.sectionTitle}`}
-            />
-
             <TextBox
               childrenStyleClassName="wrap regularText fzMedium"
               gsapClassName="sixth-text-1"
             >
-              <GlowingCard>
-                <ImageArea
-                  src="/icons/logo/logo-official-yougposse-white-horiz.svg"
-                  alt="Young posse 화이트 버전 로고"
-                />
-              </GlowingCard>
+              <SectionTitle
+                ref={setSectionTitleRef}
+                text={tSection4("title")}
+                className={`${styles.sectionTitle}`}
+              />
 
-              <TitleBox>
-                <TitleBoxInTitle text={tSection4("text1")} />
-              </TitleBox>
+              <TitleBoxWrapper sectionName="sixth">
+                <GlowingCard>
+                  <ImageArea
+                    src="/icons/logo/logo-official-yougposse-white-horiz.svg"
+                    alt="Young posse 화이트 버전 로고"
+                  />
+                </GlowingCard>
 
-              <TitleBox>
-                <TitleBoxInTitle
-                  text={tSection4("text2")}
-                  gradationText={true}
-                />
-                <TitleBoxInTitle text={tSection4("text3")} />
-              </TitleBox>
+                <TitleBox>
+                  <TitleBoxInTitle text={tSection4("text1")} />
+                </TitleBox>
 
-              <TitleBox>
-                <TitleBoxInTitle
-                  text={tSection4("text4")}
-                  gradationText={true}
-                />
-                <TitleBoxInTitle text={tSection4("text5")} />
-              </TitleBox>
+                <TitleBox>
+                  <TitleBoxInTitle
+                    text={tSection4("text2")}
+                    gradationText={true}
+                  />
+                  <TitleBoxInTitle text={tSection4("text3")} />
+                </TitleBox>
 
-              <TitleBox>
-                <TitleBoxInTitle text={tSection4("text6")} />
-              </TitleBox>
+                <TitleBox>
+                  <TitleBoxInTitle
+                    text={tSection4("text4")}
+                    gradationText={true}
+                  />
+                  <TitleBoxInTitle text={tSection4("text5")} />
+                </TitleBox>
+
+                <TitleBox>
+                  <TitleBoxInTitle text={tSection4("text6")} />
+                </TitleBox>
+              </TitleBoxWrapper>
             </TextBox>
           </SectionInner>
         </Section>
