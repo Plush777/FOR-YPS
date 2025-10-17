@@ -229,6 +229,9 @@ input {
   --street-carol-album: #9cd7e3;
   --cold-album: #853036;
   --growing-pain-album: #577d31;
+  --border: rgba(255, 255, 255, 0.2);
+  --rgba-black-50: rgba(0, 0, 0, 0.5);
+  --svg-gray: rgba(255, 255, 255, 0.6);
 }
 
 :root {

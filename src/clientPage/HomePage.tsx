@@ -11,7 +11,6 @@ import { ScrollSmoother } from "gsap/dist/ScrollSmoother";
 import { useGSAP } from "@gsap/react";
 
 import ColoredLogoHoriz from "@/components/svg/ColoredLogoHoriz";
-import ScrollDownArrow from "@/components/animation/scrollDownArrow/ScrollDownArrow";
 import Section from "@/components/animation/section/Section";
 import TextBox from "@/components/animation/textBox/TextBox";
 import SectionInner from "@/components/animation/section/SectionInner";
@@ -37,6 +36,7 @@ import KoreaFlag from "@/components/svg/KoreaFlag";
 import SwiperWrapper from "@/components/swiper/wrapper/SwiperWrapper";
 import CardWrapper from "@/components/card/CardWrapper";
 import TitleBoxWrapper from "@/components/animation/titleBoxWrapper/TitleBoxWrapper";
+import TopDownButton from "@/components/topDownButton/TopDownButton";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -417,6 +417,28 @@ export default function HomePage({
         },
       }
     );
+
+    const topDownButtonWrapper = document.querySelector(
+      ".topDownButtonWrapper"
+    ) as HTMLElement | null;
+    const footer = document.querySelector(".footer") as HTMLElement | null;
+
+    if (!topDownButtonWrapper || !footer) return;
+
+    gsap.set(topDownButtonWrapper, { opacity: 0 });
+
+    gsap.to(topDownButtonWrapper, {
+      opacity: 1,
+      visibility: "visible",
+      duration: 0.3,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: ".second", // 두 번째 섹션 클래스
+        start: "top center", // 2번째 섹션이 중앙쯤 오면 등장
+        toggleActions: "play none none reverse",
+        markers: false,
+      },
+    });
   });
 
   return (
@@ -428,6 +450,8 @@ export default function HomePage({
         loop
         className={styles.introVideo}
       />
+
+      <TopDownButton />
 
       <SmoothWrapper ref={main}>
         <Section sectionName="firstSection" gsapClassName="first">
@@ -927,8 +951,6 @@ export default function HomePage({
 
         {children}
       </SmoothWrapper>
-
-      <ScrollDownArrow />
     </div>
   );
 }

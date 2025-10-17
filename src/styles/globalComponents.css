@@ -431,6 +431,17 @@
       border-box;
 }
 
+.spotlightCard.notFound {
+  background: linear-gradient(var(--color-zinc-900), var(--color-zinc-900))
+      padding-box,
+    conic-gradient(
+        from var(--border-angle),
+        var(--border-bg) 50%,
+        var(--color-zinc-400)
+      )
+      border-box;
+}
+
 .spotlightCard.sunhye .cardTitleArea {
   background-color: var(--sunhye);
 }

@@ -5,7 +5,7 @@
   top: 0;
   width: 100%;
   height: var(--header-height);
-  transform: translateY(-64px);
+  transform: translateY(-100px);
   transition: transform 0.8s;
 }
 

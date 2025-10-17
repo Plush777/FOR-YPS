@@ -1,13 +1,10 @@
 import { useTranslations } from "next-intl";
 import styles from "@/components/footer/footer.module.css";
-import SvgOpenInNew from "@/components/svg/OpenInNew";
 import Image from "next/image";
 import LinkSection from "./LinkSection";
 
 export default function Footer() {
   const t = useTranslations("IntroPage.footer");
-
-  console.log(t.raw("footerMenu"));
 
   return (
     <footer className={`${styles.footer} footer`}>
@@ -25,6 +22,15 @@ export default function Footer() {
               <div className={styles.footerNoticeBox}>
                 <p className={styles.footerNotice}>{t("notice")}</p>
                 <p className={styles.footerNotice}>{t("notice2")}</p>
+              </div>
+
+              <div className={styles.asciiArea}>
+                <Image
+                  src="/footer/img-footer-ascii.png"
+                  alt=""
+                  width={240}
+                  height={195}
+                />
               </div>
             </div>
 
@@ -55,10 +61,12 @@ export default function Footer() {
         </p>
       </div>
 
-      <div className={styles.footerBottomBox}>
+      <div className={`${styles.footerBottomBox} ${styles.hasCaution}`}>
         <p className={`${styles.warningText} ${styles.copyContents}`}>
-          해당 사이트의 이미지 및 로고 (사이트 로고 제외) 에 대한 저작권은
-          (주)디에스피미디어에게 있습니다.
+          {t("caution1")}
+        </p>
+        <p className={`${styles.warningText} ${styles.copyContents}`}>
+          {t("caution2")}
         </p>
       </div>
     </footer>

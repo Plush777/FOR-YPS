@@ -1,16 +1,19 @@
 .footer {
   position: relative;
   padding: 36px 0;
+  border-top: 1px solid var(--border);
   background-color: var(--color-black);
+  margin-top: -54px;
 }
 
 .footerInner {
-  padding: 0 24px;
 }
 
 .footerLinkBox {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid var(--border);
   padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .footerLinkBoxInner {
@@ -35,16 +38,25 @@
 .footerLinkItem svg {
   width: 18px;
   height: 18px;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--svg-gray);
 }
 
 .footerBottomBox {
+  display: flex;
+  flex-direction: column;
   padding-top: 20px;
   max-width: var(--layout-max-width);
   margin: 0 auto;
 }
 
+.hasCaution {
+  row-gap: 4px;
+  padding-left: 15px;
+}
+
 .warningText {
+  display: list-item;
+  list-style: disc;
   font-weight: 400;
   color: var(--color-white);
 }
@@ -53,6 +65,7 @@
   font-size: 14px;
   opacity: 0.6;
   text-transform: uppercase;
+  list-style: none;
 }
 
 .warningText.copyContents {
@@ -105,6 +118,9 @@
   font-weight: 400;
   opacity: 0.8;
   color: var(--color-white);
+}
+
+.asciiArea {
 }
 
 @media (hover: hover) {
