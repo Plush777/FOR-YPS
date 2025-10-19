@@ -1,5 +1,3 @@
-import styles from "./button.module.css";
-
 type Props = {
   buttonType?: "button" | "submit" | "reset";
   styleType?: string;
@@ -38,7 +36,7 @@ export default function Button({
   }
 
   function buttonColorCondition() {
-    if (color === "white") return "bgWhite";
+    if (color === "white") return "buttonBgWhite";
 
     return undefined;
   }

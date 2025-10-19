@@ -4,7 +4,7 @@ import Image from "next/image";
 import LinkSection from "./LinkSection";
 
 export default function Footer() {
-  const t = useTranslations("IntroPage.footer");
+  const t = useTranslations("mainPage.footer");
 
   return (
     <footer className={`${styles.footer} footer`}>

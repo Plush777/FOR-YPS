@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl";
 
 export default function ScrollDownArrow() {
   const scrollDownArrow = useRef<SVGSVGElement>(null);
-  const tSection1 = useTranslations("IntroPage.section1");
+  const tSection1 = useTranslations("mainPage.section1");
 
   useGSAP(() => {
     gsap.to(scrollDownArrow.current, {

@@ -11,6 +11,8 @@
   margin: 0 auto;
   padding: 44px 24px;
   border-radius: 30px;
+  transition: 0.3s ease-in-out transform;
+  transform-origin: center center;
   background-color: var(--color-black);
 }
 
@@ -73,6 +75,7 @@
   align-items: center;
   flex-direction: column;
   width: 100%;
+  border-top: 1px solid var(--border);
   background-color: var(--color-black);
 }
 

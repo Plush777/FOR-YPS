@@ -26,7 +26,9 @@ export default function SectionInner({
 
   return (
     <div
-      className={`${styles.sectionInner} ${horizonAlign()} ${verticalAlign()}`}
+      className={`${
+        styles.sectionInner
+      } ${horizonAlign()} ${verticalAlign()} sectionInner`}
     >
       {children}
     </div>

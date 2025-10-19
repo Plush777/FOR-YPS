@@ -1,5 +1,11 @@
 {
-  "IntroPage": {
+  "mainPage": {
+    "errorSection": {
+      "text1": "이런! 데이터를 불러오지 못했어요.",
+      "text2": "해당 문제가 계속 된다면, 아래 버튼을 통해 문의 해주세요.",
+      "text3": "문의하기"
+    },
+
     "section1": {
       "description1": "FOR YPS 에 오신 것을 환영합니다! ",
       "description2": "이 곳은 YOUNG POSSE 만을 위한 팬 사이트예요.",

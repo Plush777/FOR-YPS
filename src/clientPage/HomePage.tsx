@@ -37,6 +37,7 @@ import SwiperWrapper from "@/components/swiper/wrapper/SwiperWrapper";
 import CardWrapper from "@/components/card/CardWrapper";
 import TitleBoxWrapper from "@/components/animation/titleBoxWrapper/TitleBoxWrapper";
 import TopDownButton from "@/components/topDownButton/TopDownButton";
+import ErrorSection from "@/components/error/ErrorSection";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -56,34 +57,38 @@ export default function HomePage({
 }>) {
   console.log(initialItems);
 
-  const rssDate = initialItems.map((item) => item.pubDate);
+  const rssDate = initialItems && initialItems.map((item) => item.pubDate);
 
-  const parsingDate = rssDate.map((dateString) => {
-    const dateParts = dateString.split(" ");
-    return dateParts[0]; // 날짜 부분만 추출
-  });
+  const parsingDate =
+    rssDate &&
+    rssDate.map((dateString) => {
+      const dateParts = dateString.split(" ");
+      return dateParts[0]; // 날짜 부분만 추출
+    });
 
-  const rssLink = initialItems.map((item) => item.link);
-  const parsingLink = rssLink.map((link) => {
-    return link;
-  });
+  const rssLink = initialItems && initialItems.map((item) => item.link);
+  const parsingLink =
+    rssLink &&
+    rssLink.map((link) => {
+      return link;
+    });
 
   function parsingLinkCondition(i: number) {
     if (parsingLink[i].includes("/shorts")) return "Shorts";
     if (parsingLink[i].includes("/watch")) return "Video";
   }
 
-  const tSection1 = useTranslations("IntroPage.section1");
-  const tSection2 = useTranslations("IntroPage.section2");
-  const tSection2Positive = useTranslations("IntroPage.section2.positive");
-  const tSection2Negative = useTranslations("IntroPage.section2.negative");
-  const tSection3 = useTranslations("IntroPage.section3");
-  const tSection4 = useTranslations("IntroPage.section4");
-  const tSection5 = useTranslations("IntroPage.section5");
-  const tSection6 = useTranslations("IntroPage.section6");
-  const tSection7 = useTranslations("IntroPage.section7");
-  const tSection8 = useTranslations("IntroPage.section8");
-  const tSection9 = useTranslations("IntroPage.section9");
+  const tSection1 = useTranslations("mainPage.section1");
+  const tSection2 = useTranslations("mainPage.section2");
+  const tSection2Positive = useTranslations("mainPage.section2.positive");
+  const tSection2Negative = useTranslations("mainPage.section2.negative");
+  const tSection3 = useTranslations("mainPage.section3");
+  const tSection4 = useTranslations("mainPage.section4");
+  const tSection5 = useTranslations("mainPage.section5");
+  const tSection6 = useTranslations("mainPage.section6");
+  const tSection7 = useTranslations("mainPage.section7");
+  const tSection8 = useTranslations("mainPage.section8");
+  const tSection9 = useTranslations("mainPage.section9");
 
   const main = useRef<HTMLDivElement>(null);
   const smoother = useRef<ScrollSmoother>(null);
@@ -108,8 +113,11 @@ export default function HomePage({
 
   const getMemberClasses = useMemo(() => {
     const memberClasses = ["sunhye", "yeonjung", "jiana", "doeun", "jieun"];
-    return initialItems.map(
-      (_, index) => memberClasses[index % memberClasses.length]
+    return (
+      initialItems &&
+      initialItems.map(
+        (_, index) => memberClasses[index % memberClasses.length]
+      )
     );
   }, [initialItems]);
 
@@ -176,14 +184,6 @@ export default function HomePage({
     smoother.current = ScrollSmoother.create({
       smooth: 2,
       effects: true,
-    });
-
-    ScrollTrigger.create({
-      trigger: ".first",
-      pin: true,
-      start: "center center",
-      end: "+=500",
-      markers: false,
     });
 
     const tl = gsap.timeline();
@@ -267,6 +267,14 @@ export default function HomePage({
           toggleActions: "play none none reverse",
         },
       });
+    });
+
+    ScrollTrigger.create({
+      trigger: ".first",
+      pin: true,
+      start: "center center",
+      end: "+=300",
+      markers: false,
     });
 
     ScrollTrigger.create({
@@ -455,7 +463,7 @@ export default function HomePage({
 
       <SmoothWrapper ref={main}>
         <Section sectionName="firstSection" gsapClassName="first">
-          <div className={`${styles.sectionLogoBox} tl1`}>
+          <div className={`${styles.sectionLogoBox} sectionLogoBox tl1`}>
             <ColoredLogoHoriz />
           </div>
 
@@ -783,34 +791,32 @@ export default function HomePage({
                 <GlowCard
                   className={`glow-card ${memberCardColorList[i]}`}
                   key={member.id}
-                >
-                  <div className="cardTop">
+                  topContents={
                     <ImageArea
                       type="card"
                       src={member.imageSrc}
                       alt={member.name}
                     />
-                  </div>
+                  }
+                  bottomContents={
+                    <>
+                      <div className="cardColumn">
+                        <p className="cardText">{member.dateofbirth}</p>
+                      </div>
 
-                  <div className="cardBottom">
-                    <div className="cardTitleArea">
-                      <KoreaFlag />
-                      <strong className="cardTitle">{member.name}</strong>
-                    </div>
-                    <div className="cardColumn">
-                      <p className="cardText">{member.dateofbirth}</p>
-                    </div>
-
-                    <div className="cardColumn list">
-                      {member.position?.text1 && (
-                        <p className="cardText">{member.position.text1}</p>
-                      )}
-                      {member.position?.text2 && (
-                        <p className="cardText">{member.position.text2}</p>
-                      )}
-                    </div>
-                  </div>
-                </GlowCard>
+                      <div className="cardColumn list">
+                        {member.position?.text1 && (
+                          <p className="cardText">{member.position.text1}</p>
+                        )}
+                        {member.position?.text2 && (
+                          <p className="cardText">{member.position.text2}</p>
+                        )}
+                      </div>
+                    </>
+                  }
+                  cardTitle={member.name}
+                  titleContents={<KoreaFlag />}
+                />
               ))}
             </CardWrapper>
           </SectionInner>
@@ -840,27 +846,25 @@ export default function HomePage({
                       <GlowCard
                         className={`glow-card album ${albumCardColorList[i]}`}
                         key={album.id}
-                      >
-                        <div className="cardTop">
+                        topContents={
                           <ImageArea
                             type="card"
                             src={album.imageSrc}
                             alt={album.name}
                           />
-                        </div>
-
-                        <div className="cardBottom">
-                          <div className="cardTitleArea">
-                            <strong className="cardTitle">{album.name}</strong>
-                          </div>
-                          <div className="cardColumn">
-                            <p className="cardText">{album.type}</p>
-                          </div>
-                          <div className="cardColumn list">
-                            <p className="cardText">{album.date}</p>
-                          </div>
-                        </div>
-                      </GlowCard>
+                        }
+                        bottomContents={
+                          <>
+                            <div className="cardColumn">
+                              <p className="cardText">{album.type}</p>
+                            </div>
+                            <div className="cardColumn list">
+                              <p className="cardText">{album.date}</p>
+                            </div>
+                          </>
+                        }
+                        cardTitle={album.name}
+                      />
                     </SwiperSlide>
                   ))}
                 </Swiper>
@@ -888,38 +892,43 @@ export default function HomePage({
                   loop={false}
                   navigation={false}
                 >
-                  {initialItems.map((item, i) => (
-                    <SwiperSlide>
-                      <a href={item.link} title={item.title} target="_blank">
-                        <GlowCard
-                          className={`glow-card media ${getMemberClasses[i]}`}
-                          key={i}
-                        >
-                          <div className="cardTop">
-                            <span className="cardLabel">
-                              {parsingLinkCondition(i)}
-                            </span>
-                            <ImageArea
-                              type="card"
-                              src={item.thumbnail}
-                              alt={item.title}
-                            />
-                          </div>
-
-                          <div className="cardBottom">
-                            <div className="cardTitleArea">
-                              <strong className="cardTitle">
-                                {item.title}
-                              </strong>
-                            </div>
-                            <div className="cardColumn">
-                              <p className="cardText date">{parsingDate[i]}</p>
-                            </div>
-                          </div>
-                        </GlowCard>
-                      </a>
-                    </SwiperSlide>
-                  ))}
+                  {initialItems ? (
+                    initialItems.map((item, i) => (
+                      <SwiperSlide>
+                        <a href={item.link} title={item.title} target="_blank">
+                          <GlowCard
+                            className={`glow-card media ${getMemberClasses[i]}`}
+                            key={i}
+                            topContents={
+                              <>
+                                <span className="cardLabel">
+                                  {parsingLinkCondition(i) ?? "Unknown"}
+                                </span>
+                                <ImageArea
+                                  type="card"
+                                  src={
+                                    item.thumbnail ||
+                                    "/card/default-thumbnail.jpg"
+                                  }
+                                  alt={item.title || ""}
+                                />
+                              </>
+                            }
+                            bottomContents={
+                              <div className="cardColumn">
+                                <p className="cardText date">
+                                  {parsingDate[i] || "날짜를 불러오지 못함"}
+                                </p>
+                              </div>
+                            }
+                            cardTitle={item.title || "제목을 불러오지 못함"}
+                          />
+                        </a>
+                      </SwiperSlide>
+                    ))
+                  ) : (
+                    <ErrorSection />
+                  )}
                 </Swiper>
               </SwiperWrapper>
             </CardWrapper>
