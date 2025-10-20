@@ -11,8 +11,6 @@
   margin: 0 auto;
   padding: 44px 24px;
   border-radius: 30px;
-  transition: 0.3s ease-in-out transform;
-  transform-origin: center center;
   background-color: var(--color-black);
 }
 
@@ -27,20 +25,6 @@
   pointer-events: none;
 }
 
-.introContentBox {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.introTitleBox {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 100%;
-}
-
 .introVideo {
   position: fixed;
   top: 0;
@@ -51,16 +35,6 @@
   z-index: -1;
 }
 
-.introLinkButton {
-  min-height: 40px;
-  padding: 4px 16px;
-  font-size: 36px;
-  border-radius: 9999px;
-  font-weight: 500;
-  color: var(--color-black);
-  background-color: var(--color-white);
-}
-
 .scaleBg {
   width: 100%;
   height: 100%;
@@ -69,14 +43,21 @@
 }
 
 .backgroundBlack {
-  position: relative;
+  /* position: relative; */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 100%;
+  height: 100%;
   border-top: 1px solid var(--border);
   background-color: var(--color-black);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
 }
 
 .backgroundBlackInner::before {

@@ -2,12 +2,12 @@ import styles from "./description.module.css";
 
 type Props = {
   text: string;
-  gsapClassName?: string;
+  fadeClassName?: string;
 };
 
-export default function Description({ text, gsapClassName = "" }: Props) {
+export default function Description({ text, fadeClassName = "" }: Props) {
   return (
-    <p className={`${styles.introDescription} ${gsapClassName} description`}>
+    <p className={`${styles.introDescription} ${fadeClassName} description`}>
       {text}
     </p>
   );

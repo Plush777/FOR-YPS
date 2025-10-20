@@ -6,6 +6,10 @@
   --card-default-height: 444px;
 }
 
+main {
+  height: 100%;
+}
+
 .textBox.regularText .titleBoxInTitle:not(.gradationText) {
   font-weight: 400;
 }
@@ -634,12 +638,43 @@
   background-image: url("/icons/socialLogo/logo-blip.png");
 }
 
-.first .textBox {
-  padding-top: 50px;
+.fadeIn {
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease-in-out;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
 }
 
-.eleven .sectionInner {
-  height: auto;
+.fadeIn.delay1 {
+  animation-delay: 1s;
+}
+
+.fadeIn.delay2 {
+  animation-delay: 1.5s;
+}
+
+.fadeIn.delay3 {
+  animation-delay: 2s;
+}
+
+.eleven {
+  overflow: hidden;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+    visibility: visible;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
 }
 
 @keyframes border-angle-rotate {

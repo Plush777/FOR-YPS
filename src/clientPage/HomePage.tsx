@@ -186,18 +186,11 @@ export default function HomePage({
       effects: true,
     });
 
-    const tl = gsap.timeline();
-
-    tl.from(".tl1", { duration: 1, opacity: 0, y: 50 });
-    tl.from(".tl2", { duration: 1, opacity: 0, y: 50 });
-    tl.from(".tl3", { duration: 1, opacity: 0, y: 50 });
-    tl.from(".tl4", { duration: 1, opacity: 0, y: 50 });
-
-    const createTextAnimation = (
+    function createTextAnimation(
       selector: string,
       trigger: string,
       endOffset: number
-    ) => {
+    ) {
       gsap.set(selector, { opacity: 0 });
 
       gsap.fromTo(
@@ -217,7 +210,7 @@ export default function HomePage({
           },
         }
       );
-    };
+    }
 
     createTextAnimation(".second-text-1", ".second", 800);
     createTextAnimation(".second-text-2", ".second", 800);
@@ -269,144 +262,65 @@ export default function HomePage({
       });
     });
 
-    ScrollTrigger.create({
-      trigger: ".first",
-      pin: true,
-      start: "center center",
-      end: "+=300",
-      markers: false,
+    const sections = [
+      ".second",
+      ".third",
+      ".fourth",
+      ".fifth",
+      ".sixth",
+      ".seventh",
+      ".eighth",
+      ".nineth",
+      ".ten",
+    ];
+
+    sections.forEach((selector, index) => {
+      ScrollTrigger.create({
+        trigger: selector,
+        pin: true,
+        start: "center center",
+        end: index === sections.length - 1 ? "+=600" : "+=800",
+        markers: false,
+        toggleActions: "play none one reverse",
+      });
     });
 
-    ScrollTrigger.create({
-      trigger: ".second",
-      pin: true,
-      start: "center center",
-      end: "+=600",
-      markers: false,
-    });
-
-    ScrollTrigger.create({
-      trigger: ".third",
-      pin: true,
-      start: "center center",
-      end: "+=700",
-      markers: false,
-    });
-
-    ScrollTrigger.create({
-      trigger: ".fourth",
-      pin: true,
-      start: "center center",
-      end: "+=800",
-      markers: false,
-    });
-
-    ScrollTrigger.create({
-      trigger: ".fifth",
-      pin: true,
-      start: "center center",
-      end: "+=900",
-      markers: false,
-    });
-
-    ScrollTrigger.create({
-      trigger: ".sixth",
-      pin: true,
-      start: "center center",
-      end: "+=1000",
-      markers: false,
-    });
-
-    ScrollTrigger.create({
-      trigger: ".seventh",
-      pin: true,
-      start: "center center",
-      end: "+=1100",
-      markers: false,
-    });
-
-    ScrollTrigger.create({
-      trigger: ".eightth",
-      pin: true,
-      start: "center center",
-      end: "+=1200",
-      markers: false,
-    });
-
-    ScrollTrigger.create({
-      trigger: ".nineth",
-      pin: true,
-      start: "center center",
-      end: "+=1300",
-      markers: false,
-    });
-
-    ScrollTrigger.create({
-      trigger: ".ten",
-      pin: true,
-      start: "center center",
-      end: "+=1400",
-      markers: false,
-    });
-
-    ScrollTrigger.create({
-      trigger: ".eleven",
-      pin: true,
-      start: "center center",
-      end: "+=1500",
-      markers: false,
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: ".eleven",
+        start: "center center",
+        end: "+=200%",
+        scrub: 1,
+        pin: true,
+        anticipatePin: 1,
+      },
     });
 
     // GlowCard 컴포넌트들에 순차적 애니메이션 적용
     gsap.set(".glow-card", { opacity: 0, y: 50 });
 
-    // eightth 섹션의 glow-card 애니메이션
-    gsap.to(".eightth .glow-card", {
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: "power3.out",
-      stagger: 0.2, // 각 카드마다 0.2초씩 지연 (더 빠르게)
-      scrollTrigger: {
-        trigger: ".eightth",
-        start: "center 90%", // 섹션이 화면 상단 90% 지점에 도달하면 시작
-        end: "+=800",
-        scrub: false,
-        markers: false,
-        toggleActions: "play none none reverse",
-      },
-    });
+    const cardAnimations = [
+      { section: ".eighth", start: "center 90%" },
+      { section: ".nineth", start: "center 70%" },
+      { section: ".ten", start: "center 70%" },
+    ];
 
-    gsap.to(".nineth .glow-card", {
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: "power3.out",
-      stagger: 0.2,
-      scrollTrigger: {
-        trigger: ".nineth",
-        start: "center 70%",
-        end: "+=800",
-        scrub: false,
-        markers: false,
-        toggleActions: "play none none reverse",
-      },
-    });
-
-    gsap.to(".ten .glow-card", {
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: "power3.out",
-      stagger: 0.2,
-      scrollTrigger: {
-        trigger: ".ten",
-        start: "center 70%",
-        end: "+=800",
-        scrub: false,
-        markers: false,
-        toggleActions: "play none none reverse",
-      },
+    cardAnimations.forEach(({ section, start }) => {
+      gsap.to(`${section} .glow-card`, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: section,
+          start,
+          end: "+=800",
+          scrub: false,
+          markers: false,
+          toggleActions: "play none none reverse",
+        },
+      });
     });
 
     gsap.fromTo(
@@ -463,7 +377,7 @@ export default function HomePage({
 
       <SmoothWrapper ref={main}>
         <Section sectionName="firstSection" gsapClassName="first">
-          <div className={`${styles.sectionLogoBox} sectionLogoBox tl1`}>
+          <div className={`${styles.sectionLogoBox} fadeIn`}>
             <ColoredLogoHoriz />
           </div>
 
@@ -474,15 +388,15 @@ export default function HomePage({
           >
             <Description
               text={tSection1("description1")}
-              gsapClassName={`tl2`}
+              fadeClassName="fadeIn delay1"
             />
             <Description
               text={tSection1("description2")}
-              gsapClassName={`tl3`}
+              fadeClassName="fadeIn delay2"
             />
             <Description
               text={tSection1("description3")}
-              gsapClassName={`tl4`}
+              fadeClassName="fadeIn delay3"
             />
           </TextBox>
         </Section>
@@ -778,7 +692,7 @@ export default function HomePage({
           </SectionInner>
         </Section>
 
-        <Section sectionName="textSection" gsapClassName="eightth">
+        <Section sectionName="textSection" gsapClassName="eighth">
           <SectionInner horizontal="center">
             <SectionTitle
               ref={setSectionTitleRef}
