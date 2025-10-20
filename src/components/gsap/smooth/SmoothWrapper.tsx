@@ -9,7 +9,9 @@ type Props = {
 export default function SmoothWrapper({ children, ref }: Props) {
   return (
     <div id="smooth-wrapper" ref={ref}>
-      <div id="smooth-content">{children}</div>
+      <div id="smooth-content">
+        <main>{children}</main>
+      </div>
     </div>
   );
 }

@@ -18,7 +18,6 @@ import SectionTitle from "@/components/animation/section/SectionTitle";
 import TitleBox from "@/components/animation/titleBox/TitleBox";
 import TitleBoxInTitle from "@/components/animation/titleBoxInTitle/TitleBoxInTitle";
 import Description from "@/components/animation/description/Description";
-import SmoothWrapper from "@/components/gsap/smooth/SmoothWrapper";
 import DescriptionBox from "@/components/animation/description/DescriptionBox";
 import ImageArea from "@/components/animation/imageArea/ImageArea";
 import GlowingCard from "@/components/nurui/glowing-card/glowing-card";
@@ -90,8 +89,6 @@ export default function HomePage({
   const tSection8 = useTranslations("mainPage.section8");
   const tSection9 = useTranslations("mainPage.section9");
 
-  const main = useRef<HTMLDivElement>(null);
-  const smoother = useRef<ScrollSmoother>(null);
   const sectionTitleRefs = useRef<HTMLHeadingElement[]>([]);
 
   const memberCardColorMap = {
@@ -181,11 +178,6 @@ export default function HomePage({
   }, []);
 
   useGSAP(() => {
-    smoother.current = ScrollSmoother.create({
-      smooth: 2,
-      effects: true,
-    });
-
     function createTextAnimation(
       selector: string,
       trigger: string,
@@ -279,9 +271,8 @@ export default function HomePage({
         trigger: selector,
         pin: true,
         start: "center center",
-        end: index === sections.length - 1 ? "+=600" : "+=800",
+        end: "+=600",
         markers: false,
-        toggleActions: "play none one reverse",
       });
     });
 
@@ -289,10 +280,8 @@ export default function HomePage({
       scrollTrigger: {
         trigger: ".eleven",
         start: "center center",
-        end: "+=200%",
         scrub: 1,
         pin: true,
-        anticipatePin: 1,
       },
     });
 
@@ -333,7 +322,7 @@ export default function HomePage({
         scrollTrigger: {
           trigger: ".eleven", // 해당 섹션 기준으로 트리거
           start: "center center",
-          end: "bottom top", // 섹션이 화면 위로 사라질 때 끝
+          end: "bottom center", // 섹션이 화면 위로 사라질 때 끝
           scrub: true, // 스크롤에 따라 자연스럽게 변화
           markers: false,
         },
@@ -375,194 +364,193 @@ export default function HomePage({
 
       <TopDownButton />
 
-      <SmoothWrapper ref={main}>
-        <Section sectionName="firstSection" gsapClassName="first">
-          <div className={`${styles.sectionLogoBox} fadeIn`}>
-            <ColoredLogoHoriz />
-          </div>
+      <Section sectionName="firstSection" gsapClassName="first">
+        <div className={`${styles.sectionLogoBox} fadeIn`}>
+          <ColoredLogoHoriz />
+        </div>
 
+        <TextBox
+          childrenStyleClassName="fzSmall color-white"
+          isRowGap="sm"
+          isHeightFull={false}
+        >
+          <Description
+            text={tSection1("description1")}
+            fadeClassName="fadeIn delay1"
+          />
+          <Description
+            text={tSection1("description2")}
+            fadeClassName="fadeIn delay2"
+          />
+          <Description
+            text={tSection1("description3")}
+            fadeClassName="fadeIn delay3"
+          />
+        </TextBox>
+      </Section>
+
+      <Section sectionName="textSection" gsapClassName="second">
+        <TextBox childrenStyleClassName="fzLarge">
+          <TitleBoxInTitle
+            text={tSection2("text1")}
+            gsapClassName={`second-text-1`}
+          />
+          <TitleBoxInTitle
+            text={tSection2("text2")}
+            gsapClassName={`second-text-2`}
+          />
+        </TextBox>
+      </Section>
+
+      <Section sectionName="textSection" gsapClassName="third">
+        <TextBox childrenStyleClassName="fzLarge">
+          <TitleBoxInTitle
+            text={tSection2Positive("text1")}
+            gsapClassName={`third-text-1`}
+          />
+
+          <TitleBoxInTitle
+            text={tSection2Positive("text2")}
+            gsapClassName={`third-text-2`}
+          />
+
+          <TitleBoxInTitle
+            text={tSection2Positive("text3")}
+            gsapClassName={`third-text-3`}
+          />
+
+          <TitleBoxInTitle
+            text={tSection2Positive("text4")}
+            gsapClassName={`third-text-4`}
+          />
+        </TextBox>
+      </Section>
+
+      <Section sectionName="textSection" gsapClassName="fourth">
+        <TextBox childrenStyleClassName="fzLarge">
+          <TitleBoxInTitle
+            text={tSection2Negative("text1")}
+            gsapClassName={`fourth-text-1`}
+          />
+
+          <TitleBoxInTitle
+            text={tSection2Negative("text2")}
+            gsapClassName={`fourth-text-2`}
+          />
+
+          <TitleBoxInTitle
+            text={tSection2Negative("text3")}
+            gsapClassName={`fourth-text-3`}
+          />
+        </TextBox>
+      </Section>
+
+      <Section sectionName="textSection" gsapClassName="fifth">
+        <SectionInner>
           <TextBox
-            childrenStyleClassName="fzSmall color-white"
-            isRowGap="sm"
-            isHeightFull={false}
+            horizontal="center"
+            childrenStyleClassName="fzLarge regularText"
           >
-            <Description
-              text={tSection1("description1")}
-              fadeClassName="fadeIn delay1"
+            <SectionTitle
+              ref={setSectionTitleRef}
+              text={tSection3("title")}
+              className={`${styles.sectionTitle}`}
             />
-            <Description
-              text={tSection1("description2")}
-              fadeClassName="fadeIn delay2"
-            />
-            <Description
-              text={tSection1("description3")}
-              fadeClassName="fadeIn delay3"
-            />
-          </TextBox>
-        </Section>
-
-        <Section sectionName="textSection" gsapClassName="second">
-          <TextBox childrenStyleClassName="fzLarge">
-            <TitleBoxInTitle
-              text={tSection2("text1")}
-              gsapClassName={`second-text-1`}
-            />
-            <TitleBoxInTitle
-              text={tSection2("text2")}
-              gsapClassName={`second-text-2`}
-            />
-          </TextBox>
-        </Section>
-
-        <Section sectionName="textSection" gsapClassName="third">
-          <TextBox childrenStyleClassName="fzLarge">
-            <TitleBoxInTitle
-              text={tSection2Positive("text1")}
-              gsapClassName={`third-text-1`}
-            />
-
-            <TitleBoxInTitle
-              text={tSection2Positive("text2")}
-              gsapClassName={`third-text-2`}
-            />
-
-            <TitleBoxInTitle
-              text={tSection2Positive("text3")}
-              gsapClassName={`third-text-3`}
-            />
-
-            <TitleBoxInTitle
-              text={tSection2Positive("text4")}
-              gsapClassName={`third-text-4`}
-            />
-          </TextBox>
-        </Section>
-
-        <Section sectionName="textSection" gsapClassName="fourth">
-          <TextBox childrenStyleClassName="fzLarge">
-            <TitleBoxInTitle
-              text={tSection2Negative("text1")}
-              gsapClassName={`fourth-text-1`}
-            />
-
-            <TitleBoxInTitle
-              text={tSection2Negative("text2")}
-              gsapClassName={`fourth-text-2`}
-            />
-
-            <TitleBoxInTitle
-              text={tSection2Negative("text3")}
-              gsapClassName={`fourth-text-3`}
-            />
-          </TextBox>
-        </Section>
-
-        <Section sectionName="textSection" gsapClassName="fifth">
-          <SectionInner>
-            <TextBox
-              horizontal="center"
-              childrenStyleClassName="fzLarge regularText"
-            >
-              <SectionTitle
-                ref={setSectionTitleRef}
-                text={tSection3("title")}
-                className={`${styles.sectionTitle}`}
-              />
-              <TitleBoxWrapper sectionName="fifth">
-                <TitleBox gsapClassName="fifth-text-1">
-                  <TitleBoxInTitle
-                    text={tSection3("text1")}
-                    gradationText={true}
-                  />
-
-                  <TitleBoxInTitle text={tSection3("text2")} />
-                </TitleBox>
-
+            <TitleBoxWrapper sectionName="fifth">
+              <TitleBox gsapClassName="fifth-text-1">
                 <TitleBoxInTitle
-                  text={tSection3("text3")}
-                  gsapClassName={`fifth-text-2`}
+                  text={tSection3("text1")}
+                  gradationText={true}
                 />
 
-                <TitleBox gsapClassName="fifth-text-3">
-                  <TitleBoxInTitle
-                    text={tSection3("text4")}
-                    gradationText={true}
-                  />
+                <TitleBoxInTitle text={tSection3("text2")} />
+              </TitleBox>
 
-                  <TitleBoxInTitle text={tSection3("text5")} />
-                  <TitleBoxInTitle
-                    text={tSection3("text6")}
-                    gradationText={true}
-                  />
-                  <TitleBoxInTitle text={tSection3("text7")} />
-                </TitleBox>
-
-                <TitleBox gsapClassName="fifth-text-4">
-                  <TitleBoxInTitle text={tSection3("text8")} />
-                </TitleBox>
-              </TitleBoxWrapper>
-
-              <DescriptionBox
-                childrenStyleClassName="color-gray fzSmall hasDot"
-                direction="column"
-                gsapClassName="fifth-text-5"
-              >
-                <Description text={tSection3("info.text1")} />
-                <Description text={tSection3("info.text2")} />
-              </DescriptionBox>
-            </TextBox>
-          </SectionInner>
-        </Section>
-
-        <Section sectionName="textSection" gsapClassName="sixth">
-          <SectionInner>
-            <TextBox
-              childrenStyleClassName="wrap regularText fzMedium"
-              gsapClassName="sixth-text-1"
-            >
-              <SectionTitle
-                ref={setSectionTitleRef}
-                text={tSection4("title")}
-                className={`${styles.sectionTitle}`}
+              <TitleBoxInTitle
+                text={tSection3("text3")}
+                gsapClassName={`fifth-text-2`}
               />
 
-              <TitleBoxWrapper sectionName="sixth">
-                <GlowingCard>
-                  <ImageArea
-                    src="/icons/logo/logo-official-yougposse-white-horiz.svg"
-                    alt="Young posse 화이트 버전 로고"
-                  />
-                </GlowingCard>
+              <TitleBox gsapClassName="fifth-text-3">
+                <TitleBoxInTitle
+                  text={tSection3("text4")}
+                  gradationText={true}
+                />
 
-                <TitleBox>
-                  <TitleBoxInTitle text={tSection4("text1")} />
-                </TitleBox>
+                <TitleBoxInTitle text={tSection3("text5")} />
+                <TitleBoxInTitle
+                  text={tSection3("text6")}
+                  gradationText={true}
+                />
+                <TitleBoxInTitle text={tSection3("text7")} />
+              </TitleBox>
 
-                <TitleBox>
-                  <TitleBoxInTitle
-                    text={tSection4("text2")}
-                    gradationText={true}
-                  />
-                  <TitleBoxInTitle text={tSection4("text3")} />
-                </TitleBox>
+              <TitleBox gsapClassName="fifth-text-4">
+                <TitleBoxInTitle text={tSection3("text8")} />
+              </TitleBox>
+            </TitleBoxWrapper>
 
-                <TitleBox>
-                  <TitleBoxInTitle
-                    text={tSection4("text4")}
-                    gradationText={true}
-                  />
-                  <TitleBoxInTitle text={tSection4("text5")} />
-                </TitleBox>
+            <DescriptionBox
+              childrenStyleClassName="color-gray fzSmall hasDot"
+              direction="column"
+              gsapClassName="fifth-text-5"
+            >
+              <Description text={tSection3("info.text1")} />
+              <Description text={tSection3("info.text2")} />
+            </DescriptionBox>
+          </TextBox>
+        </SectionInner>
+      </Section>
 
-                <TitleBox>
-                  <TitleBoxInTitle text={tSection4("text6")} />
-                </TitleBox>
-              </TitleBoxWrapper>
-            </TextBox>
-          </SectionInner>
-        </Section>
+      <Section sectionName="textSection" gsapClassName="sixth">
+        <SectionInner>
+          <TextBox
+            childrenStyleClassName="wrap regularText fzMedium"
+            gsapClassName="sixth-text-1"
+          >
+            <SectionTitle
+              ref={setSectionTitleRef}
+              text={tSection4("title")}
+              className={`${styles.sectionTitle}`}
+            />
 
-        <Section sectionName="textSection" gsapClassName="seventh">
+            <TitleBoxWrapper sectionName="sixth">
+              <GlowingCard>
+                <ImageArea
+                  src="/icons/logo/logo-official-yougposse-white-horiz.svg"
+                  alt="Young posse 화이트 버전 로고"
+                />
+              </GlowingCard>
+
+              <TitleBox>
+                <TitleBoxInTitle text={tSection4("text1")} />
+              </TitleBox>
+
+              <TitleBox>
+                <TitleBoxInTitle
+                  text={tSection4("text2")}
+                  gradationText={true}
+                />
+                <TitleBoxInTitle text={tSection4("text3")} />
+              </TitleBox>
+
+              <TitleBox>
+                <TitleBoxInTitle
+                  text={tSection4("text4")}
+                  gradationText={true}
+                />
+                <TitleBoxInTitle text={tSection4("text5")} />
+              </TitleBox>
+
+              <TitleBox>
+                <TitleBoxInTitle text={tSection4("text6")} />
+              </TitleBox>
+            </TitleBoxWrapper>
+          </TextBox>
+        </SectionInner>
+      </Section>
+
+      {/* <Section sectionName="textSection" gsapClassName="seventh">
           <SectionInner horizontal="center">
             <SectionTitle
               ref={setSectionTitleRef}
@@ -690,166 +678,166 @@ export default function HomePage({
               </TitleBox>
             </TextBox>
           </SectionInner>
-        </Section>
+        </Section> */}
 
-        <Section sectionName="textSection" gsapClassName="eighth">
-          <SectionInner horizontal="center">
-            <SectionTitle
-              ref={setSectionTitleRef}
-              text={tSection6("title")}
-              className={`${styles.sectionTitle}`}
-            />
+      <Section sectionName="textSection" gsapClassName="eighth">
+        <SectionInner horizontal="center">
+          <SectionTitle
+            ref={setSectionTitleRef}
+            text={tSection6("title")}
+            className={`${styles.sectionTitle}`}
+          />
 
-            <CardWrapper>
-              {membersList.map((member, i) => (
-                <GlowCard
-                  className={`glow-card ${memberCardColorList[i]}`}
-                  key={member.id}
-                  topContents={
-                    <ImageArea
-                      type="card"
-                      src={member.imageSrc}
-                      alt={member.name}
+          <CardWrapper>
+            {membersList.map((member, i) => (
+              <GlowCard
+                className={`glow-card ${memberCardColorList[i]}`}
+                key={member.id}
+                topContents={
+                  <ImageArea
+                    type="card"
+                    src={member.imageSrc}
+                    alt={member.name}
+                  />
+                }
+                bottomContents={
+                  <>
+                    <div className="cardColumn">
+                      <p className="cardText">{member.dateofbirth}</p>
+                    </div>
+
+                    <div className="cardColumn list">
+                      {member.position?.text1 && (
+                        <p className="cardText">{member.position.text1}</p>
+                      )}
+                      {member.position?.text2 && (
+                        <p className="cardText">{member.position.text2}</p>
+                      )}
+                    </div>
+                  </>
+                }
+                cardTitle={member.name}
+                titleContents={<KoreaFlag />}
+              />
+            ))}
+          </CardWrapper>
+        </SectionInner>
+      </Section>
+
+      <Section sectionName="textSection" gsapClassName="nineth">
+        <SectionInner horizontal="center">
+          <SectionTitle
+            ref={setSectionTitleRef}
+            text={tSection7("title")}
+            className={`${styles.sectionTitle}`}
+          />
+
+          <CardWrapper className="noGrid">
+            <SwiperWrapper className="swiper2">
+              <Swiper
+                className="ninethSectionSwiper"
+                slidesPerView={5.5}
+                threshold={2}
+                spaceBetween={15}
+                scrollbar
+                loop={false}
+                navigation={false}
+              >
+                {albumList.map((album, i) => (
+                  <SwiperSlide>
+                    <GlowCard
+                      className={`glow-card album ${albumCardColorList[i]}`}
+                      key={album.id}
+                      topContents={
+                        <ImageArea
+                          type="card"
+                          src={album.imageSrc}
+                          alt={album.name}
+                        />
+                      }
+                      bottomContents={
+                        <>
+                          <div className="cardColumn">
+                            <p className="cardText">{album.type}</p>
+                          </div>
+                          <div className="cardColumn list">
+                            <p className="cardText">{album.date}</p>
+                          </div>
+                        </>
+                      }
+                      cardTitle={album.name}
                     />
-                  }
-                  bottomContents={
-                    <>
-                      <div className="cardColumn">
-                        <p className="cardText">{member.dateofbirth}</p>
-                      </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </SwiperWrapper>
+          </CardWrapper>
+        </SectionInner>
+      </Section>
 
-                      <div className="cardColumn list">
-                        {member.position?.text1 && (
-                          <p className="cardText">{member.position.text1}</p>
-                        )}
-                        {member.position?.text2 && (
-                          <p className="cardText">{member.position.text2}</p>
-                        )}
-                      </div>
-                    </>
-                  }
-                  cardTitle={member.name}
-                  titleContents={<KoreaFlag />}
-                />
-              ))}
-            </CardWrapper>
-          </SectionInner>
-        </Section>
+      <Section sectionName="textSection" gsapClassName="ten">
+        <SectionInner horizontal="center">
+          <SectionTitle
+            ref={setSectionTitleRef}
+            text={tSection8("title")}
+            className={styles.sectionTitle}
+          />
 
-        <Section sectionName="textSection" gsapClassName="nineth">
-          <SectionInner horizontal="center">
-            <SectionTitle
-              ref={setSectionTitleRef}
-              text={tSection7("title")}
-              className={`${styles.sectionTitle}`}
-            />
-
-            <CardWrapper className="noGrid">
-              <SwiperWrapper className="swiper2">
-                <Swiper
-                  className="ninethSectionSwiper"
-                  slidesPerView={5.5}
-                  threshold={2}
-                  spaceBetween={15}
-                  scrollbar
-                  loop={false}
-                  navigation={false}
-                >
-                  {albumList.map((album, i) => (
+          <CardWrapper className="noGrid">
+            <SwiperWrapper className="swiper2">
+              <Swiper
+                className="tenSectionSwiper"
+                slidesPerView={5.5}
+                threshold={2}
+                spaceBetween={15}
+                scrollbar
+                loop={false}
+                navigation={false}
+              >
+                {initialItems ? (
+                  initialItems.map((item, i) => (
                     <SwiperSlide>
-                      <GlowCard
-                        className={`glow-card album ${albumCardColorList[i]}`}
-                        key={album.id}
-                        topContents={
-                          <ImageArea
-                            type="card"
-                            src={album.imageSrc}
-                            alt={album.name}
-                          />
-                        }
-                        bottomContents={
-                          <>
+                      <a href={item.link} title={item.title} target="_blank">
+                        <GlowCard
+                          className={`glow-card media ${getMemberClasses[i]}`}
+                          key={i}
+                          topContents={
+                            <>
+                              <span className="cardLabel">
+                                {parsingLinkCondition(i) ?? "Unknown"}
+                              </span>
+                              <ImageArea
+                                type="card"
+                                src={
+                                  item.thumbnail ||
+                                  "/card/default-thumbnail.jpg"
+                                }
+                                alt={item.title || ""}
+                              />
+                            </>
+                          }
+                          bottomContents={
                             <div className="cardColumn">
-                              <p className="cardText">{album.type}</p>
+                              <p className="cardText date">
+                                {parsingDate[i] || "날짜를 불러오지 못함"}
+                              </p>
                             </div>
-                            <div className="cardColumn list">
-                              <p className="cardText">{album.date}</p>
-                            </div>
-                          </>
-                        }
-                        cardTitle={album.name}
-                      />
+                          }
+                          cardTitle={item.title || "제목을 불러오지 못함"}
+                        />
+                      </a>
                     </SwiperSlide>
-                  ))}
-                </Swiper>
-              </SwiperWrapper>
-            </CardWrapper>
-          </SectionInner>
-        </Section>
+                  ))
+                ) : (
+                  <ErrorSection />
+                )}
+              </Swiper>
+            </SwiperWrapper>
+          </CardWrapper>
+        </SectionInner>
+      </Section>
 
-        <Section sectionName="textSection" gsapClassName="ten">
-          <SectionInner horizontal="center">
-            <SectionTitle
-              ref={setSectionTitleRef}
-              text={tSection8("title")}
-              className={styles.sectionTitle}
-            />
-
-            <CardWrapper className="noGrid">
-              <SwiperWrapper className="swiper2">
-                <Swiper
-                  className="tenSectionSwiper"
-                  slidesPerView={5.5}
-                  threshold={2}
-                  spaceBetween={15}
-                  scrollbar
-                  loop={false}
-                  navigation={false}
-                >
-                  {initialItems ? (
-                    initialItems.map((item, i) => (
-                      <SwiperSlide>
-                        <a href={item.link} title={item.title} target="_blank">
-                          <GlowCard
-                            className={`glow-card media ${getMemberClasses[i]}`}
-                            key={i}
-                            topContents={
-                              <>
-                                <span className="cardLabel">
-                                  {parsingLinkCondition(i) ?? "Unknown"}
-                                </span>
-                                <ImageArea
-                                  type="card"
-                                  src={
-                                    item.thumbnail ||
-                                    "/card/default-thumbnail.jpg"
-                                  }
-                                  alt={item.title || ""}
-                                />
-                              </>
-                            }
-                            bottomContents={
-                              <div className="cardColumn">
-                                <p className="cardText date">
-                                  {parsingDate[i] || "날짜를 불러오지 못함"}
-                                </p>
-                              </div>
-                            }
-                            cardTitle={item.title || "제목을 불러오지 못함"}
-                          />
-                        </a>
-                      </SwiperSlide>
-                    ))
-                  ) : (
-                    <ErrorSection />
-                  )}
-                </Swiper>
-              </SwiperWrapper>
-            </CardWrapper>
-          </SectionInner>
-        </Section>
-
-        <Section sectionName="textSection" gsapClassName="eleven">
+      {/* <Section sectionName="textSection" gsapClassName="eleven">
           <SectionInner horizontal="center">
             <div className={styles.backgroundBlack}>
               <div
@@ -870,10 +858,9 @@ export default function HomePage({
               </div>
             </div>
           </SectionInner>
-        </Section>
+        </Section> */}
 
-        {children}
-      </SmoothWrapper>
+      {children}
     </div>
   );
 }

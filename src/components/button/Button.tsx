@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 type Props = {
   buttonType?: "button" | "submit" | "reset";
   styleType?: string;
@@ -6,6 +8,7 @@ type Props = {
   text?: string;
   iconName?: string;
   gsapClassName?: string;
+  children?: ReactNode;
 };
 
 export default function Button({
@@ -16,6 +19,7 @@ export default function Button({
   text = "",
   iconName = "",
   gsapClassName = "",
+  children,
 }: Props) {
   const iconNameCondition = iconName !== "" ? "hasIcon" : "";
 
@@ -47,6 +51,7 @@ export default function Button({
       className={`button ${styleTypeCondition()} ${sizeTypeCondition()} ${buttonColorCondition()} ${iconNameCondition} ${gsapClassName}`}
     >
       {text !== "" ? <span>{text}</span> : <></>}
+      {children}
     </button>
   );
 }

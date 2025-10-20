@@ -55,19 +55,21 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className={styles.footerBottomBox}>
-        <p className={`${styles.warningText} ${styles.copyright}`}>
-          © for yps ALL RIGHTS RESERVED.
-        </p>
-      </div>
+      <div className={styles.footerBottomArea}>
+        <div className={styles.footerBottomBox}>
+          <p className={`${styles.warningText} ${styles.copyright}`}>
+            © for yps ALL RIGHTS RESERVED.
+          </p>
+        </div>
 
-      <div className={`${styles.footerBottomBox} ${styles.hasCaution}`}>
-        <p className={`${styles.warningText} ${styles.copyContents}`}>
-          {t("caution1")}
-        </p>
-        <p className={`${styles.warningText} ${styles.copyContents}`}>
-          {t("caution2")}
-        </p>
+        <div className={`${styles.footerBottomBox} ${styles.hasCaution}`}>
+          <p className={`${styles.warningText} ${styles.copyContents}`}>
+            {t("caution1")}
+          </p>
+          <p className={`${styles.warningText} ${styles.copyContents}`}>
+            {t("caution2")}
+          </p>
+        </div>
       </div>
     </footer>
   );

@@ -1,5 +1,6 @@
 .sectionTitle {
   margin-right: auto;
+  margin-left: -16px;
   width: fit-content;
   padding: 8px 154px 8px 22px;
   font-size: 44px;

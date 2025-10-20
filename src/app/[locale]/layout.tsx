@@ -46,7 +46,7 @@ export default async function RootLayout({
         <NextIntlClientProvider messages={messages}>
           <div id="app">
             <Header />
-            <main>{children}</main>
+            {children}
           </div>
           <MoneyCursor />
           <div id="portal" />
