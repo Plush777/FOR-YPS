@@ -1,8 +1,8 @@
 .descriptionBox {
   position: absolute;
-  bottom: 100px;
-  max-width: 900px;
+  bottom: 20px;
   line-height: 1.5;
+  max-width: 700px;
 }
 
 .descriptionBox.row {
@@ -12,5 +12,9 @@
 
 .descriptionBox.column {
   display: flex;
+  align-items: center;
   flex-direction: column;
+}
+
+@media (max-width: 1024px) {
 }

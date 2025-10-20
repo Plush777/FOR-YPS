@@ -29,3 +29,15 @@
   border-width: 30px;
   border-style: solid;
 }
+
+@media (max-width: 1024px) {
+  .wrap {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrap {
+    margin-bottom: 0;
+  }
+}

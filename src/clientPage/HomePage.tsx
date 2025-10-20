@@ -177,6 +177,15 @@ export default function HomePage({
     }
   }, []);
 
+  const cardSwiperParams = {
+    slidesPerView: "auto" as const,
+    grabCursor: true,
+    threshold: 2,
+    spaceBetween: 16,
+    loop: false,
+    navigation: false,
+  };
+
   useGSAP(() => {
     function createTextAnimation(
       selector: string,
@@ -449,6 +458,7 @@ export default function HomePage({
         <SectionInner>
           <TextBox
             horizontal="center"
+            isRowGap="none"
             childrenStyleClassName="fzLarge regularText"
           >
             <SectionTitle
@@ -505,6 +515,7 @@ export default function HomePage({
       <Section sectionName="textSection" gsapClassName="sixth">
         <SectionInner>
           <TextBox
+            isRowGap="none"
             childrenStyleClassName="wrap regularText fzMedium"
             gsapClassName="sixth-text-1"
           >
@@ -689,37 +700,47 @@ export default function HomePage({
           />
 
           <CardWrapper>
-            {membersList.map((member, i) => (
-              <GlowCard
-                className={`glow-card ${memberCardColorList[i]}`}
-                key={member.id}
-                topContents={
-                  <ImageArea
-                    type="card"
-                    src={member.imageSrc}
-                    alt={member.name}
-                  />
-                }
-                bottomContents={
-                  <>
-                    <div className="cardColumn">
-                      <p className="cardText">{member.dateofbirth}</p>
-                    </div>
+            <SwiperWrapper className="swiper3">
+              <Swiper className="eighthSectionSwiper" {...cardSwiperParams}>
+                {membersList.map((member, i) => (
+                  <SwiperSlide>
+                    <GlowCard
+                      className={`glow-card ${memberCardColorList[i]}`}
+                      key={member.id}
+                      topContents={
+                        <ImageArea
+                          type="card"
+                          src={member.imageSrc}
+                          alt={member.name}
+                        />
+                      }
+                      bottomContents={
+                        <>
+                          <div className="cardColumn">
+                            <p className="cardText">{member.dateofbirth}</p>
+                          </div>
 
-                    <div className="cardColumn list">
-                      {member.position?.text1 && (
-                        <p className="cardText">{member.position.text1}</p>
-                      )}
-                      {member.position?.text2 && (
-                        <p className="cardText">{member.position.text2}</p>
-                      )}
-                    </div>
-                  </>
-                }
-                cardTitle={member.name}
-                titleContents={<KoreaFlag />}
-              />
-            ))}
+                          <div className="cardColumn list">
+                            {member.position?.text1 && (
+                              <p className="cardText">
+                                {member.position.text1}
+                              </p>
+                            )}
+                            {member.position?.text2 && (
+                              <p className="cardText">
+                                {member.position.text2}
+                              </p>
+                            )}
+                          </div>
+                        </>
+                      }
+                      cardTitle={member.name}
+                      titleContents={<KoreaFlag />}
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </SwiperWrapper>
           </CardWrapper>
         </SectionInner>
       </Section>
@@ -732,17 +753,9 @@ export default function HomePage({
             className={`${styles.sectionTitle}`}
           />
 
-          <CardWrapper className="noGrid">
+          <CardWrapper>
             <SwiperWrapper className="swiper2">
-              <Swiper
-                className="ninethSectionSwiper"
-                slidesPerView={5.5}
-                threshold={2}
-                spaceBetween={15}
-                scrollbar
-                loop={false}
-                navigation={false}
-              >
+              <Swiper className="ninethSectionSwiper" {...cardSwiperParams}>
                 {albumList.map((album, i) => (
                   <SwiperSlide>
                     <GlowCard
@@ -783,17 +796,9 @@ export default function HomePage({
             className={styles.sectionTitle}
           />
 
-          <CardWrapper className="noGrid">
-            <SwiperWrapper className="swiper2">
-              <Swiper
-                className="tenSectionSwiper"
-                slidesPerView={5.5}
-                threshold={2}
-                spaceBetween={15}
-                scrollbar
-                loop={false}
-                navigation={false}
-              >
+          <CardWrapper>
+            <SwiperWrapper className="swiper4">
+              <Swiper className="tenSectionSwiper" {...cardSwiperParams}>
                 {initialItems ? (
                   initialItems.map((item, i) => (
                     <SwiperSlide>

@@ -8,9 +8,9 @@
   padding: 24px;
 }
 
-.imageArea.iconSize {
-  width: 540px;
-  height: 162px;
+.imageArea.iconSize img {
+  width: 500px;
+  height: auto;
 }
 
 .imageArea.cardSize {
@@ -33,4 +33,16 @@
 .imageArea::before {
   width: 100%;
   height: 100%;
+}
+
+@media (max-width: 1024px) {
+  .imageArea.iconSize img {
+    width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .imageArea.iconSize img {
+    width: 300px;
+  }
 }

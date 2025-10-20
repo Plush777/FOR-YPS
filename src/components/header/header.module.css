@@ -3,7 +3,7 @@
   z-index: 999;
   left: 0;
   top: 0;
-  width: 100vw;
+  width: 100%;
   height: var(--header-height);
   transform: translateY(-100px);
   transition: transform 0.8s;
@@ -20,7 +20,7 @@
   max-width: var(--layout-max-width);
   margin: 0 auto;
   height: 100%;
-  padding: 0 24px;
+  padding: 0 36px;
 }
 
 .headerInner a {

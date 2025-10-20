@@ -546,9 +546,33 @@ main {
   background-color: var(--jieun);
 }
 
-.hasSwiperBox.swiper2 {
+.hasSwiperBox.swiper2,
+.hasSwiperBox.swiper3,
+.hasSwiperBox.swiper4 {
   max-width: none;
   margin: 0;
+}
+
+.swiper2 .swiper-slide,
+.swiper3 .swiper-slide,
+.swiper4 .swiper-slide {
+  width: auto;
+}
+
+.swiper2 .swiper-wrapper,
+.swiper4 .swiper-wrapper {
+  justify-content: flex-start;
+}
+
+.swiper3 .swiper-wrapper {
+  justify-content: center;
+}
+
+.swiper2 .spotlightCard,
+.swiper3 .spotlightCard,
+.swiper4 .spotlightCard {
+  width: 320px;
+  height: 444px;
 }
 
 .cardWrapper.noGrid {
@@ -660,8 +684,20 @@ main {
   animation-delay: 2s;
 }
 
-.eleven {
-  overflow: hidden;
+.sixth .textBox {
+  padding-top: 170px;
+}
+
+.eighth .cardWrapper {
+  padding-top: 150px;
+}
+
+.nineth .cardWrapper {
+  padding-top: 130px;
+}
+
+.ten .cardWrapper {
+  padding-top: 150px;
 }
 
 @keyframes fadeIn {
@@ -690,4 +726,20 @@ main {
   syntax: "<angle>";
   initial-value: 0deg;
   inherits: false;
+}
+
+@media (max-width: 1700px) {
+  .swiper3 .swiper-wrapper {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 1024px) {
+  .textBox.fzLarge .titleBoxInTitle {
+    font-size: 36px;
+  }
+
+  .rowGapMd {
+    row-gap: 12px;
+  }
 }
