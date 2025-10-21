@@ -46,3 +46,9 @@
     width: 300px;
   }
 }
+
+@media (max-width: 520px) {
+  .imageArea.iconSize img {
+    width: 200px;
+  }
+}

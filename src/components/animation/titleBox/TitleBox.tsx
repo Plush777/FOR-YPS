@@ -7,13 +7,18 @@ type Props = {
   childrenType?: string;
 };
 
-export default function TitleBox({ children, gsapClassName = "" }: Props) {
+export default function TitleBox({
+  children,
+  gsapClassName = "",
+  direction,
+}: Props) {
   return (
     <div
       className={`
         ${styles.titleBox} 
         ${gsapClassName}
         titleBox
+        ${direction === "column" ? `${styles.column} column` : ""}
       `}
     >
       {children}

@@ -6,6 +6,29 @@
   --card-default-height: 444px;
 }
 
+.gradationText {
+  font-weight: 700;
+  position: relative;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text !important;
+  background: linear-gradient(to right, #851fd8, #ffc314 70%);
+  margin: 0 16px;
+  white-space: nowrap;
+}
+
+.gradationText::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% + 14px);
+  height: calc(100% + 8px);
+  background-color: var(--color-white);
+  z-index: -1;
+}
+
 main {
   height: 100%;
 }
@@ -16,10 +39,12 @@ main {
 
 .textBox.fzLarge .titleBoxInTitle {
   font-size: 48px;
+  line-height: 1.5;
 }
 
 .textBox.fzMedium .titleBoxInTitle {
   font-size: 36px;
+  line-height: 1.5;
 }
 
 .textBox.fzXSmall .titleBoxInTitle {
@@ -61,6 +86,15 @@ main {
 .textBox.wrap .titleBox {
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.first .description {
+  text-align: center;
+  line-height: 1.5;
+}
+
+.descriptionBox.hasDot .description {
+  padding-left: 18px;
 }
 
 .descriptionBox.hasDot .description::before {
@@ -688,6 +722,19 @@ main {
   padding-top: 170px;
 }
 
+.ten .sectionTitle,
+.sixth .sectionTitle {
+  padding: 8px 200px 8px 22px;
+}
+
+.seventh .titleBox.column {
+  row-gap: 16px;
+}
+
+.seventh .sectionInner {
+  padding-top: 150px;
+}
+
 .eighth .cardWrapper {
   padding-top: 150px;
 }
@@ -698,6 +745,35 @@ main {
 
 .ten .cardWrapper {
   padding-top: 150px;
+}
+
+.fifth .titleBox.column {
+  row-gap: 26px;
+  max-width: 768px;
+}
+
+.underline {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.mobileSwiperButtonGroup {
+  display: none;
+  align-items: center;
+  justify-content: flex-end;
+  column-gap: 6px;
+}
+
+.mobileSwiperButtonGroup [class*="swiper-button"] {
+  position: static;
+  width: 36px;
+  height: 36px;
+  transform: none !important;
+}
+
+.mobileSwiperButtonGroup [class*="swiper-button"] svg {
+  width: 20px;
+  height: 20px;
 }
 
 @keyframes fadeIn {
@@ -741,5 +817,76 @@ main {
 
   .rowGapMd {
     row-gap: 12px;
+  }
+
+  .textBox.fzXSmall .titleBoxInTitle {
+    font-size: 16px;
+  }
+
+  [class*="swiper-button"] {
+    width: 48px;
+    height: 48px;
+  }
+
+  [class*="swiper-button"] svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sixth .textBox .titleBoxInTitle {
+    font-size: 28px;
+  }
+
+  .sixth .textBox.wrap .titleBox {
+    row-gap: 12px;
+  }
+
+  [class*="swiper-button"] {
+    display: none;
+  }
+
+  .mobileSwiperButtonGroup {
+    display: flex;
+  }
+
+  .mobileSwiperButtonGroup [class*="swiper-button"] {
+    display: flex;
+  }
+
+  .seventh .sectionInner {
+    padding-top: 200px;
+  }
+}
+
+@media (max-width: 640px) {
+  .textBox.fzLarge .titleBoxInTitle {
+    font-size: 26px;
+  }
+
+  .descriptionBox.fzSmall .description {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 520px) {
+  .fifth .titleBoxInTitle {
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+  }
+
+  .fifth .titleBoxInTitle .gradationText {
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  .fifth .textBox {
+    padding-top: 90px;
+  }
+
+  .sixth .textBox .titleBoxInTitle {
+    font-size: 22px;
   }
 }

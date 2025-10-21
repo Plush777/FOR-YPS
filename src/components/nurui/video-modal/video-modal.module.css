@@ -130,6 +130,23 @@
   border-radius: 16px;
 }
 
+@media (max-width: 1024px) {
+  .blurBox {
+    width: 90px;
+    height: 90px;
+  }
+
+  .hasPlayBox {
+    width: 66px;
+    height: 66px;
+  }
+
+  .playSvg {
+    width: 34px;
+    height: 34px;
+  }
+}
+
 @media (max-width: 768px) {
   .motionTransitionDiv {
     margin-left: 0;

@@ -1,19 +1,25 @@
 .sectionTitle {
   position: absolute;
   top: 140px;
-  left: -36px;
+  left: -16px;
   width: fit-content;
   padding: 8px 154px 8px 22px;
   font-size: 44px;
   font-weight: 600;
   color: var(--color-white);
+  white-space: nowrap;
   background: url("/bg/bg-title-gradient.svg") no-repeat center;
   background-size: cover;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .sectionTitle {
     font-size: 40px;
-    padding: 8px 90px 8px 22px;
+  }
+}
+
+@media (max-width: 640px) {
+  .sectionTitle {
+    font-size: 32px;
   }
 }

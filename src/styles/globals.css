@@ -212,6 +212,8 @@ input {
 }
 
 :root {
+  --contents-side-padding: 0 16px;
+  --mobile-navigation-height: 158px;
   --header-height: 100px;
   --layout-max-width: 1600px;
   --arrow-border-size: 57px;
@@ -231,7 +233,14 @@ input {
   --growing-pain-album: #577d31;
   --border: rgba(255, 255, 255, 0.2);
   --rgba-black-50: rgba(0, 0, 0, 0.5);
+  --black-transparent: #0000008f;
   --svg-gray: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --header-height: 60px;
+  }
 }
 
 :root {

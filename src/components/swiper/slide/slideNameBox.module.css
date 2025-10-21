@@ -1,4 +1,5 @@
 .slideBox {
+  position: relative;
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
@@ -19,4 +20,26 @@
   font-weight: 400;
   color: var(--color-white);
   word-break: keep-all;
+}
+
+@media (max-width: 1024px) {
+  .slideTitle {
+    font-size: 22px;
+  }
+
+  .slideDesc {
+    font-size: 18px;
+  }
+
+  .slideBox {
+    height: 80px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .slideBox {
+    height: auto;
+    min-height: 80px;
+  }
 }

@@ -1,10 +1,9 @@
 .titleBox {
   display: flex;
   align-items: center;
-  column-gap: 16px;
 }
 
 .titleBox.column {
   flex-direction: column;
-  row-gap: 8px;
+  row-gap: 26px;
 }

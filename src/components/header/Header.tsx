@@ -8,31 +8,25 @@ import LocaleDropdown from "@/components/form/LocaleDropdown/LocaleDropdown";
 import SvgHamburger from "@/components/svg/HamburgerMenu";
 
 import { Link } from "@/i18n/routing";
-import Button from "../button/Button";
 import { M768, Min768 } from "../mediaQuery/MediaQuery";
 
+import navData from "@/data/nav/nav.json";
+import MobileNavigation from "../mobile/MobileNavigaiton";
+
 export default function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      setIsScrolled(scrollTop > 0);
-    };
+  function linkClickCloseNavigation() {
+    setIsMenuOpen(false);
+  }
 
-    // 초기 스크롤 위치 확인
-    handleScroll();
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  function hamburgerButtonToggle() {
+    setIsMenuOpen(!isMenuOpen);
+  }
 
   return (
     <>
-      <header className={`${styles.header} ${isScrolled ? styles.active : ""}`}>
+      <header className={styles.header}>
         <div className={styles.headerInner}>
           <div className={styles.headerLeft}>
             <h1>
@@ -48,7 +42,7 @@ export default function Header() {
             </h1>
 
             <Min768>
-              <Nav />
+              <Nav data={navData.navList} />
             </Min768>
           </div>
 
@@ -58,11 +52,25 @@ export default function Header() {
             </Min768>
 
             <M768>
-              <button type="button" className={styles.hamburgerButton}>
+              <button
+                type="button"
+                className={`
+                  ${styles.hamburgerButton} 
+                  ${isMenuOpen ? styles.active : ""}`}
+                onClick={hamburgerButtonToggle}
+              >
                 <SvgHamburger />
               </button>
             </M768>
           </div>
+
+          <M768>
+            <MobileNavigation
+              data={navData.navList}
+              isOpen={isMenuOpen}
+              onClose={linkClickCloseNavigation}
+            />
+          </M768>
         </div>
       </header>
     </>

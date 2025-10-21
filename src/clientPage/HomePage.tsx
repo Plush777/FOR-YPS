@@ -28,7 +28,7 @@ import { VideoModal } from "@/components/nurui/video-modal/video-modal";
 import { GlowCard } from "@/components/nurui/spotlight-card/spotlight-card";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 import type { MembersByKey, MemberWithImage } from "@/types/members";
 import type { AlbumsByKey, AlbumWithImage } from "@/types/albums";
 import KoreaFlag from "@/components/svg/KoreaFlag";
@@ -37,6 +37,7 @@ import CardWrapper from "@/components/card/CardWrapper";
 import TitleBoxWrapper from "@/components/animation/titleBoxWrapper/TitleBoxWrapper";
 import TopDownButton from "@/components/topDownButton/TopDownButton";
 import ErrorSection from "@/components/error/ErrorSection";
+import MobileSwiperButtonGroup from "@/components/swiper/navigations/MobileSwiperButtonGroup";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -467,36 +468,17 @@ export default function HomePage({
               className={`${styles.sectionTitle}`}
             />
             <TitleBoxWrapper sectionName="fifth">
-              <TitleBox gsapClassName="fifth-text-1">
-                <TitleBoxInTitle
-                  text={tSection3("text1")}
-                  gradationText={true}
-                />
-
-                <TitleBoxInTitle text={tSection3("text2")} />
-              </TitleBox>
-
-              <TitleBoxInTitle
-                text={tSection3("text3")}
-                gsapClassName={`fifth-text-2`}
-              />
-
-              <TitleBox gsapClassName="fifth-text-3">
-                <TitleBoxInTitle
-                  text={tSection3("text4")}
-                  gradationText={true}
-                />
-
-                <TitleBoxInTitle text={tSection3("text5")} />
-                <TitleBoxInTitle
-                  text={tSection3("text6")}
-                  gradationText={true}
-                />
-                <TitleBoxInTitle text={tSection3("text7")} />
-              </TitleBox>
-
-              <TitleBox gsapClassName="fifth-text-4">
-                <TitleBoxInTitle text={tSection3("text8")} />
+              <TitleBox direction="column">
+                {tSection3.raw("description").map((html: string, i: number) => {
+                  return (
+                    <React.Fragment key={i}>
+                      <TitleBoxInTitle
+                        gsapClassName={`fifth-text-${i + 1}`}
+                        html={html}
+                      />
+                    </React.Fragment>
+                  );
+                })}
               </TitleBox>
             </TitleBoxWrapper>
 
@@ -505,8 +487,13 @@ export default function HomePage({
               direction="column"
               gsapClassName="fifth-text-5"
             >
-              <Description text={tSection3("info.text1")} />
-              <Description text={tSection3("info.text2")} />
+              {tSection3.raw("info").map((html: string, i: number) => {
+                return (
+                  <React.Fragment key={i}>
+                    <Description html={html} />
+                  </React.Fragment>
+                );
+              })}
             </DescriptionBox>
           </TextBox>
         </SectionInner>
@@ -533,163 +520,127 @@ export default function HomePage({
                 />
               </GlowingCard>
 
-              <TitleBox>
-                <TitleBoxInTitle text={tSection4("text1")} />
-              </TitleBox>
-
-              <TitleBox>
-                <TitleBoxInTitle
-                  text={tSection4("text2")}
-                  gradationText={true}
-                />
-                <TitleBoxInTitle text={tSection4("text3")} />
-              </TitleBox>
-
-              <TitleBox>
-                <TitleBoxInTitle
-                  text={tSection4("text4")}
-                  gradationText={true}
-                />
-                <TitleBoxInTitle text={tSection4("text5")} />
-              </TitleBox>
-
-              <TitleBox>
-                <TitleBoxInTitle text={tSection4("text6")} />
+              <TitleBox direction="column">
+                {tSection4.raw("description").map((html: string, i: number) => {
+                  return (
+                    <React.Fragment key={i}>
+                      <TitleBoxInTitle
+                        gsapClassName={`sixth-text-${i + 1}`}
+                        html={html}
+                      />
+                    </React.Fragment>
+                  );
+                })}
               </TitleBox>
             </TitleBoxWrapper>
           </TextBox>
         </SectionInner>
       </Section>
 
-      {/* <Section sectionName="textSection" gsapClassName="seventh">
-          <SectionInner horizontal="center">
-            <SectionTitle
-              ref={setSectionTitleRef}
-              text={tSection5("title")}
-              className={`${styles.sectionTitle}`}
-            />
+      <Section sectionName="textSection" gsapClassName="seventh">
+        <SectionInner horizontal="center">
+          <SectionTitle
+            ref={setSectionTitleRef}
+            text={tSection5("title")}
+            className={`${styles.sectionTitle}`}
+          />
 
-            <SwiperWrapper className="seventh-text-1">
-              <SwiperPrevButton />
+          <SwiperWrapper className="seventh-text-1">
+            <SwiperPrevButton />
 
-              <Swiper
-                modules={[Autoplay, Pagination, Navigation]}
-                navigation={{
-                  prevEl: ".swiper-button-prev",
-                  nextEl: ".swiper-button-next",
-                }}
-                className="seventhSectionSwiper"
-                slidesPerView="auto"
-                threshold={2}
-                spaceBetween={30}
-                scrollbar
-                loop={true}
-                autoplay={{
-                  delay: 3000,
-                  disableOnInteraction: false,
-                  pauseOnMouseEnter: true,
-                }}
-              >
-                <SwiperSlide>
-                  <SlideNameBox
-                    title="YOUNG POSSE UP (feat.Verbal Jint, NSW yoon, Token)"
-                    desc="Jersey Drill (Jersey Club + Drill)"
-                  />
-
-                  <VideoModal
-                    animationStyle="from-center"
-                    videoSrc="https://www.youtube.com/embed/eaGsVrnH-5k?si=XMcmKrCDr9Xrm2Up"
-                    thumbnailSrc="/thumbnail/img-video-thumbnail-01.jpg"
-                    thumbnailAlt="Hero Video1"
-                  />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <SlideNameBox title="Skyline" desc="Jersey Club + Dnb" />
-
-                  <VideoModal
-                    animationStyle="from-center"
-                    videoSrc="https://www.youtube.com/embed/9hBFfI_3elA?si=PvKDR5SUomqPmwEb"
-                    thumbnailSrc="/thumbnail/img-video-thumbnail-02.jpg"
-                    thumbnailAlt="Hero Video2"
-                  />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <SlideNameBox title="Same Shit 中 Another One" desc="Rage" />
-
-                  <VideoModal
-                    animationStyle="from-center"
-                    videoSrc="https://www.youtube.com/embed/o16aOeWMGOk?si=P1cTZgCip_ID3Gl-"
-                    thumbnailSrc="/thumbnail/img-video-thumbnail-03.png"
-                    thumbnailAlt="Hero Video3"
-                  />
-                </SwiperSlide>
-
-                <SwiperSlide>
-                  <SlideNameBox title="Blue Dot" desc="Rage" />
-                  <VideoModal
-                    animationStyle="from-center"
-                    videoSrc="https://www.youtube.com/embed/r374CxtQHpM?si=5JLD2X7x7bw7AjXE"
-                    thumbnailSrc="/thumbnail/img-video-thumbnail-04.jpg"
-                    thumbnailAlt="Hero Video4"
-                  />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <SlideNameBox title="YSSR" desc="Rage" />
-                  <VideoModal
-                    animationStyle="from-center"
-                    videoSrc="https://www.youtube.com/embed/DmZi8TOLN_I?si=j-L15LrMGtS7bPz_"
-                    thumbnailSrc="/thumbnail/img-video-thumbnail-05.jpg"
-                    thumbnailAlt="Hero Video5"
-                  />
-                </SwiperSlide>
-              </Swiper>
-
-              <SwiperNextButton />
-            </SwiperWrapper>
-
-            <TextBox
-              isHeightFull={false}
-              childrenStyleClassName="fzXSmall wrap regularText titleBoxGapXs"
-              horizontal="start"
-              gsapClassName="seventh-text-1"
-              isRowGap="xs"
+            <Swiper
+              modules={[Navigation]}
+              navigation={{
+                prevEl: ".swiper-button-prev",
+                nextEl: ".swiper-button-next",
+              }}
+              className="seventhSectionSwiper"
+              slidesPerView="auto"
+              threshold={2}
+              spaceBetween={30}
+              scrollbar
+              loop={true}
             >
-              <TitleBox>
-                <TitleBoxInTitle
-                  text={tSection5("text1")}
-                  gradationText={true}
+              <SwiperSlide>
+                <SlideNameBox
+                  title="YOUNG POSSE UP (feat.Verbal Jint, NSW yoon, Token)"
+                  desc="Jersey Drill (Jersey Club + Drill)"
+                  buttons={<MobileSwiperButtonGroup />}
                 />
-                <TitleBoxInTitle
-                  text={tSection5("text2")}
-                  gradationText={true}
-                />
-                <TitleBoxInTitle
-                  text={tSection5("text3")}
-                  gradationText={true}
-                />
-                <TitleBoxInTitle text={tSection5("text4")} />
-              </TitleBox>
-              <TitleBoxInTitle text={tSection5("text5")} />
 
-              <TitleBox>
-                <TitleBoxInTitle text={tSection5("text6")} />
-                <TitleBoxInTitle
-                  text={tSection5("text7")}
-                  gradationText={true}
+                <VideoModal
+                  animationStyle="from-center"
+                  videoSrc="https://www.youtube.com/embed/eaGsVrnH-5k?si=XMcmKrCDr9Xrm2Up"
+                  thumbnailSrc="/thumbnail/img-video-thumbnail-01.jpg"
+                  thumbnailAlt="Hero Video1"
                 />
-                <TitleBoxInTitle text={tSection5("text8")} />
-              </TitleBox>
+              </SwiperSlide>
+              <SwiperSlide>
+                <SlideNameBox title="Skyline" desc="Jersey Club + Dnb" />
 
-              <TitleBox>
-                <TitleBoxInTitle
-                  text={tSection5("text9")}
-                  gradationText={true}
+                <VideoModal
+                  animationStyle="from-center"
+                  videoSrc="https://www.youtube.com/embed/9hBFfI_3elA?si=PvKDR5SUomqPmwEb"
+                  thumbnailSrc="/thumbnail/img-video-thumbnail-02.jpg"
+                  thumbnailAlt="Hero Video2"
                 />
-                <TitleBoxInTitle text={tSection5("text10")} />
-              </TitleBox>
-            </TextBox>
-          </SectionInner>
-        </Section> */}
+              </SwiperSlide>
+              <SwiperSlide>
+                <SlideNameBox title="Same Shit 中 Another One" desc="Rage" />
+
+                <VideoModal
+                  animationStyle="from-center"
+                  videoSrc="https://www.youtube.com/embed/o16aOeWMGOk?si=P1cTZgCip_ID3Gl-"
+                  thumbnailSrc="/thumbnail/img-video-thumbnail-03.png"
+                  thumbnailAlt="Hero Video3"
+                />
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <SlideNameBox title="Blue Dot" desc="Rage" />
+                <VideoModal
+                  animationStyle="from-center"
+                  videoSrc="https://www.youtube.com/embed/r374CxtQHpM?si=5JLD2X7x7bw7AjXE"
+                  thumbnailSrc="/thumbnail/img-video-thumbnail-04.jpg"
+                  thumbnailAlt="Hero Video4"
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <SlideNameBox title="YSSR" desc="Rage" />
+                <VideoModal
+                  animationStyle="from-center"
+                  videoSrc="https://www.youtube.com/embed/DmZi8TOLN_I?si=j-L15LrMGtS7bPz_"
+                  thumbnailSrc="/thumbnail/img-video-thumbnail-05.jpg"
+                  thumbnailAlt="Hero Video5"
+                />
+              </SwiperSlide>
+            </Swiper>
+
+            <SwiperNextButton />
+          </SwiperWrapper>
+
+          <TextBox
+            isHeightFull={false}
+            childrenStyleClassName="fzXSmall wrap regularText "
+            horizontal="start"
+            gsapClassName="seventh-text-1"
+            isRowGap="xs"
+          >
+            <TitleBox direction="column">
+              {tSection5.raw("description").map((html: string, i: number) => {
+                return (
+                  <React.Fragment key={i}>
+                    <TitleBoxInTitle
+                      gsapClassName={`seventh-text-${i + 1}`}
+                      html={html}
+                    />
+                  </React.Fragment>
+                );
+              })}
+            </TitleBox>
+          </TextBox>
+        </SectionInner>
+      </Section>
 
       <Section sectionName="textSection" gsapClassName="eighth">
         <SectionInner horizontal="center">

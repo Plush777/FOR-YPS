@@ -31,43 +31,37 @@
     },
 
     "section3": {
-      "title": "Who is YOUNG POSSE?",
-      "text1": "YOUNG POSSE",
-      "text2": "는",
-      "text3": "2023년 10월에 데뷔한 5인조 걸그룹이에요.",
-      "text4": "DSP 미디어",
-      "text5": "와",
-      "text6": "비츠엔터테인먼트",
-      "text7": "가",
-      "text8": "공동으로 제작하는 그룹입니다.",
-      "info": {
-        "text1": "DSP 미디어는 젝스키스, 핑클, SS501, 카라, 레인보우, 에이프릴, KARD 등 많은 그룹들을 탄생시킨 소속사예요.",
-        "text2": "비츠엔터테인먼트는 키겐이 설립한 연예 기획사로, YOUNG POSSE 앨범 프로듀싱을 담당하고 있어요. 이전에는 신화, 세븐틴, TWICE, Wanna One 등의 많은 케이팝 그룹들의 곡들을 프로듀싱 한 이력이 있습니다."
-      }
+      "title": "Introduction",
+      "description": [
+        "<em class='gradationText'>YOUNG POSSE</em>는 2023년 10월에 데뷔한 5인조 걸그룹으로,",
+        "<a href='http://dspmedia.co.kr/' target='_blank' class='gradationText'>DSP 미디어</a>와<a href='https://x.com/BEATS_ent_twt' target='_blank' class='gradationText'>비츠엔터테인먼트</a>가 공동으로 제작하는 그룹입니다."
+      ],
+      "info": [
+        "<a href='http://dspmedia.co.kr/' target='_blank' class='underline'>DSP 미디어</a>는 젝스키스, 핑클, SS501, 카라, 레인보우, 에이프릴, KARD 등 많은 그룹들을 탄생시킨 소속사예요.",
+        "<a href='https://x.com/BEATS_ent_twt' target='_blank' class='underline'>비츠엔터테인먼트</a>는 키겐이 설립한 연예 기획사로, YOUNG POSSE 앨범 프로듀싱을 담당하고 있어요. 이전에는 신화, 세븐틴, TWICE, Wanna One 등의 많은 케이팝 그룹들의 곡들을 프로듀싱 한 이력이 있습니다."
+      ]
     },
 
     "section4": {
-      "title": "My name is...",
-      "text1": "\"할수있다\", \"가능하다\" 라는 뜻의 라틴어",
-      "text2": "\"POSSE\"",
-      "text3": "를 따와 만들어진 그룹명이에요.",
-      "text4": "혼자보다는 모두가 함께 힘을 합쳐야 원하는 바를 이룰 수 있다",
-      "text5": "는",
-      "text6": "당찬 포부와 강렬한 의지를 내포하고 있습니다."
+      "title": "Team",
+
+      "description": [
+        "\"할 수 있다\", \"가능하다\" 라는 뜻의 라틴어",
+        "<em class='gradationText'>POSSE</em>를 따와 만들어진 그룹명이에요.",
+        "혼자보다는<em class='gradationText'>모두가 함께</em> 힘을 합쳐야 원하는 바를 이룰 수 있다는",
+        "<em class='gradationText'>당찬 포부와 강렬한 의지</em>를 담고 있습니다."
+      ]
     },
 
     "section5": {
       "title": "Concept",
-      "text1": "드릴,",
-      "text2": "저지클럽,",
-      "text3": "레이지",
-      "text4": "등의 사운드로 구성된 강렬한 힙합 음악을 추구하고 있고,",
-      "text5": "걸그룹 중에서도 드물게 힙합을 추구하여 힙합 관련 커뮤니티에서도 큰 주목을 받았습니다.",
-      "text6": "또한",
-      "text7": "YOUNG POSSE",
-      "text8": "는 데뷔 이래 꾸준히 힙합을 밀어붙이고 있어 커뮤니티에선",
-      "text9": "\"국힙 딸내미\"",
-      "text10": "라는 별명도 생겼어요."
+
+      "description": [
+        "<em class='gradationText'>드릴, 저지클럽, 레이지</em> 등의 사운드로 구성된 강렬한 힙합 음악을 추구하고 있고,",
+        "걸그룹 중에서도 드물게 힙합을 추구하여 힙합 관련 커뮤니티에서도 큰 주목을 받았습니다.",
+        "또한<em class='gradationText'>YOUNG POSSE</em>는 데뷔 이래 꾸준히 힙합을 밀어붙이고 있어 커뮤니티에선",
+        "<em class='gradationText'>국힙 딸내미</em>라는 별명도 생겼어요."
+      ]
     },
 
     "section6": {
@@ -171,7 +165,7 @@
     },
 
     "section8": {
-      "title": "Hi, YOUNG POSSE!"
+      "title": "Media"
     },
 
     "section9": {
