@@ -103,6 +103,7 @@
   z-index: 20;
   text-align: center;
   width: 100%;
+  padding: 0 16px;
 }
 
 .endingText {
@@ -115,5 +116,15 @@
   .sectionLogoBox svg {
     width: 100%;
     height: auto;
+  }
+
+  .endingText {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 500px) {
+  .endingText {
+    font-size: 28px;
   }
 }

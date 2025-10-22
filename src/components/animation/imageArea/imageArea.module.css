@@ -35,9 +35,15 @@
   height: 100%;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1440px) {
   .imageArea.iconSize img {
     width: 400px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .imageArea.iconSize img {
+    width: 300px;
   }
 }
 

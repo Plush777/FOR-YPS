@@ -54,6 +54,13 @@
   height: 100%;
 }
 
+@media (max-width: 1440px) {
+  .headerInner img {
+    width: 120px;
+    height: 28px;
+  }
+}
+
 @media (max-width: 768px) {
   .headerInner img {
     width: 100px;

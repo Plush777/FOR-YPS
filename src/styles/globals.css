@@ -237,6 +237,12 @@ input {
   --svg-gray: rgba(255, 255, 255, 0.6);
 }
 
+@media (max-width: 1440px) {
+  :root {
+    --header-height: 80px;
+  }
+}
+
 @media (max-width: 768px) {
   :root {
     --header-height: 60px;

@@ -18,7 +18,7 @@ export default function GlowingCard({ children }: Props) {
   }, []);
 
   return (
-    <div className={styles.wrap}>
+    <div className={`${styles.wrap} glowingCard`}>
       <div className={styles.inner}>
         {children}
 

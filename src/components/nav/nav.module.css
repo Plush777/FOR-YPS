@@ -27,3 +27,9 @@
   color: var(--color-white);
   height: 100%;
 }
+
+@media (max-width: 1440px) {
+  .navListItemText {
+    font-size: 16px;
+  }
+}

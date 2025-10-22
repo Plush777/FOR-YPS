@@ -22,7 +22,7 @@
   word-break: keep-all;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1440px) {
   .slideTitle {
     font-size: 22px;
   }
@@ -40,6 +40,14 @@
 @media (max-width: 768px) {
   .slideBox {
     height: auto;
-    min-height: 80px;
+    min-height: 50px;
+  }
+
+  .slideTitle {
+    font-size: 18px;
+  }
+
+  .slideDesc {
+    font-size: 16px;
   }
 }

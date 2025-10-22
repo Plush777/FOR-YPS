@@ -9,7 +9,7 @@
   transition-property: visibility, height;
   backdrop-filter: blur(8px);
   overflow: hidden;
-  background-color: var(--black-transparent);
+  background-color: var(--color-black);
 }
 
 .wrap.active {
@@ -31,6 +31,7 @@
   align-items: center;
   text-transform: uppercase;
   color: var(--color-zinc-400);
+  overflow-x: auto;
 }
 
 .localeLink {
@@ -38,6 +39,7 @@
   display: flex;
   align-items: center;
   padding: 16px;
+  white-space: nowrap;
 }
 
 .localeLink::after {

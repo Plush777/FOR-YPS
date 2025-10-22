@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useRef, useMemo } from "react";
+import React, { useCallback, useRef, useMemo, useLayoutEffect } from "react";
 import styles from "@/app/[locale]/page.module.css";
 
 import { useTranslations } from "next-intl";
@@ -188,25 +188,28 @@ export default function HomePage({
   };
 
   useGSAP(() => {
-    function createTextAnimation(
-      selector: string,
+    function createGroupTextAnimation(
+      selectors: string[],
       trigger: string,
-      endOffset: number
+      endOffset: number,
+      stagger: number = 0.2
     ) {
-      gsap.set(selector, { opacity: 0 });
+      const selectorString = selectors.join(", ");
+      gsap.set(selectorString, { opacity: 0 });
 
       gsap.fromTo(
-        selector,
-        { opacity: 0 },
+        selectorString,
+        { opacity: 0, scale: 0.5 },
         {
           opacity: 1,
+          scale: 1,
           duration: 1,
           ease: "power4.out",
+          stagger,
           scrollTrigger: {
-            trigger: trigger,
-            start: "center center",
+            trigger,
+            start: "top 20%",
             end: `+=${endOffset}`,
-            scrub: 3,
             markers: false,
             toggleActions: "play none none reverse",
           },
@@ -214,27 +217,73 @@ export default function HomePage({
       );
     }
 
-    createTextAnimation(".second-text-1", ".second", 800);
-    createTextAnimation(".second-text-2", ".second", 800);
+    createGroupTextAnimation(
+      [
+        ".second .second-text-1.titleBoxInTitle",
+        ".second .second-text-2.titleBoxInTitle",
+      ],
+      ".second",
+      800
+    );
 
-    createTextAnimation(".third-text-1", ".third", 800);
-    createTextAnimation(".third-text-2", ".third", 800);
-    createTextAnimation(".third-text-3", ".third", 800);
-    createTextAnimation(".third-text-4", ".third", 800);
+    createGroupTextAnimation(
+      [
+        ".third .third-text-1.titleBoxInTitle",
+        ".third .third-text-2.titleBoxInTitle",
+        ".third .third-text-3.titleBoxInTitle",
+        ".third .third-text-4.titleBoxInTitle",
+      ],
+      ".third",
+      800
+    );
 
-    createTextAnimation(".fourth-text-1", ".fourth", 800);
-    createTextAnimation(".fourth-text-2", ".fourth", 800);
-    createTextAnimation(".fourth-text-3", ".fourth", 800);
+    createGroupTextAnimation(
+      [
+        ".fourth .fourth-text-1.titleBoxInTitle",
+        ".fourth .fourth-text-2.titleBoxInTitle",
+        ".fourth .fourth-text-3.titleBoxInTitle",
+      ],
+      ".fourth",
+      1200
+    );
 
-    createTextAnimation(".fifth-text-1", ".fifth", 800);
-    createTextAnimation(".fifth-text-2", ".fifth", 800);
-    createTextAnimation(".fifth-text-3", ".fifth", 800);
-    createTextAnimation(".fifth-text-4", ".fifth", 800);
-    createTextAnimation(".fifth-text-5", ".fifth", 1200);
+    createGroupTextAnimation(
+      [
+        ".fifth .fifth-text-1.titleBoxInTitle",
+        ".fifth .fifth-text-2.titleBoxInTitle",
+        ".fifth .fifth-text-3.titleBoxInTitle",
+        ".fifth .fifth-text-4.titleBoxInTitle",
+        ".fifth .fifth-text-5.titleBoxInTitle",
+        ".fifth-text-5-1",
+        ".fifth-text-5-2",
+      ],
+      ".fifth",
+      1200
+    );
 
-    createTextAnimation(".sixth-text-1", ".sixth", 800);
+    createGroupTextAnimation(
+      [
+        ".sixth .sixth-text-1.titleBoxInTitle",
+        ".sixth .sixth-text-2.titleBoxInTitle",
+        ".sixth .sixth-text-3.titleBoxInTitle",
+        ".sixth .sixth-text-4.titleBoxInTitle",
+        ".sixth .glowingCard",
+      ],
+      ".sixth",
+      800
+    );
 
-    createTextAnimation(".seventh-text-1", ".seventh", 800);
+    createGroupTextAnimation(
+      [
+        ".seventh .seventh-text-1.titleBoxInTitle",
+        ".seventh .seventh-text-2.titleBoxInTitle",
+        ".seventh .seventh-text-3.titleBoxInTitle",
+        ".seventh .seventh-text-4.titleBoxInTitle",
+        ".seventh-swiper",
+      ],
+      ".seventh",
+      800
+    );
 
     sectionTitleRefs.current.forEach((title) => {
       const triggerElement = title.closest("section");
@@ -255,9 +304,9 @@ export default function HomePage({
         ease: "power3.out",
         scrollTrigger: {
           trigger: triggerElement,
-          start: "center center",
+          start: "top 80%",
           end: "+=400",
-          scrub: 1,
+          // scrub: 1,
           markers: false,
           toggleActions: "play none none reverse",
         },
@@ -279,7 +328,6 @@ export default function HomePage({
     sections.forEach((selector, index) => {
       ScrollTrigger.create({
         trigger: selector,
-        pin: true,
         start: "center center",
         end: "+=600",
         markers: false,
@@ -485,12 +533,14 @@ export default function HomePage({
             <DescriptionBox
               childrenStyleClassName="color-gray fzSmall hasDot"
               direction="column"
-              gsapClassName="fifth-text-5"
             >
               {tSection3.raw("info").map((html: string, i: number) => {
                 return (
                   <React.Fragment key={i}>
-                    <Description html={html} />
+                    <Description
+                      fadeClassName={`fifth-text-5-${i + 1}`}
+                      html={html}
+                    />
                   </React.Fragment>
                 );
               })}
@@ -545,7 +595,7 @@ export default function HomePage({
             className={`${styles.sectionTitle}`}
           />
 
-          <SwiperWrapper className="seventh-text-1">
+          <SwiperWrapper className="seventh-swiper">
             <SwiperPrevButton />
 
             <Swiper
@@ -561,11 +611,12 @@ export default function HomePage({
               scrollbar
               loop={true}
             >
+              <MobileSwiperButtonGroup />
+
               <SwiperSlide>
                 <SlideNameBox
                   title="YOUNG POSSE UP (feat.Verbal Jint, NSW yoon, Token)"
                   desc="Jersey Drill (Jersey Club + Drill)"
-                  buttons={<MobileSwiperButtonGroup />}
                 />
 
                 <VideoModal
@@ -793,28 +844,28 @@ export default function HomePage({
         </SectionInner>
       </Section>
 
-      {/* <Section sectionName="textSection" gsapClassName="eleven">
-          <SectionInner horizontal="center">
-            <div className={styles.backgroundBlack}>
-              <div
-                className={`${styles.backgroundBlackInner} backgroundBlackInner`}
-              >
-                <img
-                  src="/bg/bg-last-young-posse.webp"
-                  className={styles.scaleBg}
-                  alt=""
-                />
+      <Section sectionName="textSection" gsapClassName="eleven">
+        <SectionInner horizontal="center">
+          <div className={styles.backgroundBlack}>
+            <div
+              className={`${styles.backgroundBlackInner} backgroundBlackInner`}
+            >
+              <img
+                src="/bg/bg-last-young-posse.webp"
+                className={styles.scaleBg}
+                alt=""
+              />
 
-                <div className={styles.backgroundBlackInnerContents}>
-                  <div className={`${styles.endingTextBox} eleven-text`}>
-                    <p className={styles.endingText}>{tSection9("text1")}</p>
-                    <p className={styles.endingText}>{tSection9("text2")}</p>
-                  </div>
+              <div className={styles.backgroundBlackInnerContents}>
+                <div className={`${styles.endingTextBox} eleven-text`}>
+                  <p className={styles.endingText}>{tSection9("text1")}</p>
+                  <p className={styles.endingText}>{tSection9("text2")}</p>
                 </div>
               </div>
             </div>
-          </SectionInner>
-        </Section> */}
+          </div>
+        </SectionInner>
+      </Section>
 
       {children}
     </div>

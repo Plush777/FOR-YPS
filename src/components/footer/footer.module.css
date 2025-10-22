@@ -142,7 +142,6 @@
 @media (max-width: 768px) {
   .footerLinkBoxInner {
     flex-wrap: wrap;
-    justify-content: center;
     row-gap: 60px;
   }
 

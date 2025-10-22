@@ -12,14 +12,15 @@
   background-size: cover;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1440px) {
   .sectionTitle {
     font-size: 40px;
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .sectionTitle {
+    top: 95px;
     font-size: 32px;
   }
 }
