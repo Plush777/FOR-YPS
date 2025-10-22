@@ -1,9 +1,17 @@
 import SwiperNavigation from "@/components/svg/SwiperNavigation";
 
-export default function Next() {
+type Props = {
+  onNext: () => void;
+};
+
+export default function Next({ onNext }: Props) {
   return (
-    <div className="swiper-button-next">
+    <button
+      type="button"
+      onClick={onNext}
+      className="swiper-button-next-custom"
+    >
       <SwiperNavigation />
-    </div>
+    </button>
   );
 }

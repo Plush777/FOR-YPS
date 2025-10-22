@@ -7,7 +7,6 @@
   height: var(--header-height);
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(8px);
-  background-color: var(--rgba-black-50);
 }
 
 .headerInner {

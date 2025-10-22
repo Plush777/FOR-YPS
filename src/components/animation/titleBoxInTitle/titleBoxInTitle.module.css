@@ -6,3 +6,9 @@
   white-space: pre-wrap;
   word-break: keep-all;
 }
+
+.titleBoxInTitle:lang(jp),
+.titleBoxInTitle:lang(zh-CN),
+.titleBoxInTitle:lang(zh-TW) {
+  word-break: unset;
+}

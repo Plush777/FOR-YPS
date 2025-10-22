@@ -35,7 +35,6 @@ main {
 
 .textBox.regularText .titleBoxInTitle:not(.gradationText) {
   font-weight: 400;
-  line-height: 1.5;
 }
 
 .textBox.fzLarge .titleBoxInTitle {
@@ -145,6 +144,10 @@ main {
 }
 
 [class*="swiper-button"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
   top: 50% !important;
   transform: translateY(calc(-50% + 63px)) !important;
   margin: 0 !important;
@@ -160,11 +163,18 @@ main {
   height: 32px;
 }
 
-.swiper-button-prev {
+.swiper-button-prev-custom svg {
+  transform: rotate(-180deg);
+  margin-left: -2px;
+}
+
+.swiper-button-prev,
+.swiper-button-prev-custom {
   left: -80px !important;
 }
 
-.swiper-button-next {
+.swiper-button-next,
+.swiper-button-next-custom {
   right: -80px !important;
 }
 
@@ -735,6 +745,10 @@ main {
   padding-top: 220px;
 }
 
+.seventh .sectionInner:lang(en) {
+  padding-top: 260px;
+}
+
 .eighth .cardWrapper {
   padding-top: 150px;
 }
@@ -852,10 +866,6 @@ main {
     row-gap: 12px;
   }
 
-  [class*="swiper-button"] {
-    display: none;
-  }
-
   .mobileSwiperButtonGroup {
     display: flex;
   }
@@ -878,6 +888,14 @@ main {
 
   .seventh .titleBoxInTitle {
     line-height: 1.4;
+  }
+
+  .textBox.regularText .titleBoxInTitle:not(.gradationText) {
+    line-height: 1.5;
+  }
+
+  .sixth .textBox:lang(en) {
+    padding-top: 150px;
   }
 }
 
@@ -909,5 +927,9 @@ main {
 
   .sixth .textBox .titleBoxInTitle {
     font-size: 22px;
+  }
+
+  .sixth .textBox:lang(en) {
+    padding-top: 100px;
   }
 }

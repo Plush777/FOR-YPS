@@ -15,6 +15,7 @@
   -webkit-line-clamp: 1;
   white-space: nowrap;
   text-overflow: ellipsis;
+  text-transform: uppercase;
 }
 
 .cardTop {

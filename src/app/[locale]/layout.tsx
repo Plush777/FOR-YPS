@@ -13,7 +13,6 @@ import "../../styles/globals.css";
 import "../../styles/globalComponents.css";
 
 import Header from "@/components/header/Header";
-import Footer from "@/components/footer/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -41,7 +40,7 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
+    <html lang={locale} translate="no">
       <body>
         <NextIntlClientProvider messages={messages}>
           <div id="app">

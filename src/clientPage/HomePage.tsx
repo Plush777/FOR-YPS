@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useRef, useMemo, useLayoutEffect } from "react";
+import React, { useCallback, useRef, useMemo } from "react";
 import styles from "@/app/[locale]/page.module.css";
 
 import { useTranslations } from "next-intl";
@@ -37,7 +37,8 @@ import CardWrapper from "@/components/card/CardWrapper";
 import TitleBoxWrapper from "@/components/animation/titleBoxWrapper/TitleBoxWrapper";
 import TopDownButton from "@/components/topDownButton/TopDownButton";
 import ErrorSection from "@/components/error/ErrorSection";
-import MobileSwiperButtonGroup from "@/components/swiper/navigations/MobileSwiperButtonGroup";
+import { M768, Min768 } from "@/components/mediaQuery/MediaQuery";
+import { Swiper as SwiperType } from "swiper";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -56,6 +57,8 @@ export default function HomePage({
   initialItems: RssItem[];
 }>) {
   console.log(initialItems);
+
+  const swiperRef = useRef<SwiperType | null>(null);
 
   const rssDate = initialItems && initialItems.map((item) => item.pubDate);
 
@@ -410,6 +413,14 @@ export default function HomePage({
     });
   });
 
+  function handlePrev() {
+    swiperRef.current?.slidePrev();
+  }
+
+  function handleNext() {
+    swiperRef.current?.slideNext();
+  }
+
   return (
     <div className={styles.pageBackground}>
       <video
@@ -596,13 +607,18 @@ export default function HomePage({
           />
 
           <SwiperWrapper className="seventh-swiper">
-            <SwiperPrevButton />
+            <Min768>
+              <SwiperPrevButton onPrev={handlePrev} />
+            </Min768>
 
             <Swiper
               modules={[Navigation]}
               navigation={{
                 prevEl: ".swiper-button-prev",
                 nextEl: ".swiper-button-next",
+              }}
+              onBeforeInit={(swiper) => {
+                swiperRef.current = swiper;
               }}
               className="seventhSectionSwiper"
               slidesPerView="auto"
@@ -611,7 +627,12 @@ export default function HomePage({
               scrollbar
               loop={true}
             >
-              <MobileSwiperButtonGroup />
+              <M768>
+                <div className="mobileSwiperButtonGroup">
+                  <SwiperPrevButton onPrev={handlePrev} />
+                  <SwiperNextButton onNext={handleNext} />
+                </div>
+              </M768>
 
               <SwiperSlide>
                 <SlideNameBox
@@ -667,7 +688,9 @@ export default function HomePage({
               </SwiperSlide>
             </Swiper>
 
-            <SwiperNextButton />
+            <Min768>
+              <SwiperNextButton onNext={handleNext} />
+            </Min768>
           </SwiperWrapper>
 
           <TextBox

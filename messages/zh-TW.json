@@ -1,10 +1,16 @@
 {
-  "IntroPage": {
+  "mainPage": {
+    "errorSection": {
+      "text1": "糟了！無法載入資料。",
+      "text2": "如果這個問題持續發生，請透過下方按鈕與我們聯絡。",
+      "text3": "聯絡我們"
+    },
+
     "section1": {
       "description1": "歡迎來到 FOR YPS！",
-      "description2": "這裡是專屬於 YOUNG POSSE 的粉絲網站。",
-      "description3": "等等，你還不知道 YOUNG POSSE 是誰嗎？",
-      "description4": "請往下滑看看吧。"
+      "description2": "這裡是專為 YOUNG POSSE 粉絲打造的網站。",
+      "description3": "咦？你還不知道 YOUNG POSSE 是誰嗎？",
+      "description4": "往下滑就知道了。"
     },
 
     "section2": {
@@ -12,160 +18,230 @@
       "text2": "你喜歡嘻哈音樂嗎？🎶",
 
       "positive": {
-        "text1": "如果喜歡的話……太好了 ☺️",
-        "text2": "因為 YOUNG POSSE 所追求的音樂可是超級嘻哈的！😎",
-        "text3": "讓我來介紹一下 YOUNG POSSE 吧～",
-        "text4": "你一定會喜歡她們的 🥰"
+        "text1": "如果喜歡的話……太好了！☺️",
+        "text2": "因為 YOUNG POSSE 所追求的音樂，就是純正的嘻哈！😎",
+        "text3": "讓我來介紹一下 YOUNG POSSE 吧。",
+        "text4": "你一定會愛上的🥰"
       },
       "negative": {
-        "text1": "如果不喜歡……真可惜 😭",
-        "text2": "我還是想介紹一下 YOUNG POSSE，不介意聽我說一下嗎？🥺",
-        "text3": "聽完之後，也許你會改變想法喔 🤔"
+        "text1": "不喜歡嗎……好可惜 😭",
+        "text2": "不過我還是想介紹一下 YOUNG POSSE，可以聽我說一會兒嗎？🥺",
+        "text3": "聽完之後，也許你的想法會改變喔。🤔"
       }
     },
 
     "section3": {
-      "title": "誰是 YOUNG POSSE？",
-      "text1": "YOUNG POSSE",
-      "text2": "是",
-      "text3": "於 2023 年 10 月出道的五人女子團體。",
-      "text4": "由 DSP 媒體",
-      "text5": "與",
-      "text6": "Beats 娛樂公司",
-      "text7": "共同製作。",
-      "text8": "",
-      "info": {
-        "text1": "DSP 媒體曾經打造過 Sechs Kies、Fin.K.L、SS501、KARA、Rainbow、APRIL、KARD 等許多知名團體。",
-        "text2": "Beats 娛樂由製作人 Kigen 所創立，負責 YOUNG POSSE 的專輯製作。Kigen 過去也曾為神話、SEVENTEEN、TWICE、Wanna One 等多個韓團製作歌曲。"
-      }
+      "title": "Introduction",
+      "description": [
+        "<em class='gradationText'>YOUNG POSSE</em> 是於 2023 年 10 月出道的五人女子團體，",
+        "由 <a href='http://dspmedia.co.kr/' target='_blank' class='gradationText'>DSP Media</a> 與 <a href='https://x.com/BEATS_ent_twt' target='_blank' class='gradationText'>BEATS Entertainment</a> 共同製作。"
+      ],
+      "info": [
+        "<a href='http://dspmedia.co.kr/' target='_blank' class='underline'>DSP Media</a> 是推出 SECHSKIES、Fin.K.L、SS501、KARA、Rainbow、APRIL、KARD 等眾多知名團體的經紀公司。",
+        "<a href='https://x.com/BEATS_ent_twt' target='_blank' class='underline'>BEATS Entertainment</a> 由製作人 Kiggen 創立，負責 YOUNG POSSE 的專輯製作。Kiggen 曾為 Shinhwa、SEVENTEEN、TWICE、Wanna One 等多組 K-pop 團體製作歌曲。"
+      ]
     },
 
     "section4": {
-      "title": "My name is...",
-      "text1": "團名取自拉丁語中代表「能夠、可以」的字詞",
-      "text2": "「POSSE」。",
-      "text3": "",
-      "text4": "名字中包含著「與其一個人，不如大家一起合作才能達成目標」",
-      "text5": "的",
-      "text6": "堅定抱負與強烈意志。"
+      "title": "Team",
+
+      "description": [
+        "團名取自拉丁語中代表「能夠」、「可以」的字詞",
+        "<em class='gradationText'>POSSE</em>。",
+        "象徵著與其一個人奮鬥，<em class='gradationText'>不如大家齊心協力</em>，才能實現理想，",
+        "展現了她們<em class='gradationText'>堅定的意志與強烈的抱負</em>。"
+      ]
     },
 
     "section5": {
-      "title": "概念",
-      "text1": "YOUNG POSSE 以 Drill、",
-      "text2": "Jersey Club、",
-      "text3": "Rage",
-      "text4": "等風格的強烈嘻哈音樂為主要概念，",
-      "text5": "在女子團體中極少見地堅持嘻哈路線，因此在嘻哈圈中受到廣泛關注。",
-      "text6": "此外，",
-      "text7": "YOUNG POSSE",
-      "text8": "自出道以來一直專注於嘻哈風格，粉絲們甚至給她們取了個暱稱——",
-      "text9": "「韓嘻女兒」",
-      "text10": "。"
+      "title": "Concept",
+
+      "description": [
+        "她們以 <em class='gradationText'>Drill、Jersey Club、Rage</em> 等音樂風格為基礎，追求強烈的嘻哈音樂。",
+        "作為少數專注於嘻哈的女團之一，YOUNG POSSE 在嘻哈圈中也引起了高度關注。",
+        "自出道以來，<em class='gradationText'>YOUNG POSSE</em> 一直堅持嘻哈路線，粉絲甚至稱她們為",
+        "<em class='gradationText'>「韓嘻哈的女兒們」</em>。"
+      ]
     },
 
     "section6": {
-      "title": "成員",
+      "title": "Members",
 
       "members": {
         "member1": {
-          "name": "鄭善惠",
+          "name": "Sunhye",
           "dateofbirth": "2004.04.12",
-          "nationality": "韓國",
+          "nationality": "大韓民國",
           "position": {
-            "text1": "隊長",
-            "text2": "主饒舌"
+            "text1": "Leader",
+            "text2": "Main Rapper"
           }
         },
         "member2": {
-          "name": "魏妍靜",
+          "name": "Yeonjung",
           "dateofbirth": "2004.09.01",
-          "nationality": "韓國",
+          "nationality": "大韓民國",
           "position": {
-            "text1": "主舞"
+            "text1": "Main Dancer"
           }
         },
         "member3": {
-          "name": "Gianna",
+          "name": "Jiana",
           "dateofbirth": "2006.02.02",
-          "nationality": "韓國",
+          "nationality": "大韓民國",
           "position": {
-            "text1": "主唱"
+            "text1": "Main Vocalist"
           }
         },
         "member4": {
-          "name": "道恩",
+          "name": "Doeun",
           "dateofbirth": "2007.12.24",
-          "nationality": "韓國",
+          "nationality": "大韓民國",
           "position": {
-            "text1": "饒舌 / 主唱"
+            "text1": "Rapper / Vocalist"
           }
         },
         "member5": {
-          "name": "韓智恩",
+          "name": "Jieun",
           "dateofbirth": "2009.11.05",
-          "nationality": "韓國",
+          "nationality": "大韓民國",
           "position": {
-            "text1": "主唱"
+            "text1": "Vocalist"
           }
         }
       }
     },
 
     "section7": {
-      "title": "專輯",
+      "title": "Albums",
 
       "albums": {
         "album1": {
           "name": "MACARONI CHEESE",
-          "type": "第 1 張 EP",
+          "type": "1st EP",
           "date": "2023.10.18"
         },
         "album2": {
           "name": "YOUNG POSSE UP",
-          "type": "數位單曲",
+          "type": "Digital Single",
           "date": "2024.02.04"
         },
         "album3": {
           "name": "XXL",
-          "type": "第 2 張 EP",
+          "type": "2nd EP",
           "date": "2024.03.20"
         },
         "album4": {
           "name": "On My Scars",
-          "type": "數位單曲",
+          "type": "Digital Single",
           "date": "2024.06.26"
         },
         "album5": {
           "name": "ATE THAT",
-          "type": "第 3 張 EP",
+          "type": "3rd EP",
           "date": "2024.08.21"
         },
         "album6": {
           "name": "Year 1 : We Still Loading",
-          "type": "數位專輯",
+          "type": "Digital Album",
           "date": "2024.10.18"
         },
         "album7": {
-          "name": "在街頭…",
-          "type": "數位單曲",
+          "name": "ㄱㅓ리에서...",
+          "type": "Digital Single",
           "date": "2024.12.13"
         },
         "album8": {
           "name": "COLD",
-          "type": "特別專輯",
+          "type": "Special Album",
           "date": "2025.03.02"
         },
         "album9": {
           "name": "Growing Pain pt.1 : FREE",
-          "type": "第 4 張 EP",
+          "type": "4th EP",
           "date": "2025.08.14"
         }
       }
     },
 
     "section8": {
-      "title": "Hi, YOUNG POSSE!"
+      "title": "Media"
+    },
+
+    "section9": {
+      "text1": "TELE POSSE UP!",
+      "text2": "準備好現在就入坑了嗎？"
+    },
+
+    "footer": {
+      "title1": "社群媒體",
+      "title2": "專輯與週邊商品",
+      "title3": "使用指南",
+      "notice": "POSSE UP, YOUNG POSSE!",
+      "notice2": "TELE 們永遠支持你！",
+      "caution1": "本網站中除網站標誌外的所有圖片與標誌之版權皆屬於 DSP Media Co., Ltd.",
+      "caution2": "請注意，本網站為粉絲自製的非官方網站。",
+
+      "social": [
+        {
+          "url": "https://open.kakao.com/o/g1mpLjOf",
+          "name": "TELE 開放聊天室"
+        },
+        {
+          "url": "https://www.youtube.com/channel/UCYvGSZPvQj09LgpcziCszyA",
+          "name": "官方 YouTube"
+        },
+        {
+          "url": "https://x.com/youngposseup",
+          "name": "官方 Twitter"
+        },
+        {
+          "url": "https://x.com/yps_members",
+          "name": "成員 Twitter"
+        },
+        {
+          "url": "https://youngposse.bstage.in/",
+          "name": "b.stage"
+        },
+        {
+          "url": "https://blip.kr/artists/YOUNGPOSSE",
+          "name": "Blip"
+        },
+        {
+          "url": "https://www.instagram.com/youngposseup/",
+          "name": "官方 Instagram"
+        },
+        {
+          "url": "https://open.spotify.com/artist/5bxwvIM9PX0CkpS6f1L2Ff",
+          "name": "Spotify"
+        },
+        {
+          "url": "https://www.tiktok.com/@youngposseup",
+          "name": "官方 TikTok"
+        }
+      ],
+
+      "footerMenu": [
+        {
+          "url": "/privacy",
+          "name": "隱私政策"
+        },
+        {
+          "url": "/inquiry",
+          "name": "聯絡我們"
+        }
+      ],
+
+      "footerLink": [
+        {
+          "url": "https://kr.ktown4u.com/searchList?goodsTextSearch=young%20posse",
+          "name": "ktown4u"
+        },
+        {
+          "url": "https://www.bizent.co.kr/index.html",
+          "name": "bizent"
+        }
+      ]
     }
   }
 }

@@ -1,67 +1,67 @@
 {
-  "IntroPage": {
+  "mainPage": {
+    "errorSection": {
+      "text1": "Oops! We couldn't load the data.",
+      "text2": "If this problem continues, please contact us using the button below.",
+      "text3": "Contact Us"
+    },
+
     "section1": {
       "description1": "Welcome to FOR YPS!",
-      "description2": "This is a fan site made just for YOUNG POSSE.",
+      "description2": "This is a fan site made exclusively for YOUNG POSSE.",
       "description3": "Wait, you don’t know who YOUNG POSSE is yet?",
-      "description4": "Scroll down to find out!"
+      "description4": "Scroll down to find out."
     },
 
     "section2": {
-      "text1": "Let me ask you one thing.",
+      "text1": "Let me ask you one question.",
       "text2": "Do you like hip-hop music? 🎶",
 
       "positive": {
-        "text1": "If you do, that’s great! ☺️",
-        "text2": "Because YOUNG POSSE is all about hip-hop. 😎",
-        "text3": "Let me introduce you to them.",
-        "text4": "I’m sure you’ll love them! 🥰"
+        "text1": "If you do... that’s great! ☺️",
+        "text2": "Because YOUNG POSSE’s music is pure hip-hop! 😎",
+        "text3": "Let me introduce you to YOUNG POSSE.",
+        "text4": "You’re going to love them 🥰"
       },
       "negative": {
         "text1": "If not... that’s a shame 😭",
-        "text2": "But still, could you give me a moment to tell you about YOUNG POSSE? 🥺",
-        "text3": "You might just change your mind after hearing their story. 🤔"
+        "text2": "I’m still going to introduce YOUNG POSSE—could you give them a chance? 🥺",
+        "text3": "You might just change your mind after hearing about them. 🤔"
       }
     },
 
     "section3": {
-      "title": "Who is YOUNG POSSE?",
-      "text1": "YOUNG POSSE",
-      "text2": "is a",
-      "text3": "five-member girl group that debuted in October 2023.",
-      "text4": "They’re a joint project between",
-      "text5": "DSP Media",
-      "text6": "and",
-      "text7": "Beats Entertainment.",
-      "text8": "",
-      "info": {
-        "text1": "DSP Media is known for creating legendary groups like Sechs Kies, Fin.K.L, SS501, KARA, Rainbow, APRIL, and KARD.",
-        "text2": "Beats Entertainment, founded by producer Kiggen, is in charge of producing YOUNG POSSE’s albums. He has also worked with top K-pop acts such as Shinhwa, SEVENTEEN, TWICE, and Wanna One."
-      }
+      "title": "Introduction",
+      "description": [
+        "<em class='gradationText'>YOUNG POSSE</em> is a five-member girl group that debuted in October 2023,",
+        "produced jointly by <a href='http://dspmedia.co.kr/' target='_blank' class='gradationText'>DSP Media</a> and <a href='https://x.com/BEATS_ent_twt' target='_blank' class='gradationText'>BEATS Entertainment</a>."
+      ],
+      "info": [
+        "<a href='http://dspmedia.co.kr/' target='_blank' class='underline'>DSP Media</a> is the agency behind many iconic groups such as SECHSKIES, Fin.K.L, SS501, KARA, Rainbow, APRIL, and KARD.",
+        "<a href='https://x.com/BEATS_ent_twt' target='_blank' class='underline'>BEATS Entertainment</a> was founded by producer Kiggen and is responsible for producing YOUNG POSSE’s albums. Kiggen has also worked on songs for many major K-pop groups including Shinhwa, SEVENTEEN, TWICE, and Wanna One."
+      ]
     },
 
     "section4": {
-      "title": "My name is...",
-      "text1": "The name ‘POSSE’ comes from the Latin word meaning",
-      "text2": "‘to be able to’ or ‘can do.’",
-      "text3": "",
-      "text4": "It carries a strong message that success is achieved not alone, but together as a team—",
-      "text5": "symbolizing",
-      "text6": "confidence, ambition, and unity."
+      "title": "Team",
+
+      "description": [
+        "The group name comes from the Latin word meaning \"to be able to\" or \"can.\"",
+        "<em class='gradationText'>POSSE</em> represents the idea that success is achieved not alone but when",
+        "<em class='gradationText'>everyone works together</em> with determination and strength.",
+        "It embodies their <em class='gradationText'>bold ambition and powerful will</em>."
+      ]
     },
 
     "section5": {
       "title": "Concept",
-      "text1": "YOUNG POSSE’s sound revolves around",
-      "text2": "drill,",
-      "text3": "jersey club,",
-      "text4": "and",
-      "text5": "rage-style beats — a bold hip-hop sound that’s rare among girl groups.",
-      "text6": "They’ve caught the attention of hip-hop communities for their authenticity and energy.",
-      "text7": "Since debut,",
-      "text8": "YOUNG POSSE",
-      "text9": "has stayed true to hip-hop, earning the nickname",
-      "text10": "“K-hiphop’s daughters.”"
+
+      "description": [
+        "They pursue powerful hip-hop music based on <em class='gradationText'>drill, jersey club, and rage</em> sounds.",
+        "As one of the few girl groups that focus on hip-hop, they’ve drawn significant attention even within hip-hop communities.",
+        "Since their debut, <em class='gradationText'>YOUNG POSSE</em> has stayed true to their hip-hop roots—fans have even nicknamed them",
+        "<em class='gradationText'>the daughters of Korean hip-hop</em>."
+      ]
     },
 
     "section6": {
@@ -69,42 +69,42 @@
 
       "members": {
         "member1": {
-          "name": "Jeong Sunhye",
-          "dateofbirth": "April 12, 2004",
-          "nationality": "South Korea",
+          "name": "SUNHYE",
+          "dateofbirth": "2004.04.12",
+          "nationality": "Republic of Korea",
           "position": {
             "text1": "Leader",
             "text2": "Main Rapper"
           }
         },
         "member2": {
-          "name": "Wi Yeonjeong",
-          "dateofbirth": "September 1, 2004",
-          "nationality": "South Korea",
+          "name": "YEONJUNG",
+          "dateofbirth": "2004.09.01",
+          "nationality": "Republic of Korea",
           "position": {
             "text1": "Main Dancer"
           }
         },
         "member3": {
-          "name": "Jianna",
-          "dateofbirth": "February 2, 2006",
-          "nationality": "South Korea",
+          "name": "JIANA",
+          "dateofbirth": "2006.02.02",
+          "nationality": "Republic of Korea",
           "position": {
             "text1": "Main Vocalist"
           }
         },
         "member4": {
-          "name": "Doeun",
-          "dateofbirth": "December 24, 2007",
-          "nationality": "South Korea",
+          "name": "DOEUN",
+          "dateofbirth": "2007.12.24",
+          "nationality": "Republic of Korea",
           "position": {
             "text1": "Rapper / Vocalist"
           }
         },
         "member5": {
-          "name": "Han Ji-eun",
-          "dateofbirth": "November 5, 2009",
-          "nationality": "South Korea",
+          "name": "JIEUN",
+          "dateofbirth": "2009.11.05",
+          "nationality": "Republic of Korea",
           "position": {
             "text1": "Vocalist"
           }
@@ -119,53 +119,129 @@
         "album1": {
           "name": "MACARONI CHEESE",
           "type": "1st EP",
-          "date": "October 18, 2023"
+          "date": "2023.10.18"
         },
         "album2": {
           "name": "YOUNG POSSE UP",
           "type": "Digital Single",
-          "date": "February 4, 2024"
+          "date": "2024.02.04"
         },
         "album3": {
           "name": "XXL",
           "type": "2nd EP",
-          "date": "March 20, 2024"
+          "date": "2024.03.20"
         },
         "album4": {
           "name": "On My Scars",
           "type": "Digital Single",
-          "date": "June 26, 2024"
+          "date": "2024.06.26"
         },
         "album5": {
           "name": "ATE THAT",
           "type": "3rd EP",
-          "date": "August 21, 2024"
+          "date": "2024.08.21"
         },
         "album6": {
           "name": "Year 1 : We Still Loading",
           "type": "Digital Album",
-          "date": "October 18, 2024"
+          "date": "2024.10.18"
         },
         "album7": {
-          "name": "Street carol...",
+          "name": "ㄱㅓ리에서...",
           "type": "Digital Single",
-          "date": "December 13, 2024"
+          "date": "2024.12.13"
         },
         "album8": {
           "name": "COLD",
           "type": "Special Album",
-          "date": "March 2, 2025"
+          "date": "2025.03.02"
         },
         "album9": {
           "name": "Growing Pain pt.1 : FREE",
           "type": "4th EP",
-          "date": "August 14, 2025"
+          "date": "2025.08.14"
         }
       }
     },
 
     "section8": {
-      "title": "Hi, YOUNG POSSE!"
+      "title": "Media"
+    },
+
+    "section9": {
+      "text1": "TELE POSSE UP!",
+      "text2": "Are you ready to join the fandom right now?"
+    },
+
+    "footer": {
+      "title1": "Social Media",
+      "title2": "Albums & Goods",
+      "title3": "Information",
+      "notice": "POSSE UP, YOUNG POSSE!",
+      "notice2": "TELE's will always cheer for you!",
+      "caution1": "Copyrights for all images and logos (except the site logo) belong to DSP Media Co., Ltd.",
+      "caution2": "Please note that this is a fan site and not the official YOUNG POSSE website.",
+
+      "social": [
+        {
+          "url": "https://open.kakao.com/o/g1mpLjOf",
+          "name": "TELE Open Chat"
+        },
+        {
+          "url": "https://www.youtube.com/channel/UCYvGSZPvQj09LgpcziCszyA",
+          "name": "YouTube"
+        },
+        {
+          "url": "https://x.com/youngposseup",
+          "name": "Twitter"
+        },
+        {
+          "url": "https://x.com/yps_members",
+          "name": "Members’ Twitter"
+        },
+        {
+          "url": "https://youngposse.bstage.in/",
+          "name": "b.stage"
+        },
+        {
+          "url": "https://blip.kr/artists/YOUNGPOSSE",
+          "name": "Blip"
+        },
+        {
+          "url": "https://www.instagram.com/youngposseup/",
+          "name": "Instagram"
+        },
+        {
+          "url": "https://open.spotify.com/artist/5bxwvIM9PX0CkpS6f1L2Ff",
+          "name": "Spotify"
+        },
+        {
+          "url": "https://www.tiktok.com/@youngposseup",
+          "name": "TikTok"
+        }
+      ],
+
+      "footerMenu": [
+        {
+          "url": "/privacy",
+          "name": "Privacy Policy"
+        },
+        {
+          "url": "/inquiry",
+          "name": "Contact"
+        }
+      ],
+
+      "footerLink": [
+        {
+          "url": "https://kr.ktown4u.com/searchList?goodsTextSearch=young%20posse",
+          "name": "ktown4u"
+        },
+        {
+          "url": "https://www.bizent.co.kr/index.html",
+          "name": "bizent"
+        }
+      ]
     }
   }
 }

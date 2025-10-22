@@ -1,9 +1,17 @@
 import SwiperNavigation from "@/components/svg/SwiperNavigation";
 
-export default function Prev() {
+type Props = {
+  onPrev: () => void;
+};
+
+export default function Prev({ onPrev }: Props) {
   return (
-    <div className="swiper-button-prev">
+    <button
+      type="button"
+      onClick={onPrev}
+      className="swiper-button-prev-custom"
+    >
       <SwiperNavigation />
-    </div>
+    </button>
   );
 }
