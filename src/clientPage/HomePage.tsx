@@ -39,6 +39,8 @@ import TopDownButton from "@/components/topDownButton/TopDownButton";
 import ErrorSection from "@/components/error/ErrorSection";
 import { M768, Min768 } from "@/components/mediaQuery/MediaQuery";
 import { Swiper as SwiperType } from "swiper";
+import Video from "@/components/video/Video";
+import PageBackground from "@/components/pageBackground/PageBackground";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -50,12 +52,11 @@ interface RssItem {
   thumbnail: string;
 }
 
-export default function HomePage({
-  initialItems,
-  children,
-}: React.PropsWithChildren<{
+interface HomePageProps {
   initialItems: RssItem[];
-}>) {
+}
+
+export default function HomePage({ initialItems }: HomePageProps) {
   console.log(initialItems);
 
   const swiperRef = useRef<SwiperType | null>(null);
@@ -211,7 +212,7 @@ export default function HomePage({
           stagger,
           scrollTrigger: {
             trigger,
-            start: "top 20%",
+            start: "top 40%",
             end: `+=${endOffset}`,
             markers: false,
             toggleActions: "play none none reverse",
@@ -422,14 +423,8 @@ export default function HomePage({
   }
 
   return (
-    <div className={styles.pageBackground}>
-      <video
-        src="/video/intro-video.mp4"
-        autoPlay
-        muted
-        loop
-        className={styles.introVideo}
-      />
+    <PageBackground>
+      <Video />
 
       <TopDownButton />
 
@@ -889,8 +884,6 @@ export default function HomePage({
           </div>
         </SectionInner>
       </Section>
-
-      {children}
-    </div>
+    </PageBackground>
   );
 }

@@ -56,13 +56,12 @@
 @media (max-width: 1440px) {
   .headerInner img {
     width: 120px;
-    height: 28px;
+    height: auto;
   }
 }
 
 @media (max-width: 768px) {
   .headerInner img {
     width: 100px;
-    height: 36px;
   }
 }

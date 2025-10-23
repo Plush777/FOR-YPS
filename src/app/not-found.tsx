@@ -1,17 +1,40 @@
 "use client";
 
-import Error from "next/error";
-import { Link } from "@/i18n/routing";
+import CircleQuestion from "@/components/svg/CircleQuestion";
+import "../styles/globals.css";
+import "../styles/notFound.css";
+import ArrowLeft from "@/components/svg/ArrowLeft";
 
 export default function GlobalNotFound() {
   return (
-    <html lang="en">
-      <body style={{ textAlign: "center", padding: "50px" }}>
-        <h1>404 - Page Not Found</h1>
-        <p>Sorry, the page you are looking for does not exist.</p>
-        {/* <Link href="/" style={{ textDecoration: "none", color: "blue" }}>
-          🔙 Go to Home
-        </Link> */}
+    <html lang="ko">
+      <head>
+        <title>404 - For YPS</title>
+      </head>
+      <body>
+        <div className="column-center">
+          <h1>404</h1>
+
+          <div className="p-box">
+            <p>이런! 해당 페이지를 찾을 수 없네요!</p>
+            <p>해당 문제가 계속된다면, 개발자에게 문의 해보세요.</p>
+          </div>
+
+          <div className="button-box">
+            <a href="/" className="home">
+              <ArrowLeft />
+              홈으로
+            </a>
+            <a
+              href="https://open.kakao.com/o/sIZ4nWQb"
+              className="inquiry"
+              target="_blank"
+            >
+              <CircleQuestion />
+              문의하기
+            </a>
+          </div>
+        </div>
       </body>
     </html>
   );

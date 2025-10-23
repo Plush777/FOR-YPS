@@ -6,11 +6,10 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  transition: opacity 0.3s ease;
+  transition: 0.3s ease;
   opacity: 0;
   visibility: hidden;
   border: 1px solid var(--border);
-  background-color: var(--color-black);
   border-radius: 8px;
 }
 
@@ -20,6 +19,16 @@
   justify-content: center;
   width: 40px;
   height: 40px;
+  transition: 0.3s ease;
+  background-color: var(--color-gray-950);
+}
+
+.topDownButton:first-child {
+  border-radius: 8px 8px 0 0;
+}
+
+.topDownButton:last-child {
+  border-radius: 0 0 8px 8px;
 }
 
 .topDownButton + .topDownButton {
@@ -30,4 +39,13 @@
   width: 20px;
   height: 20px;
   color: var(--svg-gray);
+  transition: 0.3s ease;
+}
+
+.topDownButton:hover {
+  background-color: var(--color-black);
+}
+
+.topDownButton:hover svg {
+  color: var(--color-white);
 }

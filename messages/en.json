@@ -1,5 +1,10 @@
 {
   "mainPage": {
+    "meta": {
+      "title": "For YPS",
+      "description": "A fan site dedicated to YOUNG POSSE! Share your love and messages with YOUNG POSSE here.",
+      "keywords": "YOUNG POSSE, Young Posse, TERRY, hip-hop idol, hip-hop girl group, DSP Media, DSP"
+    },
     "errorSection": {
       "text1": "Oops! We couldn't load the data.",
       "text2": "If this problem continues, please contact us using the button below.",
@@ -57,7 +62,7 @@
       "title": "Concept",
 
       "description": [
-        "They pursue powerful hip-hop music based on <em class='gradationText'>drill, jersey club, and rage</em> sounds.",
+        "They pursue powerful hip-hop music based on <em class='gradationText'>Drill, Jersey club, and Rage</em> sounds.",
         "As one of the few girl groups that focus on hip-hop, they’ve drawn significant attention even within hip-hop communities.",
         "Since their debut, <em class='gradationText'>YOUNG POSSE</em> has stayed true to their hip-hop roots—fans have even nicknamed them",
         "<em class='gradationText'>the daughters of Korean hip-hop</em>."
@@ -242,6 +247,14 @@
           "name": "bizent"
         }
       ]
+    }
+  },
+
+  "subPage": {
+    "contactUs": {
+      "hiddenText1": "Subpage title area",
+      "hiddenText2": "Subpage content area",
+      "description": "For inquiries, please contact us using the information below!"
     }
   }
 }

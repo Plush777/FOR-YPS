@@ -1,0 +1,49 @@
+.visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 500px;
+}
+
+.visual::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--rgba-black-50);
+  pointer-events: none;
+}
+
+.visualTitle {
+  font-size: 46px;
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+.visual video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  object-fit: cover;
+}
+
+.visualTextArea {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 10px;
+  z-index: 10;
+}
+
+.visualDescription {
+  color: var(--color-gray-200);
+  font-size: 18px;
+  font-weight: 400;
+}

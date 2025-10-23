@@ -24,3 +24,9 @@
     font-size: 32px;
   }
 }
+
+@media (max-width: 375px) {
+  .sectionTitle {
+    font-size: 28px;
+  }
+}

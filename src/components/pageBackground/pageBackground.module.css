@@ -1,0 +1,25 @@
+.pageBackground {
+  position: relative;
+}
+
+.pageBackground::before {
+  content: "";
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: var(--rgba-black-50);
+  pointer-events: none;
+}
+
+.pageBackground.main::before {
+  width: 100vw;
+  height: 100vh;
+}
+
+.pageBackground.sub {
+  padding-top: var(--header-height);
+}
+
+.pageBackground.sub::before {
+  display: none;
+}

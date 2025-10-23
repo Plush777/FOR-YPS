@@ -1,5 +1,10 @@
 {
   "mainPage": {
+    "meta": {
+      "title": "For YPS",
+      "description": "專屬於YOUNG POSSE的粉絲網站！在這裡向YOUNG POSSE傳達你的心意吧。",
+      "keywords": "YOUNG POSSE, 英帕西, TELE, 嘻哈偶像, 嘻哈女團, DSP Media, DSP"
+    },
     "errorSection": {
       "text1": "糟了！無法載入資料。",
       "text2": "如果這個問題持續發生，請透過下方按鈕與我們聯絡。",
@@ -242,6 +247,14 @@
           "name": "bizent"
         }
       ]
+    }
+  },
+
+  "subPage": {
+    "contactUs": {
+      "hiddenText1": "子頁面標題區域",
+      "hiddenText2": "子頁面內容區域",
+      "description": "若有任何詢問，請透過以下聯絡方式與我們聯繫！"
     }
   }
 }

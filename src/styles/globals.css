@@ -63,6 +63,14 @@ section {
   display: block;
 }
 
+html {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  touch-action: pan-y;
+}
+
 body,
 html {
   width: 100%;

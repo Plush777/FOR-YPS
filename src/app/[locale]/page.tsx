@@ -11,9 +11,5 @@ export default async function Page() {
 
   const data = await res.json();
 
-  return (
-    <HomePage initialItems={data.items}>
-      <Footer />
-    </HomePage>
-  );
+  return <HomePage initialItems={data.items} />;
 }

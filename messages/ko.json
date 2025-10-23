@@ -1,5 +1,10 @@
 {
   "mainPage": {
+    "meta": {
+      "title": "For YPS",
+      "description": "YOUNG POSSE만을 위한 팬 사이트! 여기서 YOUNG POSSE에게 마음을 전해보세요.",
+      "keywords": "YOUNG POSSE, 영파씨, 테리, 힙합 아이돌, 힙합 걸그룹, DSP 미디어, DSP"
+    },
     "errorSection": {
       "text1": "이런! 데이터를 불러오지 못했어요.",
       "text2": "해당 문제가 계속 된다면, 아래 버튼을 통해 문의 해주세요.",
@@ -242,6 +247,14 @@
           "name": "bizent"
         }
       ]
+    }
+  },
+
+  "subPage": {
+    "contactUs": {
+      "hiddenText1": "서브페이지 제목 영역",
+      "hiddenText2": "서브페이지 콘텐츠 영역",
+      "description": "문의는 아래 연락처로 부탁드립니다!"
     }
   }
 }

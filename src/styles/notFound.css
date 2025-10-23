@@ -1,0 +1,111 @@
+body {
+  display: grid;
+  place-content: center;
+  width: 100%;
+  height: 100vh;
+  padding: 0 16px;
+}
+
+.column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 120px;
+  font-weight: 700;
+  color: #000;
+  letter-spacing: 2px;
+}
+
+.p-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 16px;
+  margin-bottom: 40px;
+  color: #333;
+  font-size: 18px;
+  text-align: center;
+  word-break: keep-all;
+}
+
+p {
+  line-height: 1.5;
+}
+
+a,
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  column-gap: 8px;
+  font-size: 16px;
+  padding: 0 16px;
+  min-width: 135px;
+  height: 48px;
+}
+
+a svg,
+button svg {
+  width: 20px;
+  height: 20px;
+}
+
+.button-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.button-box a {
+  flex: 1;
+}
+
+.home {
+  background-color: #000;
+}
+
+.inquiry {
+  background-color: #666;
+}
+
+.home,
+.inquiry {
+  color: #fff;
+}
+
+.home svg,
+.inquiry svg {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 100px;
+  }
+
+  .p-box {
+    font-size: 16px;
+    margin-top: 8px;
+    margin-bottom: 32px;
+  }
+
+  a,
+  button {
+    font-size: 14px;
+    padding: 0 8px;
+    min-width: 120px;
+  }
+
+  .home svg,
+  .inquiry svg {
+    width: 16px;
+    height: 16px;
+  }
+}

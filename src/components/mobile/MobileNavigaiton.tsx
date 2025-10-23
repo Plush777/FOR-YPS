@@ -50,7 +50,7 @@ export default function MobileNavigation({ data, isOpen, onClose }: Props) {
             <Link
               key={code}
               href={`/${code}`}
-              locale={code}
+              // locale={code}
               className={`${styles.localeLink} ${
                 currentLocale === code ? styles.active : ""
               }`}

@@ -29,10 +29,6 @@
   z-index: -1;
 }
 
-main {
-  height: 100%;
-}
-
 .textBox.regularText .titleBoxInTitle:not(.gradationText) {
   font-weight: 400;
 }
@@ -931,5 +927,11 @@ main {
 
   .sixth .textBox:lang(en) {
     padding-top: 100px;
+  }
+}
+
+@media (max-width: 375px) {
+  .textBox.fzLarge .titleBoxInTitle {
+    font-size: 24px;
   }
 }
