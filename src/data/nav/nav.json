@@ -1,12 +1,12 @@
 {
   "navList": [
     {
-      "name": "to. YPS",
-      "link": "/toyps"
+      "name": "My YPS ♥️",
+      "link": "/my-yps"
     },
     {
-      "name": "Contact Us",
-      "link": "/contactus"
+      "name": "About",
+      "link": "/about"
     }
   ]
 }

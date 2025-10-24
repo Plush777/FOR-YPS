@@ -1,0 +1,31 @@
+.simpleList {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+.simpleItem a {
+  position: relative;
+  padding-left: 16px;
+}
+
+.simpleItem a::before {
+  content: "";
+  position: absolute;
+  top: 7.5px;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--color-black);
+}
+
+@media (max-width: 768px) {
+  .simpleList {
+    row-gap: 8px;
+  }
+
+  .simpleItem a {
+    font-size: 14px;
+  }
+}

@@ -17,7 +17,7 @@ export default function Nav({ data }: Props) {
         {data.map((item, index: number) => (
           <li key={index} className={styles.navListItem}>
             <Link
-              className={styles.navListItemText}
+              className={`${styles.navListItemText} navListItemText`}
               href={item.link}
               title={item.name}
             >

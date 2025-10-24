@@ -251,7 +251,7 @@
   },
 
   "subPage": {
-    "contactUs": {
+    "about": {
       "hiddenText1": "서브페이지 제목 영역",
       "hiddenText2": "서브페이지 콘텐츠 영역",
       "description": "문의는 아래 연락처로 부탁드립니다!"

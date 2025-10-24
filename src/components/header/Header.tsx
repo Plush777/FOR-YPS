@@ -13,7 +13,11 @@ import { M768, Min768 } from "../mediaQuery/MediaQuery";
 import navData from "@/data/nav/nav.json";
 import MobileNavigation from "../mobile/MobileNavigaiton";
 
-export default function Header() {
+interface Props {
+  name: string;
+}
+
+export default function Header({ name }: Props) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   function linkClickCloseNavigation() {
@@ -26,7 +30,7 @@ export default function Header() {
 
   return (
     <>
-      <header className={styles.header}>
+      <header className={`${styles.header} header ${name}`}>
         <div className={styles.headerInner}>
           <div className={styles.headerLeft}>
             <h1>

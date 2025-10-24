@@ -7,7 +7,6 @@ import { useTranslations } from "next-intl";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { ScrollSmoother } from "gsap/dist/ScrollSmoother";
 import { useGSAP } from "@gsap/react";
 
 import ColoredLogoHoriz from "@/components/svg/ColoredLogoHoriz";
@@ -42,7 +41,7 @@ import { Swiper as SwiperType } from "swiper";
 import Video from "@/components/video/Video";
 import PageBackground from "@/components/pageBackground/PageBackground";
 
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+gsap.registerPlugin(ScrollTrigger);
 
 interface RssItem {
   title: string;

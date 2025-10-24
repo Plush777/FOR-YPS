@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 500px;
+  height: 400px;
 }
 
 .visual::before {
@@ -30,6 +30,7 @@
   left: 0;
   z-index: -1;
   object-fit: cover;
+  object-position: center center;
 }
 
 .visualTextArea {
@@ -46,4 +47,29 @@
   color: var(--color-gray-200);
   font-size: 18px;
   font-weight: 400;
+}
+
+.contentsInner {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 120px 60px;
+}
+
+@media (max-width: 768px) {
+  .visual {
+    height: 250px;
+  }
+
+  .visualTitle {
+    font-size: 36px;
+  }
+
+  .visualDescription {
+    font-size: 16px;
+  }
+
+  .contentsInner {
+    padding: 80px 40px;
+  }
 }

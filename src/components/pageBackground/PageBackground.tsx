@@ -18,8 +18,12 @@ export default function PageBackground({
   }
 
   return (
-    <main className={`${styles.pageBackground} ${styleTypeClassName()}`}>
+    <div
+      className={`${
+        styles.pageBackground
+      } ${styleTypeClassName()} pageBackground`}
+    >
       {children}
-    </main>
+    </div>
   );
 }

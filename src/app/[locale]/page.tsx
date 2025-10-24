@@ -1,6 +1,7 @@
 import HomePage from "@/clientPage/HomePage";
-import Footer from "@/components/footer/Footer";
+import Header from "@/components/header/Header";
 import rssUrl from "@/data/rss/youtube.json";
+import Main from "@/components/main/Main";
 
 export const revalidate = 3600;
 
@@ -11,5 +12,13 @@ export default async function Page() {
 
   const data = await res.json();
 
-  return <HomePage initialItems={data.items} />;
+  return (
+    <>
+      <Header name="main" />
+
+      <Main>
+        <HomePage initialItems={data.items} />;
+      </Main>
+    </>
+  );
 }

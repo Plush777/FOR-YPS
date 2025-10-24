@@ -1,0 +1,17 @@
+.wrap {
+  margin: 30px 0;
+}
+
+.inner {
+  display: flex;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px 16px;
+  border-radius: 20px;
+  background: #fac5de;
+  background: linear-gradient(
+    0deg,
+    rgba(250, 197, 222, 1) 0%,
+    rgba(245, 152, 194, 1) 100%
+  );
+}

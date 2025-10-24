@@ -12,7 +12,6 @@ import "swiper/css/navigation";
 import "../../styles/globals.css";
 import "../../styles/globalComponents.css";
 
-import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
 
 export async function generateMetadata({
@@ -54,7 +53,7 @@ export async function generateMetadata({
 
 interface RootLayoutProps {
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
+  params: { locale: string };
 }
 
 export default async function RootLayout({
@@ -77,7 +76,6 @@ export default async function RootLayout({
       <body>
         <NextIntlClientProvider messages={messages}>
           <div id="app">
-            <Header />
             {children}
             <Footer />
           </div>

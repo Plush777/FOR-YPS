@@ -791,6 +791,20 @@
   padding: 0;
 }
 
+.header.default {
+  position: static;
+  background-color: var(--color-zinc-800);
+}
+
+.header.sub {
+  position: absolute;
+}
+
+.header.sub + main .pageBackground,
+.header.default + main .pageBackground {
+  padding-top: 0;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
