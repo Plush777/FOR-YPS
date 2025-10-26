@@ -10,7 +10,7 @@ export default function AboutPage() {
   const t = useTranslations("subPage.about");
 
   return (
-    <SubPageLayout styleType="common" description={t("description")}>
+    <SubPageLayout isVisual={true} description={t("description")}>
       <TitleArea title="About" />
 
       <ContentsArea>
@@ -18,24 +18,50 @@ export default function AboutPage() {
           <li className={styles.simpleItem}>
             <a href="mailto:sky11916@naver.com">E-mail: sky11916@naver.com</a>
           </li>
-          <li className={`${styles.simpleItem} underline`}>
-            <a href="https://open.kakao.com/o/sIZ4nWQb" target="_blank">
-              Kakaotalk: https://open.kakao.com/o/sIZ4nWQb
+          <li className={styles.simpleItem}>
+            <a href="https://open.kakao.com/o/ss7hM2Oh" target="_blank">
+              Kakaotalk:&nbsp;
+              <span className="underline">
+                https://open.kakao.com/o/ss7hM2Oh
+              </span>
             </a>
           </li>
-          <li className={`${styles.simpleItem} underline`}>
-            <a href="https://open.kakao.com/o/sIZ4nWQb" target="_blank">
-              Github: https://github.com/Plush777
+          <li className={styles.simpleItem}>
+            <a href="https://github.com/Plush777" target="_blank">
+              Github:&nbsp;
+              <span className="underline">https://github.com/Plush777</span>
             </a>
           </li>
-          <li className={`${styles.simpleItem} underline`}>
+          <li className={styles.simpleItem}>
             <a href="https://plush-tech.netlify.app/" target="_blank">
-              My tech blog: https://plush-tech.netlify.app/
+              My tech blog:&nbsp;
+              <span className="underline">https://plush-tech.netlify.app/</span>
             </a>
           </li>
-          <li className={`${styles.simpleItem} underline`}>
+          <li className={styles.simpleItem}>
+            <a
+              href="https://blog.naver.com/sky11916/223996312001"
+              target="_blank"
+            >
+              My music blog:&nbsp;
+              <span className="underline">
+                https://blog.naver.com/sky11916/223996312001
+              </span>
+            </a>
+          </li>
+          <li className={styles.simpleItem}>
             <a href="https://velog.io/@sky/posts/" target="_blank">
-              Velog: https://velog.io/@sky/posts/
+              Velog:&nbsp;
+              <span className="underline">https://velog.io/@sky/posts/</span>
+            </a>
+          </li>
+          <li className={styles.simpleItem}>
+            <a
+              href="https://www.instagram.com/hsulp_?igsh=MXBraXBvcmtrZXF0aA=="
+              target="_blank"
+            >
+              Instagram:&nbsp;
+              <span className="underline">@HSULP_</span>
             </a>
           </li>
         </ul>

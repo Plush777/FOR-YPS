@@ -2,7 +2,7 @@ import styles from "@/components/subPage/contents/contentsArea.module.css";
 import { ReactNode } from "react";
 
 interface Props {
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 export default function ContentsArea({ children }: Props) {

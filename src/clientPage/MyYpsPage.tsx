@@ -1,10 +1,10 @@
 import SubPageLayout from "@/components/subPage/layout/SubPageLayout";
-import ContentsArea from "@/components/subPage/contents/ContentsArea";
+import MyYpsContents from "@/components/subPage/layoutContents/MyYpsContents";
 
 export default function MyYpsPage() {
   return (
-    <SubPageLayout styleType="myYps">
-      <ContentsArea>dd</ContentsArea>
+    <SubPageLayout isVisual={false}>
+      <MyYpsContents />
     </SubPageLayout>
   );
 }

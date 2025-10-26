@@ -657,6 +657,21 @@
   background-color: var(--color-white);
 }
 
+.buttonFillWhite {
+  color: var(--color-zinc-700);
+  background-color: var(--color-white);
+}
+
+.buttonBgYellow {
+  color: var(--color-black);
+  background-color: var(--color-yellow-400);
+}
+
+.buttonBgGreen {
+  color: var(--color-white);
+  background-color: var(--color-green-500);
+}
+
 .roundedFull {
   border-radius: 9999px;
 }
@@ -669,37 +684,16 @@
   border-radius: 8px;
 }
 
-.buttonHasIcon.spotify::before {
-  background-image: url("/icons/socialLogo/logo-spotify.png");
+.icon-naver::before {
+  background-image: url("/icons/socialLogo/logo-naver.svg");
 }
 
-.buttonHasIcon.bstage::before {
-  background-image: url("/icons/socialLogo/logo-bstage.svg");
+.icon-google::before {
+  background-image: url("/icons/socialLogo/logo-google.svg");
 }
 
-.buttonHasIcon.instagram::before {
-  background-image: url("/icons/socialLogo/logo-instagram.webp");
-}
-
-.buttonHasIcon.kakaotalk::before {
-  background-image: url("/icons/socialLogo/logo-kakaotalk.png");
-}
-
-.buttonHasIcon.tiktok::before {
-  background-image: url("/icons/socialLogo/logo-tiktok.jpg");
-}
-
-.buttonHasIcon.twitter::before {
-  background-image: url("/icons/socialLogo/logo-x.svg");
-}
-
-.buttonHasIcon.youtube::before {
-  background-image: url("/icons/socialLogo/logo-youtube.png");
-}
-
-.buttonHasIcon.blip::before {
-  border-radius: 20%;
-  background-image: url("/icons/socialLogo/logo-blip.png");
+.icon-kakao::before {
+  background-image: url("/icons/socialLogo/logo-kakaotalk.svg");
 }
 
 .fadeIn {
@@ -798,11 +792,6 @@
 
 .header.sub {
   position: absolute;
-}
-
-.header.sub + main .pageBackground,
-.header.default + main .pageBackground {
-  padding-top: 0;
 }
 
 @keyframes fadeIn {

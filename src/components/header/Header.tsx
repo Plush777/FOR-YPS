@@ -1,11 +1,12 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import styles from "./header.module.css";
 import Image from "next/image";
 import Nav from "@/components/nav/Nav";
 import LocaleDropdown from "@/components/form/LocaleDropdown/LocaleDropdown";
 import SvgHamburger from "@/components/svg/HamburgerMenu";
+import { Modal } from "@/components/modal/Modal";
 
 import { Link } from "@/i18n/routing";
 import { M768, Min768 } from "../mediaQuery/MediaQuery";
@@ -52,6 +53,7 @@ export default function Header({ name }: Props) {
 
           <div className={styles.headerRight}>
             <Min768>
+              <Modal useType="auth" />
               <LocaleDropdown />
             </Min768>
 

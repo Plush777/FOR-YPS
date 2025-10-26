@@ -25,10 +25,6 @@
   align-items: center;
 }
 
-.headerInner img {
-  object-position: 0 1px;
-}
-
 .headerLeft {
   display: flex;
   align-items: center;

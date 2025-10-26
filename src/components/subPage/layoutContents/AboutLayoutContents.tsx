@@ -4,7 +4,7 @@ import Video from "@/components/video/Video";
 import { useTranslations } from "next-intl";
 
 interface Props {
-  description?: string;
+  description?: any;
   children: ReactNode;
 }
 

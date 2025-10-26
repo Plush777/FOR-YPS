@@ -9,6 +9,7 @@ type Props = {
   iconName?: string;
   gsapClassName?: string;
   children?: ReactNode;
+  onClick?: () => void;
 };
 
 export default function Button({
@@ -20,9 +21,8 @@ export default function Button({
   iconName = "",
   gsapClassName = "",
   children,
+  onClick,
 }: Props) {
-  const iconNameCondition = iconName !== "" ? "hasIcon" : "";
-
   function styleTypeCondition() {
     if (styleType === "roundedFull") return "roundedFull";
     if (styleType === "roundedLg") return "roundedLg";
@@ -41,6 +41,9 @@ export default function Button({
 
   function buttonColorCondition() {
     if (color === "white") return "buttonBgWhite";
+    if (color === "fill-white") return "buttonFillWhite";
+    if (color === "yellow") return "buttonBgYellow";
+    if (color === "green") return "buttonBgGreen";
 
     return undefined;
   }
@@ -48,7 +51,8 @@ export default function Button({
   return (
     <button
       type={buttonType}
-      className={`button ${styleTypeCondition()} ${sizeTypeCondition()} ${buttonColorCondition()} ${iconNameCondition} ${gsapClassName}`}
+      className={`button ${styleTypeCondition()} ${sizeTypeCondition()} ${buttonColorCondition()} icon-${iconName} ${gsapClassName}`}
+      onClick={onClick}
     >
       {text !== "" ? <span>{text}</span> : <></>}
       {children}

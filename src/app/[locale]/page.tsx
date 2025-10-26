@@ -17,7 +17,7 @@ export default async function Page() {
       <Header name="main" />
 
       <Main>
-        <HomePage initialItems={data.items} />;
+        <HomePage initialItems={data.items} />
       </Main>
     </>
   );

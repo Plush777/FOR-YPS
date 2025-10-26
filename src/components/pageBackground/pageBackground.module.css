@@ -17,9 +17,12 @@
 }
 
 .pageBackground.sub {
-  padding-top: var(--header-height);
 }
 
 .pageBackground.sub::before {
   display: none;
+}
+
+.pageBackground.myyps {
+  padding: 30px 16px;
 }

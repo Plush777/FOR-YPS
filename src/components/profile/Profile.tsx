@@ -1,0 +1,46 @@
+"use client";
+
+import { useState } from "react";
+import styles from "@/components/profile/profile.module.css";
+import MenuDropDown from "@/components/menuDropdown/MenuDropDown";
+import { useTranslations } from "next-intl";
+import { logout } from "@/components/auth/AuthArea";
+
+interface Props {
+  userData: any;
+}
+
+export default function Profile({ userData }: Props) {
+  const [open, setOpen] = useState(false);
+  const tMenu = useTranslations("auth.menuDropdown");
+  const tAuth = useTranslations("auth");
+  const menus = (tMenu.raw("menus") as string[]) || [];
+  const logoutLabel = tAuth("logout");
+
+  async function handleSelect(label: string) {
+    if (label === logoutLabel) {
+      await logout();
+    }
+    setOpen(false);
+  }
+
+  return (
+    <div>
+      <button
+        type="button"
+        className={styles.userInfo}
+        onClick={() => setOpen((v) => !v)}
+      >
+        {userData.avatar_url && (
+          <img
+            src={userData.avatar_url}
+            alt={userData.name || "user"}
+            className={styles.avatar}
+          />
+        )}
+      </button>
+
+      {open && <MenuDropDown items={menus} onSelect={(label) => handleSelect(label)} />}
+    </div>
+  );
+}

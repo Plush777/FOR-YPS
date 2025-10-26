@@ -1,0 +1,12 @@
+.userInfo {
+  display: flex;
+  align-items: center;
+  column-gap: 6px;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-position: center;
+}

@@ -13,16 +13,13 @@ export default function PageBackground({
   function styleTypeClassName() {
     if (styleType === "main") return styles.main;
     if (styleType === "sub") return styles.sub;
+    if (styleType === "myyps") return styles.myyps;
 
     return undefined;
   }
 
   return (
-    <div
-      className={`${
-        styles.pageBackground
-      } ${styleTypeClassName()} pageBackground`}
-    >
+    <div className={`${styles.pageBackground} ${styleTypeClassName()}`}>
       {children}
     </div>
   );

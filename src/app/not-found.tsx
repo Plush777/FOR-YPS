@@ -26,7 +26,7 @@ export default function GlobalNotFound() {
               홈으로
             </a>
             <a
-              href="https://open.kakao.com/o/sIZ4nWQb"
+              href="https://open.kakao.com/o/ss7hM2Oh"
               className="inquiry"
               target="_blank"
             >
