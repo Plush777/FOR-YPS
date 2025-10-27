@@ -1,12 +1,26 @@
+.wrap {
+  position: relative;
+}
+
 .userInfo {
   display: flex;
   align-items: center;
-  column-gap: 6px;
+  column-gap: 8px;
 }
 
 .avatar {
-  width: 60px;
-  height: 60px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   object-position: center;
+}
+
+.avatar + svg {
+  color: var(--color-white);
+  width: 28px;
+  height: 28px;
+}
+
+.avatar + svg path:last-child {
+  fill: currentColor;
 }

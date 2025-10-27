@@ -3,6 +3,7 @@ import Button from "@/components/button/Button";
 
 import { ReactNode } from "react";
 import { supabase } from "@/lib/supabaseClient";
+import Wave from "@/components/animation/wave/Wave";
 
 interface Props {
   description: ReactNode;
@@ -48,6 +49,8 @@ export default function AuthContents({ description, smallDescription }: Props) {
       </div>
 
       <p className={modalStyles.smallDesc}>{smallDescription}</p>
+
+      <Wave />
     </>
   );
 }

@@ -243,6 +243,7 @@ input {
   --rgba-black-50: rgba(0, 0, 0, 0.5);
   --black-transparent: #0000008f;
   --svg-gray: rgba(255, 255, 255, 0.6);
+  --letter-size: 225px;
 }
 
 @media (max-width: 1440px) {

@@ -3,13 +3,18 @@ import Pencil from "@/components/svg/Pencil";
 
 interface Props {
   type: string;
+  onClickModal: () => void;
 }
 
-export default function FixedButton({ type }: Props) {
+export default function FixedButton({ type, onClickModal }: Props) {
   return (
     <div className={styles.fixedButtonWrap}>
       {type === "write" && (
-        <button type="button" className={styles.fixedButton}>
+        <button
+          type="button"
+          onClick={onClickModal}
+          className={styles.fixedButton}
+        >
           <span className="hidden">작성하기</span>
           <Pencil />
         </button>

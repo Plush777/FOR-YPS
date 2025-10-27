@@ -53,8 +53,8 @@ export default function Header({ name }: Props) {
 
           <div className={styles.headerRight}>
             <Min768>
-              <Modal useType="auth" />
               <LocaleDropdown />
+              <Modal useType="auth" />
             </Min768>
 
             <M768>

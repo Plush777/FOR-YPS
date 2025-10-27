@@ -69,11 +69,12 @@ export default function AuthArea({ onClickModal }: Props) {
         <Profile userData={user} />
       ) : (
         <Button
-          size="md"
+          size="sm"
           styleType="roundedFull"
           color="white"
           text={tAuth("login")}
           onClick={onClickModal}
+          className={styles.loginButton}
         />
       )}
     </div>

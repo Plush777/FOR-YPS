@@ -5,6 +5,7 @@ import styles from "@/components/profile/profile.module.css";
 import MenuDropDown from "@/components/menuDropdown/MenuDropDown";
 import { useTranslations } from "next-intl";
 import { logout } from "@/components/auth/AuthArea";
+import ArrowDropDown from "../svg/ArrowDropDown";
 
 interface Props {
   userData: any;
@@ -25,22 +26,32 @@ export default function Profile({ userData }: Props) {
   }
 
   return (
-    <div>
+    <div className={styles.wrap}>
       <button
         type="button"
         className={styles.userInfo}
         onClick={() => setOpen((v) => !v)}
       >
         {userData.avatar_url && (
-          <img
-            src={userData.avatar_url}
-            alt={userData.name || "user"}
-            className={styles.avatar}
-          />
+          <>
+            <img
+              src={userData.avatar_url}
+              alt={userData.name || "user"}
+              className={styles.avatar}
+            />
+
+            <ArrowDropDown />
+          </>
         )}
       </button>
 
-      {open && <MenuDropDown items={menus} onSelect={(label) => handleSelect(label)} />}
+      {open && (
+        <MenuDropDown
+          items={menus}
+          onSelect={(label) => handleSelect(label)}
+          onClose={() => setOpen(false)}
+        />
+      )}
     </div>
   );
 }

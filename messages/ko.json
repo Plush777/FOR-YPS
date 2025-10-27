@@ -10,18 +10,15 @@
       "text2": "해당 문제가 계속 된다면, 아래 버튼을 통해 문의 해주세요.",
       "text3": "문의하기"
     },
-
     "section1": {
       "description1": "FOR YPS 에 오신 것을 환영합니다! ",
       "description2": "이 곳은 YOUNG POSSE 만을 위한 팬 사이트예요.",
       "description3": "잠깐, YOUNG POSSE 가 누구인지 아직도 모른다구요?",
       "description4": "아래로 스크롤 하세요."
     },
-
     "section2": {
       "text1": "제가 하나만 여쭤볼게요.",
       "text2": "혹시... 힙합 음악 좋아하시나요? 🎶",
-
       "positive": {
         "text1": "좋아하신다면... 잘 됐네요 ☺️",
         "text2": "YOUNG POSSE가 추구하는 음악이 완전 힙합이거든요? 😎",
@@ -34,7 +31,6 @@
         "text3": "제 얘기를 들으시면 마음이 바뀌실 수도 있을거에요. 🤔"
       }
     },
-
     "section3": {
       "title": "Introduction",
       "description": [
@@ -46,10 +42,8 @@
         "<a href='https://x.com/BEATS_ent_twt' target='_blank' class='underline'>비츠엔터테인먼트</a>는 키겐이 설립한 연예 기획사로, YOUNG POSSE 앨범 프로듀싱을 담당하고 있어요. 이전에는 신화, 세븐틴, TWICE, Wanna One 등의 많은 케이팝 그룹들의 곡들을 프로듀싱 한 이력이 있습니다."
       ]
     },
-
     "section4": {
       "title": "Team",
-
       "description": [
         "\"할 수 있다\", \"가능하다\" 라는 뜻의 라틴어",
         "<em class='gradationText'>POSSE</em>를 따와 만들어진 그룹명이에요.",
@@ -57,10 +51,8 @@
         "<em class='gradationText'>당찬 포부와 강렬한 의지</em>를 담고 있습니다."
       ]
     },
-
     "section5": {
       "title": "Concept",
-
       "description": [
         "<em class='gradationText'>드릴, 저지클럽, 레이지</em> 등의 사운드로 구성된 강렬한 힙합 음악을 추구하고 있고,",
         "걸그룹 중에서도 드물게 힙합을 추구하여 힙합 관련 커뮤니티에서도 큰 주목을 받았습니다.",
@@ -68,10 +60,8 @@
         "<em class='gradationText'>국힙 딸내미</em>라는 별명도 생겼어요."
       ]
     },
-
     "section6": {
       "title": "Members",
-
       "members": {
         "member1": {
           "name": "정선혜",
@@ -116,10 +106,8 @@
         }
       }
     },
-
     "section7": {
       "title": "Albums",
-
       "albums": {
         "album1": {
           "name": "MACARONI CHEESE",
@@ -168,16 +156,13 @@
         }
       }
     },
-
     "section8": {
       "title": "Media"
     },
-
     "section9": {
       "text1": "TELE POSSE UP!",
       "text2": "지금 당장 입덕할 준비 되셨나요?"
     },
-
     "footer": {
       "title1": "소셜 미디어",
       "title2": "앨범 및 굿즈",
@@ -186,7 +171,6 @@
       "notice2": "테리들이 항상 응원해!",
       "caution1": "해당 사이트의 이미지 및 로고 (사이트 로고 제외) 에 대한 저작권은 (주)디에스피미디어에게 있습니다.",
       "caution2": "이 사이트는 YOUNG POSSE 공식 사이트가 아닌 팬 사이트임을 유의하세요.",
-
       "social": [
         {
           "url": "https://open.kakao.com/o/g1mpLjOf",
@@ -225,7 +209,6 @@
           "name": "공식 틱톡"
         }
       ],
-
       "footerMenu": [
         {
           "url": "/privacy",
@@ -236,7 +219,6 @@
           "name": "문의하기"
         }
       ],
-
       "footerLink": [
         {
           "url": "https://kr.ktown4u.com/searchList?goodsTextSearch=young%20posse",
@@ -249,7 +231,6 @@
       ]
     }
   },
-
   "subPage": {
     "about": {
       "hiddenText1": "서브페이지 제목 영역",
@@ -257,14 +238,17 @@
       "description": "문의는 아래 연락처로 부탁드립니다!"
     },
     "myYps": {
+      "letter": {
+        "emptyText": "이런, 아직 마음을 전한 사람이 아무도 없네요. <br></br>가장 먼저 마음을 전해보세요!"
+      },
       "letterPopup": {
         "title": "편지쓰기",
         "placeholder": "YOUNG POSSE에게 전하고 싶은 말을 적어보세요.",
-        "submit": "등록"
+        "submit": "등록",
+        "loginRequired": "로그인이 필요해요 ! 먼저 로그인해주세요. "
       }
     }
   },
-
   "auth": {
     "login": "로그인",
     "logout": "로그아웃",

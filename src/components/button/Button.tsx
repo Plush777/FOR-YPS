@@ -7,9 +7,11 @@ type Props = {
   color?: string;
   text?: string;
   iconName?: string;
+  className?: string;
   gsapClassName?: string;
   children?: ReactNode;
   onClick?: () => void;
+  disabled?: boolean;
 };
 
 export default function Button({
@@ -19,9 +21,11 @@ export default function Button({
   color = "white",
   text = "",
   iconName = "",
+  className = "",
   gsapClassName = "",
   children,
   onClick,
+  disabled = false,
 }: Props) {
   function styleTypeCondition() {
     if (styleType === "roundedFull") return "roundedFull";
@@ -51,8 +55,9 @@ export default function Button({
   return (
     <button
       type={buttonType}
-      className={`button ${styleTypeCondition()} ${sizeTypeCondition()} ${buttonColorCondition()} icon-${iconName} ${gsapClassName}`}
+      className={`button ${styleTypeCondition()} ${sizeTypeCondition()} ${buttonColorCondition()} ${className} icon-${iconName} ${gsapClassName}`}
       onClick={onClick}
+      disabled={disabled}
     >
       {text !== "" ? <span>{text}</span> : <></>}
       {children}

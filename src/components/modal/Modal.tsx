@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 
 import styles from "@/components/nurui/video-modal/video-modal.module.css";
@@ -11,9 +11,9 @@ import { useTranslations } from "next-intl";
 
 import AuthArea from "@/components/auth/AuthArea";
 import ModalContentsLayout from "@/components/modalContents/ModalContentsLayout";
-import MyypsContents from "@/components/modalContents/MyypsContents";
+import ModalMyypsContents from "@/components/modalContents/ModalMyypsContents";
 import AuthContents from "@/components/modalContents/AuthContents";
-import { Link } from "@/i18n/routing";
+import { supabase } from "@/lib/supabaseClient";
 
 type AnimationStyle =
   | "from-bottom"
@@ -28,6 +28,7 @@ type AnimationStyle =
 interface HeroVideoProps {
   animationStyle?: AnimationStyle;
   useType: string;
+  onSubmitMyYps?: (message: string) => Promise<void> | void;
 }
 
 const animationVariants = {
@@ -76,16 +77,100 @@ const animationVariants = {
 export function Modal({
   animationStyle = "from-center",
   useType,
+  onSubmitMyYps,
 }: HeroVideoProps) {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const [isAuthLoading, setIsAuthLoading] = useState(useType === "fixedButton");
+  const [authUser, setAuthUser] = useState<{
+    name?: string | null;
+    email?: string | null;
+  } | null>(null);
   const selectedAnimation = animationVariants[animationStyle];
   const tLetterPopup = useTranslations("subPage.myYps.letterPopup");
   const tAuthPopup = useTranslations("auth.authPopup");
 
+  useEffect(() => {
+    if (useType !== "fixedButton") return;
+
+    let isMounted = true;
+
+    async function fetchUser() {
+      try {
+        const { data } = await supabase.auth.getUser();
+        if (!isMounted) return;
+
+        const user = data.user
+          ? {
+              name: data.user.user_metadata?.name ?? data.user.email,
+              email: data.user.email,
+            }
+          : null;
+
+        setAuthUser(user);
+      } finally {
+        if (isMounted) {
+          setIsAuthLoading(false);
+        }
+      }
+    }
+
+    fetchUser();
+
+    const { data: listener } = supabase.auth.onAuthStateChange(
+      (_event, session) => {
+        if (!isMounted) return;
+
+        if (session?.user) {
+          setAuthUser({
+            name: session.user.user_metadata?.name ?? session.user.email,
+            email: session.user.email,
+          });
+        } else {
+          setAuthUser(null);
+        }
+        setIsAuthLoading(false);
+      }
+    );
+
+    return () => {
+      isMounted = false;
+      listener?.subscription.unsubscribe();
+    };
+  }, [useType]);
+
+  const handleFixedButtonClick = () => {
+    if (useType !== "fixedButton") return;
+    if (isAuthLoading) return;
+
+    if (!authUser) {
+      alert(tLetterPopup("loginRequired"));
+      return;
+    }
+
+    setIsVideoOpen(true);
+  };
+
+  const handleMyYpsSubmit = async (message: string) => {
+    if (!onSubmitMyYps) return;
+
+    try {
+      await Promise.resolve(onSubmitMyYps(message));
+      setIsVideoOpen(false);
+    } catch (error) {
+      console.error("Failed to submit message:", error);
+    }
+  };
+
   function clickContentsCondition() {
-    if (useType === "fixedButton") return <FixedButton type="write" />;
-    if (useType === "auth")
+    if (useType === "fixedButton") {
+      if (isAuthLoading) return null; // 로딩 중일 때 아무것도 표시하지 않음
+
+      return <FixedButton onClickModal={handleFixedButtonClick} type="write" />;
+    }
+
+    if (useType === "auth") {
       return <AuthArea onClickModal={() => setIsVideoOpen(true)} />;
+    }
   }
 
   function modalStylesCondition() {
@@ -100,10 +185,11 @@ export function Modal({
           onClose={() => setIsVideoOpen(false)}
           title={tLetterPopup("title")}
         >
-          <MyypsContents
-            username="test"
+          <ModalMyypsContents
+            username={authUser?.name ?? authUser?.email ?? ""}
             placeholder={tLetterPopup("placeholder")}
             buttonText={tLetterPopup("submit")}
+            onSubmit={handleMyYpsSubmit}
           />
         </ModalContentsLayout>
       );
@@ -132,12 +218,15 @@ export function Modal({
 
   return (
     <div className={styles.wrap}>
-      <div className={styles.inner}>{clickContentsCondition()}</div>
+      <div className={`${styles.inner} ${modalStyles.inner}`}>
+        {clickContentsCondition()}
+      </div>
 
       <Portal>
         <AnimatePresence>
           {isVideoOpen && (
             <motion.div
+              key={useType}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
