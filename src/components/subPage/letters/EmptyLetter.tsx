@@ -5,12 +5,12 @@ export default function EmptyLetter() {
   const t = useTranslations("subPage.myYps.letter");
 
   return (
-    <li className={styles.emptyWrap}>
+    <div className={styles.emptyWrap}>
       <p className={styles.emptyText}>
         {t.rich("emptyText", {
           br: () => <br />,
         })}
       </p>
-    </li>
+    </div>
   );
 }

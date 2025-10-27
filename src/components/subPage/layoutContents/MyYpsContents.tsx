@@ -1,7 +1,7 @@
 import type { Letter } from "@/types/letter";
 import styles from "@/components/subPage/layoutContents/myYpsContents.module.css";
 import EmptyLetter from "@/components/subPage/letters/EmptyLetter";
-import Loading from "@/components/loading/Loading";
+import Skeleton from "@/components/skeleton/Skeleton";
 
 interface Props {
   items: Letter[];
@@ -12,15 +12,13 @@ export default function MyYpsContents({ items, isLoading }: Props) {
   const hasItems = items.length > 0;
   const rotateArray = ["5deg", "-22deg", "15deg", "-14deg", "24deg", "-11deg"];
 
-  return (
-    <div className={styles.wrap}>
-      <div className={styles.inner}>
-        {isLoading ? (
-          <Loading type="letter" />
-        ) : (
-          <ul className={hasItems ? styles.list : styles.emptyList}>
-            {hasItems ? (
-              items.map((item, i) => (
+  function renderItems() {
+    return (
+      <ul className={hasItems ? styles.list : styles.emptyList}>
+        {hasItems ? (
+          <>
+            {items.map((item, i) => {
+              return (
                 <li className={styles.item} key={item.id}>
                   <div
                     className={styles.letterInner}
@@ -46,12 +44,20 @@ export default function MyYpsContents({ items, isLoading }: Props) {
                     </div>
                   </div>
                 </li>
-              ))
-            ) : (
-              <EmptyLetter />
-            )}
-          </ul>
+              );
+            })}
+          </>
+        ) : (
+          <EmptyLetter />
         )}
+      </ul>
+    );
+  }
+
+  return (
+    <div className={styles.wrap}>
+      <div className={styles.inner}>
+        {isLoading ? <Skeleton rotate={rotateArray} /> : renderItems()}
       </div>
     </div>
   );

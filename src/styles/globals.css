@@ -220,6 +220,8 @@ input {
 }
 
 :root {
+  --letter-empty-height: 530px; /* letter가 없을 때 EmptyLetter 컴포넌트에 적용되는 기본 높이값. 적용시 총 높이 650px */
+  --loading-grey: #ededed;
   --contents-side-padding: 0 16px;
   --mobile-navigation-height: 158px;
   --header-height: 100px;
