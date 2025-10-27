@@ -10,6 +10,11 @@
   max-width: 448px;
 }
 
+.stickyWrap {
+  position: sticky;
+  bottom: 20px;
+}
+
 .inner {
   cursor: default;
   z-index: 0;

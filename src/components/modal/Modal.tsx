@@ -217,7 +217,7 @@ export function Modal({
   }
 
   return (
-    <div className={styles.wrap}>
+    <div className={`${styles.wrap} ${modalStyles.stickyWrap}`}>
       <div className={`${styles.inner} ${modalStyles.inner}`}>
         {clickContentsCondition()}
       </div>

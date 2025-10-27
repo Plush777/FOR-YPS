@@ -78,9 +78,8 @@ export default function Page() {
       <Main background="gray">
         <SubPageLayout isVisual={false}>
           <MyYpsContents items={messages} isLoading={isLoading} />
+          <Modal useType="fixedButton" onSubmitMyYps={handleSubmitMessage} />
         </SubPageLayout>
-
-        <Modal useType="fixedButton" onSubmitMyYps={handleSubmitMessage} />
       </Main>
       <HeartCanvas hMin={360} hMax={360} bgColor="transparent" count={40} />
     </>
