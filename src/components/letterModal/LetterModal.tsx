@@ -3,8 +3,10 @@
 import React, { ReactNode } from "react";
 import styles from "@/components/letterModal/letterModal.module.css";
 import ModalClose from "@/components/svg/ModalClose";
+import DotMore from "@/components/svg/DotMore";
 
 interface Props {
+  width?: string;
   children: ReactNode;
   onClose: () => void;
   data: {
@@ -13,10 +15,23 @@ interface Props {
   };
 }
 
-export function LetterModal({ children, onClose, data }: Props) {
+export function LetterModal({
+  width = "default",
+  children,
+  onClose,
+  data,
+}: Props) {
+  function widthStyleCondition() {
+    if (width === "large") return styles.widthLarge;
+    if (width === "default") return styles.widthDefault;
+    if (width === "small") return styles.widthSmall;
+
+    return undefined;
+  }
+
   return (
     <div className={styles.overlay}>
-      <section className={styles.modal}>
+      <section className={`${styles.modal} ${widthStyleCondition()}`}>
         <header className={styles.modalHeader}>
           <div className={styles.modalHeaderButtonGroup}>
             <button className={styles.close} onClick={onClose}>
@@ -27,16 +42,14 @@ export function LetterModal({ children, onClose, data }: Props) {
 
         <div className={styles.modalBody}>
           <div className={styles.modalBodyColumn}>
-            {data.username && (
-              <strong className={styles.username}>
-                {data.username}&nbsp;님의 편지
-              </strong>
-            )}
-            <div className={styles.modalBodyInCard}>{children}</div>
-            <div className={styles.modalBodyBottom}>
-              {/* 왼쪽 아이템이 생겼을 때를 대비 */}
-              <div></div>
-              <span className={styles.modalBodyBottomDate}>
+            <div className={styles.modalBodyTop}>
+              {data.username && (
+                <strong className={styles.username}>
+                  {data.username}&nbsp;님의 편지
+                </strong>
+              )}
+
+              <span className={styles.modalDate}>
                 {new Date(data.created_at).toLocaleString("ko-KR", {
                   year: "numeric",
                   month: "2-digit",
@@ -44,6 +57,14 @@ export function LetterModal({ children, onClose, data }: Props) {
                 })}
               </span>
             </div>
+
+            <div className={styles.modalBodyButtons}>
+              <button type="button" className={styles.modalBodyButton}>
+                <DotMore />
+              </button>
+            </div>
+
+            {children}
           </div>
         </div>
       </section>

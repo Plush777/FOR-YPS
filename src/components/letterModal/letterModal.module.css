@@ -14,13 +14,24 @@
 
 .modal {
   width: 100%;
-  max-width: 920px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border-radius: 12px;
   background-color: var(--color-zinc-800);
+}
+
+.modal.widthLarge {
+  max-width: 1200px;
+}
+
+.modal.widthDefault {
+  max-width: 768px;
+}
+
+.modal.widthSmall {
+  max-width: 500px;
 }
 
 .modalHeader {
@@ -36,6 +47,7 @@
   display: flex;
   align-items: center;
   column-gap: 8px;
+  margin-left: auto;
 }
 
 .modalBody {
@@ -44,7 +56,7 @@
   flex-direction: column;
   border-radius: 8px;
   width: 100%;
-  padding: 30px 0;
+  padding: 30px 120px;
   overflow-y: auto;
   max-height: calc(100vh - 100px);
 }
@@ -52,12 +64,21 @@
 .modalBodyColumn {
   display: flex;
   flex-direction: column;
+  width: 100%;
+}
+
+.modalBodyTop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 12px;
+  margin-bottom: 20px;
 }
 
 .username {
   display: flex;
   justify-content: center;
-  margin-bottom: 32px;
+
   font-size: 24px;
   font-weight: 700;
   color: var(--color-gray-100);
@@ -77,14 +98,28 @@
   color: var(--color-white);
 }
 
-.modalBodyBottom {
+.modalBodyButtons {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-top: 16px;
+  justify-content: flex-end;
+  margin-bottom: 12px;
 }
 
-.modalBodyBottomDate {
+.modalBodyButton {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalBodyButton svg {
+  width: 100%;
+  height: 100%;
+  color: var(--color-zinc-400);
+}
+
+.modalDate {
   font-size: 14px;
   color: var(--color-gray-300);
 }
