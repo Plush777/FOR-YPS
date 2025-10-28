@@ -2,6 +2,8 @@ import type { Letter } from "@/types/letter";
 import styles from "@/components/subPage/layoutContents/myYpsContents.module.css";
 import EmptyLetter from "@/components/subPage/letters/EmptyLetter";
 import Skeleton from "@/components/skeleton/Skeleton";
+import { Link } from "@/i18n/routing";
+import LetterCard from "@/components/letterCard/LetterCard";
 
 interface Props {
   items: Letter[];
@@ -19,30 +21,17 @@ export default function MyYpsContents({ items, isLoading }: Props) {
           <>
             {items.map((item, i) => {
               return (
-                <li className={styles.item} key={item.id}>
-                  <div
-                    className={styles.letterInner}
-                    style={{
-                      transform: `rotate(${
-                        rotateArray[i % rotateArray.length]
-                      })`,
-                    }}
-                  >
-                    <p className={styles.text}>{item.content}</p>
-
-                    <div className={styles.metaArea}>
-                      <span className={`${styles.username} ${styles.metaText}`}>
-                        By {item.username}
-                      </span>
-                      <span className={`${styles.date} ${styles.metaText}`}>
-                        {new Date(item.created_at).toLocaleString("ko-KR", {
-                          year: "numeric",
-                          month: "2-digit",
-                          day: "2-digit",
-                        })}
-                      </span>
-                    </div>
-                  </div>
+                <li key={item.id}>
+                  <Link href={`/my-yps/detail/${item.id}`}>
+                    <LetterCard
+                      style={{
+                        transform: `rotate(${
+                          rotateArray[i % rotateArray.length]
+                        })`,
+                      }}
+                      item={item}
+                    />
+                  </Link>
                 </li>
               );
             })}

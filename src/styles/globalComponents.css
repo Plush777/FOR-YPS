@@ -794,7 +794,7 @@
 }
 
 .header.default {
-  position: static;
+  position: relative;
   background-color: var(--color-zinc-800);
 }
 

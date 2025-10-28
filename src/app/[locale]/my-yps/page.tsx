@@ -1,20 +1,18 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-
-import Header from "@/components/header/Header";
-import Main from "@/components/main/Main";
+import { usePathname } from "next/navigation"; // ✅ 현재 경로 확인용
 
 import HeartCanvas from "@/components/canvas/HeartCanvas";
 import { Modal } from "@/components/modal/Modal";
-import SubPageLayout from "@/components/subPage/layout/SubPageLayout";
-import MyYpsContents from "@/components/subPage/layoutContents/MyYpsContents";
-
 import { supabase } from "@/lib/supabaseClient";
 
 import type { Letter } from "@/types/letter";
 
 export default function Page() {
+  const pathname = usePathname(); // ✅ ex) "/ko/my-yps" or "/ko/my-yps/detail/7"
+  const isListPage = pathname.endsWith("/my-yps"); // ✅ 리스트 페이지 여부 감지
+
   const [messages, setMessages] = useState<Letter[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -34,9 +32,10 @@ export default function Page() {
     setIsLoading(false);
   }, []);
 
+  // ✅ 리스트 페이지일 때만 메시지 불러오기
   useEffect(() => {
-    fetchMessages();
-  }, [fetchMessages]);
+    if (isListPage) fetchMessages();
+  }, [fetchMessages, isListPage]);
 
   // ✅ 메시지 등록
   const handleSubmitMessage = useCallback(
@@ -50,11 +49,9 @@ export default function Page() {
         return;
       }
 
-      // ✅ 유저 이름 계산
       const username =
         user.user_metadata?.name || user.email?.split("@")[0] || "익명";
 
-      // ✅ DB 저장 시 username 추가
       const { error } = await supabase.from("letters").insert({
         user_id: user.id,
         username,
@@ -67,21 +64,21 @@ export default function Page() {
         return;
       }
 
-      await fetchMessages();
+      // ✅ 리스트일 때만 새로고침
+      if (isListPage) await fetchMessages();
     },
-    [fetchMessages]
+    [fetchMessages, isListPage]
   );
 
   return (
     <>
-      <Header name="default" />
-      <Main background="gray">
-        <SubPageLayout isVisual={false}>
-          <MyYpsContents items={messages} isLoading={isLoading} />
+      {/* ✅ 리스트 페이지일 때만 카드 작성 Modal 버튼 노출 */}
+      {isListPage && (
+        <>
           <Modal useType="fixedButton" onSubmitMyYps={handleSubmitMessage} />
-        </SubPageLayout>
-      </Main>
-      <HeartCanvas hMin={360} hMax={360} bgColor="transparent" count={40} />
+          <HeartCanvas hMin={360} hMax={360} bgColor="transparent" count={40} />
+        </>
+      )}
     </>
   );
 }

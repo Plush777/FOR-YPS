@@ -6,7 +6,7 @@ import { ReactNode } from "react";
 
 interface Props {
   onClose: () => void;
-  title: string;
+  title?: string;
   children: ReactNode;
 }
 

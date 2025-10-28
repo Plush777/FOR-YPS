@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 
 import styles from "@/components/nurui/video-modal/video-modal.module.css";
@@ -28,6 +28,7 @@ type AnimationStyle =
 interface HeroVideoProps {
   animationStyle?: AnimationStyle;
   useType: string;
+  children?: ReactNode;
   onSubmitMyYps?: (message: string) => Promise<void> | void;
 }
 
@@ -78,6 +79,7 @@ export function Modal({
   animationStyle = "from-center",
   useType,
   onSubmitMyYps,
+  children,
 }: HeroVideoProps) {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   const [isAuthLoading, setIsAuthLoading] = useState(useType === "fixedButton");
@@ -193,6 +195,7 @@ export function Modal({
           />
         </ModalContentsLayout>
       );
+
     if (useType === "auth")
       return (
         <ModalContentsLayout
@@ -214,6 +217,14 @@ export function Modal({
           />
         </ModalContentsLayout>
       );
+
+    if (useType === "myypsDetail") {
+      <ModalContentsLayout onClose={() => setIsVideoOpen(false)}>
+        {children}
+      </ModalContentsLayout>;
+    }
+
+    return undefined;
   }
 
   return (
