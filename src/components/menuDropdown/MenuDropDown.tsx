@@ -5,6 +5,7 @@ import { Link } from "@/i18n/routing";
 import { useEffect, useRef } from "react";
 import Edit from "../svg/Edit";
 import Delete from "@/components/svg/Delete";
+import Siren from "@/components/svg/Siren";
 
 interface MenuDropDownProps {
   items: string[];
@@ -60,11 +61,14 @@ export default function MenuDropDown({
           <button
             type="button"
             role="menuitem"
-            className={styles.menuItemButton}
+            className={`${styles.menuItemButton} ${
+              index === 2 ? "text-red" : ""
+            }`}
             onClick={() => onSelect?.(label, index)}
           >
             {index === 0 && <Edit />}
             {index === 1 && <Delete />}
+            {index === 2 && <Siren />}
             {label}
           </button>
         </>

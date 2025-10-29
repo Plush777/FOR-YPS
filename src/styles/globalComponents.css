@@ -807,6 +807,10 @@
   pointer-events: none;
 }
 
+.text-red {
+  color: var(--color-red-500) !important;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
