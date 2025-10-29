@@ -4,12 +4,38 @@
   left: 0;
 }
 
+.letterModalMenu {
+  left: auto;
+  top: 35px;
+  right: 0;
+  z-index: 1000;
+  border-radius: 8px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+  background-color: var(--color-white);
+}
+
+.letterModalMenu .menuItem {
+  height: 36px;
+}
+
+.letterModalMenu .menuItemButton {
+  font-size: 14px;
+}
+
 .menuItem {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 48px;
   background-color: var(--color-white);
+}
+
+.menuItem:first-child {
+  border-radius: 8px 8px 0 0;
+}
+
+.menuItem:last-child {
+  border-radius: 0 0 8px 8px;
 }
 
 .link {
@@ -24,11 +50,17 @@
 .menuItemButton {
   display: flex;
   align-items: center;
-  justify-content: center;
+  column-gap: 6px;
   height: 100%;
   padding: 0 12px;
   white-space: nowrap;
   font-size: 16px;
+  color: var(--color-gray-700);
+}
+
+.menuItemButton svg {
+  width: 16px;
+  height: 16px;
 }
 
 @media (hover: hover) {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import styles from "@/components/profile/profile.module.css";
 import MenuDropDown from "@/components/menuDropdown/MenuDropDown";
 import { useTranslations } from "next-intl";
@@ -25,10 +25,13 @@ export default function Profile({ userData }: Props) {
     setOpen(false);
   }
 
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
   return (
     <div className={styles.wrap}>
       <button
         type="button"
+        ref={buttonRef}
         className={styles.userInfo}
         onClick={() => setOpen((v) => !v)}
       >
@@ -47,9 +50,11 @@ export default function Profile({ userData }: Props) {
 
       {open && (
         <MenuDropDown
+          useType="profile"
           items={menus}
           onSelect={(label) => handleSelect(label)}
           onClose={() => setOpen(false)}
+          triggerRef={buttonRef}
         />
       )}
     </div>
