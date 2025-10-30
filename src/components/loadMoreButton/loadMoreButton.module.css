@@ -1,0 +1,74 @@
+.loadMoreWrap {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.loadMoreButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 2px;
+  padding: 0 16px;
+  height: 36px;
+  font-size: 14px;
+  border-radius: 9999px;
+  color: var(--color-zinc-100);
+  background-color: var(--color-zinc-800);
+}
+
+.loadMoreButton svg {
+  width: 20px;
+  height: 20px;
+  color: var(--color-white);
+}
+
+.loadMoreButton::before,
+.loadMoreButton::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: calc(100% - 510px);
+  height: 1px;
+  background-color: var(--color-zinc-600);
+}
+
+.loadMoreButton::before {
+  left: 0;
+}
+
+.loadMoreButton::after {
+  right: 0;
+}
+
+.loadMoreEndText {
+  font-size: 16px;
+  color: var(--color-black);
+}
+
+.loadMoreEndText::after {
+  width: fit-content;
+}
+
+.loadMoreEndText::before,
+.loadMoreEndText::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: calc(100% - 560px);
+  height: 1px;
+  background-color: var(--color-zinc-600);
+}
+
+.loadMoreEndText::before {
+  left: 0;
+}
+
+.loadMoreEndText::after {
+  right: 0;
+}

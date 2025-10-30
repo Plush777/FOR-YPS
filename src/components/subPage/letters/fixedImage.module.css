@@ -1,0 +1,17 @@
+.fixedImage {
+  position: fixed;
+  bottom: -70px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  transition: 0.6s ease-in-out;
+}
+
+.fixedImage img {
+  width: 520px;
+  height: 457px;
+}
+
+.hide {
+  transform: translateX(-50%) translateY(410px);
+}

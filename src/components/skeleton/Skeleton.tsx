@@ -5,7 +5,7 @@ interface Props {
   rotate?: string[];
 }
 
-export default function Skeleton({ length = 6, rotate = [] }: Props) {
+export default function Skeleton({ length = 9, rotate = [] }: Props) {
   return (
     <ul className={styles.list}>
       {Array.from({ length }).map((_, i) => (

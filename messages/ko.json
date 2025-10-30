@@ -239,7 +239,12 @@
     },
     "myYps": {
       "letter": {
-        "emptyText": "이런, 아직 마음을 전한 사람이 아무도 없네요. <br></br>가장 먼저 마음을 전해보세요!"
+        "emptyText": "이런, 아직 마음을 전한 사람이 아무도 없네요. <br></br>가장 먼저 마음을 전해보세요!",
+        "state": {
+          "loadText": "불러오는 중",
+          "defaultText": "더보기",
+          "loadEndText": "모든 편지를 불러왔습니다 🎉"
+        }
       },
       "letterPopup": {
         "title": "편지쓰기",
