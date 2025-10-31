@@ -8,6 +8,8 @@ import ModalClose from "@/components/svg/ModalClose";
 import DotMore from "@/components/svg/DotMore";
 import MenuDropDown from "@/components/menuDropdown/MenuDropDown";
 import Share from "@/components/svg/Share";
+import DetailTop from "@/components/subPage/detail/DetailTop";
+import DetailButtons from "@/components/subPage/detail/DetailButtons";
 
 interface Props {
   width?: string;
@@ -38,10 +40,7 @@ export function LetterModal({
     return undefined;
   }
 
-  async function handleSelect(label: string) {
-    // if (label === logoutLabel) {
-    //   await logout();
-    // }
+  function handleSelect() {
     setOpen(false);
   }
 
@@ -58,45 +57,17 @@ export function LetterModal({
 
         <div className={styles.modalBody}>
           <div className={styles.modalBodyColumn}>
-            <div className={styles.modalBodyTop}>
-              {data.username && (
-                <strong className={styles.username}>
-                  {data.username}&nbsp;님의 편지
-                </strong>
-              )}
+            <DetailTop data={data} useType="modal" />
 
-              <span className={styles.modalDate}>
-                {new Date(data.created_at).toLocaleString("ko-KR", {
-                  year: "numeric",
-                  month: "2-digit",
-                  day: "2-digit",
-                })}
-              </span>
-            </div>
-
-            <div className={styles.modalBodyButtons}>
-              <button type="button" className={styles.modalBodyButton}>
-                <Share />
-              </button>
-              <button
-                type="button"
-                ref={buttonRef}
-                onClick={() => setOpen((v) => !v)}
-                className={styles.modalBodyButton}
-              >
-                <DotMore />
-              </button>
-
-              {open && (
-                <MenuDropDown
-                  useType="letterModal"
-                  items={menus}
-                  onSelect={(label) => handleSelect(label)}
-                  onClose={() => setOpen(false)}
-                  triggerRef={buttonRef}
-                />
-              )}
-            </div>
+            <DetailButtons
+              useType="modal"
+              dropdownMenus={menus}
+              buttonRef={buttonRef}
+              onDropdownToogle={() => setOpen((v) => !v)}
+              openState={open}
+              onClose={() => setOpen(false)}
+              onSelect={handleSelect}
+            />
 
             <div
               className={`${styles.whiteDimmed} ${open ? styles.active : ""}`}

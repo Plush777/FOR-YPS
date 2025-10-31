@@ -2,19 +2,18 @@ import Header from "@/components/header/Header";
 import Main from "@/components/main/Main";
 import SubInner from "@/components/subPage/layout/SubInner";
 import SubPageLayout from "@/components/subPage/layout/SubPageLayout";
-import MyYpsContentsClient from "@/components/subPage/layoutContents/MyYpsContentsClient";
 
-export default function ListLayout({ children, modal }: any) {
+export default function DetailLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <>
       <Header name="default" />
       <Main background="gray">
         <SubPageLayout isVisual={false}>
-          <SubInner>
-            <MyYpsContentsClient initialMessages={[]} />
-            {children}
-            {modal}
-          </SubInner>
+          <SubInner width="large">{children}</SubInner>
         </SubPageLayout>
       </Main>
     </>

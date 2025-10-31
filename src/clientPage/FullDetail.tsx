@@ -1,36 +1,45 @@
 "use client";
 
-import { useRouter } from "@/i18n/routing";
+import { useState, useRef } from "react";
+
+import { useTranslations } from "next-intl";
 import HeartCanvas from "@/components/canvas/HeartCanvas";
 import LetterCard from "@/components/letterCard/LetterCard";
+import DetailTop from "@/components/subPage/detail/DetailTop";
+import DetailButtons from "@/components/subPage/detail/DetailButtons";
+import SubTop from "@/components/subPage/contents/SubTop";
 
 export default function FullDetail({ letter }: any) {
-  const router = useRouter();
+  const [open, setOpen] = useState(false);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const tModalMenu = useTranslations("auth.modalMenuDropdown");
+  const menus = (tModalMenu.raw("menus") as string[]) || [];
+
+  function handleSelect() {
+    setOpen(false);
+  }
 
   return (
-    <div>
-      {/* 배경 하트 애니메이션 */}
+    <>
       <HeartCanvas hMin={360} hMax={360} bgColor="transparent" count={40} />
 
-      {/* 뒤로가기 */}
-      <button onClick={() => router.back()}>← 돌아가기</button>
+      <SubTop
+        rightComponent={
+          <DetailButtons
+            useType="detail"
+            dropdownMenus={menus}
+            buttonRef={buttonRef}
+            onDropdownToogle={() => setOpen((v) => !v)}
+            openState={open}
+            onClose={() => setOpen(false)}
+            onSelect={handleSelect}
+          />
+        }
+      />
 
-      {/* 본문 */}
-      <div>
-        <LetterCard isEllipsis={false} item={letter} />
-      </div>
+      <DetailTop data={letter} useType="detail" />
 
-      {/* 메타 정보 */}
-      <div>
-        <span>By {letter.username}</span>
-        <span>
-          {new Date(letter.created_at).toLocaleString("ko-KR", {
-            year: "numeric",
-            month: "2-digit",
-            day: "2-digit",
-          })}
-        </span>
-      </div>
-    </div>
+      <LetterCard isEllipsis={false} item={letter} />
+    </>
   );
 }
