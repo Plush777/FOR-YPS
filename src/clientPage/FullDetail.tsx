@@ -8,6 +8,7 @@ import LetterCard from "@/components/letterCard/LetterCard";
 import DetailTop from "@/components/subPage/detail/DetailTop";
 import DetailButtons from "@/components/subPage/detail/DetailButtons";
 import SubTop from "@/components/subPage/contents/SubTop";
+import styles from "@/app/[locale]/my-yps/detail/[id]/fullDetail.module.css";
 
 export default function FullDetail({ letter }: any) {
   const [open, setOpen] = useState(false);
@@ -37,9 +38,10 @@ export default function FullDetail({ letter }: any) {
         }
       />
 
-      <DetailTop data={letter} useType="detail" />
-
-      <LetterCard useType="detail" isEllipsis={false} item={letter} />
+      <div className={styles.subContentsWrapper}>
+        <DetailTop data={letter} useType="detail" />
+        <LetterCard useType="detail" isEllipsis={false} item={letter} />
+      </div>
     </>
   );
 }

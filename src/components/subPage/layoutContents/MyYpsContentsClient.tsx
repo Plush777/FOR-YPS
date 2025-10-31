@@ -4,6 +4,8 @@ import { useEffect, useState, useCallback } from "react";
 import { supabase } from "@/lib/supabaseClient";
 import type { Letter } from "@/types/letter";
 import MyYpsContents from "./MyYpsContents";
+import { toast } from "react-toastify";
+import { useTranslations } from "next-intl";
 
 const PAGE_SIZE = 50;
 
@@ -12,17 +14,14 @@ export default function MyYpsContentsClient({
 }: {
   initialMessages: Letter[];
 }) {
+  const t = useTranslations("toast");
+
   const [messages, setMessages] = useState<Letter[]>(initialMessages);
   const [page, setPage] = useState(0);
-
-  // ✅ 로딩 상태 분리: 초기 로딩 vs 더보기 로딩
   const [isInitialLoading, setIsInitialLoading] = useState(
     initialMessages.length === 0
   );
-
   const [isLoadMoreLoading, setIsLoadMoreLoading] = useState(false);
-
-  // ✅ “모든 메시지 로드 완료” 문구는 ‘클릭했는데 더 이상 없을 때’만 보여줌
   const [showAllLoadedNotice, setShowAllLoadedNotice] = useState(false);
 
   const fetchPage = useCallback(async (pageIndex: number) => {
@@ -37,12 +36,14 @@ export default function MyYpsContentsClient({
 
     if (error) {
       console.error("❌ 메시지 불러오기 실패:", error);
+      toast.error("메시지를 불러오지 못했습니다.");
       return [];
     }
+
     return data ?? [];
   }, []);
 
-  // ✅ 초기 로딩: 스켈레톤만, 버튼은 “더보기”로 유지
+  // ✅ 초기 로딩
   useEffect(() => {
     (async () => {
       setIsInitialLoading(true);
@@ -50,34 +51,16 @@ export default function MyYpsContentsClient({
       setMessages(first);
       setIsInitialLoading(false);
       setPage(0);
-      setShowAllLoadedNotice(false); // 초기 진입 시 안내문은 감추기
+      setShowAllLoadedNotice(false);
     })();
   }, [fetchPage]);
 
-  // ✅ Realtime (INSERT만 반영: 상단 prepend)
-  useEffect(() => {
-    const channel = supabase
-      .channel("letters-realtime")
-      .on(
-        "postgres_changes",
-        { event: "INSERT", schema: "public", table: "letters" },
-        (payload) => {
-          const newMessage = payload.new as Letter;
-          setMessages((prev) => [newMessage, ...prev]);
-        }
-      )
-      .subscribe();
-
-    return () => {
-      supabase.removeChannel(channel);
-    };
-  }, []);
-
-  // ✅ “더보기” 클릭: 이때만 로딩 문구로 바뀌고, 결과 0개면 안내문 노출
-  const handleLoadMore = async () => {
+  // ✅ Load More 핸들러
+  const handleLoadMore = useCallback(async () => {
     if (isLoadMoreLoading) return;
+
     setIsLoadMoreLoading(true);
-    setShowAllLoadedNotice(false); // 새로운 클릭 시 기존 안내문 감추기(선택)
+    setShowAllLoadedNotice(false);
 
     const nextPage = page + 1;
     const next = await fetchPage(nextPage);
@@ -86,12 +69,71 @@ export default function MyYpsContentsClient({
       setMessages((prev) => [...prev, ...next]);
       setPage(nextPage);
     } else {
-      // ✅ 클릭했는데 더 가져올 데이터가 없을 때만 안내문 표시
       setShowAllLoadedNotice(true);
     }
 
     setIsLoadMoreLoading(false);
-  };
+  }, [isLoadMoreLoading, page, fetchPage]);
+
+  // ✅ 유저가 글 쓰기 버튼으로 입력한 값 반영 + Toast
+  useEffect(() => {
+    const handler = async (e: any) => {
+      const content = e.detail;
+
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+      if (!user) return;
+
+      const username =
+        user.user_metadata?.name || user.email?.split("@")[0] || "익명";
+
+      const { data, error } = await supabase
+        .from("letters")
+        .insert({ user_id: user.id, username, content })
+        .select()
+        .single();
+
+      if (error) {
+        console.error(error);
+        toast.error(t("error"));
+        return;
+      }
+
+      toast.success(t("success"));
+
+      setMessages((prev) => {
+        if (prev.find((m) => m.id === data.id)) return prev;
+        return [data, ...prev];
+      });
+    };
+
+    window.addEventListener("yps-add-message", handler);
+    return () => window.removeEventListener("yps-add-message", handler);
+  }, []);
+
+  // ✅ Realtime (중복 방지 포함)
+  useEffect(() => {
+    const channel = supabase
+      .channel("letters-realtime")
+      .on(
+        "postgres_changes",
+        { event: "INSERT", schema: "public", table: "letters" },
+        (payload) => {
+          const newMessage = payload.new as Letter;
+
+          setMessages((prev) => {
+            if (prev.find((m) => m.id === newMessage.id)) return prev;
+            return [newMessage, ...prev];
+          });
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, []);
 
   return (
     <MyYpsContents

@@ -3,13 +3,13 @@
 }
 
 .w1600 {
-  max-width: 1600px;
+  max-width: var(--sub-inner-max-width1);
 }
 
 .w968 {
-  max-width: 968px;
+  max-width: var(--sub-inner-max-width2);
 }
 
 .w768 {
-  max-width: 768px;
+  max-width: var(--sub-inner-max-width3);
 }

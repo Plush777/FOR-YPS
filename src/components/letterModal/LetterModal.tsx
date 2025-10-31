@@ -5,9 +5,6 @@ import { useTranslations } from "next-intl";
 
 import styles from "@/components/letterModal/letterModal.module.css";
 import ModalClose from "@/components/svg/ModalClose";
-import DotMore from "@/components/svg/DotMore";
-import MenuDropDown from "@/components/menuDropdown/MenuDropDown";
-import Share from "@/components/svg/Share";
 import DetailTop from "@/components/subPage/detail/DetailTop";
 import DetailButtons from "@/components/subPage/detail/DetailButtons";
 
@@ -19,6 +16,10 @@ interface Props {
     username: string;
     created_at: string;
   };
+  currentUser?: {
+    avatar_url?: string;
+    name?: string;
+  };
 }
 
 export function LetterModal({
@@ -26,6 +27,7 @@ export function LetterModal({
   children,
   onClose,
   data,
+  currentUser,
 }: Props) {
   const [open, setOpen] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -57,7 +59,7 @@ export function LetterModal({
 
         <div className={styles.modalBody}>
           <div className={styles.modalBodyColumn}>
-            <DetailTop data={data} useType="modal" />
+            <DetailTop data={data} useType="modal" currentUser={currentUser} />
 
             <DetailButtons
               useType="modal"

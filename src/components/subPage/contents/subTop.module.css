@@ -1,6 +1,9 @@
 .subTop {
-  margin-top: 20px;
+  position: sticky;
+  top: 20px;
+  z-index: 100;
   margin-bottom: 40px;
+  padding: var(--contents-side-padding);
   display: flex;
   align-items: center;
 }
@@ -12,7 +15,7 @@
   width: 40px;
   height: 40px;
   border: 2px solid var(--color-white);
-  background-color: var(--color-zinc-800);
+  background-color: var(--color-zinc-700);
 }
 
 .subTopButton svg {

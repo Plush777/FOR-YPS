@@ -271,5 +271,9 @@
     "modalMenuDropdown": {
       "menus": ["수정", "삭제", "신고하기"]
     }
+  },
+  "toast": {
+    "success": "편지가 등록되었어요! 🎉",
+    "error": "편지를 등록하지 못했어요 😢"
   }
 }

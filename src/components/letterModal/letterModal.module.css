@@ -67,7 +67,7 @@
   width: 100%;
 }
 
-.modalBodyTop {
+.bodyTop {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -78,8 +78,6 @@
 .username {
   display: flex;
   justify-content: center;
-
-  font-size: 24px;
   font-weight: 700;
   color: var(--color-gray-100);
 }
@@ -121,8 +119,7 @@
   color: var(--color-zinc-400);
 }
 
-.modalDate {
-  font-size: 14px;
+.date {
   color: var(--color-gray-300);
 }
 
@@ -147,4 +144,40 @@
 .whiteDimmed.active::before {
   opacity: 1;
   visibility: visible;
+}
+
+.bodyTop.modal .username {
+  font-size: 24px;
+}
+
+.bodyTop.detail .username {
+  font-size: 32px;
+}
+
+.bodyTop.modal .date {
+  font-size: 14px;
+}
+
+.bodyTop.detail .date {
+  font-size: 18px;
+}
+
+.img {
+  border-radius: 50%;
+}
+
+.bodyTop.modal .img {
+  width: 36px;
+  height: 36px;
+}
+
+.bodyTop.detail .img {
+  width: 48px;
+  height: 48px;
+}
+
+.titleArea {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
 }

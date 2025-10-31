@@ -1,51 +1,44 @@
-import detailTopStyles from "@/components/subPage/detail/detailTop.module.css";
 import letterModalStyles from "@/components/letterModal/letterModal.module.css";
+
 interface Props {
   data: {
     username: string;
     created_at: string;
   };
   useType: string;
+  currentUser?: {
+    avatar_url?: string;
+    name?: string;
+  };
 }
 
-export default function DetailTop({ data, useType }: Props) {
+export default function DetailTop({ data, useType, currentUser }: Props) {
   function useTypeStyleCondition() {
-    if (useType === "modal") {
-      return {
-        top: {
-          modalBodyTop: letterModalStyles.modalBodyTop,
-          username: letterModalStyles.username,
-        },
-        date: {
-          modalDate: letterModalStyles.modalDate,
-        },
-      };
-    }
+    if (useType === "modal") return letterModalStyles.modal;
+    if (useType === "detail") return letterModalStyles.detail;
 
-    if (useType === "detail") {
-      return {
-        top: {
-          modalBodyTop: `${letterModalStyles.modalBodyTop} ${detailTopStyles.modalBodyTop}`,
-          username: `${letterModalStyles.username} ${detailTopStyles.username}`,
-        },
-        date: {
-          modalDate: `${letterModalStyles.modalDate} ${detailTopStyles.modalDate}`,
-        },
-      };
-    }
+    return "";
   }
 
-  const useTypeStyles = useTypeStyleCondition();
-
   return (
-    <div className={useTypeStyles?.top.modalBodyTop}>
-      {data.username && (
-        <strong className={useTypeStyles?.top.username}>
-          {data.username}&nbsp;님의 편지
-        </strong>
-      )}
+    <div className={`${letterModalStyles.bodyTop} ${useTypeStyleCondition()}`}>
+      <div className={letterModalStyles.titleArea}>
+        {currentUser?.avatar_url && (
+          <img
+            className={letterModalStyles.img}
+            src={currentUser.avatar_url}
+            alt="Profile"
+          />
+        )}
 
-      <span className={useTypeStyles?.date.modalDate}>
+        {data.username && (
+          <strong className={letterModalStyles.username}>
+            {data.username}&nbsp;님의 편지
+          </strong>
+        )}
+      </div>
+
+      <span className={letterModalStyles.date}>
         {new Date(data.created_at).toLocaleString("ko-KR", {
           year: "numeric",
           month: "2-digit",

@@ -5,11 +5,13 @@ import { routing } from "@/i18n/routing";
 import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import MoneyCursor from "@/components/nurui/money-cursor/money-cursor";
+import { ToastContainer } from "react-toastify";
 
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "../../styles/globals.css";
+import "react-toastify/dist/ReactToastify.css";
 import "../../styles/globalComponents.css";
 
 import Footer from "@/components/footer/Footer";
@@ -79,6 +81,7 @@ export default async function RootLayout({
             {children}
             <Footer />
           </div>
+          <ToastContainer position="top-center" autoClose={2000} />
           <MoneyCursor />
           <div id="portal" />
         </NextIntlClientProvider>

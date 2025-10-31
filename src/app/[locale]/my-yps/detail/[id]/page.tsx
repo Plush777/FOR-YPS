@@ -4,12 +4,14 @@ import FullDetail from "@/clientPage/FullDetail";
 export default async function DetailPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
+  const { id } = await params;
+
   const { data: letter } = await supabase
     .from("letters")
     .select("id, username, content, created_at")
-    .eq("id", params.id)
+    .eq("id", id)
     .single();
 
   if (!letter) {

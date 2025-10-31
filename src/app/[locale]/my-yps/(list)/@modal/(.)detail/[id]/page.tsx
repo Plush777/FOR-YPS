@@ -11,23 +11,44 @@ export default function LetterModalPage() {
   const router = useRouter();
   const params = useParams(); // ✅ 클라이언트 훅 → await 불필요
   const [letter, setLetter] = useState<any>(null);
+  const [currentUser, setCurrentUser] = useState<any>(null);
 
   useEffect(() => {
     const fetchLetter = async () => {
       const { data, error } = await supabase
         .from("letters")
         .select("id, username, content, created_at")
-        .eq("id", params.id) // ✅ 바로 사용 가능
+        .eq("id", params.id)
         .single();
+
       if (!error && data) setLetter(data);
     };
+
+    const fetchUser = async () => {
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+
+      if (user) {
+        setCurrentUser({
+          avatar_url: user.user_metadata.avatar_url,
+          name: user.user_metadata.name,
+        });
+      }
+    };
+
+    fetchUser();
     fetchLetter();
   }, [params.id]);
 
   if (!letter) return null;
 
   return (
-    <LetterModal data={letter} onClose={() => router.back()}>
+    <LetterModal
+      currentUser={currentUser}
+      data={letter}
+      onClose={() => router.back()}
+    >
       <LetterCard useType="modal" isEllipsis={false} item={letter} />
     </LetterModal>
   );
