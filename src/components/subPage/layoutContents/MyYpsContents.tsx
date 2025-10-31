@@ -47,6 +47,7 @@ export default function MyYpsContents({
                   <li key={item.id}>
                     <Link href={`/my-yps/detail/${item.id}`}>
                       <LetterCard
+                        useType="cardList"
                         style={{
                           transform: `rotate(${
                             rotateArray[i % rotateArray.length]

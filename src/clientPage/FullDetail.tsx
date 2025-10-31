@@ -39,7 +39,7 @@ export default function FullDetail({ letter }: any) {
 
       <DetailTop data={letter} useType="detail" />
 
-      <LetterCard isEllipsis={false} item={letter} />
+      <LetterCard useType="detail" isEllipsis={false} item={letter} />
     </>
   );
 }

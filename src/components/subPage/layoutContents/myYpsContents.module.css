@@ -62,8 +62,6 @@
 
 .item.hasEllipsis .letterInner {
   overflow-y: visible;
-  width: var(--letter-size);
-  height: var(--letter-size);
 }
 
 .item.hasEllipsis .text {
@@ -119,4 +117,19 @@
 .metaText {
   font-size: 14px;
   color: var(--color-gray-500);
+}
+
+.detailSize {
+  max-width: 300px;
+  height: 300px;
+}
+
+.cardListSize {
+  width: var(--letter-size);
+  height: var(--letter-size);
+}
+
+.modalSize {
+  width: 100%;
+  height: 300px;
 }

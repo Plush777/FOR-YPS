@@ -28,7 +28,7 @@ export default function LetterModalPage() {
 
   return (
     <LetterModal data={letter} onClose={() => router.back()}>
-      <LetterCard isEllipsis={false} item={letter} />
+      <LetterCard useType="modal" isEllipsis={false} item={letter} />
     </LetterModal>
   );
 }
