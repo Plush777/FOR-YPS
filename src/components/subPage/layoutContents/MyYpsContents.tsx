@@ -45,7 +45,7 @@ export default function MyYpsContents({
               <ul className={styles.list}>
                 {items.map((item, i) => (
                   <li key={item.id}>
-                    <Link href={`/my-yps/detail/${item.id}`}>
+                    <Link scroll={false} href={`/my-yps/detail/${item.id}`}>
                       <LetterCard
                         useType="cardList"
                         style={{

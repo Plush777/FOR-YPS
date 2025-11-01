@@ -1,11 +1,10 @@
-import letterModalStyles from "@/components/letterModal/letterModal.module.css";
+import styles from "@/components/letterModal/letterModal.module.css";
 import Share from "@/components/svg/Share";
 import DotMore from "@/components/svg/DotMore";
 import MenuDropDown from "@/components/menuDropdown/MenuDropDown";
-import subTopStyles from "@/components/subPage/contents/subTop.module.css";
 
 interface Props {
-  useType: string;
+  useType: "modal" | "detail";
   onDropdownToogle: () => void;
   onSelect: () => void;
   onClose: () => void;
@@ -24,37 +23,27 @@ export default function DetailButtons({
   openState,
 }: Props) {
   function useTypeStyleCondition() {
-    if (useType === "modal") {
-      return {
-        buttons: {
-          wrap: letterModalStyles.modalBodyButtons,
-          button: letterModalStyles.modalBodyButton,
-        },
-      };
-    }
+    if (useType === "modal") return styles.modalType;
+    if (useType === "detail") return styles.detailType;
 
-    if (useType === "detail") {
-      return {
-        buttons: {
-          wrap: `${letterModalStyles.modalBodyButtons}`,
-          button: `${subTopStyles.subTopButton}`,
-        },
-      };
-    }
+    return "";
   }
 
-  const useTypeStyles = useTypeStyleCondition();
-
   return (
-    <div className={useTypeStyles?.buttons.wrap}>
-      <button type="button" className={useTypeStyles?.buttons.button}>
+    <div
+      className={`
+        ${styles.modalBodyButtons} 
+        ${useTypeStyleCondition()}
+      `}
+    >
+      <button type="button" className={styles.modalBodyButton}>
         <Share />
       </button>
       <button
         type="button"
         ref={buttonRef}
         onClick={onDropdownToogle}
-        className={useTypeStyles?.buttons.button}
+        className={styles.modalBodyButton}
       >
         <DotMore />
       </button>

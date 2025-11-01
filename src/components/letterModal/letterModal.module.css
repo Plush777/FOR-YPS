@@ -146,19 +146,19 @@
   visibility: visible;
 }
 
-.bodyTop.modal .username {
+.bodyTop.modalType .username {
   font-size: 24px;
 }
 
-.bodyTop.detail .username {
+.bodyTop.detailType .username {
   font-size: 32px;
 }
 
-.bodyTop.modal .date {
+.bodyTop.modalType .date {
   font-size: 14px;
 }
 
-.bodyTop.detail .date {
+.bodyTop.detailType .date {
   font-size: 18px;
 }
 
@@ -166,12 +166,12 @@
   border-radius: 50%;
 }
 
-.bodyTop.modal .img {
+.bodyTop.modalType .img {
   width: 36px;
   height: 36px;
 }
 
-.bodyTop.detail .img {
+.bodyTop.detailType .img {
   width: 48px;
   height: 48px;
 }
@@ -180,4 +180,11 @@
   display: flex;
   align-items: center;
   column-gap: 16px;
+}
+
+.modalBodyButtons.detailType .modalBodyButton {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--color-white);
+  background-color: var(--color-zinc-700);
 }

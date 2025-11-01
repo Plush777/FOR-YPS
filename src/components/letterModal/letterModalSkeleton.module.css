@@ -1,0 +1,77 @@
+.bodyTop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 12px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.bodyTopTitleArea {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+}
+
+.bodyTopImg {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--color-zinc-700);
+}
+
+.bodyTopUsername {
+  min-width: 200px;
+  height: 29px;
+  border-radius: 8px;
+  background-color: var(--color-zinc-700);
+}
+
+.bodyTopDate {
+  min-width: 80px;
+  height: 16px;
+  border-radius: 4px;
+  background-color: var(--color-zinc-700);
+}
+
+.contentItem {
+  display: flex;
+  justify-content: center;
+}
+
+.contentLetterInner {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  padding: 16px;
+  width: 100%;
+  height: 300px;
+  border-radius: 8px;
+  background-color: var(--color-zinc-700);
+}
+
+.contentText {
+  width: 100%;
+  height: 21px;
+  border-radius: 4px;
+  background-color: var(--color-zinc-600);
+}
+
+.buttonsWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+  column-gap: 12px;
+}
+
+.buttonsWrapButton {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--color-zinc-700);
+}

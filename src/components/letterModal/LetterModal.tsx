@@ -7,6 +7,8 @@ import styles from "@/components/letterModal/letterModal.module.css";
 import ModalClose from "@/components/svg/ModalClose";
 import DetailTop from "@/components/subPage/detail/DetailTop";
 import DetailButtons from "@/components/subPage/detail/DetailButtons";
+import useBodyScrollLock from "@/hooks/useBodyScrollLock";
+import LetterModalSkeleton from "@/components/letterModal/LetterModalSkeleton";
 
 interface Props {
   width?: string;
@@ -34,6 +36,8 @@ export function LetterModal({
   const tModalMenu = useTranslations("auth.modalMenuDropdown");
   const menus = (tModalMenu.raw("menus") as string[]) || [];
 
+  const isLoading = !data; // ✅ 데이터 로딩 상태 체크
+
   function widthStyleCondition() {
     if (width === "large") return styles.widthLarge;
     if (width === "default") return styles.widthDefault;
@@ -46,9 +50,14 @@ export function LetterModal({
     setOpen(false);
   }
 
+  useBodyScrollLock(true); // ✅ 스크롤 잠금
+
   return (
-    <div className={styles.overlay}>
-      <section className={`${styles.modal} ${widthStyleCondition()}`}>
+    <div onClick={onClose} className={styles.overlay}>
+      <section
+        onClick={(e) => e.stopPropagation()}
+        className={`${styles.modal} ${widthStyleCondition()}`}
+      >
         <header className={styles.modalHeader}>
           <div className={styles.modalHeaderButtonGroup}>
             <button className={styles.close} onClick={onClose}>
@@ -59,22 +68,56 @@ export function LetterModal({
 
         <div className={styles.modalBody}>
           <div className={styles.modalBodyColumn}>
-            <DetailTop data={data} useType="modal" currentUser={currentUser} />
+            {/* {isLoading ? (
+              ""
+            ) : (
+              <LetterModalSkeleton useType="modal" name="top" />
+            )} */}
 
-            <DetailButtons
-              useType="modal"
-              dropdownMenus={menus}
-              buttonRef={buttonRef}
-              onDropdownToogle={() => setOpen((v) => !v)}
-              openState={open}
-              onClose={() => setOpen(false)}
-              onSelect={handleSelect}
-            />
+            {isLoading ? (
+              <LetterModalSkeleton useType="modal" name="top" />
+            ) : (
+              <DetailTop
+                data={data}
+                useType="modal"
+                currentUser={currentUser}
+              />
+            )}
+
+            {/* {isLoading ? (
+              ""
+            ) : (
+              <LetterModalSkeleton useType="modal" name="buttons" />
+            )} */}
+
+            {isLoading ? (
+              <LetterModalSkeleton useType="modal" name="buttons" />
+            ) : (
+              <DetailButtons
+                useType="modal"
+                dropdownMenus={menus}
+                buttonRef={buttonRef}
+                onDropdownToogle={() => setOpen((v) => !v)}
+                openState={open}
+                onClose={() => setOpen(false)}
+                onSelect={handleSelect}
+              />
+            )}
 
             <div
               className={`${styles.whiteDimmed} ${open ? styles.active : ""}`}
             >
-              {children}
+              {/* {isLoading ? (
+                ""
+              ) : (
+                <LetterModalSkeleton useType="modal" name="content" />
+              )} */}
+
+              {isLoading ? (
+                <LetterModalSkeleton useType="modal" name="content" />
+              ) : (
+                children
+              )}
             </div>
           </div>
         </div>

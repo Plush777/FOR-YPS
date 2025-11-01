@@ -14,8 +14,8 @@ interface Props {
 
 export default function DetailTop({ data, useType, currentUser }: Props) {
   function useTypeStyleCondition() {
-    if (useType === "modal") return letterModalStyles.modal;
-    if (useType === "detail") return letterModalStyles.detail;
+    if (useType === "modal") return letterModalStyles.modalType;
+    if (useType === "detail") return letterModalStyles.detailType;
 
     return "";
   }

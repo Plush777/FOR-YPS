@@ -15,6 +15,8 @@ import ModalMyypsContents from "@/components/modalContents/ModalMyypsContents";
 import AuthContents from "@/components/modalContents/AuthContents";
 import { supabase } from "@/lib/supabaseClient";
 
+import useBodyScrollLock from "@/hooks/useBodyScrollLock";
+
 type AnimationStyle =
   | "from-bottom"
   | "from-center"
@@ -90,6 +92,10 @@ export function Modal({
   const selectedAnimation = animationVariants[animationStyle];
   const tLetterPopup = useTranslations("subPage.myYps.letterPopup");
   const tAuthPopup = useTranslations("auth.authPopup");
+
+  useBodyScrollLock(isVideoOpen);
+
+  // if (!isVideoOpen) return null;
 
   useEffect(() => {
     if (useType !== "fixedButton") return;
