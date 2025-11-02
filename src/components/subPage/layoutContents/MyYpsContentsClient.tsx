@@ -36,7 +36,7 @@ export default function MyYpsContentsClient({
 
     if (error) {
       console.error("❌ 메시지 불러오기 실패:", error);
-      toast.error("메시지를 불러오지 못했습니다.");
+      toast.error(t("letterLoad.error"));
       return [];
     }
 
@@ -96,11 +96,11 @@ export default function MyYpsContentsClient({
 
       if (error) {
         console.error(error);
-        toast.error(t("error"));
+        toast.error(t("letterEnroll.error"));
         return;
       }
 
-      toast.success(t("success"));
+      toast.success(t("letterEnroll.success"));
 
       setMessages((prev) => {
         if (prev.find((m) => m.id === data.id)) return prev;

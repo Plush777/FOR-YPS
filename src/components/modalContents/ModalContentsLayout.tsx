@@ -3,6 +3,8 @@ import styles from "@/components/nurui/video-modal/video-modal.module.css";
 import { motion } from "motion/react";
 import { XIcon } from "lucide-react";
 import { ReactNode } from "react";
+import Button from "@/components/button/Button";
+import ModalClose from "@/components/svg/ModalClose";
 
 interface Props {
   onClose: () => void;
@@ -19,12 +21,17 @@ export default function ModalContentsLayout({
     <div className={modalStyles.motionDivInner}>
       <div className={modalStyles.motionDivHead}>
         <strong className={modalStyles.motionDivTitle}>{title}</strong>
-        <motion.button
-          className={`${styles.motionTransitionDivInButton} ${modalStyles.closeButton}`}
+
+        <Button
+          rounded="roundedMd"
+          onlyIcon={true}
+          iconSize="lg"
+          color="transparent-gray"
           onClick={onClose}
+          className={modalStyles.closeButton}
         >
-          <XIcon className={styles.xIcon} />
-        </motion.button>
+          <ModalClose />
+        </Button>
       </div>
 
       <div className={modalStyles.motionDivBody}>{children}</div>

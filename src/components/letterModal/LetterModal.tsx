@@ -9,6 +9,7 @@ import DetailTop from "@/components/subPage/detail/DetailTop";
 import DetailButtons from "@/components/subPage/detail/DetailButtons";
 import useBodyScrollLock from "@/hooks/useBodyScrollLock";
 import LetterModalSkeleton from "@/components/letterModal/LetterModalSkeleton";
+import Button from "@/components/button/Button";
 
 interface Props {
   width?: string;
@@ -60,9 +61,15 @@ export function LetterModal({
       >
         <header className={styles.modalHeader}>
           <div className={styles.modalHeaderButtonGroup}>
-            <button className={styles.close} onClick={onClose}>
+            <Button
+              rounded="roundedMd"
+              onlyIcon={true}
+              iconSize="lg"
+              color="transparent-gray"
+              onClick={onClose}
+            >
               <ModalClose />
-            </button>
+            </Button>
           </div>
         </header>
 
@@ -101,6 +108,7 @@ export function LetterModal({
                 openState={open}
                 onClose={() => setOpen(false)}
                 onSelect={handleSelect}
+                isLoggedIn={!!currentUser}
               />
             )}
 

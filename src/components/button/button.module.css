@@ -1,0 +1,200 @@
+.roundedFull {
+  border-radius: 9999px;
+}
+
+.roundedLg {
+  border-radius: 12px;
+}
+
+.roundedMd {
+  border-radius: 8px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttonHasIcon::before {
+  content: "";
+  width: 36px;
+  height: 36px;
+  background-size: 36px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.buttonSizeLg {
+  height: 60px;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 0 16px;
+  column-gap: 8px;
+}
+
+.buttonSizeMd {
+  height: 48px;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 0 12px;
+  column-gap: 6px;
+}
+
+.buttonSizeSm {
+  height: 40px;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 0 8px;
+  column-gap: 6px;
+}
+
+.buttonSizeXs {
+  height: 36px;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 0 16px;
+  column-gap: 2px;
+}
+
+.buttonSizeXs svg {
+  width: 20px;
+  height: 20px;
+}
+
+.buttonBgGray {
+  color: var(--color-white);
+  border: 1px solid var(--color-zinc-500);
+  background-color: var(--color-zinc-700);
+}
+
+.buttonBgGray2 {
+  color: var(--color-zinc-100);
+  background-color: var(--color-zinc-800);
+}
+
+.buttonBorder2White {
+  color: var(--color-white);
+  border: 2px solid var(--color-white);
+  background-color: var(--color-zinc-700);
+}
+
+.buttonBgGray svg,
+.buttonBgGray2 svg {
+  color: var(--color-white);
+}
+
+.buttonBgWhite {
+  border: 1px solid var(--color-black);
+  color: var(--color-zinc-900);
+  background-color: var(--color-white);
+}
+
+.buttonBgWhite[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.buttonFillWhite {
+  color: var(--color-zinc-700);
+  background-color: var(--color-white);
+}
+
+.buttonBgYellow {
+  color: var(--color-black);
+  background-color: var(--color-yellow-400);
+}
+
+.buttonBgGreen {
+  color: var(--color-white);
+  background-color: var(--color-green-500);
+}
+
+.buttonTransparentWhite svg {
+  color: var(--color-white);
+}
+
+.buttonTransparentGray svg {
+  color: var(--color-zinc-400);
+}
+
+.iconNaver::before {
+  background-image: url("/icons/socialLogo/logo-naver.svg");
+}
+
+.iconGoogle::before {
+  background-image: url("/icons/socialLogo/logo-google.svg");
+}
+
+.iconKakao::before {
+  background-image: url("/icons/socialLogo/logo-kakaotalk.svg");
+}
+
+.iconSizeOnly36 {
+  width: 36px;
+  height: 36px;
+}
+
+.iconSizeXl {
+  width: 56px;
+  height: 56px;
+}
+
+.iconSizeXl svg {
+  width: 36px;
+  height: 36px;
+}
+
+.iconSizeLg {
+  width: 40px;
+  height: 40px;
+}
+
+.iconSizeLg svg {
+  width: 24px;
+  height: 24px;
+}
+
+.iconSizeMd {
+  width: 32px;
+  height: 32px;
+}
+
+.iconSizeMd svg {
+  width: 16px;
+  height: 16px;
+}
+
+.iconSizeSm {
+  width: 20px;
+  height: 20px;
+}
+
+.iconSizeSm svg {
+  width: 16px;
+  height: 16px;
+}
+
+.button[class*="Transparent"] {
+  transition: 0.3s ease-in-out;
+  background-color: transparent;
+}
+
+.button[class*="Transparent"] svg {
+  transition: 0.3s ease-in-out;
+}
+
+.button[class*="SizeOnly"] svg {
+  width: 100%;
+  height: 100%;
+}
+
+@media (hover: hover) {
+  .buttonTransparentGray:hover {
+    background-color: var(--color-zinc-700);
+  }
+
+  .buttonTransparentGray:hover svg {
+    color: var(--color-white);
+  }
+}

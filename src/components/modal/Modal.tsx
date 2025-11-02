@@ -1,5 +1,6 @@
 "use client";
 
+import { toast } from "react-toastify";
 import { ReactNode, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 
@@ -151,7 +152,7 @@ export function Modal({
     if (isAuthLoading) return;
 
     if (!authUser) {
-      alert(tLetterPopup("loginRequired"));
+      toast.error(tLetterPopup("loginRequired"));
       return;
     }
 
@@ -248,6 +249,7 @@ export function Modal({
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className={styles.motionDiv}
+              onClick={() => setIsVideoOpen(false)}
             >
               <motion.div
                 {...selectedAnimation}
@@ -255,6 +257,7 @@ export function Modal({
                 className={`
                   ${styles.motionTransitionDiv} ${modalStylesCondition()}
                 `}
+                onClick={(e) => e.stopPropagation()}
               >
                 {innerContentsCondition()}
               </motion.div>

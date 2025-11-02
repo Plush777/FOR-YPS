@@ -1,6 +1,7 @@
 import styles from "@/components/loadMoreButton/loadMoreButton.module.css";
 import { useTranslations } from "next-intl";
-import ArrowDown from "@/components/svg/ArrowDown";
+import ArrowDownLoadMore from "@/components/svg/ArrowDownLoadMore";
+import Button from "@/components/button/Button";
 
 interface Props {
   showAllLoadedNotice: boolean;
@@ -21,7 +22,10 @@ export default function LoadMoreButton({
       {showAllLoadedNotice ? (
         <p className={styles.loadMoreEndText}>{t("loadEndText")}</p>
       ) : (
-        <button
+        <Button
+          onlyIcon={false}
+          size="xs"
+          color="gray2"
           className={styles.loadMoreButton}
           onClick={onLoadMore}
           disabled={isLoadMoreLoading}
@@ -31,10 +35,10 @@ export default function LoadMoreButton({
           ) : (
             <>
               {t("defaultText")}
-              <ArrowDown />
+              <ArrowDownLoadMore />
             </>
           )}
-        </button>
+        </Button>
       )}
     </div>
   );

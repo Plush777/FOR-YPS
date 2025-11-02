@@ -2,8 +2,8 @@
 
 import { useCallback } from "react";
 import styles from "@/components/topDownButton/topDownButton.module.css";
-import SvgArrowTop from "@/components/svg/ArrowTop";
-import SvgArrowDown from "@/components/svg/ArrowDown";
+import ArrowTop from "@/components/svg/ArrowTop";
+import ArrowDown from "@/components/svg/ArrowDown";
 
 export default function TopDownButton() {
   const handleScrollTop = useCallback(() => {
@@ -31,7 +31,7 @@ export default function TopDownButton() {
         onClick={handleScrollTop}
       >
         <span className="hidden">위로 올라가기</span>
-        <SvgArrowTop />
+        <ArrowTop />
       </button>
 
       <button
@@ -40,7 +40,7 @@ export default function TopDownButton() {
         onClick={handleScrollDown}
       >
         <span className="hidden">아래로 내려가기</span>
-        <SvgArrowDown />
+        <ArrowDown />
       </button>
     </div>
   );

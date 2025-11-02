@@ -1,53 +1,123 @@
 import { ReactNode } from "react";
+import styles from "@/components/button/button.module.css";
 
-type Props = {
+// 공통 Props
+type CommonProps = {
   buttonType?: "button" | "submit" | "reset";
-  styleType?: string;
-  size?: string;
-  color?: string;
+  rounded?: "roundedFull" | "roundedLg" | "roundedMd" | "roundedNone";
   text?: string;
-  iconName?: string;
+  iconName?: "naver" | "google" | "kakao" | "";
   className?: string;
   gsapClassName?: string;
   children?: ReactNode;
   onClick?: () => void;
   disabled?: boolean;
+  ref?: React.RefObject<HTMLButtonElement | null>;
 };
+
+// onlyIcon = true 경우
+type OnlyIconProps = {
+  onlyIcon: true;
+  color?:
+    | "white"
+    | "fill-white"
+    | "yellow"
+    | "green"
+    | "gray"
+    | "gray2"
+    | "transparent-white"
+    | "transparent-gray"
+    | "border2-white";
+  iconSize: "xl" | "lg" | "md" | "sm" | "onlySizeXl"; // ✅ required
+  size?: string; // ✅ optional
+};
+
+// onlyIcon = false 경우
+type WithTextProps = {
+  onlyIcon: false;
+  color:
+    | "white"
+    | "fill-white"
+    | "yellow"
+    | "green"
+    | "gray"
+    | "gray2"
+    | "transparent-white"
+    | "transparent-gray"
+    | "border2-white";
+  iconSize?: "xl" | "lg" | "md" | "sm" | "onlySizeXl"; // ✅ optional
+  size: string; // ✅ required
+};
+
+export type ButtonProps = CommonProps & (OnlyIconProps | WithTextProps);
 
 export default function Button({
   buttonType = "button",
-  styleType = "roundedFull",
+  rounded = "roundedFull",
   size = "lg",
+  onlyIcon,
   color = "white",
   text = "",
   iconName = "",
+  iconSize = "md",
   className = "",
   gsapClassName = "",
   children,
   onClick,
   disabled = false,
-}: Props) {
-  function styleTypeCondition() {
-    if (styleType === "roundedFull") return "roundedFull";
-    if (styleType === "roundedLg") return "roundedLg";
-    if (styleType === "roundedMd") return "roundedMd";
+  ref,
+}: ButtonProps) {
+  function roundedTypeCondition() {
+    if (rounded === "roundedFull") return styles.roundedFull;
+    if (rounded === "roundedLg") return styles.roundedLg;
+    if (rounded === "roundedMd") return styles.roundedMd;
+    if (rounded === "roundedNone") return "";
 
     return undefined;
   }
 
   function sizeTypeCondition() {
-    if (size === "lg") return "buttonSizeLg";
-    if (size === "md") return "buttonSizeMd";
-    if (size === "sm") return "buttonSizeSm";
+    if (!onlyIcon) {
+      if (size === "lg") return styles.buttonSizeLg;
+      if (size === "md") return styles.buttonSizeMd;
+      if (size === "sm") return styles.buttonSizeSm;
+      if (size === "xs") return styles.buttonSizeXs;
+    }
 
     return undefined;
   }
 
   function buttonColorCondition() {
-    if (color === "white") return "buttonBgWhite";
-    if (color === "fill-white") return "buttonFillWhite";
-    if (color === "yellow") return "buttonBgYellow";
-    if (color === "green") return "buttonBgGreen";
+    if (color === "white") return styles.buttonBgWhite;
+    if (color === "fill-white") return styles.buttonFillWhite;
+    if (color === "yellow") return styles.buttonBgYellow;
+    if (color === "green") return styles.buttonBgGreen;
+    if (color === "gray") return styles.buttonBgGray;
+    if (color === "gray2") return styles.buttonBgGray2;
+    if (color === "transparent-white") return styles.buttonTransparentWhite;
+    if (color === "transparent-gray") return styles.buttonTransparentGray;
+    if (color === "border2-white") return styles.buttonBorder2White;
+
+    return undefined;
+  }
+
+  function iconCondition() {
+    if (iconName === "naver") return styles.iconNaver;
+    if (iconName === "google") return styles.iconGoogle;
+    if (iconName === "kakao") return styles.iconKakao;
+
+    return undefined;
+  }
+
+  function onlyIconSizeCondition() {
+    if (onlyIcon) {
+      if (iconSize === "xl") return styles.iconSizeXl;
+      if (iconSize === "lg") return styles.iconSizeLg;
+      if (iconSize === "md") return styles.iconSizeMd;
+      if (iconSize === "sm") return styles.iconSizeSm;
+
+      if (iconSize === "onlySizeXl") return styles.iconSizeOnly36;
+    }
 
     return undefined;
   }
@@ -55,11 +125,14 @@ export default function Button({
   return (
     <button
       type={buttonType}
-      className={`button ${styleTypeCondition()} ${sizeTypeCondition()} ${buttonColorCondition()} ${className} icon-${iconName} ${gsapClassName}`}
+      ref={ref}
+      className={`
+        ${styles.button} ${iconCondition()} ${onlyIconSizeCondition()}
+        ${roundedTypeCondition()} ${sizeTypeCondition()} ${buttonColorCondition()} ${className} ${gsapClassName}`}
       onClick={onClick}
       disabled={disabled}
     >
-      {text !== "" ? <span>{text}</span> : <></>}
+      {text !== "" && <span>{text}</span>}
       {children}
     </button>
   );

@@ -13,6 +13,7 @@ import { M768, Min768 } from "../mediaQuery/MediaQuery";
 
 import navData from "@/data/nav/nav.json";
 import MobileNavigation from "../mobile/MobileNavigaiton";
+import Button from "@/components/button/Button";
 
 interface Props {
   name: string;
@@ -58,15 +59,17 @@ export default function Header({ name }: Props) {
             </Min768>
 
             <M768>
-              <button
-                type="button"
+              <Button
+                color="transparent-white"
+                onlyIcon={true}
+                iconSize="onlySizeXl"
                 className={`
                   ${styles.hamburgerButton} 
                   ${isMenuOpen ? styles.active : ""}`}
                 onClick={hamburgerButtonToggle}
               >
                 <SvgHamburger />
-              </button>
+              </Button>
             </M768>
           </div>
 

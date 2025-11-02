@@ -62,8 +62,10 @@ export default function ModalMyypsContents({
 
       <div className={modalStyles.buttonArea}>
         <Button
+          onlyIcon={false}
+          color="white"
           size="md"
-          styleType="roundedFull"
+          rounded="roundedFull"
           text={buttonText}
           disabled={isDisabled}
           onClick={handleSubmit}

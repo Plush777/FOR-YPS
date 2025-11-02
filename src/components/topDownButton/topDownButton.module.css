@@ -42,10 +42,12 @@
   transition: 0.3s ease;
 }
 
-.topDownButton:hover {
-  background-color: var(--color-black);
-}
+@media (hover: hover) {
+  .topDownButton:hover {
+    background-color: var(--color-black);
+  }
 
-.topDownButton:hover svg {
-  color: var(--color-white);
+  .topDownButton:hover svg {
+    color: var(--color-white);
+  }
 }

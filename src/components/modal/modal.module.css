@@ -6,7 +6,7 @@
 .myypsModalStyle {
   border-radius: 12px;
   padding: 16px;
-  background-color: var(--color-zinc-600);
+  background-color: var(--color-zinc-800);
   max-width: 448px;
 }
 
@@ -23,7 +23,7 @@
 .authModalStyle {
   border-radius: 12px;
   padding: 16px;
-  background-color: var(--color-zinc-600);
+  background-color: var(--color-zinc-800);
   max-width: 800px;
   height: 500px;
 }
@@ -56,17 +56,11 @@
 }
 
 .closeButton {
+  position: absolute;
   top: 50%;
   transform: translateY(-50%);
   right: 0;
-  border-radius: 0;
   box-shadow: none;
-  background-color: transparent;
-}
-
-.closeButton svg {
-  width: 26px;
-  height: 26px;
 }
 
 .motionDivBody {

@@ -15,7 +15,13 @@ export default function ErrorSection({}: Props) {
           <p className={styles.errorText}>{t("text2")}</p>
         </div>
 
-        <Button styleType="roundedMd" size="md" text={t("text3")} />
+        <Button
+          onlyIcon={false}
+          color="white"
+          rounded="roundedMd"
+          size="md"
+          text={t("text3")}
+        />
       </div>
     </section>
   );

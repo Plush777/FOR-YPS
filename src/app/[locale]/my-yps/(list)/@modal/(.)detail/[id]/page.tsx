@@ -7,7 +7,6 @@ import { supabase } from "@/lib/supabaseClient";
 import Portal from "@/components/portal/Portal";
 import { LetterModal } from "@/components/letterModal/LetterModal";
 import LetterCard from "@/components/letterCard/LetterCard";
-import LetterModalSkeleton from "@/components/letterModal/LetterModalSkeleton";
 
 export default function LetterModalPage() {
   const router = useRouter();
