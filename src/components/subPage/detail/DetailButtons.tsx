@@ -14,6 +14,8 @@ interface Props {
   dropdownMenus: string[];
   openState: boolean;
   isLoggedIn: boolean;
+  isMyLetter: boolean;
+  onEdit: () => void;
 }
 
 export default function DetailButtons({
@@ -25,87 +27,44 @@ export default function DetailButtons({
   dropdownMenus,
   openState,
   isLoggedIn,
+  isMyLetter,
+  onEdit,
 }: Props) {
   const { copyUrl } = useClipboard();
 
-  function useTypeStyleCondition() {
-    if (useType === "modal") return styles.modalType;
-    if (useType === "detail") return styles.detailType;
-
-    return "";
-  }
-
-  function useTypeButtonStyleCondiiton() {
-    if (useType === "modal") {
-      return (
-        <>
-          <Button
-            onClick={() => copyUrl()}
-            onlyIcon={true}
-            iconSize="lg"
-            color="transparent-gray"
-          >
-            <Share />
-          </Button>
-          <Button
-            onlyIcon={true}
-            iconSize="lg"
-            color="transparent-gray"
-            ref={buttonRef}
-            onClick={onDropdownToogle}
-          >
-            <DotMore />
-          </Button>
-        </>
-      );
-    }
-
-    if (useType === "detail") {
-      return (
-        <>
-          <Button
-            onClick={() => copyUrl()}
-            rounded="roundedNone"
-            onlyIcon={true}
-            iconSize="lg"
-            color="border2-white"
-          >
-            <Share />
-          </Button>
-          <Button
-            rounded="roundedNone"
-            onlyIcon={true}
-            iconSize="lg"
-            color="border2-white"
-            ref={buttonRef}
-            onClick={onDropdownToogle}
-          >
-            <DotMore />
-          </Button>
-        </>
-      );
-    }
-
-    return null;
-  }
-
   return (
     <div
-      className={`
-        ${styles.modalBodyButtons} 
-        ${useTypeStyleCondition()}
-      `}
+      className={`${styles.modalBodyButtons} ${
+        useType === "modal" ? styles.modalType : styles.detailType
+      }`}
     >
-      {useTypeButtonStyleCondiiton()}
+      <Button
+        onClick={() => copyUrl()}
+        onlyIcon
+        iconSize="lg"
+        color="transparent-gray"
+      >
+        <Share />
+      </Button>
+      <Button
+        onlyIcon
+        iconSize="lg"
+        color="transparent-gray"
+        ref={buttonRef}
+        onClick={onDropdownToogle}
+      >
+        <DotMore />
+      </Button>
 
       {openState && (
         <MenuDropDown
           useType="letterModal"
           items={dropdownMenus}
-          onSelect={onSelect}
           onClose={onClose}
           triggerRef={buttonRef}
           isLoggedIn={isLoggedIn}
+          isMyLetter={isMyLetter}
+          onEdit={onEdit} // ✅ 전달
         />
       )}
     </div>

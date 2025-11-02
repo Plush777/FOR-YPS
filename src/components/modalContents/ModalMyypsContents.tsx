@@ -1,6 +1,7 @@
 import { ChangeEvent, useState } from "react";
 import modalStyles from "@/components/modal/modal.module.css";
 import Button from "@/components/button/Button";
+import TextareaCounter from "@/components/form/textareaCounter/TextareaCounter";
 
 interface Props {
   placeholder: string;
@@ -39,27 +40,16 @@ export default function ModalMyypsContents({
 
   const isDisabled = !onSubmit || value.trim().length === 0 || isSubmitting;
 
-  //
   return (
     <>
-      <textarea
-        className={modalStyles.motionTextarea}
+      <TextareaCounter
+        isUsername={true}
+        username={username}
         placeholder={placeholder}
         maxLength={CHARACTER_LIMIT}
         value={value}
         onChange={handleChange}
-      ></textarea>
-
-      <div className={modalStyles.motionTextareaInfo}>
-        <div className={modalStyles.fromArea}>
-          <span className={modalStyles.fromText}>from</span>
-          <span className={modalStyles.fromName}>{username}</span>
-        </div>
-
-        <div className={modalStyles.textareaCounter}>
-          {value.length} / {CHARACTER_LIMIT}
-        </div>
-      </div>
+      />
 
       <div className={modalStyles.buttonArea}>
         <Button

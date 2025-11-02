@@ -37,7 +37,7 @@
   height: 48px;
   font-size: 16px;
   font-weight: 500;
-  padding: 0 12px;
+  padding: 0 16px;
   column-gap: 6px;
 }
 
@@ -187,6 +187,22 @@
 .button[class*="SizeOnly"] svg {
   width: 100%;
   height: 100%;
+}
+
+.buttonMinWidthLg {
+  min-width: 100px;
+}
+
+.buttonMinWidthMd {
+  min-width: 90px;
+}
+
+.buttonMinWidthSm {
+  min-width: 80px;
+}
+
+.buttonMinWidthXs {
+  min-width: 70px;
 }
 
 @media (hover: hover) {

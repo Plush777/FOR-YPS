@@ -13,6 +13,7 @@ type CommonProps = {
   onClick?: () => void;
   disabled?: boolean;
   ref?: React.RefObject<HTMLButtonElement | null>;
+  minWidth?: "lg" | "md" | "sm" | "xs";
 };
 
 // onlyIcon = true 경우
@@ -66,6 +67,7 @@ export default function Button({
   onClick,
   disabled = false,
   ref,
+  minWidth,
 }: ButtonProps) {
   function roundedTypeCondition() {
     if (rounded === "roundedFull") return styles.roundedFull;
@@ -73,7 +75,7 @@ export default function Button({
     if (rounded === "roundedMd") return styles.roundedMd;
     if (rounded === "roundedNone") return "";
 
-    return undefined;
+    return "";
   }
 
   function sizeTypeCondition() {
@@ -84,7 +86,16 @@ export default function Button({
       if (size === "xs") return styles.buttonSizeXs;
     }
 
-    return undefined;
+    return "";
+  }
+
+  function minWidthTypeCondition() {
+    if (minWidth === "lg") return styles.buttonMinWidthLg;
+    if (minWidth === "md") return styles.buttonMinWidthMd;
+    if (minWidth === "sm") return styles.buttonMinWidthSm;
+    if (minWidth === "xs") return styles.buttonMinWidthXs;
+
+    return "";
   }
 
   function buttonColorCondition() {
@@ -98,7 +109,7 @@ export default function Button({
     if (color === "transparent-gray") return styles.buttonTransparentGray;
     if (color === "border2-white") return styles.buttonBorder2White;
 
-    return undefined;
+    return "";
   }
 
   function iconCondition() {
@@ -106,7 +117,7 @@ export default function Button({
     if (iconName === "google") return styles.iconGoogle;
     if (iconName === "kakao") return styles.iconKakao;
 
-    return undefined;
+    return "";
   }
 
   function onlyIconSizeCondition() {
@@ -119,7 +130,7 @@ export default function Button({
       if (iconSize === "onlySizeXl") return styles.iconSizeOnly36;
     }
 
-    return undefined;
+    return "";
   }
 
   return (
@@ -127,7 +138,8 @@ export default function Button({
       type={buttonType}
       ref={ref}
       className={`
-        ${styles.button} ${iconCondition()} ${onlyIconSizeCondition()}
+        ${styles.button} 
+        ${iconCondition()} ${onlyIconSizeCondition()} ${minWidthTypeCondition()}
         ${roundedTypeCondition()} ${sizeTypeCondition()} ${buttonColorCondition()} ${className} ${gsapClassName}`}
       onClick={onClick}
       disabled={disabled}
