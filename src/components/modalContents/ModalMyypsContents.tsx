@@ -2,6 +2,8 @@ import { ChangeEvent, useState } from "react";
 import modalStyles from "@/components/modal/modal.module.css";
 import Button from "@/components/button/Button";
 import TextareaCounter from "@/components/form/textareaCounter/TextareaCounter";
+import Textarea from "../form/textarea/Textarea";
+import TextCounter from "../form/textCounter/TextCounter";
 
 interface Props {
   placeholder: string;
@@ -42,14 +44,20 @@ export default function ModalMyypsContents({
 
   return (
     <>
-      <TextareaCounter
-        isUsername={true}
-        username={username}
-        placeholder={placeholder}
-        maxLength={CHARACTER_LIMIT}
-        value={value}
-        onChange={handleChange}
-      />
+      <TextareaCounter>
+        <Textarea
+          placeholder={placeholder}
+          maxLength={CHARACTER_LIMIT}
+          value={value}
+          onChange={handleChange}
+        />
+
+        <TextCounter
+          username={username}
+          value={value}
+          maxLength={CHARACTER_LIMIT}
+        />
+      </TextareaCounter>
 
       <div className={modalStyles.buttonArea}>
         <Button

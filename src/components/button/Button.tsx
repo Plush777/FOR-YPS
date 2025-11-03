@@ -140,7 +140,9 @@ export default function Button({
       className={`
         ${styles.button} 
         ${iconCondition()} ${onlyIconSizeCondition()} ${minWidthTypeCondition()}
-        ${roundedTypeCondition()} ${sizeTypeCondition()} ${buttonColorCondition()} ${className} ${gsapClassName}`}
+        ${roundedTypeCondition()} ${sizeTypeCondition()} ${buttonColorCondition()} 
+        ${className === "active" ? styles.active : className} ${gsapClassName}
+      `}
       onClick={onClick}
       disabled={disabled}
     >

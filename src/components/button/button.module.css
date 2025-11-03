@@ -118,6 +118,14 @@
   color: var(--color-zinc-400);
 }
 
+.button.buttonTransparentGray.active {
+  background-color: var(--color-zinc-700);
+}
+
+.buttonTransparentGray.active svg {
+  color: var(--color-white);
+}
+
 .iconNaver::before {
   background-image: url("/icons/socialLogo/logo-naver.svg");
 }
@@ -206,11 +214,11 @@
 }
 
 @media (hover: hover) {
-  .buttonTransparentGray:hover {
+  .buttonTransparentGray:not(.active):hover {
     background-color: var(--color-zinc-700);
   }
 
-  .buttonTransparentGray:hover svg {
+  .buttonTransparentGray:not(.active):hover svg {
     color: var(--color-white);
   }
 }

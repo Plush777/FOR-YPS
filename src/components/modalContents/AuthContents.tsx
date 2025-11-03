@@ -28,22 +28,25 @@ export default function AuthContents({ description, smallDescription }: Props) {
       <div className={modalStyles.authButtonGroup}>
         <Button
           iconName="google"
+          onlyIcon={false}
+          size="lg"
           color="fill-white"
-          styleType="roundedFull"
           text="Google"
           onClick={() => handleLogin("google")}
         />
         <Button
           iconName="kakao"
+          onlyIcon={false}
+          size="lg"
           color="yellow"
-          styleType="roundedFull"
           text="Kakao"
           onClick={() => handleLogin("kakao")}
         />
         <Button
           iconName="naver"
+          onlyIcon={false}
+          size="lg"
           color="green"
-          styleType="roundedFull"
           text="Naver"
         />
       </div>

@@ -9,8 +9,14 @@ import ModalClose from "@/components/svg/ModalClose";
 import DetailTop from "@/components/subPage/detail/DetailTop";
 import DetailButtons from "@/components/subPage/detail/DetailButtons";
 import useBodyScrollLock from "@/hooks/useBodyScrollLock";
-import LetterModalSkeleton from "@/components/letterModal/LetterModalSkeleton";
+import {
+  LetterModalSkeletonHeader,
+  LetterModalSkeletonTop,
+  LetterModalSkeletonButtons,
+  LetterModalSkeletonContent,
+} from "@/components/letterModal/LetterModalSkeleton";
 import Button from "@/components/button/Button";
+import { LetterModalHeader } from "../modal/modalHeader/ModalHeader";
 
 interface Props {
   width?: string;
@@ -85,34 +91,32 @@ export function LetterModal({
             : styles.widthDefault
         }`}
       >
-        <header className={styles.modalHeader}>
-          <div className={styles.modalHeaderButtonGroup}>
+        {isLoading ? (
+          <LetterModalSkeletonHeader />
+        ) : (
+          <LetterModalHeader>
             <Button
               rounded="roundedMd"
-              onlyIcon
+              onlyIcon={true}
               iconSize="lg"
               color="transparent-gray"
               onClick={onClose}
             >
               <ModalClose />
             </Button>
-          </div>
-        </header>
+          </LetterModalHeader>
+        )}
 
         <div className={styles.modalBody}>
           <div className={styles.modalBodyColumn}>
             {isLoading ? (
-              <LetterModalSkeleton useType="modal" name="top" />
+              <LetterModalSkeletonTop useType="modal" />
             ) : (
-              <DetailTop
-                data={data}
-                useType="modal"
-                currentUser={currentUser}
-              />
+              <DetailTop data={data} useType="modal" />
             )}
 
             {isLoading ? (
-              <LetterModalSkeleton useType="modal" name="buttons" />
+              <LetterModalSkeletonButtons useType="modal" />
             ) : (
               <DetailButtons
                 useType="modal"
@@ -132,7 +136,7 @@ export function LetterModal({
               className={`${styles.whiteDimmed} ${open ? styles.active : ""}`}
             >
               {isLoading ? (
-                <LetterModalSkeleton useType="modal" name="content" />
+                <LetterModalSkeletonContent useType="modal" />
               ) : (
                 React.cloneElement(children as any, {
                   editMode,

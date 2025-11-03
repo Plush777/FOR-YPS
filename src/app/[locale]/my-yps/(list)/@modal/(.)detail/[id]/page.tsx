@@ -20,7 +20,7 @@ export default function LetterModalPage() {
     const fetchLetter = async () => {
       const { data } = await supabase
         .from("letters")
-        .select("id, username, user_id, content, created_at")
+        .select("id, username, user_id, avatar_url, content, created_at")
         .eq("id", params.id)
         .single();
       setLetter(data);

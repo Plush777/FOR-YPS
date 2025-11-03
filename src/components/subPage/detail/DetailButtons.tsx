@@ -51,6 +51,7 @@ export default function DetailButtons({
         iconSize="lg"
         color="transparent-gray"
         ref={buttonRef}
+        className={openState ? "active" : ""}
         onClick={onDropdownToogle}
       >
         <DotMore />
@@ -64,6 +65,7 @@ export default function DetailButtons({
           triggerRef={buttonRef}
           isLoggedIn={isLoggedIn}
           isMyLetter={isMyLetter}
+          onSelect={onSelect}
           onEdit={onEdit} // ✅ 전달
         />
       )}

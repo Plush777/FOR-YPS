@@ -32,7 +32,7 @@ export default function Profile({ userData }: Props) {
       <button
         type="button"
         ref={buttonRef}
-        className={styles.userInfo}
+        className={`${styles.userInfo} ${open ? styles.active : ""}`}
         onClick={() => setOpen((v) => !v)}
       >
         {userData.avatar_url && (

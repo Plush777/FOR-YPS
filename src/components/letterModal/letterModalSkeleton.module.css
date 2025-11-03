@@ -63,15 +63,37 @@
   align-items: center;
   justify-content: flex-end;
   margin-bottom: 12px;
-  column-gap: 12px;
+  column-gap: 4px;
 }
 
 .buttonsWrapButton {
-  width: 24px;
-  height: 24px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  background-color: var(--color-zinc-700);
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 12px;
+}
+
+.modalHeaderButtonGroup {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  margin-left: auto;
+}
+
+.modalHeaderButton {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
   background-color: var(--color-zinc-700);
 }

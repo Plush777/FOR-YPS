@@ -1,7 +1,9 @@
 import TextareaCounter from "@/components/form/textareaCounter/TextareaCounter";
+import Textarea from "@/components/form/textarea/Textarea";
 import styles from "@/components/subPage/layoutContents/myYpsContents.module.css";
 import { useTranslations } from "next-intl";
 import Button from "@/components/button/Button";
+import TextCounter from "../form/textCounter/TextCounter";
 
 interface Props {
   useType: string;
@@ -44,17 +46,22 @@ export default function LetterCard({
       >
         {editMode ? (
           <>
-            <TextareaCounter
-              placeholder={tLetterPopup("placeholder")}
-              maxLength={CHARACTER_LIMIT}
-              value={editedText ?? ""}
-              isUsername={false}
-              onChange={(e) => setEditedText?.(e.target.value)}
-            />
+            <TextareaCounter>
+              <Textarea
+                placeholder={tLetterPopup("placeholder")}
+                maxLength={CHARACTER_LIMIT}
+                value={editedText ?? ""}
+                onChange={(e) => setEditedText?.(e.target.value)}
+              />
+              <TextCounter
+                value={editedText ?? ""}
+                maxLength={CHARACTER_LIMIT}
+              />
+            </TextareaCounter>
 
             <div className={styles.buttonGroup}>
               <Button
-                size="md"
+                size="xs"
                 color="white"
                 onlyIcon={false}
                 text="저장하기"
@@ -62,7 +69,7 @@ export default function LetterCard({
                 onClick={onSave}
               />
               <Button
-                size="md"
+                size="xs"
                 color="gray"
                 onlyIcon={false}
                 text="취소"

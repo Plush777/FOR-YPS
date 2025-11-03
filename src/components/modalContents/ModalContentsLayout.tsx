@@ -1,14 +1,12 @@
 import modalStyles from "@/components/modal/modal.module.css";
-import styles from "@/components/nurui/video-modal/video-modal.module.css";
-import { motion } from "motion/react";
-import { XIcon } from "lucide-react";
 import { ReactNode } from "react";
 import Button from "@/components/button/Button";
 import ModalClose from "@/components/svg/ModalClose";
+import { MotionModalHeader } from "../modal/modalHeader/ModalHeader";
 
 interface Props {
   onClose: () => void;
-  title?: string;
+  title?: any;
   children: ReactNode;
 }
 
@@ -19,9 +17,7 @@ export default function ModalContentsLayout({
 }: Props) {
   return (
     <div className={modalStyles.motionDivInner}>
-      <div className={modalStyles.motionDivHead}>
-        <strong className={modalStyles.motionDivTitle}>{title}</strong>
-
+      <MotionModalHeader title={title}>
         <Button
           rounded="roundedMd"
           onlyIcon={true}
@@ -32,8 +28,7 @@ export default function ModalContentsLayout({
         >
           <ModalClose />
         </Button>
-      </div>
-
+      </MotionModalHeader>
       <div className={modalStyles.motionDivBody}>{children}</div>
     </div>
   );

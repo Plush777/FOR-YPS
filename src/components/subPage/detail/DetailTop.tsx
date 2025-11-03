@@ -3,16 +3,13 @@ import letterModalStyles from "@/components/letterModal/letterModal.module.css";
 interface Props {
   data: {
     username: string;
+    avatar_url: string;
     created_at: string;
   };
   useType: string;
-  currentUser?: {
-    avatar_url?: string;
-    name?: string;
-  };
 }
 
-export default function DetailTop({ data, useType, currentUser }: Props) {
+export default function DetailTop({ data, useType }: Props) {
   function useTypeStyleCondition() {
     if (useType === "modal") return letterModalStyles.modalType;
     if (useType === "detail") return letterModalStyles.detailType;
@@ -23,11 +20,11 @@ export default function DetailTop({ data, useType, currentUser }: Props) {
   return (
     <div className={`${letterModalStyles.bodyTop} ${useTypeStyleCondition()}`}>
       <div className={letterModalStyles.titleArea}>
-        {currentUser?.avatar_url && (
+        {data.avatar_url && (
           <img
             className={letterModalStyles.img}
-            src={currentUser.avatar_url}
-            alt="Profile"
+            src={data.avatar_url}
+            alt="profile"
           />
         )}
 

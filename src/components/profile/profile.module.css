@@ -8,6 +8,15 @@
   column-gap: 8px;
 }
 
+.userInfo svg {
+  opacity: 0.5;
+  transition: 0.3s ease-in-out;
+}
+
+.userInfo.active svg {
+  opacity: 1;
+}
+
 .avatar {
   width: 48px;
   height: 48px;
@@ -23,4 +32,10 @@
 
 .avatar + svg path:last-child {
   fill: currentColor;
+}
+
+@media (hover: hover) {
+  .userInfo:hover svg {
+    opacity: 1;
+  }
 }

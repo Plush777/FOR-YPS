@@ -14,6 +14,10 @@
   background-color: var(--color-white);
 }
 
+.profileModalMenu .menuItem {
+  height: 48px;
+}
+
 .letterModalMenu .menuItem {
   height: 36px;
 }
@@ -25,7 +29,6 @@
 .menuItem {
   display: flex;
   align-items: center;
-  height: 48px;
   background-color: var(--color-white);
 }
 
