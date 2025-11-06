@@ -16,6 +16,7 @@ interface Props {
   isLoggedIn: boolean;
   isMyLetter: boolean;
   onEdit: () => void;
+  data: any;
 }
 
 export default function DetailButtons({
@@ -29,6 +30,7 @@ export default function DetailButtons({
   isLoggedIn,
   isMyLetter,
   onEdit,
+  data,
 }: Props) {
   const { copyUrl } = useClipboard();
 
@@ -67,6 +69,7 @@ export default function DetailButtons({
           isMyLetter={isMyLetter}
           onSelect={onSelect}
           onEdit={onEdit} // ✅ 전달
+          letterId={(data as any)?.id}
         />
       )}
     </div>

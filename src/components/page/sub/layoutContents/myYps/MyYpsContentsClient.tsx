@@ -112,19 +112,37 @@ export default function MyYpsContentsClient({
     return () => window.removeEventListener("yps-add-message", handler);
   }, []);
 
-  // ✅ Realtime (중복 방지 포함)
+  // ✅ Realtime (INSERT / UPDATE / DELETE 모두 처리)
   useEffect(() => {
     const channel = supabase
       .channel("letters-realtime")
       .on(
         "postgres_changes",
-        { event: "INSERT", schema: "public", table: "letters" },
+        { event: "*", schema: "public", table: "letters" },
         (payload) => {
-          const newMessage = payload.new as Letter;
+          console.log("🔄 Realtime 변화 감지:", payload);
 
           setMessages((prev) => {
-            if (prev.find((m) => m.id === newMessage.id)) return prev;
-            return [newMessage, ...prev];
+            // ✅ INSERT
+            if (payload.eventType === "INSERT") {
+              const newMessage = payload.new as Letter;
+              if (prev.find((m) => m.id === newMessage.id)) return prev;
+              return [newMessage, ...prev];
+            }
+
+            // ✅ UPDATE
+            if (payload.eventType === "UPDATE") {
+              const updated = payload.new as Letter;
+              return prev.map((m) => (m.id === updated.id ? updated : m));
+            }
+
+            // ✅ DELETE
+            if (payload.eventType === "DELETE") {
+              const deletedId = payload.old.id;
+              return prev.filter((m) => m.id !== deletedId);
+            }
+
+            return prev;
           });
         }
       )

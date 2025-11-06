@@ -14,11 +14,6 @@ type CommonProps = {
   disabled?: boolean;
   ref?: React.RefObject<HTMLButtonElement | null>;
   minWidth?: "lg" | "md" | "sm" | "xs";
-};
-
-// onlyIcon = true 경우
-type OnlyIconProps = {
-  onlyIcon: true;
   color?:
     | "white"
     | "fill-white"
@@ -28,7 +23,13 @@ type OnlyIconProps = {
     | "gray2"
     | "transparent-white"
     | "transparent-gray"
-    | "border2-white";
+    | "border2-white"
+    | "red";
+};
+
+// onlyIcon = true 경우
+type OnlyIconProps = {
+  onlyIcon: true;
   iconSize: "xl" | "lg" | "md" | "sm" | "onlySizeXl"; // ✅ required
   size?: string; // ✅ optional
 };
@@ -36,16 +37,6 @@ type OnlyIconProps = {
 // onlyIcon = false 경우
 type WithTextProps = {
   onlyIcon: false;
-  color:
-    | "white"
-    | "fill-white"
-    | "yellow"
-    | "green"
-    | "gray"
-    | "gray2"
-    | "transparent-white"
-    | "transparent-gray"
-    | "border2-white";
   iconSize?: "xl" | "lg" | "md" | "sm" | "onlySizeXl"; // ✅ optional
   size: string; // ✅ required
 };
@@ -108,6 +99,7 @@ export default function Button({
     if (color === "transparent-white") return styles.buttonTransparentWhite;
     if (color === "transparent-gray") return styles.buttonTransparentGray;
     if (color === "border2-white") return styles.buttonBorder2White;
+    if (color === "red") return styles.buttonRed;
 
     return "";
   }

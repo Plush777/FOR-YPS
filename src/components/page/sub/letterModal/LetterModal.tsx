@@ -129,6 +129,7 @@ export function LetterModal({
                 isLoggedIn={!!currentUser}
                 isMyLetter={!!isMyLetter}
                 onEdit={handleEditStart}
+                data={data}
               />
             )}
 

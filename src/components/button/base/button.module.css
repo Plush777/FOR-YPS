@@ -126,6 +126,11 @@
   color: var(--color-white);
 }
 
+.buttonRed {
+  color: var(--color-white);
+  background-color: var(--color-red-500);
+}
+
 .iconNaver::before {
   background-image: url("/icons/socialLogo/logo-naver.svg");
 }
