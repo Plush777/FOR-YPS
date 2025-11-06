@@ -1,6 +1,6 @@
 import styles from "@/components/error/errorSection.module.css";
 import { useTranslations } from "next-intl";
-import Button from "../button/Button";
+import Button from "@/components/button/base/Button";
 
 type Props = {};
 

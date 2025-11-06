@@ -1,7 +1,7 @@
-import Header from "@/components/header/Header";
-import Main from "@/components/main/Main";
-import SubInner from "@/components/subPage/layout/SubInner";
-import SubPageLayout from "@/components/subPage/layout/SubPageLayout";
+import Header from "@/components/layout/header/base/Header";
+import Main from "@/components/page/main/base/Main";
+import SubInner from "@/components/page/sub/layout/subInner/SubInner";
+import SubPageLayout from "@/components/page/sub/layout/SubPageLayout";
 
 export default function DetailLayout({
   children,

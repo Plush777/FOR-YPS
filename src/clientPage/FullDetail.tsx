@@ -3,11 +3,11 @@
 import { useState, useRef } from "react";
 
 import { useTranslations } from "next-intl";
-import HeartCanvas from "@/components/canvas/HeartCanvas";
-import LetterCard from "@/components/letterCard/LetterCard";
-import DetailTop from "@/components/subPage/detail/DetailTop";
-import DetailButtons from "@/components/subPage/detail/DetailButtons";
-import SubTop from "@/components/subPage/contents/SubTop";
+import HeartCanvas from "@/components/page/sub/canvas/HeartCanvas";
+import LetterCard from "@/components/page/sub/letterCard/LetterCard";
+import DetailTop from "@/components/page/sub/detail/detailTop/DetailTop";
+import DetailButtons from "@/components/page/sub/detail/detailButtons/DetailButtons";
+import SubTop from "@/components/page/sub/subTop/SubTop";
 import styles from "@/app/[locale]/my-yps/detail/[id]/fullDetail.module.css";
 
 export default function FullDetail({ letter }: any) {

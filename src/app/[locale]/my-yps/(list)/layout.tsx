@@ -1,9 +1,9 @@
-import Header from "@/components/header/Header";
-import Main from "@/components/main/Main";
-import SubInner from "@/components/subPage/layout/SubInner";
-import SubPageLayout from "@/components/subPage/layout/SubPageLayout";
-import MyYpsContentsClient from "@/components/subPage/layoutContents/MyYpsContentsClient";
-import WriteButton from "@/components/button/WriteButton";
+import Header from "@/components/layout/header/base/Header";
+import Main from "@/components/page/main/base/Main";
+import SubInner from "@/components/page/sub/layout/subInner/SubInner";
+import SubPageLayout from "@/components/page/sub/layout/SubPageLayout";
+import MyYpsContentsClient from "@/components/page/sub/layoutContents/myYps/MyYpsContentsClient";
+import WriteButton from "@/components/button/writeButton/WriteButton";
 
 export default function ListLayout({ children, modal }: any) {
   return (

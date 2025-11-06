@@ -1,6 +1,6 @@
 import AboutPage from "@/clientPage/AboutPage";
-import Header from "@/components/header/Header";
-import Main from "@/components/main/Main";
+import Header from "@/components/layout/header/base/Header";
+import Main from "@/components/page/main/base/Main";
 
 export default function Page() {
   return (

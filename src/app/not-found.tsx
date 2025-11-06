@@ -1,9 +1,9 @@
 "use client";
 
-import CircleQuestion from "@/components/svg/CircleQuestion";
+import CircleQuestion from "@/components/common/svg/CircleQuestion";
 import "../styles/globals.css";
 import "../styles/notFound.css";
-import ArrowLeft from "@/components/svg/ArrowLeft";
+import ArrowLeft from "@/components/common/svg/ArrowLeft";
 
 export default function GlobalNotFound() {
   return (

@@ -4,9 +4,9 @@ import { useRouter, useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
 
-import Portal from "@/components/portal/Portal";
-import { LetterModal } from "@/components/letterModal/LetterModal";
-import LetterCard from "@/components/letterCard/LetterCard";
+import Portal from "@/components/common/portal/Portal";
+import { LetterModal } from "@/components/page/sub/letterModal/LetterModal";
+import LetterCard from "@/components/page/sub/letterCard/LetterCard";
 
 export default function LetterModalPage() {
   const router = useRouter();

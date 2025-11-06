@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
-import MoneyCursor from "@/components/nurui/money-cursor/money-cursor";
+import MoneyCursor from "@/components/lib/nurui/money-cursor/money-cursor";
 import { ToastContainer } from "react-toastify";
 
 import "swiper/css";
@@ -14,7 +14,7 @@ import "../../styles/globals.css";
 import "react-toastify/dist/ReactToastify.css";
 import "../../styles/globalComponents.css";
 
-import Footer from "@/components/footer/Footer";
+import Footer from "@/components/layout/footer/Footer";
 
 export async function generateMetadata({
   params,

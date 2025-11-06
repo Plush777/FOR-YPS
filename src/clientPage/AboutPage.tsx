@@ -1,10 +1,10 @@
 "use client";
 
-import SubPageLayout from "@/components/subPage/layout/SubPageLayout";
+import SubPageLayout from "@/components/page/sub/layout/SubPageLayout";
 import styles from "@/app/[locale]/about/page.module.css";
 import { useTranslations } from "next-intl";
-import TitleArea from "@/components/subPage/contents/TitleArea";
-import ContentsArea from "@/components/subPage/contents/ContentsArea";
+import TitleArea from "@/components/page/sub/titleArea/TitleArea";
+import ContentsArea from "@/components/page/sub/contents/ContentsArea";
 
 export default function AboutPage() {
   const t = useTranslations("subPage.about");
