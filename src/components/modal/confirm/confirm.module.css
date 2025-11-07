@@ -5,14 +5,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 999;
+  z-index: 9999;
+  backdrop-filter: blur(12px);
 }
 
 .modal {
   background: #fff;
   border-radius: 12px;
   padding: 24px;
-  width: 320px;
+  width: 100%;
+  max-width: 320px;
   text-align: center;
 }
 

@@ -28,7 +28,7 @@ export default function DetailTop({ data, useType }: Props) {
           />
         )}
 
-        {data.username && (
+        {data?.username && (
           <strong className={letterModalStyles.username}>
             {data.username}&nbsp;님의 편지
           </strong>
@@ -36,7 +36,7 @@ export default function DetailTop({ data, useType }: Props) {
       </div>
 
       <span className={letterModalStyles.date}>
-        {new Date(data.created_at).toLocaleString("ko-KR", {
+        {new Date(data?.created_at).toLocaleString("ko-KR", {
           year: "numeric",
           month: "2-digit",
           day: "2-digit",

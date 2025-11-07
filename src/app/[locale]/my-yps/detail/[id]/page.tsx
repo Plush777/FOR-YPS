@@ -1,24 +1,44 @@
+"use client";
+
+import { useParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
+
+import LetterCard from "@/components/page/sub/letterCard/LetterCard";
 import FullDetail from "@/clientPage/FullDetail";
 
-export default async function DetailPage({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}) {
-  const { id } = await params;
+import { useGetMyProfile } from "@/hooks/feature/profile/useGetMyProfile";
 
-  const { data: letter } = await supabase
-    .from("letters")
-    .select("id, username, content, created_at")
-    .eq("id", id)
-    .single();
+export default function DetailPage() {
+  const params = useParams();
+  const { user: currentUser } = useGetMyProfile();
 
-  if (!letter) {
-    return (
-      <div style={{ padding: "40px" }}>해당 메시지를 찾을 수 없습니다.</div>
-    );
-  }
+  const [letter, setLetter] = useState<any>(null);
 
-  return <FullDetail letter={letter} />;
+  useEffect(() => {
+    const fetchLetter = async () => {
+      const { data } = await supabase
+        .from("letters")
+        .select("id, username, user_id, avatar_url, content, created_at")
+        .eq("id", params.id)
+        .single();
+      setLetter(data);
+    };
+
+    fetchLetter();
+  }, [params.id]);
+
+  const isMyLetter =
+    currentUser?.id && letter?.user_id && currentUser.id === letter.user_id;
+
+  return (
+    <FullDetail
+      data={letter}
+      currentUser={currentUser}
+      isMyLetter={isMyLetter}
+      isLoggedIn={!!currentUser}
+    >
+      <LetterCard useType="detail" isEllipsis={false} item={letter} />
+    </FullDetail>
+  );
 }

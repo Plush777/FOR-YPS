@@ -7,46 +7,31 @@ import { supabase } from "@/lib/supabaseClient";
 import Portal from "@/components/common/portal/Portal";
 import { LetterModal } from "@/components/page/sub/letterModal/LetterModal";
 import LetterCard from "@/components/page/sub/letterCard/LetterCard";
+import { useGetMyProfile } from "@/hooks/feature/profile/useGetMyProfile";
 
 export default function LetterModalPage() {
   const router = useRouter();
   const params = useParams();
-  const [letter, setLetter] = useState<any>(null);
-  const [currentUser, setCurrentUser] = useState<any>(null);
+  const { user: currentUser } = useGetMyProfile();
 
-  const [loading, setLoading] = useState(true);
+  const [letter, setLetter] = useState<any>(null);
 
   useEffect(() => {
-    const fetchLetter = async () => {
+    async function fetchLetter() {
       const { data } = await supabase
         .from("letters")
         .select("id, username, user_id, avatar_url, content, created_at")
         .eq("id", params.id)
         .single();
       setLetter(data);
-      setLoading(false);
-    };
-
-    const fetchUser = async () => {
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-
-      if (user) {
-        setCurrentUser({
-          id: user.id,
-          avatar_url: user.user_metadata.avatar_url,
-          name: user.user_metadata.name,
-        });
-      }
-    };
-
-    fetchUser();
+    }
     fetchLetter();
   }, [params.id]);
 
   const isMyLetter =
     currentUser?.id && letter?.user_id && currentUser.id === letter.user_id;
+
+  console.log(letter);
 
   return (
     <Portal>

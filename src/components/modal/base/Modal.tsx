@@ -16,7 +16,7 @@ import ModalMyypsContents from "@/components/modal/contents/ModalMyypsContents";
 import AuthContents from "@/components/modal/contents/AuthContents";
 import { supabase } from "@/lib/supabaseClient";
 
-import useBodyScrollLock from "@/hooks/useBodyScrollLock";
+import useBodyScrollLock from "@/hooks/modal/useBodyScrollLock";
 
 type AnimationStyle =
   | "from-bottom"

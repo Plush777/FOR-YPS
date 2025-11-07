@@ -8,7 +8,7 @@ import styles from "@/components/page/sub/letterModal/letterModal.module.css";
 import ModalClose from "@/components/common/svg/ModalClose";
 import DetailTop from "@/components/page/sub/detail/detailTop/DetailTop";
 import DetailButtons from "@/components/page/sub/detail/detailButtons/DetailButtons";
-import useBodyScrollLock from "@/hooks/useBodyScrollLock";
+import useBodyScrollLock from "@/hooks/modal/useBodyScrollLock";
 import {
   LetterModalSkeletonHeader,
   LetterModalSkeletonTop,

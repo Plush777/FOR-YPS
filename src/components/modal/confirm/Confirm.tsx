@@ -20,18 +20,20 @@ export default function Confirm({
         <p className={styles.message}>{message}</p>
         <div className={styles.buttons}>
           <Button
-            size="md"
+            size="sm"
             onlyIcon={false}
             color="gray"
             text="취소"
             onClick={onCancel}
+            minWidth="sm"
           />
           <Button
-            size="md"
+            size="sm"
             onlyIcon={false}
             color="red"
             text="확인"
             onClick={onConfirm}
+            minWidth="sm"
           />
         </div>
       </div>

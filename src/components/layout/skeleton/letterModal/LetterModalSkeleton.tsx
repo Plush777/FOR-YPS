@@ -1,5 +1,3 @@
-"use client";
-
 import styles from "@/components/layout/skeleton/letterModal/letterModalSkeleton.module.css";
 
 type UseType = "modal" | "detail";

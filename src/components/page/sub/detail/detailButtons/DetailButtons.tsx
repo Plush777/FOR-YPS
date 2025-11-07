@@ -3,7 +3,7 @@ import Share from "@/components/common/svg/Share";
 import DotMore from "@/components/common/svg/DotMore";
 import MenuDropDown from "@/components/layout/header/menuDropdown/MenuDropDown";
 import Button from "@/components/button/base/Button";
-import { useClipboard } from "@/hooks/useClipboard";
+import { useClipboard } from "@/hooks/feature/clipboard/useClipboard";
 
 interface Props {
   useType: "modal" | "detail";
