@@ -73,8 +73,52 @@ export default async function RootLayout({
   // side is the easiest way to get started
   const messages = await getMessages();
 
+  const faviconUrlPrefix = "/icons/favicons";
+
   return (
     <html lang={locale} translate="no">
+      <head>
+        <link
+          rel="apple-touch-icon"
+          sizes="174x192"
+          href={`${faviconUrlPrefix}/apple-icon.png`}
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="36x40"
+          href={`${faviconUrlPrefix}/android-icon-36x36.png`}
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="48x53"
+          href={`${faviconUrlPrefix}/android-icon-48x48.png`}
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x35"
+          href={`${faviconUrlPrefix}/favicon-32x32.png`}
+        />
+        <link
+          rel="icon"
+          type="image/ico"
+          sizes="32x35"
+          href={`${faviconUrlPrefix}/favicon.ico`}
+        />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta
+          name="msapplication-TileImage"
+          content={`${faviconUrlPrefix}/ms-icon-144x144.png`}
+        />
+        <meta
+          name="msapplication-TileImage"
+          content={`${faviconUrlPrefix}/ms-icon-70x70.png`}
+        />
+        <meta name="theme-color" content="#ffffff" />
+      </head>
       <body>
         <NextIntlClientProvider messages={messages}>
           <div id="app">

@@ -110,6 +110,11 @@
   background-color: var(--color-green-500);
 }
 
+.buttonBgBlack {
+  color: var(--color-white);
+  background-color: var(--color-black);
+}
+
 .buttonTransparentWhite svg {
   color: var(--color-white);
 }
@@ -133,6 +138,10 @@
 
 .iconNaver::before {
   background-image: url("/icons/socialLogo/logo-naver.svg");
+}
+
+.iconX::before {
+  background-image: url("/icons/socialLogo/logo-x.svg");
 }
 
 .iconGoogle::before {

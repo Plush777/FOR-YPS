@@ -6,7 +6,7 @@ type CommonProps = {
   buttonType?: "button" | "submit" | "reset";
   rounded?: "roundedFull" | "roundedLg" | "roundedMd" | "roundedNone";
   text?: string;
-  iconName?: "naver" | "google" | "kakao" | "";
+  iconName?: "naver" | "google" | "kakao" | "x" | "";
   className?: string;
   gsapClassName?: string;
   children?: ReactNode;
@@ -24,7 +24,8 @@ type CommonProps = {
     | "transparent-white"
     | "transparent-gray"
     | "border2-white"
-    | "red";
+    | "red"
+    | "black";
 };
 
 // onlyIcon = true 경우
@@ -100,6 +101,7 @@ export default function Button({
     if (color === "transparent-gray") return styles.buttonTransparentGray;
     if (color === "border2-white") return styles.buttonBorder2White;
     if (color === "red") return styles.buttonRed;
+    if (color === "black") return styles.buttonBgBlack;
 
     return "";
   }
@@ -108,6 +110,7 @@ export default function Button({
     if (iconName === "naver") return styles.iconNaver;
     if (iconName === "google") return styles.iconGoogle;
     if (iconName === "kakao") return styles.iconKakao;
+    if (iconName === "x") return styles.iconX;
 
     return "";
   }

@@ -43,11 +43,11 @@ export default function AuthContents({ description, smallDescription }: Props) {
           onClick={() => handleLogin("kakao")}
         />
         <Button
-          iconName="naver"
+          iconName="x"
           onlyIcon={false}
           size="lg"
-          color="green"
-          text="Naver"
+          color="black"
+          text="X (Twitter)"
         />
       </div>
 

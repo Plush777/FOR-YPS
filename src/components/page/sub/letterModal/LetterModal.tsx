@@ -25,6 +25,7 @@ interface Props {
   data: any;
   currentUser?: any;
   isMyLetter?: boolean;
+  avatarCondition: string;
 }
 
 export function LetterModal({
@@ -34,6 +35,7 @@ export function LetterModal({
   data,
   currentUser,
   isMyLetter,
+  avatarCondition,
 }: Props) {
   const [open, setOpen] = useState(false);
   const [editMode, setEditMode] = useState(false);
@@ -112,7 +114,11 @@ export function LetterModal({
             {isLoading ? (
               <LetterModalSkeletonTop useType="modal" />
             ) : (
-              <DetailTop data={data} useType="modal" />
+              <DetailTop
+                avatarCondition={avatarCondition}
+                data={data}
+                useType="modal"
+              />
             )}
 
             {isLoading ? (

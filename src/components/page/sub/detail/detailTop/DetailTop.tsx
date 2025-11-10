@@ -7,9 +7,10 @@ interface Props {
     created_at: string;
   };
   useType: string;
+  avatarCondition: any;
 }
 
-export default function DetailTop({ data, useType }: Props) {
+export default function DetailTop({ data, useType, avatarCondition }: Props) {
   function useTypeStyleCondition() {
     if (useType === "modal") return letterModalStyles.modalType;
     if (useType === "detail") return letterModalStyles.detailType;
@@ -20,13 +21,11 @@ export default function DetailTop({ data, useType }: Props) {
   return (
     <div className={`${letterModalStyles.bodyTop} ${useTypeStyleCondition()}`}>
       <div className={letterModalStyles.titleArea}>
-        {data.avatar_url && (
-          <img
-            className={letterModalStyles.img}
-            src={data.avatar_url}
-            alt="profile"
-          />
-        )}
+        <img
+          className={letterModalStyles.img}
+          src={avatarCondition ?? "/images/img-user-default.png"}
+          alt="profile"
+        />
 
         {data?.username && (
           <strong className={letterModalStyles.username}>
