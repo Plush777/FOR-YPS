@@ -1,4 +1,4 @@
-import styles from "@/components/subPage/contents/titleArea.module.css";
+import styles from "@/components/page/sub/titleArea/titleArea.module.css";
 
 interface Props {
   title: string;

@@ -1,4 +1,4 @@
-import styles from "@/components/subPage/contents/contentsArea.module.css";
+import styles from "@/components/page/sub/contents/contentsArea.module.css";
 import { ReactNode } from "react";
 
 interface Props {
