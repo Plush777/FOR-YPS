@@ -2,7 +2,7 @@
 
 import { useRouter, useParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import { supabase } from "@/lib/supabaseClient";
+import { supabase } from "@/lib/supabase/client";
 
 import Portal from "@/components/common/portal/Portal";
 import { LetterModal } from "@/components/page/sub/letterModal/LetterModal";

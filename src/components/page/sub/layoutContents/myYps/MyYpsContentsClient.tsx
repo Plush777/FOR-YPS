@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
-import { supabase } from "@/lib/supabaseClient";
+import { supabase } from "@/lib/supabase/client";
 import type { Letter } from "@/types/letter";
 import MyYpsContents from "@/components/page/sub/layoutContents/myYps/MyYpsContents";
 import { toast } from "react-toastify";

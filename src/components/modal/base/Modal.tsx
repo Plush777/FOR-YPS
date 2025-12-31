@@ -14,7 +14,7 @@ import AuthArea from "@/components/layout/header/auth/AuthArea";
 import ModalContentsLayout from "@/components/modal/contents/ModalContentsLayout";
 import ModalMyypsContents from "@/components/modal/contents/ModalMyypsContents";
 import AuthContents from "@/components/modal/contents/AuthContents";
-import { supabase } from "@/lib/supabaseClient";
+import { supabase } from "@/lib/supabase/client";
 
 import useBodyScrollLock from "@/hooks/modal/useBodyScrollLock";
 

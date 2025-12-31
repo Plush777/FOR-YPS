@@ -1,44 +1,23 @@
-"use client";
+import { createClient } from "@/lib/supabase/server";
+import { redirect } from "next/navigation";
+import DetailClient from "@/components/page/sub/detail/detailClient/DetailClient";
 
-import { useParams } from "next/navigation";
-import { useEffect, useState } from "react";
-import { supabase } from "@/lib/supabaseClient";
+export default async function Page({ params }: { params: { id: string } }) {
+  const supabase = await createClient(); // ✅ await
 
-import LetterCard from "@/components/page/sub/letterCard/LetterCard";
-import FullDetail from "@/clientPage/FullDetail";
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
 
-import { useGetMyProfile } from "@/hooks/feature/profile/useGetMyProfile";
+  if (!user) redirect("/login");
 
-export default function DetailPage() {
-  const params = useParams();
-  const { user: currentUser } = useGetMyProfile();
+  const { data: letter } = await supabase
+    .from("letters")
+    .select("*")
+    .eq("id", params.id)
+    .single();
 
-  const [letter, setLetter] = useState<any>(null);
+  if (!letter) redirect("/404");
 
-  useEffect(() => {
-    const fetchLetter = async () => {
-      const { data } = await supabase
-        .from("letters")
-        .select("id, username, user_id, content, created_at")
-        .eq("id", params.id)
-        .single();
-      setLetter(data);
-    };
-
-    fetchLetter();
-  }, [params.id]);
-
-  const isMyLetter =
-    currentUser?.id && letter?.user_id && currentUser.id === letter.user_id;
-
-  return (
-    <FullDetail
-      data={letter}
-      currentUser={currentUser}
-      isMyLetter={isMyLetter}
-      isLoggedIn={!!currentUser}
-    >
-      <LetterCard useType="detail" isEllipsis={false} item={letter} />
-    </FullDetail>
-  );
+  return <DetailClient letter={letter} currentUser={user} />;
 }

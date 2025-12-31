@@ -6,7 +6,7 @@ import Delete from "@/components/common/svg/Delete";
 import Siren from "@/components/common/svg/Siren";
 
 import { toast } from "react-toastify";
-import { supabase } from "@/lib/supabaseClient";
+import { supabase } from "@/lib/supabase/client";
 import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@/i18n/routing";
@@ -38,7 +38,7 @@ export default function MenuDropDown({
 }: Props) {
   const router = useRouter();
 
-  const links = ["myLetters", "settings"];
+  const links = ["my-letters", "settings"];
   const menuRef = useRef<HTMLUListElement | null>(null);
   const t = useTranslations("auth.modalMenuDropdown");
   const menus = t.raw("menus") as string[];

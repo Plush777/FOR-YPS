@@ -15,6 +15,7 @@ interface Props {
   isLoadMoreLoading: boolean; // ✅ 더보기 로딩 전용
   onLoadMore: () => void;
   showAllLoadedNotice: boolean; // ✅ 클릭 후 더 이상 없을 때만 true
+  isBackground?: boolean;
 }
 
 export default function MyYpsContents({
@@ -23,19 +24,29 @@ export default function MyYpsContents({
   isLoadMoreLoading,
   onLoadMore,
   showAllLoadedNotice,
+  isBackground = true,
 }: Props) {
   const hasItems = items.length > 0;
   const rotateArray = ["5deg", "-22deg", "15deg", "-14deg", "24deg", "-11deg"];
 
   return (
     <>
-      <HeartCanvas hMin={360} hMax={360} bgColor="transparent" count={40} />
+      {isBackground && (
+        <HeartCanvas hMin={360} hMax={360} bgColor="transparent" count={40} />
+      )}
+
       <div className={styles.wrap}>
-        <div className={styles.inner}>
-          <FixedImage
-            src="/images/common/img-letter-fixed.png"
-            alt="young posse"
-          />
+        <div
+          className={`
+            ${styles.inner} 
+            ${isBackground ? styles.innerBackground : styles.emptyInner}`}
+        >
+          {isBackground && (
+            <FixedImage
+              src="/images/common/img-letter-fixed.png"
+              alt="young posse"
+            />
+          )}
 
           {/* ✅ 초기 로딩 중 + 아직 데이터 없음 → 스켈레톤 */}
           {isInitialLoading ? (

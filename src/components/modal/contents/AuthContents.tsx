@@ -2,7 +2,7 @@ import modalStyles from "@/components/modal/base/modal.module.css";
 import Button from "@/components/button/base/Button";
 
 import { ReactNode } from "react";
-import { supabase } from "@/lib/supabaseClient";
+import { supabase } from "@/lib/supabase/client";
 import Wave from "@/components/common/animation/wave/Wave";
 
 interface Props {
@@ -41,13 +41,6 @@ export default function AuthContents({ description, smallDescription }: Props) {
           color="yellow"
           text="Kakao"
           onClick={() => handleLogin("kakao")}
-        />
-        <Button
-          iconName="x"
-          onlyIcon={false}
-          size="lg"
-          color="black"
-          text="X (Twitter)"
         />
       </div>
 

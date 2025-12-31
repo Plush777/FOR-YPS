@@ -6,6 +6,14 @@
   flex-direction: column;
   align-items: center;
   min-height: calc(100vh + 180px);
+}
+
+.emptyInner {
+  min-height: auto;
+  padding: 100px 0;
+}
+
+.innerBackground {
   padding: 60px 40px;
   border-radius: 30px;
   background: #fac5de;
@@ -104,7 +112,14 @@
   text-align: center;
   font-size: 20px;
   font-weight: 500;
+}
+
+.emptyTextBlack {
   color: var(--color-black);
+}
+
+.emptyTextWhite {
+  color: var(--color-zinc-50);
 }
 
 .metaArea {

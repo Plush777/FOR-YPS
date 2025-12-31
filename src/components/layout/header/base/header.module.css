@@ -7,6 +7,8 @@
   height: var(--header-height);
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(8px);
+  padding: var(--contents-side-padding);
+  background-color: var(--color-zinc-800);
 }
 
 .headerInner {
@@ -17,7 +19,6 @@
   max-width: var(--layout-max-width);
   margin: 0 auto;
   height: 100%;
-  padding: var(--contents-side-padding);
 }
 
 .headerInner a {

@@ -10,9 +10,11 @@ export default function AboutPage() {
   const t = useTranslations("subPage.about");
 
   return (
-    <SubPageLayout isVisual={true} description={t("description")}>
-      <TitleArea title="About" />
-
+    <SubPageLayout
+      title={t("title")}
+      isVisual={true}
+      description={t("description")}
+    >
       <ContentsArea>
         <ul className={styles.simpleList}>
           <li className={styles.simpleItem}>

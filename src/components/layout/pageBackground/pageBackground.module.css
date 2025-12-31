@@ -17,6 +17,7 @@
 }
 
 .pageBackground.sub {
+  padding-inline: 16px;
 }
 
 .pageBackground.sub::before {

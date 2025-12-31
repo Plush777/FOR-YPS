@@ -1,7 +1,7 @@
 "use client";
 
 import React, { ReactNode, useRef, useState, useEffect } from "react";
-import { supabase } from "@/lib/supabaseClient";
+import { supabase } from "@/lib/supabase/client";
 import { useTranslations } from "next-intl";
 
 import styles from "@/components/page/sub/letterModal/letterModal.module.css";

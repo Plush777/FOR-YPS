@@ -1,3 +1,6 @@
+/* visual 영역 css인데 현재는 사용 안함. */
+
+/* 
 .visual {
   position: relative;
   display: flex;
@@ -49,11 +52,13 @@
   font-weight: 400;
 }
 
+*/
+
 .contentsInner {
-  max-width: 1280px;
+  max-width: var(--layout-max-width);
   width: 100%;
   margin: 0 auto;
-  padding: 120px 60px;
+  padding-block: 60px;
 }
 
 @media (max-width: 768px) {
