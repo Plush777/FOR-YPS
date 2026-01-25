@@ -15,7 +15,12 @@
   border-width: 2px;
   border-color: var(--color-violet-400);
   border-style: solid;
-  box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 0 #0000;
+  box-shadow:
+    0 0 #0000,
+    0 0 #0000,
+    0 0 #0000,
+    0 0 #0000,
+    0 0 #0000;
   transition: 0.3s all;
   aspect-ratio: 16 / 9;
 }
@@ -51,7 +56,12 @@
   background-color: var(--color-violet-400);
   width: 80px;
   height: 80px;
-  box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 0 #0000;
+  box-shadow:
+    0 0 #0000,
+    0 0 #0000,
+    0 0 #0000,
+    0 0 #0000,
+    0 0 #0000;
   transition: 0.3s all ease-in-out;
 }
 
@@ -101,7 +111,9 @@
   line-height: 28px;
   color: var(--color-white);
   border-radius: 9999px;
-  box-shadow: 0 0 0 0px #fff, 0 0 0 calc(1px + 0px) rgba(142, 81, 255, 0.5),
+  box-shadow:
+    0 0 0 0px #fff,
+    0 0 0 calc(1px + 0px) rgba(142, 81, 255, 0.5),
     0 0 #0000;
   backdrop-filter: blur(12px);
   background-color: var(--color-violet-400);
@@ -152,6 +164,12 @@
   .motionTransitionDiv {
     margin-left: 0;
     margin-right: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .motionDiv {
+    padding: 0 16px;
   }
 }
 

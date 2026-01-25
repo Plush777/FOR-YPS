@@ -149,3 +149,9 @@
   width: 100%;
   height: 300px;
 }
+
+@media (max-width: 768px) {
+  .innerBackground {
+    padding: 50px 30px;
+  }
+}

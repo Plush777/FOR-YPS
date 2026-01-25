@@ -135,8 +135,19 @@
   font-size: 18px;
 }
 
+/* .bodyTop.detailType {
+  position: sticky;
+  top: 20px;
+  width: fit-content;
+  border-radius: 8px;
+  background-color: var(--color-zinc-800);
+  margin: 0 auto 20px auto;
+} */
+
 .img {
+  padding: 4px;
   border-radius: 50%;
+  background-color: var(--color-white);
 }
 
 .bodyTop.modalType .img {

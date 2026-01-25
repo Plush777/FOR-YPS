@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useCallback, useRef, useMemo } from "react";
-import styles from "@/app/[locale]/page.module.css";
+import styles from "@/app/[locale]/(main)/page.module.css";
 
 import { useTranslations } from "next-intl";
 
@@ -117,7 +117,7 @@ export default function HomePage({ initialItems }: HomePageProps) {
     return (
       initialItems &&
       initialItems.map(
-        (_, index) => memberClasses[index % memberClasses.length]
+        (_, index) => memberClasses[index % memberClasses.length],
       )
     );
   }, [initialItems]);
@@ -195,7 +195,7 @@ export default function HomePage({ initialItems }: HomePageProps) {
       selectors: string[],
       trigger: string,
       endOffset: number,
-      stagger: number = 0.2
+      stagger: number = 0.2,
     ) {
       const selectorString = selectors.join(", ");
       gsap.set(selectorString, { opacity: 0 });
@@ -216,7 +216,7 @@ export default function HomePage({ initialItems }: HomePageProps) {
             markers: false,
             toggleActions: "play none none reverse",
           },
-        }
+        },
       );
     }
 
@@ -226,7 +226,7 @@ export default function HomePage({ initialItems }: HomePageProps) {
         ".second .second-text-2.titleBoxInTitle",
       ],
       ".second",
-      800
+      800,
     );
 
     createGroupTextAnimation(
@@ -237,7 +237,7 @@ export default function HomePage({ initialItems }: HomePageProps) {
         ".third .third-text-4.titleBoxInTitle",
       ],
       ".third",
-      800
+      800,
     );
 
     createGroupTextAnimation(
@@ -247,7 +247,7 @@ export default function HomePage({ initialItems }: HomePageProps) {
         ".fourth .fourth-text-3.titleBoxInTitle",
       ],
       ".fourth",
-      1200
+      1200,
     );
 
     createGroupTextAnimation(
@@ -261,7 +261,7 @@ export default function HomePage({ initialItems }: HomePageProps) {
         ".fifth-text-5-2",
       ],
       ".fifth",
-      1200
+      1200,
     );
 
     createGroupTextAnimation(
@@ -273,7 +273,7 @@ export default function HomePage({ initialItems }: HomePageProps) {
         ".sixth .glowingCard",
       ],
       ".sixth",
-      800
+      800,
     );
 
     createGroupTextAnimation(
@@ -285,7 +285,7 @@ export default function HomePage({ initialItems }: HomePageProps) {
         ".seventh-swiper",
       ],
       ".seventh",
-      800
+      800,
     );
 
     sectionTitleRefs.current.forEach((title) => {
@@ -387,11 +387,11 @@ export default function HomePage({ initialItems }: HomePageProps) {
           scrub: true, // 스크롤에 따라 자연스럽게 변화
           markers: false,
         },
-      }
+      },
     );
 
     const topDownButtonWrapper = document.querySelector(
-      ".topDownButtonWrapper"
+      ".topDownButtonWrapper",
     ) as HTMLElement | null;
     const footer = document.querySelector(".footer") as HTMLElement | null;
 

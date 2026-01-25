@@ -15,3 +15,9 @@
 .hide {
   transform: translateX(-50%) translateY(410px);
 }
+
+@media (max-width: 500px) {
+  .fixedImage {
+    bottom: -200px;
+  }
+}

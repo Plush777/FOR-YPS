@@ -53,15 +53,13 @@ export async function generateMetadata({
   };
 }
 
-interface RootLayoutProps {
-  children: React.ReactNode;
-  params: { locale: string };
-}
-
 export default async function RootLayout({
   children,
   params,
-}: RootLayoutProps) {
+}: {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+}) {
   const { locale } = await params;
 
   // 들어오는 'locale'이 유효한지 확인합니다.

@@ -44,17 +44,19 @@ export default function DetailButtons({
         onClick={() => copyUrl()}
         onlyIcon
         iconSize="lg"
-        color="transparent-gray"
+        color={useType === "modal" ? "transparent-gray" : "border2-white"}
+        rounded="roundedNone"
       >
         <Share />
       </Button>
       <Button
         onlyIcon
         iconSize="lg"
-        color="transparent-gray"
+        color={useType === "modal" ? "transparent-gray" : "border2-white"}
         ref={buttonRef}
         className={openState ? "active" : ""}
         onClick={onDropdownToogle}
+        rounded="roundedNone"
       >
         <DotMore />
       </Button>

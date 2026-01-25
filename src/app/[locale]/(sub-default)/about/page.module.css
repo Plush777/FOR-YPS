@@ -7,6 +7,7 @@
 .simpleItem a {
   position: relative;
   padding-left: 16px;
+  color: var(--color-white);
 }
 
 .simpleItem a::before {
@@ -17,7 +18,7 @@
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background-color: var(--color-black);
+  background-color: currentColor;
 }
 
 @media (max-width: 768px) {

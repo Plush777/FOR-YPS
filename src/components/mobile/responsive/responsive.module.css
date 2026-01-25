@@ -1,0 +1,17 @@
+.min768 {
+  display: block;
+}
+
+.max768 {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .min768 {
+    display: none;
+  }
+
+  .max768 {
+    display: block;
+  }
+}

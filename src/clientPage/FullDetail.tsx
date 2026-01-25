@@ -3,9 +3,9 @@
 import { supabase } from "@/lib/supabase/client";
 import { useState, useRef, ReactNode, useEffect } from "react";
 import React from "react";
+import dynamic from "next/dynamic";
 
 import { useTranslations } from "next-intl";
-import HeartCanvas from "@/components/page/sub/canvas/HeartCanvas";
 import {
   LetterModalSkeletonContent,
   LetterModalSkeletonTop,
@@ -14,7 +14,7 @@ import {
 import DetailTop from "@/components/page/sub/detail/detailTop/DetailTop";
 import DetailButtons from "@/components/page/sub/detail/detailButtons/DetailButtons";
 import SubTop from "@/components/page/sub/subTop/SubTop";
-import styles from "@/app/[locale]/my-yps/detail/[id]/fullDetail.module.css";
+import styles from "@/app/[locale]/(sub-default)/my-yps/detail/[id]/fullDetail.module.css";
 
 type Props = {
   data: any;
@@ -35,11 +35,19 @@ export default function FullDetail({
   const [editMode, setEditMode] = useState(false);
   const [editedText, setEditedText] = useState<string>("");
 
+  const avatarCondition =
+    data?.author_avatar_url || "/images/common/img-user-default.png";
+
   const buttonRef = useRef<HTMLButtonElement>(null);
   const tModalMenu = useTranslations("auth.modalMenuDropdown");
   const menus = (tModalMenu.raw("menus") as string[]) || [];
 
   const isLoading = !data;
+
+  const HeartCanvas = dynamic(
+    () => import("@/components/page/sub/canvas/HeartCanvas"),
+    { ssr: false },
+  );
 
   // ✅ 데이터가 도착/변경될 때 원본 내용으로 동기화 (편집모드 아닐 때만)
   useEffect(() => {
@@ -73,7 +81,7 @@ export default function FullDetail({
     }
   }
 
-  console.log(data);
+  console.log("currentUser", currentUser);
 
   return (
     <>
@@ -107,7 +115,11 @@ export default function FullDetail({
         {isLoading ? (
           <LetterModalSkeletonTop useType="detail" />
         ) : (
-          <DetailTop data={data} useType="detail" />
+          <DetailTop
+            avatarCondition={avatarCondition}
+            data={data}
+            useType="detail"
+          />
         )}
 
         {isLoading ? (

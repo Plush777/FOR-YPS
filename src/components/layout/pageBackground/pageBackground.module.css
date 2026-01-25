@@ -27,3 +27,9 @@
 .pageBackground.myyps {
   padding: 30px 16px;
 }
+
+@media (max-width: 768px) {
+  .pageBackground.myyps {
+    padding: 16px;
+  }
+}

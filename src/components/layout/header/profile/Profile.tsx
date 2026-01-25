@@ -5,7 +5,6 @@ import styles from "@/components/layout/header/profile/profile.module.css";
 import MenuDropDown from "@/components/layout/header/menuDropdown/MenuDropDown";
 import { useTranslations } from "next-intl";
 import { logout } from "@/components/layout/header/auth/AuthArea";
-import ArrowDropDown from "@/components/common/svg/ArrowDropDown";
 
 interface Props {
   userData: any;
@@ -36,15 +35,11 @@ export default function Profile({ userData }: Props) {
         onClick={() => setOpen((v) => !v)}
       >
         {userData.avatar_url && (
-          <>
-            <img
-              src={userData.avatar_url}
-              alt={userData.name || "user"}
-              className={styles.avatar}
-            />
-
-            <ArrowDropDown />
-          </>
+          <img
+            src={userData.avatar_url}
+            alt={userData.name || "user"}
+            className={styles.avatar}
+          />
         )}
       </button>
 

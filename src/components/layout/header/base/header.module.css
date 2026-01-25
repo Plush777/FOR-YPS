@@ -11,6 +11,14 @@
   background-color: var(--color-zinc-800);
 }
 
+.headerRowBox {
+  height: 100%;
+}
+
+.headerRow {
+  height: 100%;
+}
+
 .headerInner {
   position: relative;
   display: flex;
@@ -41,14 +49,25 @@
 }
 
 @media (max-width: 1440px) {
-  .headerInner img {
+  .headerLeft img {
     width: 120px;
     height: auto;
   }
 }
 
 @media (max-width: 768px) {
-  .headerInner img {
+  .header {
+    height: auto;
+    padding: 11.5px 16px 0 16px;
+  }
+
+  .headerLeft img {
     width: 100px;
+  }
+
+  .headerRowBox {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
   }
 }

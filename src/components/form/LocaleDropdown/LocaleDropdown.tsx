@@ -17,7 +17,7 @@ export default function LocaleDropdown() {
 
   return (
     <select
-      className={styles.localeDropdownWrapper}
+      className={`${styles.localeDropdownWrapper}`}
       value={locale}
       onChange={handleChange}
     >

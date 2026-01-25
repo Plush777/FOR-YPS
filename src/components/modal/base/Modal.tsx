@@ -138,7 +138,7 @@ export function Modal({
           setAuthUser(null);
         }
         setIsAuthLoading(false);
-      }
+      },
     );
 
     return () => {
@@ -235,7 +235,9 @@ export function Modal({
   }
 
   return (
-    <div className={`${styles.wrap} ${modalStyles.stickyWrap}`}>
+    <div
+      className={`${styles.wrap} ${useType === "fixedButton" ? modalStyles.stickyWrap : ""}`}
+    >
       <div className={`${styles.inner} ${modalStyles.inner}`}>
         {clickContentsCondition()}
       </div>

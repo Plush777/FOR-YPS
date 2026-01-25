@@ -1,0 +1,10 @@
+.writeButtonSkeleton {
+  position: sticky;
+  bottom: 20px;
+  margin-top: 30px;
+  margin-left: auto;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--color-stone-700);
+}

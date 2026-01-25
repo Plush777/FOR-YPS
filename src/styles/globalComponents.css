@@ -253,8 +253,8 @@
 }
 
 .spotlightCard.macaroniCheeze {
-  background: linear-gradient(var(--color-zinc-900), var(--color-zinc-900))
-      padding-box,
+  background:
+    linear-gradient(var(--color-zinc-900), var(--color-zinc-900)) padding-box,
     conic-gradient(
         from var(--border-angle),
         var(--border-bg) 50%,
@@ -264,8 +264,8 @@
 }
 
 .spotlightCard.youngPosseUp {
-  background: linear-gradient(var(--color-zinc-900), var(--color-zinc-900))
-      padding-box,
+  background:
+    linear-gradient(var(--color-zinc-900), var(--color-zinc-900)) padding-box,
     conic-gradient(
         from var(--border-angle),
         var(--border-bg) 50%,
@@ -275,8 +275,8 @@
 }
 
 .spotlightCard.xxl {
-  background: linear-gradient(var(--color-zinc-900), var(--color-zinc-900))
-      padding-box,
+  background:
+    linear-gradient(var(--color-zinc-900), var(--color-zinc-900)) padding-box,
     conic-gradient(
         from var(--border-angle),
         var(--border-bg) 50%,
@@ -286,8 +286,8 @@
 }
 
 .spotlightCard.onMyScars {
-  background: linear-gradient(var(--color-zinc-900), var(--color-zinc-900))
-      padding-box,
+  background:
+    linear-gradient(var(--color-zinc-900), var(--color-zinc-900)) padding-box,
     conic-gradient(
         from var(--border-angle),
         var(--border-bg) 50%,
@@ -297,8 +297,8 @@
 }
 
 .spotlightCard.ateThat {
-  background: linear-gradient(var(--color-zinc-900), var(--color-zinc-900))
-      padding-box,
+  background:
+    linear-gradient(var(--color-zinc-900), var(--color-zinc-900)) padding-box,
     conic-gradient(
         from var(--border-angle),
         var(--border-bg) 50%,
@@ -308,8 +308,8 @@
 }
 
 .spotlightCard.weStillLoading {
-  background: linear-gradient(var(--color-zinc-900), var(--color-zinc-900))
-      padding-box,
+  background:
+    linear-gradient(var(--color-zinc-900), var(--color-zinc-900)) padding-box,
     conic-gradient(
         from var(--border-angle),
         var(--border-bg) 50%,
@@ -319,8 +319,8 @@
 }
 
 .spotlightCard.streetCarol {
-  background: linear-gradient(var(--color-zinc-900), var(--color-zinc-900))
-      padding-box,
+  background:
+    linear-gradient(var(--color-zinc-900), var(--color-zinc-900)) padding-box,
     conic-gradient(
         from var(--border-angle),
         var(--border-bg) 50%,
@@ -330,8 +330,8 @@
 }
 
 .spotlightCard.cold {
-  background: linear-gradient(var(--color-zinc-900), var(--color-zinc-900))
-      padding-box,
+  background:
+    linear-gradient(var(--color-zinc-900), var(--color-zinc-900)) padding-box,
     conic-gradient(
         from var(--border-angle),
         var(--border-bg) 50%,
@@ -341,8 +341,8 @@
 }
 
 .spotlightCard.growingPain {
-  background: linear-gradient(var(--color-zinc-900), var(--color-zinc-900))
-      padding-box,
+  background:
+    linear-gradient(var(--color-zinc-900), var(--color-zinc-900)) padding-box,
     conic-gradient(
         from var(--border-angle),
         var(--border-bg) 50%,
@@ -353,8 +353,8 @@
 
 .spotlightCard.sunhye {
   color: var(--sunhye);
-  background: linear-gradient(var(--color-zinc-900), var(--color-zinc-900))
-      padding-box,
+  background:
+    linear-gradient(var(--color-zinc-900), var(--color-zinc-900)) padding-box,
     conic-gradient(
         from var(--border-angle),
         var(--border-bg) 50%,
@@ -364,8 +364,8 @@
 }
 
 .spotlightCard.yeonjung {
-  background: linear-gradient(var(--color-zinc-900), var(--color-zinc-900))
-      padding-box,
+  background:
+    linear-gradient(var(--color-zinc-900), var(--color-zinc-900)) padding-box,
     conic-gradient(
         from var(--border-angle),
         var(--border-bg) 50%,
@@ -375,29 +375,29 @@
 }
 
 .spotlightCard.jiana {
-  background: linear-gradient(var(--color-zinc-900), var(--color-zinc-900))
-      padding-box,
+  background:
+    linear-gradient(var(--color-zinc-900), var(--color-zinc-900)) padding-box,
     conic-gradient(from var(--border-angle), var(--border-bg) 50%, var(--jiana))
       border-box;
 }
 
 .spotlightCard.doeun {
-  background: linear-gradient(var(--color-zinc-900), var(--color-zinc-900))
-      padding-box,
+  background:
+    linear-gradient(var(--color-zinc-900), var(--color-zinc-900)) padding-box,
     conic-gradient(from var(--border-angle), var(--border-bg) 50%, var(--doeun))
       border-box;
 }
 
 .spotlightCard.jieun {
-  background: linear-gradient(var(--color-zinc-900), var(--color-zinc-900))
-      padding-box,
+  background:
+    linear-gradient(var(--color-zinc-900), var(--color-zinc-900)) padding-box,
     conic-gradient(from var(--border-angle), var(--border-bg) 50%, var(--jieun))
       border-box;
 }
 
 .spotlightCard.notFound {
-  background: linear-gradient(var(--color-zinc-900), var(--color-zinc-900))
-      padding-box,
+  background:
+    linear-gradient(var(--color-zinc-900), var(--color-zinc-900)) padding-box,
     conic-gradient(
         from var(--border-angle),
         var(--border-bg) 50%,
@@ -475,8 +475,8 @@
 }
 
 .spotlightCard.sunhye {
-  background: linear-gradient(var(--color-zinc-900), var(--color-zinc-900))
-      padding-box,
+  background:
+    linear-gradient(var(--color-zinc-900), var(--color-zinc-900)) padding-box,
     conic-gradient(
         from var(--border-angle),
         var(--border-bg) 50%,
@@ -491,8 +491,8 @@
 }
 
 .spotlightCard.yeonjung {
-  background: linear-gradient(var(--color-zinc-900), var(--color-zinc-900))
-      padding-box,
+  background:
+    linear-gradient(var(--color-zinc-900), var(--color-zinc-900)) padding-box,
     conic-gradient(
         from var(--border-angle),
         var(--border-bg) 50%,
@@ -506,8 +506,8 @@
 }
 
 .spotlightCard.jiana {
-  background: linear-gradient(var(--color-zinc-900), var(--color-zinc-900))
-      padding-box,
+  background:
+    linear-gradient(var(--color-zinc-900), var(--color-zinc-900)) padding-box,
     conic-gradient(from var(--border-angle), var(--border-bg) 50%, var(--jiana))
       border-box;
 }
@@ -517,8 +517,8 @@
 }
 
 .spotlightCard.doeun {
-  background: linear-gradient(var(--color-zinc-900), var(--color-zinc-900))
-      padding-box,
+  background:
+    linear-gradient(var(--color-zinc-900), var(--color-zinc-900)) padding-box,
     conic-gradient(from var(--border-angle), var(--border-bg) 50%, var(--doeun))
       border-box;
 }
@@ -528,8 +528,8 @@
 }
 
 .spotlightCard.jieun {
-  background: linear-gradient(var(--color-zinc-900), var(--color-zinc-900))
-      padding-box,
+  background:
+    linear-gradient(var(--color-zinc-900), var(--color-zinc-900)) padding-box,
     conic-gradient(from var(--border-angle), var(--border-bg) 50%, var(--jieun))
       border-box;
 }
@@ -667,6 +667,16 @@
 
 .header.sub {
   position: static;
+  border-bottom: 1px solid var(--color-stone-200);
+  background-color: var(--color-white);
+}
+
+.header.main {
+  background-color: transparent;
+}
+
+.header.sub .navListItemText {
+  color: var(--black);
 }
 
 .button:disabled {

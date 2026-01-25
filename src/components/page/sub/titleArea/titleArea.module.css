@@ -1,11 +1,13 @@
 .titleArea {
-  margin-bottom: 48px;
+  margin-bottom: 26px;
 }
 
 .title {
   font-size: 36px;
   font-weight: 700;
   color: var(--color-zinc-50);
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-zinc-300);
 }
 
 @media (max-width: 768px) {
