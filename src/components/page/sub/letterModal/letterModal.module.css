@@ -135,13 +135,19 @@
   font-size: 18px;
 }
 
-.img {
-  border-radius: 50%;
-  border: 1px solid var(--color-white);
-}
+/* .bodyTop.detailType {
+  position: sticky;
+  top: 20px;
+  width: fit-content;
+  border-radius: 8px;
+  background-color: var(--color-zinc-800);
+  margin: 0 auto 20px auto;
+} */
 
-.imgScaleDown {
-  padding: 8px;
+.img {
+  padding: 4px;
+  border-radius: 50%;
+  background-color: var(--color-white);
 }
 
 .bodyTop.modalType .img {

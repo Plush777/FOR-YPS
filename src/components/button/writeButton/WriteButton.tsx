@@ -3,6 +3,7 @@
 import { usePathname } from "@/i18n/routing";
 import { Modal } from "@/components/modal/base/Modal";
 import { useEffect, useState } from "react";
+import styles from "@/components/button/writeButton/writeButton.module.css";
 
 export default function WriteButton() {
   const pathname = usePathname();
@@ -13,7 +14,7 @@ export default function WriteButton() {
     setMounted(true);
   }, []);
 
-  if (!mounted) return null;
+  // if (!mounted) return null;
 
   const isDetailPage =
     pathname.includes("/my-yps/detail") ||
@@ -23,13 +24,19 @@ export default function WriteButton() {
   if (isDetailPage) return null;
 
   return (
-    <Modal
-      useType="fixedButton"
-      onSubmitMyYps={(message) => {
-        window.dispatchEvent(
-          new CustomEvent("yps-add-message", { detail: message })
-        );
-      }}
-    />
+    <>
+      {mounted ? (
+        <Modal
+          useType="fixedButton"
+          onSubmitMyYps={(message) => {
+            window.dispatchEvent(
+              new CustomEvent("yps-add-message", { detail: message }),
+            );
+          }}
+        />
+      ) : (
+        <div className={styles.writeButtonSkeleton}></div>
+      )}
+    </>
   );
 }

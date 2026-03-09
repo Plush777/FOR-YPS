@@ -18,20 +18,31 @@
 }
 
 .avatar {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   object-position: center;
 }
 
 .avatar + svg {
   color: var(--color-white);
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
 }
 
 .avatar + svg path:last-child {
   fill: currentColor;
+}
+
+@media (max-width: 768px) {
+  .avatar {
+    width: 36px;
+    height: 36px;
+  }
+
+  .avatar + svg {
+    display: none;
+  }
 }
 
 @media (hover: hover) {

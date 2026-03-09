@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { usePathname } from "@/i18n/routing";
 import { useLocale } from "next-intl";
 import Link from "next/link";
 import styles from "./mobileNavigation.module.css";
@@ -26,7 +25,6 @@ const localeList = [
 ];
 
 export default function MobileNavigation({ data, isOpen, onClose }: Props) {
-  const pathname = usePathname();
   const currentLocale = useLocale();
 
   return (
@@ -34,7 +32,7 @@ export default function MobileNavigation({ data, isOpen, onClose }: Props) {
       className={`
         ${styles.wrap} 
         ${isOpen ? styles.active : ""} 
-        mobileNavigation`}
+      `}
     >
       <ul className={styles.list}>
         {data.map((item, i) => (

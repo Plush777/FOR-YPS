@@ -1,7 +1,7 @@
 "use client";
 
 import SubPageLayout from "@/components/page/sub/layout/SubPageLayout";
-import styles from "@/app/[locale]/about/page.module.css";
+import styles from "@/app/[locale]/(sub-default)/about/page.module.css";
 import { useTranslations } from "next-intl";
 import TitleArea from "@/components/page/sub/titleArea/TitleArea";
 import ContentsArea from "@/components/page/sub/contents/ContentsArea";
@@ -16,6 +16,7 @@ export default function AboutPage() {
       description={t("description")}
     >
       <ContentsArea>
+        <TitleArea title={t("title")} />
         <ul className={styles.simpleList}>
           <li className={styles.simpleItem}>
             <a href="mailto:sky11916@naver.com">E-mail: sky11916@naver.com</a>

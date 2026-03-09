@@ -7,7 +7,7 @@ import MyYpsContents from "@/components/page/sub/layoutContents/myYps/MyYpsConte
 import { toast } from "react-toastify";
 import { useTranslations } from "next-intl";
 
-const PAGE_SIZE = 50;
+const PAGE_SIZE = 9;
 
 export default function MyYpsContentsClient({
   initialMessages,
@@ -16,51 +16,57 @@ export default function MyYpsContentsClient({
 }) {
   const t = useTranslations("toast");
 
+  const [hasMore, setHasMore] = useState(true);
   const [messages, setMessages] = useState<Letter[]>(initialMessages);
   const [page, setPage] = useState(0);
   const [isInitialLoading, setIsInitialLoading] = useState(
-    initialMessages.length === 0
+    initialMessages.length === 0,
   );
   const [isLoadMoreLoading, setIsLoadMoreLoading] = useState(false);
   const [showAllLoadedNotice, setShowAllLoadedNotice] = useState(false);
 
-  const fetchPage = useCallback(async (pageIndex: number) => {
-    const from = pageIndex * PAGE_SIZE;
-    const to = from + PAGE_SIZE - 1;
+  const fetchPage = useCallback(
+    async (pageIndex: number) => {
+      const from = pageIndex * PAGE_SIZE;
+      const to = from + PAGE_SIZE - 1;
 
-    const { data, error } = await supabase
-      .from("letters")
-      .select("id, username, content, created_at")
-      .order("created_at", { ascending: false })
-      .range(from, to);
+      const { data, error } = await supabase
+        .from("letters")
+        .select("id, user_id, username, content, created_at, author_avatar_url")
+        .order("created_at", { ascending: false })
+        .range(from, to);
 
-    if (error) {
-      console.error("❌ 메시지 불러오기 실패:", error);
-      toast.error(t("letterLoad.error"));
-      return [];
-    }
+      if (error) {
+        console.error("❌ 메시지 불러오기 실패:", error);
+        toast.error(t("letterLoad.error"));
+        return [];
+      }
 
-    return data ?? [];
-  }, []);
+      return data ?? [];
+    },
+    [t],
+  );
 
   // ✅ 초기 로딩
   useEffect(() => {
     (async () => {
       setIsInitialLoading(true);
+
       const first = await fetchPage(0);
       setMessages(first);
-      setIsInitialLoading(false);
       setPage(0);
-      setShowAllLoadedNotice(false);
+
+      setHasMore(first.length === PAGE_SIZE); // ✅ 9개 꽉 차면 더 있을 가능성
+      setShowAllLoadedNotice(first.length < PAGE_SIZE); // ✅ 선택(원하면)
+      setIsInitialLoading(false);
     })();
   }, [fetchPage]);
 
   // ✅ Load More 핸들러
   const handleLoadMore = useCallback(async () => {
-    if (isLoadMoreLoading) return;
+    if (isLoadMoreLoading || !hasMore) return;
 
     setIsLoadMoreLoading(true);
-    setShowAllLoadedNotice(false);
 
     const nextPage = page + 1;
     const next = await fetchPage(nextPage);
@@ -68,12 +74,15 @@ export default function MyYpsContentsClient({
     if (next.length > 0) {
       setMessages((prev) => [...prev, ...next]);
       setPage(nextPage);
-    } else {
-      setShowAllLoadedNotice(true);
     }
 
+    // ✅ 다음이 9개보다 적으면 더 이상 없음
+    const stillHasMore = next.length === PAGE_SIZE;
+    setHasMore(stillHasMore);
+    setShowAllLoadedNotice(!stillHasMore);
+
     setIsLoadMoreLoading(false);
-  }, [isLoadMoreLoading, page, fetchPage]);
+  }, [isLoadMoreLoading, hasMore, page, fetchPage]);
 
   // ✅ 유저가 글 쓰기 버튼으로 입력한 값 반영 + Toast
   useEffect(() => {
@@ -88,10 +97,18 @@ export default function MyYpsContentsClient({
       const username =
         user.user_metadata?.name || user.email?.split("@")[0] || "익명";
 
+      // ✅ provider 상관없이 avatar url 추출 (google/kakao 등)
+      const author_avatar_url =
+        user.user_metadata?.avatar_url ||
+        user.user_metadata?.picture ||
+        user.user_metadata?.profile_image_url || // 카카오에서 종종 사용
+        user.user_metadata?.thumbnail_image_url || // 카카오 썸네일 키 가능성
+        null;
+
       const { data, error } = await supabase
         .from("letters")
-        .insert({ user_id: user.id, username, content })
-        .select()
+        .insert({ user_id: user.id, username, content, author_avatar_url })
+        .select("id, user_id, username, content, created_at, author_avatar_url")
         .single();
 
       if (error) {
@@ -144,7 +161,7 @@ export default function MyYpsContentsClient({
 
             return prev;
           });
-        }
+        },
       )
       .subscribe();
 
@@ -160,6 +177,7 @@ export default function MyYpsContentsClient({
       isLoadMoreLoading={isLoadMoreLoading}
       onLoadMore={handleLoadMore}
       showAllLoadedNotice={showAllLoadedNotice}
+      hasMore={hasMore}
     />
   );
 }

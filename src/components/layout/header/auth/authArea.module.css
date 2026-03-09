@@ -1,3 +1,18 @@
 .loginButton {
   min-width: 80px;
 }
+
+.profileSkeleton {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-position: center;
+  background-color: var(--color-stone-700);
+}
+
+@media (max-width: 768px) {
+  .profileSkeleton {
+    width: 36px;
+    height: 36px;
+  }
+}

@@ -33,3 +33,17 @@
     font-size: 16px;
   }
 }
+
+@media (max-width: 768px) {
+  .navList {
+    overflow-x: auto;
+  }
+
+  .navListItem {
+    height: 48px;
+  }
+
+  .navListItemText {
+    height: 100%;
+  }
+}

@@ -4,16 +4,17 @@ import FullDetail from "@/clientPage/FullDetail";
 import LetterCard from "@/components/page/sub/letterCard/LetterCard";
 
 export default function DetailClient({ letter, currentUser }: any) {
-  const isMyLetter = currentUser.id === letter.user_id;
+  const isLoggedIn = !!currentUser;
+  const isMyLetter = isLoggedIn && currentUser.id === letter.user_id;
 
   console.log(isMyLetter);
 
   return (
     <FullDetail
       data={letter}
-      currentUser={currentUser}
+      currentUser={currentUser} // null 가능
       isMyLetter={isMyLetter}
-      isLoggedIn
+      isLoggedIn={isLoggedIn}
     >
       <LetterCard useType="detail" isEllipsis={false} item={letter} />
     </FullDetail>

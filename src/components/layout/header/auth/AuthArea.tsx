@@ -15,7 +15,9 @@ export default function AuthArea({ onClickModal }: Props) {
   const tAuth = useTranslations("auth");
   const { user, loading } = useAuth();
 
-  if (loading) return null; // 👈 로딩 중엔 아무 것도 렌더링하지 않음
+  if (loading) {
+    return <div className={styles.profileSkeleton}></div>;
+  }
 
   console.log(user);
 
