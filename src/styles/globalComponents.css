@@ -663,6 +663,7 @@
 
 .header.default {
   position: relative;
+  background-color: var(--color-zinc-800);
 }
 
 .header.sub {

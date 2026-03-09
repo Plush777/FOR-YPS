@@ -1,9 +1,5 @@
-import SubDefaultLayout from "@/components/layout/subDefault/SubDefaultLayout";
+import SubPageLayout from "@/components/page/sub/layout/SubPageLayout";
 
 export default function ListLayout({ children }: any) {
-  return (
-    <SubDefaultLayout isCanvas={false} isDetail={false} isWrite={false}>
-      {children}
-    </SubDefaultLayout>
-  );
+  return <SubPageLayout pageName="myLetters">{children}</SubPageLayout>;
 }

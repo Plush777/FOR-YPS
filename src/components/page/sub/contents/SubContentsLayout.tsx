@@ -10,9 +10,7 @@ interface Props {
 export default function SubContentsLayout({ children }: Props) {
   return (
     <div className={styles.inner}>
-      <section className={styles.contents}>
-        <div className={styles.contentsInner}>{children}</div>
-      </section>
+      <section className={styles.contents}>{children}</section>
     </div>
   );
 }

@@ -18,6 +18,10 @@
 
 .pageBackground.sub {
   padding-inline: 16px;
+  max-width: var(--sub-inner-max-width2);
+  width: 100%;
+  margin: 0 auto;
+  padding-block: 60px;
 }
 
 .pageBackground.sub::before {

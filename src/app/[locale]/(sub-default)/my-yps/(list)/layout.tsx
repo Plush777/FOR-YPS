@@ -1,12 +1,12 @@
 import MyYpsContentsClient from "@/components/page/sub/layoutContents/myYps/MyYpsContentsClient";
-import SubDefaultLayout from "@/components/layout/subDefault/SubDefaultLayout";
+import SubPageLayout from "@/components/page/sub/layout/SubPageLayout";
 
 export default function ListLayout({ children, modal }: any) {
   return (
-    <SubDefaultLayout isCanvas={true} isDetail={false} isWrite={true}>
+    <SubPageLayout pageName="myYps">
       <MyYpsContentsClient initialMessages={[]} />
       {children}
       {modal}
-    </SubDefaultLayout>
+    </SubPageLayout>
   );
 }

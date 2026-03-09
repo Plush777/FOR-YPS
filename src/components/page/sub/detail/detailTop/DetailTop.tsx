@@ -30,19 +30,14 @@ export default function DetailTop({ data, useType, avatarUrl }: Props) {
   return (
     <div className={`${letterModalStyles.bodyTop} ${useTypeStyleCondition()}`}>
       <div className={letterModalStyles.titleArea}>
-        {avatarCondition ? (
-          <img
-            className={letterModalStyles.img}
-            src={avatarCondition}
-            alt="profile"
-          />
-        ) : (
-          <img
-            className={letterModalStyles.img}
-            src="/images/img-user-default.png"
-            alt="profile"
-          />
-        )}
+        <img
+          src={avatarSrc}
+          alt="profile"
+          className={`
+            ${letterModalStyles.img}
+            ${!hasAvatar ? letterModalStyles.imgScaleDown : ""}
+          `}
+        />
 
         {data?.username && (
           <strong className={letterModalStyles.username}>

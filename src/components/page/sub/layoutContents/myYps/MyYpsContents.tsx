@@ -64,34 +64,6 @@ export default function MyYpsContents({
           {/* 로딩 중일땐 스켈레톤 */}
           {isInitialLoading ? (
             <Skeleton rotate={rotateArray} />
-          ) : hasItems ? (
-            <>
-              <ul className={styles.list}>
-                {items.map((item, i) => (
-                  <li key={item.id}>
-                    <Link scroll={false} href={`/my-yps/detail/${item.id}`}>
-                      <LetterCard
-                        useType="cardList"
-                        style={{
-                          transform: `rotate(${
-                            rotateArray[i % rotateArray.length]
-                          })`,
-                        }}
-                        item={item}
-                      />
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-
-              {shouldShowLoadMore && (
-                <LoadMoreButton
-                  showAllLoadedNotice={showAllLoadedNotice}
-                  onLoadMore={onLoadMore}
-                  isLoadMoreLoading={isLoadMoreLoading}
-                />
-              )}
-            </>
           ) : (
             <>
               {/* 
