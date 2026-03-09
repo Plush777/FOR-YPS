@@ -5,9 +5,9 @@ import Main from "@/components/page/main/base/Main";
 export default function Page() {
   return (
     <>
-      <Header name="sub" />
+      <Header name="default" />
 
-      <Main>
+      <Main background="gray">
         <AboutPage />
       </Main>
     </>

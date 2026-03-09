@@ -5,7 +5,7 @@ import MyLettersPage from "@/clientPage/MyLettersPage";
 export default function Page() {
   return (
     <>
-      <Header name="sub" />
+      <Header name="default" />
       <Main background="gray">
         <MyLettersPage />
       </Main>

@@ -3,14 +3,23 @@ import letterModalStyles from "@/components/page/sub/letterModal/letterModal.mod
 interface Props {
   data: {
     username: string;
-    avatar_url: string;
     created_at: string;
   };
+  avatarUrl?: string | null; // ✅ 작성자 avatar만 받기
   useType: string;
-  avatarCondition: any;
 }
 
-export default function DetailTop({ data, useType, avatarCondition }: Props) {
+export default function DetailTop({ data, useType, avatarUrl }: Props) {
+  // console.log(currentUser);
+  console.log(avatarUrl);
+  console.log(data);
+
+  const hasAvatar = Boolean(avatarUrl);
+
+  const avatarSrc = hasAvatar
+    ? avatarUrl!
+    : "/images/common/img-user-default.png";
+
   function useTypeStyleCondition() {
     if (useType === "modal") return letterModalStyles.modalType;
     if (useType === "detail") return letterModalStyles.detailType;
@@ -22,9 +31,12 @@ export default function DetailTop({ data, useType, avatarCondition }: Props) {
     <div className={`${letterModalStyles.bodyTop} ${useTypeStyleCondition()}`}>
       <div className={letterModalStyles.titleArea}>
         <img
-          className={letterModalStyles.img}
-          src={avatarCondition ?? "/images/img-user-default.png"}
+          src={avatarSrc}
           alt="profile"
+          className={`
+            ${letterModalStyles.img}
+            ${!hasAvatar ? letterModalStyles.imgScaleDown : ""}
+          `}
         />
 
         {data?.username && (

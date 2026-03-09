@@ -8,6 +8,9 @@
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(8px);
   padding: var(--contents-side-padding);
+}
+
+.header.gray {
   background-color: var(--color-zinc-800);
 }
 

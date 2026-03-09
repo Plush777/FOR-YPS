@@ -26,7 +26,8 @@ export default function MyYpsContents({
   showAllLoadedNotice,
   isBackground = true,
 }: Props) {
-  const hasItems = items.length > 0;
+  const isNineItems = items.length > 9;
+  const isItems = items.length < 0;
   const rotateArray = ["5deg", "-22deg", "15deg", "-14deg", "24deg", "-11deg"];
 
   return (
@@ -39,7 +40,9 @@ export default function MyYpsContents({
         <div
           className={`
             ${styles.inner} 
-            ${isBackground ? styles.innerBackground : styles.emptyInner}`}
+            ${
+              isBackground == true ? styles.innerBackground : styles.emptyInner
+            }`}
         >
           {isBackground && (
             <FixedImage
@@ -48,37 +51,48 @@ export default function MyYpsContents({
             />
           )}
 
-          {/* ✅ 초기 로딩 중 + 아직 데이터 없음 → 스켈레톤 */}
+          {/* 로딩 중일땐 스켈레톤 */}
           {isInitialLoading ? (
             <Skeleton rotate={rotateArray} />
-          ) : hasItems ? (
-            <>
-              <ul className={styles.list}>
-                {items.map((item, i) => (
-                  <li key={item.id}>
-                    <Link scroll={false} href={`/my-yps/detail/${item.id}`}>
-                      <LetterCard
-                        useType="cardList"
-                        style={{
-                          transform: `rotate(${
-                            rotateArray[i % rotateArray.length]
-                          })`,
-                        }}
-                        item={item}
-                      />
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-
-              <LoadMoreButton
-                showAllLoadedNotice={showAllLoadedNotice}
-                onLoadMore={onLoadMore}
-                isLoadMoreLoading={isLoadMoreLoading}
-              />
-            </>
           ) : (
-            <EmptyLetter /> // ✅ 로딩이 끝났고 + 진짜 메시지 없을 때만 노출
+            <>
+              {/* 
+                로딩이 끝난 후, item이 0개면 EmptyLetter를 보여주고
+                item이 0개 이상이면 펴지 리스트를 보여줌. 
+              */}
+
+              {isItems ? (
+                <EmptyLetter />
+              ) : (
+                <ul className={styles.list}>
+                  {items.map((item, i) => (
+                    <li key={item.id}>
+                      <Link scroll={false} href={`/my-yps/detail/${item.id}`}>
+                        <LetterCard
+                          useType="cardList"
+                          style={{
+                            transform: `rotate(${
+                              rotateArray[i % rotateArray.length]
+                            })`,
+                          }}
+                          item={item}
+                        />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              {/* item이 9개 이상이면 더보기 버튼 표출 */}
+              {isNineItems && (
+                <LoadMoreButton
+                  showAllLoadedNotice={showAllLoadedNotice}
+                  onLoadMore={onLoadMore}
+                  isLoadMoreLoading={isLoadMoreLoading}
+                  isBackground={isBackground}
+                />
+              )}
+            </>
           )}
         </div>
       </div>

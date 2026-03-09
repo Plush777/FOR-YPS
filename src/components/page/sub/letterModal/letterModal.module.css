@@ -137,6 +137,11 @@
 
 .img {
   border-radius: 50%;
+  border: 1px solid var(--color-white);
+}
+
+.imgScaleDown {
+  padding: 8px;
 }
 
 .bodyTop.modalType .img {

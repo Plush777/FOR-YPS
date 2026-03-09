@@ -663,10 +663,7 @@
 
 .header.default {
   position: relative;
-}
-
-.header.sub {
-  position: static;
+  background-color: var(--color-zinc-800);
 }
 
 .button:disabled {

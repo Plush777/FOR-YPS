@@ -19,5 +19,8 @@ export default async function Page({ params }: { params: { id: string } }) {
 
   if (!letter) redirect("/404");
 
-  return <DetailClient letter={letter} currentUser={user} />;
+  // console.log(user.user_metadata);
+  // console.log(letter);
+
+  return <DetailClient letter={letter} currentUser={user.user_metadata} />;
 }

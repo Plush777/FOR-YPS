@@ -15,6 +15,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "../../styles/globalComponents.css";
 
 import Footer from "@/components/layout/footer/Footer";
+import { AuthProvider } from "@/contexts/AuthContext";
 
 export async function generateMetadata({
   params,
@@ -122,7 +123,7 @@ export default async function RootLayout({
       <body>
         <NextIntlClientProvider messages={messages}>
           <div id="app">
-            {children}
+            <AuthProvider>{children}</AuthProvider>
             <Footer />
           </div>
           <ToastContainer position="top-center" autoClose={2000} />

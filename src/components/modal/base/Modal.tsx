@@ -226,9 +226,11 @@ export function Modal({
       );
 
     if (useType === "myypsDetail") {
-      <ModalContentsLayout onClose={() => setIsVideoOpen(false)}>
-        {children}
-      </ModalContentsLayout>;
+      return (
+        <ModalContentsLayout onClose={() => setIsVideoOpen(false)}>
+          {children}
+        </ModalContentsLayout>
+      );
     }
 
     return undefined;

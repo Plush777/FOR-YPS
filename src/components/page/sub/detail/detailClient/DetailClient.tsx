@@ -6,6 +6,8 @@ import LetterCard from "@/components/page/sub/letterCard/LetterCard";
 export default function DetailClient({ letter, currentUser }: any) {
   const isMyLetter = currentUser.id === letter.user_id;
 
+  console.log(isMyLetter);
+
   return (
     <FullDetail
       data={letter}

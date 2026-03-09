@@ -3,6 +3,7 @@
 import React, { ReactNode, useRef, useState, useEffect } from "react";
 import { supabase } from "@/lib/supabase/client";
 import { useTranslations } from "next-intl";
+import { useAuth } from "@/contexts/AuthContext";
 
 import styles from "@/components/page/sub/letterModal/letterModal.module.css";
 import ModalClose from "@/components/common/svg/ModalClose";
@@ -23,9 +24,7 @@ interface Props {
   children: ReactNode;
   onClose: () => void;
   data: any;
-  currentUser?: any;
   isMyLetter?: boolean;
-  avatarCondition: string;
 }
 
 export function LetterModal({
@@ -33,9 +32,7 @@ export function LetterModal({
   children,
   onClose,
   data,
-  currentUser,
   isMyLetter,
-  avatarCondition,
 }: Props) {
   const [open, setOpen] = useState(false);
   const [editMode, setEditMode] = useState(false);
@@ -46,6 +43,10 @@ export function LetterModal({
   const menus = (tModalMenu.raw("menus") as string[]) || [];
 
   const isLoading = !data;
+
+  const { user: currentUser } = useAuth();
+
+  console.log(currentUser);
 
   // ✅ 데이터가 도착/변경될 때 원본 내용으로 동기화 (편집모드 아닐 때만)
   useEffect(() => {
@@ -81,6 +82,8 @@ export function LetterModal({
 
   useBodyScrollLock(true);
 
+  // console.log(currentUser?.avatar_url);
+
   return (
     <div onClick={onClose} className={styles.overlay}>
       <section
@@ -115,7 +118,7 @@ export function LetterModal({
               <LetterModalSkeletonTop useType="modal" />
             ) : (
               <DetailTop
-                avatarCondition={avatarCondition}
+                avatarUrl={currentUser?.avatar_url}
                 data={data}
                 useType="modal"
               />

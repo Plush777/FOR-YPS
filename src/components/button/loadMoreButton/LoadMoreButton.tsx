@@ -7,12 +7,14 @@ interface Props {
   showAllLoadedNotice: boolean;
   onLoadMore: () => void;
   isLoadMoreLoading: boolean;
+  isBackground?: boolean;
 }
 
 export default function LoadMoreButton({
   showAllLoadedNotice,
   onLoadMore,
   isLoadMoreLoading,
+  isBackground = true,
 }: Props) {
   const t = useTranslations("subPage.myYps.letter.state");
 
@@ -26,7 +28,9 @@ export default function LoadMoreButton({
           onlyIcon={false}
           size="xs"
           color="gray2"
-          className={styles.loadMoreButton}
+          className={`${styles.loadMoreButton} ${
+            isBackground == true ? "" : styles.wide
+          }`}
           onClick={onLoadMore}
           disabled={isLoadMoreLoading}
         >

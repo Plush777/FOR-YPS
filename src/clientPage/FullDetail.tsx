@@ -34,12 +34,15 @@ export default function FullDetail({
   const [open, setOpen] = useState(false);
   const [editMode, setEditMode] = useState(false);
   const [editedText, setEditedText] = useState<string>("");
+  const [localData, setLocalData] = useState(data);
 
   const buttonRef = useRef<HTMLButtonElement>(null);
   const tModalMenu = useTranslations("auth.modalMenuDropdown");
   const menus = (tModalMenu.raw("menus") as string[]) || [];
 
   const isLoading = !data;
+
+  console.log(isMyLetter);
 
   // ✅ 데이터가 도착/변경될 때 원본 내용으로 동기화 (편집모드 아닐 때만)
   useEffect(() => {
@@ -61,6 +64,10 @@ export default function FullDetail({
   }
 
   // ✅ 저장
+  useEffect(() => {
+    setLocalData(data);
+  }, [data]);
+
   async function handleSave() {
     const { error } = await supabase
       .from("letters")
@@ -68,12 +75,13 @@ export default function FullDetail({
       .eq("id", data.id);
 
     if (!error) {
-      data.content = editedText; // UI 즉시 반영
+      setLocalData((prev: any) => ({
+        ...prev,
+        content: editedText,
+      }));
       setEditMode(false);
     }
   }
-
-  console.log(data);
 
   return (
     <>
@@ -107,7 +115,11 @@ export default function FullDetail({
         {isLoading ? (
           <LetterModalSkeletonTop useType="detail" />
         ) : (
-          <DetailTop data={data} useType="detail" />
+          <DetailTop
+            data={data}
+            avatarUrl={currentUser.avatar_url}
+            useType="detail"
+          />
         )}
 
         {isLoading ? (

@@ -7,17 +7,14 @@ import { supabase } from "@/lib/supabase/client";
 import Portal from "@/components/common/portal/Portal";
 import { LetterModal } from "@/components/page/sub/letterModal/LetterModal";
 import LetterCard from "@/components/page/sub/letterCard/LetterCard";
-import { useGetMyProfile } from "@/hooks/feature/profile/useGetMyProfile";
-import { useAuthorProfile } from "@/hooks/feature/auth/useAuthorProfile";
+import { useAuth } from "@/contexts/AuthContext";
 
 export default function LetterModalPage() {
   const router = useRouter();
   const params = useParams();
-  const { user: currentUser } = useGetMyProfile();
+  const { user: currentUser } = useAuth();
 
   const [letter, setLetter] = useState<any>(null);
-
-  const author = useAuthorProfile(letter?.user_id);
 
   useEffect(() => {
     async function fetchLetter() {
@@ -31,25 +28,18 @@ export default function LetterModalPage() {
     fetchLetter();
   }, [params.id]);
 
+  // console.log(letter);
+  // console.log(currentUser);
+
   const isMyLetter =
-    currentUser?.id && letter?.user_id && currentUser.id === letter.user_id;
-
-  const avatarCondition = isMyLetter
-    ? currentUser?.avatar_url // 내가 쓴 글이면 내 프로필
-    : author?.avatar_url; // 남의 글이면 작성자 프로필
-
-  console.log(letter);
-
-  console.log(avatarCondition);
+    !!currentUser?.id && !!letter?.user_id && currentUser.id === letter.user_id;
 
   return (
     <Portal>
       <LetterModal
-        currentUser={currentUser}
         data={letter}
         isMyLetter={isMyLetter}
         onClose={() => router.back()}
-        avatarCondition={avatarCondition ?? ""}
       >
         <LetterCard useType="modal" isEllipsis={false} item={letter} />
       </LetterModal>

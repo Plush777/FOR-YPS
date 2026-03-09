@@ -5,7 +5,7 @@ import Button from "@/components/button/base/Button";
 import { supabase } from "@/lib/supabase/client";
 import { useTranslations } from "next-intl";
 import Profile from "@/components/layout/header/profile/Profile";
-import { useGetMyProfile } from "@/hooks/feature/profile/useGetMyProfile";
+import { useAuth } from "@/contexts/AuthContext";
 
 interface Props {
   onClickModal?: () => void;
@@ -13,7 +13,7 @@ interface Props {
 
 export default function AuthArea({ onClickModal }: Props) {
   const tAuth = useTranslations("auth");
-  const { user, loading } = useGetMyProfile();
+  const { user, loading } = useAuth();
 
   if (loading) return null; // 👈 로딩 중엔 아무 것도 렌더링하지 않음
 

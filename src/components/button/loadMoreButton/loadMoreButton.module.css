@@ -15,7 +15,17 @@
   transform: translateY(-50%);
   width: calc(100% - 510px);
   height: 1px;
-  background-color: var(--color-zinc-600);
+  background-color: var(--color-zinc-800);
+}
+
+.loadMoreButton.wide {
+  background-color: var(--color-zinc-900);
+}
+
+.loadMoreButton.wide::before,
+.loadMoreButton.wide::after {
+  background-color: var(--border);
+  width: calc(100% - 550px);
 }
 
 .loadMoreButton::before {
