@@ -1,6 +1,8 @@
 import Header from "@/components/layout/header/base/Header";
 import Main from "@/components/page/main/base/Main";
 
+import BodyClassController from "@/components/common/bodyClassController/BodyClassController";
+
 export default function MainLayout({
   children,
 }: {
@@ -8,6 +10,7 @@ export default function MainLayout({
 }) {
   return (
     <>
+      <BodyClassController className="main-page" />
       <Header name="main" />
       <Main isCanvas={false}>{children}</Main>
     </>
