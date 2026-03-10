@@ -4,7 +4,12 @@ import styles from "@/components/button/base/button.module.css";
 // 공통 Props
 type CommonProps = {
   buttonType?: "button" | "submit" | "reset";
-  rounded?: "roundedFull" | "roundedLg" | "roundedMd" | "roundedNone";
+  rounded?:
+    | "roundedFull"
+    | "roundedLg"
+    | "roundedMd"
+    | "roundedSm"
+    | "roundedNone";
   text?: string;
   iconName?: "naver" | "google" | "kakao" | "x" | "";
   className?: string;
@@ -24,6 +29,7 @@ type CommonProps = {
     | "transparent-white"
     | "transparent-gray"
     | "border2-white"
+    | "outlineWhite"
     | "red"
     | "black";
 };
@@ -31,7 +37,7 @@ type CommonProps = {
 // onlyIcon = true 경우
 type OnlyIconProps = {
   onlyIcon: true;
-  iconSize: "xl" | "lg" | "md" | "sm" | "onlySizeXl"; // ✅ required
+  iconSize: "xl" | "lg" | "md" | "sm" | "onlySizeXl" | "write"; // ✅ required
   size?: string; // ✅ optional
 };
 
@@ -65,6 +71,7 @@ export default function Button({
     if (rounded === "roundedFull") return styles.roundedFull;
     if (rounded === "roundedLg") return styles.roundedLg;
     if (rounded === "roundedMd") return styles.roundedMd;
+    if (rounded === "roundedSm") return styles.roundedSm;
     if (rounded === "roundedNone") return "";
 
     return "";
@@ -92,6 +99,7 @@ export default function Button({
 
   function buttonColorCondition() {
     if (color === "white") return styles.buttonBgWhite;
+    if (color === "outlineWhite") return styles.buttonOutlineWhite;
     if (color === "fill-white") return styles.buttonFillWhite;
     if (color === "yellow") return styles.buttonBgYellow;
     if (color === "green") return styles.buttonBgGreen;
@@ -123,6 +131,7 @@ export default function Button({
       if (iconSize === "sm") return styles.iconSizeSm;
 
       if (iconSize === "onlySizeXl") return styles.iconSizeOnly36;
+      if (iconSize === "write") return styles.iconSizeWrite;
     }
 
     return "";

@@ -80,7 +80,7 @@
   display: flex;
   justify-content: center;
   font-weight: 700;
-  color: var(--color-gray-100);
+  color: var(--theme-title);
 }
 
 .modalBodyButtons {
@@ -93,7 +93,7 @@
 }
 
 .date {
-  color: var(--color-gray-300);
+  color: var(--theme-date);
 }
 
 .whiteDimmed {
@@ -147,7 +147,7 @@
 .img {
   padding: 4px;
   border-radius: 50%;
-  border: 1px solid var(--color-white);
+  border: 1px solid var(--theme-button-border2-border);
 }
 
 .imgScaleDown {

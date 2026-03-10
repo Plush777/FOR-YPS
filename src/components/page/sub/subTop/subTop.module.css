@@ -1,11 +1,7 @@
 .subTop {
-  position: sticky;
-  top: 20px;
-  z-index: 100;
-  margin-bottom: 40px;
-  padding: var(--contents-side-padding);
   display: flex;
   align-items: center;
+  margin-bottom: 40px;
 }
 
 .between {

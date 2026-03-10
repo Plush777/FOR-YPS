@@ -59,7 +59,7 @@ export default function MenuDropDown({
             <button
               type="button"
               role="menuitem"
-              className={styles.menuItemButton}
+              className={`${styles.menuItemButton} ${styles.link}`}
               onClick={() => onSelect?.(label, index)}
             >
               {label}

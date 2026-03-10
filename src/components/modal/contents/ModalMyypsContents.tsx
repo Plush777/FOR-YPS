@@ -50,6 +50,7 @@ export default function ModalMyypsContents({
           maxLength={CHARACTER_LIMIT}
           value={value}
           onChange={handleChange}
+          isBorder={true}
         />
 
         <TextCounter

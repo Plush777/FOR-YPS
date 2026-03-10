@@ -1,0 +1,7 @@
+.inner {
+  padding-inline: 16px;
+  padding-block: 60px;
+  max-width: var(--sub-inner-max-width2);
+  width: 100%;
+  margin: 0 auto;
+}

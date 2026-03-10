@@ -45,7 +45,7 @@ export default function DetailButtons({
         onlyIcon
         iconSize="lg"
         color={useType === "modal" ? "transparent-gray" : "border2-white"}
-        rounded="roundedNone"
+        rounded="roundedSm"
       >
         <Share />
       </Button>
@@ -56,7 +56,7 @@ export default function DetailButtons({
         ref={buttonRef}
         className={openState ? "active" : ""}
         onClick={onDropdownToogle}
-        rounded="roundedNone"
+        rounded="roundedSm"
       >
         <DotMore />
       </Button>

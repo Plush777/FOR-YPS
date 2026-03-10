@@ -5,13 +5,13 @@
 .title {
   font-size: 36px;
   font-weight: 700;
-  color: var(--color-zinc-50);
+  color: var(--theme-sub-title);
   padding-bottom: 16px;
 }
 
 .desc {
   font-size: 16px;
-  color: var(--color-zinc-200);
+  color: var(--theme-sub-description);
 }
 
 .myYps {

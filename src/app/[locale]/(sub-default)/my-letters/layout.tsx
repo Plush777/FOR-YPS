@@ -1,5 +1,22 @@
-import SubPageLayout from "@/components/page/sub/layout/SubPageLayout";
+import PageBackground from "@/components/layout/pageBackground/PageBackground";
+import Inner from "@/components/layout/inner/Inner";
+import TitleArea from "@/components/page/sub/titleArea/TitleArea";
+
+import { useTranslations } from "next-intl";
 
 export default function ListLayout({ children }: any) {
-  return <SubPageLayout pageName="myLetters">{children}</SubPageLayout>;
+  const t = useTranslations("subPage.myLetters");
+
+  return (
+    <PageBackground styleType="sub">
+      <Inner>
+        <TitleArea
+          gapName="myLetters"
+          title={t("title")}
+          desc={t("description")}
+        />
+        {children}
+      </Inner>
+    </PageBackground>
+  );
 }

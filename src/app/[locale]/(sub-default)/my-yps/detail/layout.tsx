@@ -1,4 +1,5 @@
-import SubDefaultLayout from "@/components/layout/subDefault/SubDefaultLayout";
+import Inner from "@/components/layout/inner/Inner";
+import PageBackground from "@/components/layout/pageBackground/PageBackground";
 
 export default function DetailLayout({
   children,
@@ -6,8 +7,8 @@ export default function DetailLayout({
   children: React.ReactNode;
 }) {
   return (
-    <SubDefaultLayout isCanvas={true} isDetail={true} isWrite={false}>
-      {children}
-    </SubDefaultLayout>
+    <PageBackground styleType="sub">
+      <Inner>{children}</Inner>
+    </PageBackground>
   );
 }

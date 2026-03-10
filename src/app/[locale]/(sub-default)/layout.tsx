@@ -5,7 +5,7 @@ export default function SubLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <BodyClassController className="sub-page" />
-      <Header name="default" />
+      <Header />
       {children}
     </>
   );

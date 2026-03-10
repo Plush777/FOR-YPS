@@ -45,7 +45,7 @@ export default class AnimateHeartCanvas {
     sizeMin = 50,
     sizeMax = 350,
     bgColor?: string,
-    containerId = "main-bg-layer"
+    containerId = "main-bg-layer",
   ) {
     this.configHeart.hMin = isNaN(hMin ?? NaN) ? 330 : hMin!;
     this.configHeart.hMax = isNaN(hMax ?? NaN) ? 350 : hMax!;
@@ -73,7 +73,7 @@ export default class AnimateHeartCanvas {
 
   private handleResize = () => {
     const heartLayer = document.getElementById(
-      "heartLayer"
+      "heartLayer",
     ) as HTMLCanvasElement;
     if (heartLayer) this.updateFrameAttribute(heartLayer);
   };
@@ -111,7 +111,7 @@ export default class AnimateHeartCanvas {
     heartLayer.height = this.configFrame.height;
     heartLayer.style.width = `${rect.width}px`;
     heartLayer.style.height = `${rect.height}px`;
-    heartLayer.style.zIndex = "0";
+    heartLayer.style.zIndex = "-1";
     heartLayer.style.userSelect = "none";
     heartLayer.style.pointerEvents = "none";
     heartLayer.style.position = "absolute";
@@ -127,23 +127,23 @@ export default class AnimateHeartCanvas {
     for (let i = 0; i < this.configHeart.countHeart; i++) {
       const randomSize = randomInt(
         this.configHeart.sizeMin,
-        this.configHeart.sizeMax
+        this.configHeart.sizeMax,
       );
       const x = randomInt(0, this.configFrame.width);
       const y = randomInt(
         this.configFrame.height * (1 - this.configHeart.heartRangeMax),
-        this.configFrame.height * (1 - this.configHeart.heartRangeMin)
+        this.configFrame.height * (1 - this.configHeart.heartRangeMin),
       );
       this.heartBuffer.push({
         id: i,
         gravity: randomFloat(
           this.configHeart.gravityMin,
-          this.configHeart.gravityMax
+          this.configHeart.gravityMax,
         ),
         opacity: 0,
         opacityFinal: randomInt(
           this.configHeart.minOpacity,
-          this.configHeart.maxOpacity
+          this.configHeart.maxOpacity,
         ),
         timeInit: randomInt(1, 500),
         x,
@@ -206,7 +206,7 @@ export default class AnimateHeartCanvas {
         heart.y,
         heart.width / 2,
         heart.height / 2,
-        `hsl(${heart.colorH} ${this.configHeart.colorSaturate}% ${this.configHeart.colorLight}% / ${heart.opacity}%)`
+        `hsl(${heart.colorH} ${this.configHeart.colorSaturate}% ${this.configHeart.colorLight}% / ${heart.opacity}%)`,
       );
 
       heart.opacity += this.configHeart.opacityGrowth;
@@ -221,7 +221,7 @@ export default class AnimateHeartCanvas {
     y: number,
     width: number,
     height: number,
-    colorFill: string
+    colorFill: string,
   ) {
     ctx.save();
     ctx.beginPath();
@@ -233,7 +233,7 @@ export default class AnimateHeartCanvas {
       x - width / 2,
       y,
       x - width / 2,
-      y + topCurveHeight
+      y + topCurveHeight,
     );
     ctx.bezierCurveTo(
       x - width / 2,
@@ -241,7 +241,7 @@ export default class AnimateHeartCanvas {
       x,
       y + (height + topCurveHeight) / 1.4,
       x,
-      y + height
+      y + height,
     );
     ctx.bezierCurveTo(
       x,
@@ -249,7 +249,7 @@ export default class AnimateHeartCanvas {
       x + width / 2,
       y + (height + topCurveHeight) / 2,
       x + width / 2,
-      y + topCurveHeight
+      y + topCurveHeight,
     );
     ctx.bezierCurveTo(x + width / 2, y, x, y, x, y + topCurveHeight);
     ctx.closePath();

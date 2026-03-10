@@ -12,14 +12,10 @@ import logo from "../../../../../public/icons/logo/logo-for-yps.svg";
 
 import { Responsive } from "@/components/mobile/responsive/Responsive";
 
-interface Props {
-  name: string;
-}
-
-export default function Header({ name }: Props) {
+export default function Header() {
   return (
     <>
-      <header className={`${styles.header} header ${name}`}>
+      <header className={`${styles.header} header`}>
         <div className={styles.headerRowBox}>
           <div className={styles.headerRow}>
             <div className={styles.headerInner}>
@@ -51,11 +47,11 @@ export default function Header({ name }: Props) {
             </div>
           </div>
 
-          <div className={styles.headerRow}>
-            <Responsive useType="max768">
+          <Responsive useType="max768">
+            <div className={styles.headerRow}>
               <Nav data={navData.navList} />
-            </Responsive>
-          </div>
+            </div>
+          </Responsive>
         </div>
       </header>
     </>

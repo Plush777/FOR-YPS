@@ -10,9 +10,11 @@ import { ToastContainer } from "react-toastify";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import "../../styles/globals.css";
 import "react-toastify/dist/ReactToastify.css";
+
+import "../../styles/globals.css";
 import "../../styles/globalComponents.css";
+import "../../styles/theme.css";
 
 import Footer from "@/components/layout/footer/Footer";
 import { AuthProvider } from "@/contexts/AuthContext";

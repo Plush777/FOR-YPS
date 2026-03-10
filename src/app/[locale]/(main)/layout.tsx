@@ -11,7 +11,7 @@ export default function MainLayout({
   return (
     <>
       <BodyClassController className="main-page" />
-      <Header name="main" />
+      <Header />
       <Main isCanvas={false}>{children}</Main>
     </>
   );

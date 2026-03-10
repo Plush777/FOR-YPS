@@ -3,6 +3,8 @@ import styles from "@/components/layout/footer/footer.module.css";
 import Image from "next/image";
 import LinkSection from "./LinkSection";
 
+import logo from "../../../../public/icons/logo/logo-for-yps.svg";
+
 export default function Footer() {
   const t = useTranslations("mainPage.footer");
 
@@ -12,12 +14,7 @@ export default function Footer() {
         <div className={styles.footerLinkBox}>
           <div className={styles.footerLinkBoxInner}>
             <div className={styles.footerLogoArea}>
-              <Image
-                width={150}
-                height={60}
-                src="/icons/logo/logo-for-yps-white.svg"
-                alt="FOR YPS 푸터 로고"
-              />
+              <Image width={150} height={60} src={logo} alt="FOR YPS" />
 
               <div className={styles.footerNoticeBox}>
                 <p className={styles.footerNotice}>{t("notice")}</p>
@@ -26,10 +23,18 @@ export default function Footer() {
 
               <div className={styles.asciiArea}>
                 <Image
-                  src="/footer/img-footer-ascii.png"
+                  src="/footer/img-footer-ascii-white.png"
                   alt=""
                   width={240}
                   height={195}
+                  className={styles.asciiWhiteImg}
+                />
+                <Image
+                  src="/footer/img-footer-ascii-black.png"
+                  alt=""
+                  width={240}
+                  height={195}
+                  className={styles.asciiBlackImg}
                 />
               </div>
             </div>

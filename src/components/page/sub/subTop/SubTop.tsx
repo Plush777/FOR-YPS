@@ -14,7 +14,7 @@ export default function SubTop({ rightComponent }: Props) {
   return (
     <div className={`${styles.subTop} ${rightComponent ? styles.between : ""}`}>
       <Button
-        rounded="roundedNone"
+        rounded="roundedSm"
         onlyIcon={true}
         iconSize="lg"
         color="border2-white"

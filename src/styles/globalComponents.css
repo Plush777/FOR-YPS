@@ -6,6 +6,26 @@
   --card-default-height: 444px;
 }
 
+body {
+  background-color: var(--theme-body);
+
+  &.sub-page {
+    background-color: var(--theme-body-sub);
+  }
+}
+
+.main-page {
+  .header {
+    background-color: transparent;
+  }
+}
+
+.sub-page {
+  .header {
+    position: relative;
+  }
+}
+
 .gradationText {
   font-weight: 700;
   position: relative;
@@ -659,21 +679,6 @@
 
 .section.eleven {
   padding: 0;
-}
-
-.header.default {
-  position: relative;
-  background-color: var(--color-zinc-800);
-}
-
-.header.sub {
-  position: static;
-  border-bottom: 1px solid var(--color-stone-200);
-  background-color: var(--color-white);
-}
-
-.header.main {
-  background-color: transparent;
 }
 
 .header.sub .navListItemText {
