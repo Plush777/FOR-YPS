@@ -7,7 +7,7 @@
 .navList {
   display: flex;
   align-items: center;
-  column-gap: 32px;
+  column-gap: 8px;
   height: 100%;
 }
 
@@ -22,21 +22,35 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 40px;
+  padding: 0 16px;
+  border-radius: 9999px;
+  border: 1px solid var(--theme-nav);
   font-weight: 500;
-  font-size: 18px;
+  font-size: 16px;
   color: var(--theme-nav);
-  height: 100%;
+  transition: 0.2s ease-in-out;
+}
+
+@media (hover: hover) {
+  .navListItemText:hover {
+    background-color: var(--theme-nav);
+    color: var(--theme-bg);
+  }
 }
 
 @media (max-width: 1440px) {
   .navListItemText {
-    font-size: 16px;
+    min-height: 36px;
+    padding: 0 14px;
+    font-size: 14px;
   }
 }
 
 @media (max-width: 768px) {
   .navList {
     overflow-x: auto;
+    column-gap: 6px;
   }
 
   .navListItem {
@@ -44,6 +58,7 @@
   }
 
   .navListItemText {
-    height: 100%;
+    min-height: 32px;
+    font-size: 14px;
   }
 }
