@@ -69,7 +69,7 @@
     --theme-footer-text: var(--color-gray-100);
     --theme-footer-hover-svg: var(--color-gray-100);
     --theme-menu-dropdown-background: var(--color-zinc-800);
-    --theme-menu-dropdown-hover-background: var(--color-gray-900);
+    --theme-menu-dropdown-hover-background: var(--color-zinc-900);
     --theme-menu-dropdown-text: var(--color-gray-100);
     --theme-sub-title: var(--color-gray-50);
     --theme-sub-description: var(--color-gray-200);
