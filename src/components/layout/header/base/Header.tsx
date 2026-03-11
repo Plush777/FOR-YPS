@@ -31,18 +31,24 @@ export default function Header() {
                     />
                   </Link>
                 </h1>
-
-                <Responsive useType="min768">
-                  <Nav data={navData.navList} />
-                </Responsive>
               </div>
 
               <div className={styles.headerRight}>
                 <Responsive useType="min768">
+                  <Modal useType="auth" />
+                </Responsive>
+
+                <Responsive useType="min768">
+                  <Nav data={navData.navList} />
+                </Responsive>
+
+                <Responsive useType="min768">
                   <LocaleDropdown />
                 </Responsive>
 
-                <Modal useType="auth" />
+                <Responsive useType="max768">
+                  <Modal useType="auth" />
+                </Responsive>
               </div>
             </div>
           </div>
