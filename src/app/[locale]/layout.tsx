@@ -79,30 +79,26 @@ export default async function RootLayout({
   const supportedLocales = JSON.stringify(routing.locales);
   const bodyClassInitScript = `(() => {
     const locales = ${supportedLocales};
-    const trimPath = (path) => {
-      const normalized = path.replace(/\/+$/, "");
-      return normalized || "/";
-    };
-
-    const resolveBodyClass = () => {
-      const pathname = trimPath(window.location.pathname);
+    const applyBodyClass = () => {
+      const rawPathname = window.location.pathname || "/";
+      const pathname = rawPathname.endsWith("/") && rawPathname.length > 1
+        ? rawPathname.slice(0, -1)
+        : rawPathname;
       const segments = pathname.split("/").filter(Boolean);
-      return segments.length === 1 && locales.includes(segments[0])
-        ? "main-page"
-        : "sub-page";
-    };
-
-    const applyClass = () => {
-      if (!document.body) {
-        requestAnimationFrame(applyClass);
-        return;
-      }
+      const className =
+        segments.length === 1 && locales.includes(segments[0])
+          ? "main-page"
+          : "sub-page";
 
       document.body.classList.remove("main-page", "sub-page");
-      document.body.classList.add(resolveBodyClass());
+      document.body.classList.add(className);
     };
 
-    applyClass();
+    if (document.body) {
+      applyBodyClass();
+    } else {
+      window.addEventListener("DOMContentLoaded", applyBodyClass, { once: true });
+    }
   })();`;
 
   return (
@@ -150,7 +146,7 @@ export default async function RootLayout({
         />
         <meta name="theme-color" content="#ffffff" />
       </head>
-      <body>
+      <body suppressHydrationWarning>
         <BodyClassController locales={routing.locales} />
         <NextIntlClientProvider messages={messages}>
           <div id="app">
