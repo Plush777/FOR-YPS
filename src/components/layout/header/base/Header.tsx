@@ -35,7 +35,7 @@ export default function Header() {
 
               <div className={styles.headerRight}>
                 <Responsive useType="min768">
-                  <Modal useType="auth" />
+                  <LocaleDropdown />
                 </Responsive>
 
                 <Responsive useType="min768">
@@ -43,7 +43,7 @@ export default function Header() {
                 </Responsive>
 
                 <Responsive useType="min768">
-                  <LocaleDropdown />
+                  <Modal useType="auth" />
                 </Responsive>
 
                 <Responsive useType="max768">
