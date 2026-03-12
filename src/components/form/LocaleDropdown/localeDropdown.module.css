@@ -8,15 +8,11 @@
   justify-content: center;
   width: 40px;
   height: 40px;
-  border: 1px solid var(--theme-header-border);
-  border-radius: 999px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
   color: var(--theme-menu-dropdown-text);
-  background-color: var(--theme-menu-dropdown-background);
-  transition: background-color 0.2s ease;
-}
-
-.localeButton:hover {
-  background-color: var(--theme-menu-dropdown-hover-background);
+  transition: background-color 0.3s ease-in-out;
+  background-color: transparent;
 }
 
 .localeIcon {
@@ -64,5 +60,11 @@
 @media (max-width: 768px) {
   .localeDropdownWrapper {
     display: none;
+  }
+}
+
+@media (hover: hover) {
+  .localeButton:hover {
+    background-color: var(--border);
   }
 }
