@@ -18,6 +18,7 @@ import "../../styles/theme.css";
 
 import Footer from "@/components/layout/footer/Footer";
 import { AuthProvider } from "@/contexts/AuthContext";
+import BodyClassController from "@/components/common/bodyClassController/BodyClassController";
 
 export async function generateMetadata({
   params,
@@ -75,10 +76,39 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   const faviconUrlPrefix = "/icons/favicons";
+  const supportedLocales = JSON.stringify(routing.locales);
+  const bodyClassInitScript = `(() => {
+    const locales = ${supportedLocales};
+    const trimPath = (path) => {
+      const normalized = path.replace(/\/+$/, "");
+      return normalized || "/";
+    };
+
+    const resolveBodyClass = () => {
+      const pathname = trimPath(window.location.pathname);
+      const segments = pathname.split("/").filter(Boolean);
+      return segments.length === 1 && locales.includes(segments[0])
+        ? "main-page"
+        : "sub-page";
+    };
+
+    const applyClass = () => {
+      if (!document.body) {
+        requestAnimationFrame(applyClass);
+        return;
+      }
+
+      document.body.classList.remove("main-page", "sub-page");
+      document.body.classList.add(resolveBodyClass());
+    };
+
+    applyClass();
+  })();`;
 
   return (
     <html lang={locale} translate="no">
       <head>
+        <script dangerouslySetInnerHTML={{ __html: bodyClassInitScript }} />
         <link
           rel="apple-touch-icon"
           sizes="174x192"
@@ -121,6 +151,7 @@ export default async function RootLayout({
         <meta name="theme-color" content="#ffffff" />
       </head>
       <body>
+        <BodyClassController locales={routing.locales} />
         <NextIntlClientProvider messages={messages}>
           <div id="app">
             <AuthProvider>{children}</AuthProvider>
