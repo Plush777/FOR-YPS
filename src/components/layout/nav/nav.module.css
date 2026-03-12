@@ -19,24 +19,18 @@
 }
 
 .navListItemText {
+  composes: pillInteractive from "../../common/pillInteractive.module.css";
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 40px;
   padding: 0 16px;
-  border-radius: 9999px;
-  border: 1px solid var(--theme-nav);
+  --pill-border-color: var(--theme-nav);
+  --pill-hover-bg-color: var(--theme-nav);
+  --pill-hover-text-color: var(--theme-bg);
   font-weight: 500;
   font-size: 16px;
   color: var(--theme-nav);
-  transition: 0.2s ease-in-out;
-}
-
-@media (hover: hover) {
-  .navListItemText:hover {
-    background-color: var(--theme-nav);
-    color: var(--theme-bg);
-  }
 }
 
 @media (max-width: 1440px) {
