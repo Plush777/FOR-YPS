@@ -75,10 +75,50 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   const faviconUrlPrefix = "/icons/favicons";
+  const supportedLocales = JSON.stringify(routing.locales);
+  const bodyClassInitScript = `(() => {
+    const locales = ${supportedLocales};
+    const trimPath = (path) => {
+      const normalized = path.replace(/\\/+$/, "");
+      return normalized || "/";
+    };
+
+    const resolveBodyClass = () => {
+      const pathname = trimPath(window.location.pathname);
+      const segments = pathname.split("/").filter(Boolean);
+      return segments.length === 1 && locales.includes(segments[0])
+        ? "main-page"
+        : "sub-page";
+    };
+
+    const applyClass = () => {
+      if (!document.body) {
+        return false;
+      }
+
+      document.body.classList.remove("main-page", "sub-page");
+      document.body.classList.add(resolveBodyClass());
+      document.documentElement.classList.remove("pre-body-class-init");
+      return true;
+    };
+
+    if (!applyClass()) {
+      document.documentElement.classList.add("pre-body-class-init");
+      const observer = new MutationObserver(() => {
+        if (applyClass()) {
+          observer.disconnect();
+        }
+      });
+      observer.observe(document.documentElement, { childList: true, subtree: true });
+      window.addEventListener("DOMContentLoaded", applyClass, { once: true });
+    }
+  })();`;
 
   return (
     <html lang={locale} translate="no">
       <head>
+        <style>{`.pre-body-class-init body { visibility: hidden; }`}</style>
+        <script dangerouslySetInnerHTML={{ __html: bodyClassInitScript }} />
         <link
           rel="apple-touch-icon"
           sizes="174x192"
@@ -120,7 +160,7 @@ export default async function RootLayout({
         />
         <meta name="theme-color" content="#ffffff" />
       </head>
-      <body>
+      <body suppressHydrationWarning>
         <NextIntlClientProvider messages={messages}>
           <div id="app">
             <AuthProvider>{children}</AuthProvider>
