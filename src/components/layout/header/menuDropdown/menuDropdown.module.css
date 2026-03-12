@@ -1,8 +1,18 @@
 .menu {
   position: absolute;
-  top: 60px;
-  left: 0;
   border: 1px solid var(--theme-header-border);
+  background-color: var(--theme-menu-dropdown-background);
+}
+
+.profileModalMenu {
+  composes: dropdownSurface from "../../../common/dropdown/sharedDropdown.module.css";
+  composes: dropdownEnter from "../../../common/dropdown/sharedDropdown.module.css";
+  top: calc(100% + 8px);
+  right: 0;
+  left: auto;
+  min-width: 140px;
+  padding: 8px;
+  z-index: 1000;
 }
 
 .letterModalMenu {
@@ -12,11 +22,20 @@
   z-index: 1000;
   border-radius: 8px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
-  background-color: var(--color-white);
+  background-color: var(--theme-menu-dropdown-background);
 }
 
-.profileModalMenu .menuItem {
-  height: 48px;
+.profileMenuItem {
+  composes: dropdownItem from "../../../common/dropdown/sharedDropdown.module.css";
+  min-height: 36px;
+}
+
+.profileLink {
+  composes: dropdownLink from "../../../common/dropdown/sharedDropdown.module.css";
+}
+
+.profileMenuButton {
+  composes: dropdownTextButton from "../../../common/dropdown/sharedDropdown.module.css";
 }
 
 .letterModalMenu .menuItem {
