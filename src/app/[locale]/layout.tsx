@@ -18,6 +18,7 @@ import "../../styles/theme.css";
 
 import Footer from "@/components/layout/footer/Footer";
 import { AuthProvider } from "@/contexts/AuthContext";
+import BodyClassController from "@/components/common/bodyClassController/BodyClassController";
 
 export async function generateMetadata({
   params,
@@ -79,7 +80,7 @@ export default async function RootLayout({
   const bodyClassInitScript = `(() => {
     const locales = ${supportedLocales};
     const trimPath = (path) => {
-      const normalized = path.replace(/\\/+$/, "");
+      const normalized = path.replace(/\/+$/, "");
       return normalized || "/";
     };
 
@@ -93,31 +94,20 @@ export default async function RootLayout({
 
     const applyClass = () => {
       if (!document.body) {
-        return false;
+        requestAnimationFrame(applyClass);
+        return;
       }
 
       document.body.classList.remove("main-page", "sub-page");
       document.body.classList.add(resolveBodyClass());
-      document.documentElement.classList.remove("pre-body-class-init");
-      return true;
     };
 
-    if (!applyClass()) {
-      document.documentElement.classList.add("pre-body-class-init");
-      const observer = new MutationObserver(() => {
-        if (applyClass()) {
-          observer.disconnect();
-        }
-      });
-      observer.observe(document.documentElement, { childList: true, subtree: true });
-      window.addEventListener("DOMContentLoaded", applyClass, { once: true });
-    }
+    applyClass();
   })();`;
 
   return (
     <html lang={locale} translate="no">
       <head>
-        <style>{`.pre-body-class-init body { visibility: hidden; }`}</style>
         <script dangerouslySetInnerHTML={{ __html: bodyClassInitScript }} />
         <link
           rel="apple-touch-icon"
@@ -160,7 +150,8 @@ export default async function RootLayout({
         />
         <meta name="theme-color" content="#ffffff" />
       </head>
-      <body suppressHydrationWarning>
+      <body>
+        <BodyClassController locales={routing.locales} />
         <NextIntlClientProvider messages={messages}>
           <div id="app">
             <AuthProvider>{children}</AuthProvider>
