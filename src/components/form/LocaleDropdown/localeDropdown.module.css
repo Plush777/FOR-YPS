@@ -3,16 +3,17 @@
 }
 
 .localeButton {
+  composes: pillInteractive from "../../common/pillInteractive.module.css";
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 40px;
   height: 40px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
+  --pill-border-color: var(--theme-header-border);
+  --pill-hover-bg-color: var(--theme-menu-dropdown-hover-background);
+  --pill-hover-text-color: var(--theme-menu-dropdown-text);
   color: var(--theme-menu-dropdown-text);
-  transition: background-color 0.3s ease-in-out;
-  background-color: transparent;
+  background-color: var(--theme-menu-dropdown-background);
 }
 
 .localeIcon {

@@ -1,0 +1,12 @@
+.pillInteractive {
+  border: 1px solid var(--pill-border-color);
+  border-radius: 9999px;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+@media (hover: hover) {
+  .pillInteractive:hover {
+    background-color: var(--pill-hover-bg-color);
+    color: var(--pill-hover-text-color);
+  }
+}
