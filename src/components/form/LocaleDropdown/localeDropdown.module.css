@@ -31,29 +31,17 @@
 }
 
 .localeMenu {
+  composes: dropdownSurface from "../../common/dropdown/sharedDropdown.module.css";
+  composes: dropdownEnter from "../../common/dropdown/sharedDropdown.module.css";
   position: absolute;
   top: calc(100% + 8px);
   right: 0;
   min-width: 140px;
   padding: 8px;
-  border: 1px solid var(--theme-header-border);
-  border-radius: 8px;
-  background-color: var(--theme-menu-dropdown-background);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
 }
 
 .localeMenuItem {
-  width: 100%;
-  border-radius: 6px;
-  padding: 8px 10px;
-  text-align: left;
-  font-size: 14px;
-  color: var(--theme-menu-dropdown-text);
-  background-color: transparent;
-}
-
-.localeMenuItem:hover {
-  background-color: var(--theme-menu-dropdown-hover-background);
+  composes: dropdownTextButton from "../../common/dropdown/sharedDropdown.module.css";
 }
 
 .active {

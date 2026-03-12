@@ -5,13 +5,13 @@
 }
 
 .profileModalMenu {
+  composes: dropdownSurface from "../../../common/dropdown/sharedDropdown.module.css";
+  composes: dropdownEnter from "../../../common/dropdown/sharedDropdown.module.css";
   top: calc(100% + 8px);
   right: 0;
   left: auto;
   min-width: 140px;
   padding: 8px;
-  border-radius: 8px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
   z-index: 1000;
 }
 
@@ -25,16 +25,17 @@
   background-color: var(--theme-menu-dropdown-background);
 }
 
-.profileModalMenu .menuItem {
+.profileMenuItem {
+  composes: dropdownItem from "../../../common/dropdown/sharedDropdown.module.css";
   min-height: 36px;
-  border-radius: 6px;
 }
 
-.profileModalMenu .link,
-.profileModalMenu .menuItemButton {
-  min-width: 100%;
-  padding: 8px 10px;
-  font-size: 14px;
+.profileLink {
+  composes: dropdownLink from "../../../common/dropdown/sharedDropdown.module.css";
+}
+
+.profileMenuButton {
+  composes: dropdownTextButton from "../../../common/dropdown/sharedDropdown.module.css";
 }
 
 .letterModalMenu .menuItem {

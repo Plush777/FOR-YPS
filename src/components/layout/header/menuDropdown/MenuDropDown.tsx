@@ -59,13 +59,13 @@ export default function MenuDropDown({
             <button
               type="button"
               role="menuitem"
-              className={`${styles.menuItemButton} ${styles.link}`}
+              className={`${styles.menuItemButton} ${styles.profileMenuButton}`}
               onClick={() => onSelect?.(label, index)}
             >
               {label}
             </button>
           ) : (
-            <Link className={styles.link} href={`/${links[index]}`}>
+            <Link className={`${styles.link} ${styles.profileLink}`} href={`/${links[index]}`}>
               {label}
             </Link>
           )}
@@ -129,7 +129,7 @@ export default function MenuDropDown({
           items.map((label, index, arr) => {
             const isLast = index === arr.length - 1;
             return (
-              <li key={`${label}-${index}`} className={styles.menuItem}>
+              <li key={`${label}-${index}`} className={`${styles.menuItem} ${styles.profileMenuItem}`}>
                 {useTypeHtmlCondition(isLast, label, index)}
               </li>
             );
