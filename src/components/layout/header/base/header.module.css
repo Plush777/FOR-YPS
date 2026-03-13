@@ -8,6 +8,12 @@
   height: var(--header-height);
   padding: var(--contents-side-padding);
   margin-top: 10px;
+  transform: translateY(0);
+  transition: transform 0.25s ease-in-out;
+}
+
+.hidden {
+  transform: translateY(calc(-100% - 10px));
 }
 
 .headerInner {
