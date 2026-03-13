@@ -14,19 +14,9 @@ body {
   }
 }
 
-/* .main-page {
-  .headerRowBox {
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    background-color: rgba(255, 255, 255, 0.2);
-  }
-}
-
 .sub-page {
-  .headerRowBox {
-    position: relative;
-    border: 1px solid var(--theme-header-border);
-  }
-} */
+  padding-top: calc(var(--header-height) + var(--header-margin));
+}
 
 .gradationText {
   font-weight: 700;

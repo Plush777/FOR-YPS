@@ -222,6 +222,7 @@ body {
   --contents-side-padding: 0 16px;
   --mobile-navigation-height: 158px;
   --header-height: 60px;
+  --header-margin: 12px;
   --layout-max-width: 1600px;
   --arrow-border-size: 57px;
   --sunhye: #ffc710;

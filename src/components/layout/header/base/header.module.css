@@ -7,13 +7,13 @@
   width: 100%;
   height: var(--header-height);
   padding: var(--contents-side-padding);
-  margin-top: 10px;
+  margin-top: var(--header-margin);
   transform: translateY(0);
   transition: transform 0.25s ease-in-out;
 }
 
 .hidden {
-  transform: translateY(calc(-100% - 10px));
+  transform: translateY(calc(-100% - var(--header-margin)));
 }
 
 .headerInner {
@@ -31,7 +31,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 16px;
+  padding: 0 24px;
   border-radius: 50px;
   border: 1px solid var(--theme-header-border);
   background-color: var(--theme-header);
