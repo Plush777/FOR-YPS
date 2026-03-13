@@ -239,7 +239,6 @@
     "myYps": {
       "title": "My YOUNG POSSE",
       "description": "영파씨에게 하고싶은 말을 편지에 적어보세요.",
-
       "letter": {
         "emptyText": "이런, 아직 마음을 전한 사람이 아무도 없네요. <br></br>가장 먼저 마음을 전해보세요!",
         "state": {
@@ -261,6 +260,10 @@
     "myLetters": {
       "title": "내 편지함",
       "description": "지금까지 작성한 나의 편지들을 확인해보세요."
+    },
+    "settings": {
+      "title": "설정",
+      "description": "계정 및 알림 관련 설정 레이아웃입니다."
     }
   },
   "auth": {
@@ -272,10 +275,18 @@
       "smallDescription": "로그인 시 <underline>개인정보 처리방침</underline>에 동의하는 것으로 간주하며, <br></br>서비스 이용을 위해 이메일과 이름, 프로필 이미지를 수집합니다."
     },
     "menuDropdown": {
-      "menus": ["내 편지함", "설정", "로그아웃"]
+      "menus": [
+        "내 편지함",
+        "설정",
+        "로그아웃"
+      ]
     },
     "modalMenuDropdown": {
-      "menus": ["수정", "삭제", "신고하기"]
+      "menus": [
+        "수정",
+        "삭제",
+        "신고하기"
+      ]
     }
   },
   "toast": {

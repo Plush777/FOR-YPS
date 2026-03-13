@@ -2,7 +2,6 @@ import styles from "@/components/layout/header/base/header.module.css";
 
 import HeaderLeft from "@/components/layout/header/base/HeaderLeft";
 import HeaderRight from "@/components/layout/header/base/HeaderRight";
-import HeaderUtils from "@/components/layout/header/base/HeaderUtils";
 
 export default function Header() {
   return (
@@ -12,8 +11,6 @@ export default function Header() {
           <HeaderLeft />
           <HeaderRight />
         </div>
-
-        <HeaderUtils />
       </div>
     </header>
   );
