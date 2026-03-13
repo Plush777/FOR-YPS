@@ -19,18 +19,29 @@
 }
 
 .navListItemText {
-  composes: pillInteractive from "../../common/pillInteractive.module.css";
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 40px;
+  column-gap: 8px;
+  height: 38px;
   padding: 0 16px;
-  --pill-border-color: var(--theme-nav);
-  --pill-hover-bg-color: var(--theme-nav);
-  --pill-hover-text-color: var(--theme-bg);
   font-weight: 500;
   font-size: 16px;
-  color: var(--theme-nav);
+  color: var(--color-gray-950);
+  border: 1px solid var(--color-white);
+  border-radius: 9999px;
+  background: linear-gradient(
+    -90deg,
+    rgba(250, 197, 222, 1) 0%,
+    rgba(245, 152, 194, 1) 100%
+  );
+  transition: 0.3s ease-in-out;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 @media (max-width: 1440px) {

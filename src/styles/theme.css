@@ -2,11 +2,10 @@
 :root {
   --theme-body: var(--color-white);
   --theme-body-sub: var(--color-gray-50);
-  --theme-header: var(--color-white);
-  --theme-header-border: var(--color-zinc-200);
+  --theme-header: rgba(255, 255, 255, 0.2);
+  --theme-header-border: rgba(255, 255, 255, 0.5);
   --theme-title: var(--color-gray-900);
   --theme-date: var(--color-gray-500);
-  --theme-nav: var(--color-gray-900);
   --theme-button-border2-svg: var(--color-zinc-600);
   --theme-button-border2-border: var(--color-zinc-600);
   --theme-button-border2-background: var(--color-zinc-100);
@@ -29,11 +28,10 @@
   :root {
     --theme-body: var(--color-white);
     --theme-body-sub: var(--color-gray-50);
-    --theme-header: var(--color-white);
-    --theme-header-border: var(--color-zinc-200);
+    --theme-header: rgba(255, 255, 255, 0.2);
+    --theme-header-border: rgba(255, 255, 255, 0.5);
     --theme-title: var(--color-gray-900);
     --theme-date: var(--color-gray-500);
-    --theme-nav: var(--color-gray-900);
     --theme-button-border2-svg: var(--color-zinc-600);
     --theme-button-border2-border: var(--color-zinc-600);
     --theme-button-border2-background: var(--color-zinc-100);
@@ -57,11 +55,10 @@
   :root {
     --theme-body: var(--color-zinc-800);
     --theme-body-sub: var(--color-zinc-800);
-    --theme-header: var(--color-zinc-800);
-    --theme-header-border: var(--color-zinc-700);
+    --theme-header: rgba(255, 255, 255, 0.2);
+    --theme-header-border: rgba(255, 255, 255, 0.5);
     --theme-title: var(--color-gray-100);
     --theme-date: var(--color-gray-300);
-    --theme-nav: var(--color-white);
     --theme-button-border2-svg: var(--color-white);
     --theme-button-border2-border: var(--color-white);
     --theme-button-border2-background: var(--color-zinc-700);

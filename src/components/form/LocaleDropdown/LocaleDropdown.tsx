@@ -5,6 +5,7 @@ import { usePathname, useRouter } from "@/i18n/routing";
 import { useLocale } from "next-intl";
 import Globe from "@/components/common/svg/Globe";
 import styles from "@/components/form/LocaleDropdown/localeDropdown.module.css";
+import headerInStyles from "@/components/layout/header/base/header.module.css";
 
 const LOCALES = [
   { value: "ko", label: "한국어" },
@@ -14,12 +15,32 @@ const LOCALES = [
   { value: "zh-TW", label: "繁體中文" },
 ];
 
-export default function LocaleDropdown() {
+export default function LocaleDropdown({
+  useType,
+}: {
+  useType: "header" | "common";
+}) {
   const locale = useLocale();
   const pathname = usePathname();
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const wrapper =
+    useType === "header"
+      ? headerInStyles.localeDropdownWrapper
+      : styles.localeDropdownWrapper;
+  const button =
+    useType === "header" ? headerInStyles.localeButton : styles.localeButton;
+  const icon =
+    useType === "header" ? headerInStyles.localeIcon : styles.localeIcon;
+  const menu =
+    useType === "header" ? headerInStyles.localeMenu : styles.localeMenu;
+  const menuItem =
+    useType === "header"
+      ? headerInStyles.localeMenuItem
+      : styles.localeMenuItem;
+  const active = useType === "header" ? headerInStyles.active : styles.active;
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -41,22 +62,22 @@ export default function LocaleDropdown() {
   };
 
   return (
-    <div className={styles.localeDropdownWrapper} ref={dropdownRef}>
+    <div className={wrapper} ref={dropdownRef}>
       <button
         type="button"
-        className={styles.localeButton}
+        className={button}
         onClick={() => setIsOpen((prev) => !prev)}
         aria-label="Select language"
         aria-expanded={isOpen}
         aria-haspopup="menu"
       >
-        <span className={styles.localeIcon}>
+        <span className={icon}>
           <Globe />
         </span>
       </button>
 
       {isOpen && (
-        <ul className={styles.localeMenu} role="menu">
+        <ul className={menu} role="menu">
           {LOCALES.map(({ value, label }) => {
             const isCurrent = locale === value;
 
@@ -64,7 +85,7 @@ export default function LocaleDropdown() {
               <li key={value}>
                 <button
                   type="button"
-                  className={`${styles.localeMenuItem} ${isCurrent ? styles.active : ""}`}
+                  className={`${menuItem} ${isCurrent ? active : ""}`}
                   onClick={() => handleLocaleChange(value)}
                   role="menuitemradio"
                   aria-checked={isCurrent}
