@@ -10,18 +10,15 @@
       "text2": "如果這個問題持續發生，請透過下方按鈕與我們聯絡。",
       "text3": "聯絡我們"
     },
-
     "section1": {
       "description1": "歡迎來到 FOR YPS！",
       "description2": "這裡是專為 YOUNG POSSE 粉絲打造的網站。",
       "description3": "咦？你還不知道 YOUNG POSSE 是誰嗎？",
       "description4": "往下滑就知道了。"
     },
-
     "section2": {
       "text1": "我想問你一個問題。",
       "text2": "你喜歡嘻哈音樂嗎？🎶",
-
       "positive": {
         "text1": "如果喜歡的話……太好了！☺️",
         "text2": "因為 YOUNG POSSE 所追求的音樂，就是純正的嘻哈！😎",
@@ -34,7 +31,6 @@
         "text3": "聽完之後，也許你的想法會改變喔。🤔"
       }
     },
-
     "section3": {
       "title": "Introduction",
       "description": [
@@ -46,10 +42,8 @@
         "<a href='https://x.com/BEATS_ent_twt' target='_blank' class='underline'>BEATS Entertainment</a> 由製作人 Kiggen 創立，負責 YOUNG POSSE 的專輯製作。Kiggen 曾為 Shinhwa、SEVENTEEN、TWICE、Wanna One 等多組 K-pop 團體製作歌曲。"
       ]
     },
-
     "section4": {
       "title": "Team",
-
       "description": [
         "團名取自拉丁語中代表「能夠」、「可以」的字詞",
         "<em class='gradationText'>POSSE</em>。",
@@ -57,10 +51,8 @@
         "展現了她們<em class='gradationText'>堅定的意志與強烈的抱負</em>。"
       ]
     },
-
     "section5": {
       "title": "Concept",
-
       "description": [
         "她們以 <em class='gradationText'>Drill、Jersey Club、Rage</em> 等音樂風格為基礎，追求強烈的嘻哈音樂。",
         "作為少數專注於嘻哈的女團之一，YOUNG POSSE 在嘻哈圈中也引起了高度關注。",
@@ -68,10 +60,8 @@
         "<em class='gradationText'>「韓嘻哈的女兒們」</em>。"
       ]
     },
-
     "section6": {
       "title": "Members",
-
       "members": {
         "member1": {
           "name": "Sunhye",
@@ -116,10 +106,8 @@
         }
       }
     },
-
     "section7": {
       "title": "Albums",
-
       "albums": {
         "album1": {
           "name": "MACARONI CHEESE",
@@ -168,16 +156,13 @@
         }
       }
     },
-
     "section8": {
       "title": "Media"
     },
-
     "section9": {
       "text1": "TELE POSSE UP!",
       "text2": "準備好現在就入坑了嗎？"
     },
-
     "footer": {
       "title1": "社群媒體",
       "title2": "專輯與週邊商品",
@@ -186,7 +171,6 @@
       "notice2": "TELE 們永遠支持你！",
       "caution1": "本網站中除網站標誌外的所有圖片與標誌之版權皆屬於 DSP Media Co., Ltd.",
       "caution2": "請注意，本網站為粉絲自製的非官方網站。",
-
       "social": [
         {
           "url": "https://open.kakao.com/o/g1mpLjOf",
@@ -225,7 +209,6 @@
           "name": "官方 TikTok"
         }
       ],
-
       "footerMenu": [
         {
           "url": "/privacy",
@@ -236,7 +219,6 @@
           "name": "聯絡我們"
         }
       ],
-
       "footerLink": [
         {
           "url": "https://kr.ktown4u.com/searchList?goodsTextSearch=young%20posse",
@@ -249,12 +231,15 @@
       ]
     }
   },
-
   "subPage": {
     "about": {
       "hiddenText1": "子頁面標題區域",
       "hiddenText2": "子頁面內容區域",
       "description": "若有任何詢問，請透過以下聯絡方式與我們聯繫！"
+    },
+    "settings": {
+      "title": "設定",
+      "description": "帳號與通知設定的佔位版面。"
     }
   }
 }

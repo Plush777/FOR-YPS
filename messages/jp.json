@@ -10,18 +10,15 @@
       "text2": "この問題が続く場合は、下のボタンからお問い合わせください。",
       "text3": "お問い合わせ"
     },
-
     "section1": {
       "description1": "FOR YPSへようこそ！",
       "description2": "ここはYOUNG POSSE専用のファンサイトです。",
       "description3": "えっ、まだYOUNG POSSEを知らないんですか？",
       "description4": "下にスクロールしてみてください。"
     },
-
     "section2": {
       "text1": "ひとつだけ質問してもいいですか？",
       "text2": "もしかして…ヒップホップ音楽は好きですか？ 🎶",
-
       "positive": {
         "text1": "好きなんですね…それは良かった！☺️",
         "text2": "YOUNG POSSEが目指している音楽は、まさにヒップホップなんです！😎",
@@ -34,7 +31,6 @@
         "text3": "話を聞けば、もしかしたら印象が変わるかもしれませんよ。🤔"
       }
     },
-
     "section3": {
       "title": "Introduction",
       "description": [
@@ -46,10 +42,8 @@
         "<a href='https://x.com/BEATS_ent_twt' target='_blank' class='underline'>BEATSエンターテインメント</a>は、プロデューサーKiggenが設立した芸能事務所で、YOUNG POSSEのアルバム制作を担当しています。以前にはShinhwa、SEVENTEEN、TWICE、Wanna Oneなど、さまざまなK-POPグループの楽曲を手がけてきました。"
       ]
     },
-
     "section4": {
       "title": "Team",
-
       "description": [
         "「できる」「可能である」という意味のラテン語から取った言葉、",
         "<em class='gradationText'>POSSE</em>を由来としています。",
@@ -57,10 +51,8 @@
         "<em class='gradationText'>強い意志と情熱</em>が込められています。"
       ]
     },
-
     "section5": {
       "title": "Concept",
-
       "description": [
         "<em class='gradationText'>Drill、Jersey club、Rage</em>などのサウンドをベースにした、力強いヒップホップ音楽を追求しています。",
         "ガールズグループの中でも珍しくヒップホップをメインにしており、ヒップホップコミュニティの中でも大きな注目を集めています。",
@@ -68,10 +60,8 @@
         "<em class='gradationText'>“韓ヒップの娘たち”</em>というニックネームも生まれました。"
       ]
     },
-
     "section6": {
       "title": "Members",
-
       "members": {
         "member1": {
           "name": "SUNHYE",
@@ -116,10 +106,8 @@
         }
       }
     },
-
     "section7": {
       "title": "Albums",
-
       "albums": {
         "album1": {
           "name": "MACARONI CHEESE",
@@ -168,16 +156,13 @@
         }
       }
     },
-
     "section8": {
       "title": "Media"
     },
-
     "section9": {
       "text1": "TELE POSSE UP!",
       "text2": "今すぐ入沼（ファンになる）準備はできましたか？"
     },
-
     "footer": {
       "title1": "ソーシャルメディア",
       "title2": "アルバム & グッズ",
@@ -186,7 +171,6 @@
       "notice2": "テリたちはいつも応援してるよ！",
       "caution1": "本サイト内の画像およびロゴ（サイトロゴを除く）の著作権は、DSPメディア株式会社に帰属します。",
       "caution2": "本サイトはYOUNG POSSEの公式サイトではなく、ファンによる非公式サイトです。",
-
       "social": [
         {
           "url": "https://open.kakao.com/o/g1mpLjOf",
@@ -225,7 +209,6 @@
           "name": "TikTok"
         }
       ],
-
       "footerMenu": [
         {
           "url": "/privacy",
@@ -236,7 +219,6 @@
           "name": "お問い合わせ"
         }
       ],
-
       "footerLink": [
         {
           "url": "https://kr.ktown4u.com/searchList?goodsTextSearch=young%20posse",
@@ -249,12 +231,15 @@
       ]
     }
   },
-
   "subPage": {
     "about": {
       "hiddenText1": "サブページのタイトルエリア",
       "hiddenText2": "サブページのコンテンツエリア",
       "description": "お問い合わせは、以下の連絡先までお願いします！"
+    },
+    "settings": {
+      "title": "設定",
+      "description": "アカウント・通知設定のプレースホルダーレイアウトです。"
     }
   }
 }

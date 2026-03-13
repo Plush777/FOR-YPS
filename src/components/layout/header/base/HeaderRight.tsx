@@ -3,10 +3,15 @@ import navData from "@/data/nav/nav.json";
 import Nav from "@/components/layout/nav/Nav";
 import { Modal } from "@/components/modal/base/Modal";
 import { Responsive } from "@/components/mobile/responsive/Responsive";
+import LocaleDropdown from "@/components/form/LocaleDropdown/LocaleDropdown";
 
 export default function HeaderRight() {
   return (
     <div className={styles.headerRight}>
+      <Responsive useType="min768">
+        <LocaleDropdown useType="header" />
+      </Responsive>
+
       <Responsive useType="min768">
         <Modal useType="auth" />
       </Responsive>

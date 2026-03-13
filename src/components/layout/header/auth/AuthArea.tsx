@@ -1,11 +1,11 @@
 "use client";
 
 import styles from "@/components/layout/header/auth/authArea.module.css";
-import Button from "@/components/button/base/Button";
 import { supabase } from "@/lib/supabase/client";
 import { useTranslations } from "next-intl";
 import Profile from "@/components/layout/header/profile/Profile";
 import { useAuth } from "@/contexts/AuthContext";
+import Login from "@/components/common/svg/Login";
 
 interface Props {
   onClickModal?: () => void;
@@ -19,22 +19,22 @@ export default function AuthArea({ onClickModal }: Props) {
     return <div className={styles.profileSkeleton}></div>;
   }
 
-  console.log(user);
-
   return (
     <div className={styles.wrap}>
       {user ? (
         <Profile userData={user} />
       ) : (
-        <Button
-          onlyIcon={false}
-          size="sm"
-          rounded="roundedFull"
-          color="white"
-          text={tAuth("login")}
-          onClick={onClickModal}
+        <button
+          type="button"
           className={styles.loginButton}
-        />
+          onClick={onClickModal}
+          aria-label={tAuth("login")}
+          title={tAuth("login")}
+        >
+          <span className={styles.loginIcon}>
+            <Login />
+          </span>
+        </button>
       )}
     </div>
   );

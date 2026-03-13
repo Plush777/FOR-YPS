@@ -10,18 +10,15 @@
       "text2": "If this problem continues, please contact us using the button below.",
       "text3": "Contact Us"
     },
-
     "section1": {
       "description1": "Welcome to FOR YPS!",
       "description2": "This is a fan site made exclusively for YOUNG POSSE.",
       "description3": "Wait, you don’t know who YOUNG POSSE is yet?",
       "description4": "Scroll down to find out."
     },
-
     "section2": {
       "text1": "Let me ask you one question.",
       "text2": "Do you like hip-hop music? 🎶",
-
       "positive": {
         "text1": "If you do... that’s great! ☺️",
         "text2": "Because YOUNG POSSE’s music is pure hip-hop! 😎",
@@ -34,7 +31,6 @@
         "text3": "You might just change your mind after hearing about them. 🤔"
       }
     },
-
     "section3": {
       "title": "Introduction",
       "description": [
@@ -46,10 +42,8 @@
         "<a href='https://x.com/BEATS_ent_twt' target='_blank' class='underline'>BEATS Entertainment</a> was founded by producer Kiggen and is responsible for producing YOUNG POSSE’s albums. Kiggen has also worked on songs for many major K-pop groups including Shinhwa, SEVENTEEN, TWICE, and Wanna One."
       ]
     },
-
     "section4": {
       "title": "Team",
-
       "description": [
         "The group name comes from the Latin word meaning \"to be able to\" or \"can.\"",
         "<em class='gradationText'>POSSE</em> represents the idea that success is achieved not alone but when",
@@ -57,10 +51,8 @@
         "It embodies their <em class='gradationText'>bold ambition and powerful will</em>."
       ]
     },
-
     "section5": {
       "title": "Concept",
-
       "description": [
         "They pursue powerful hip-hop music based on <em class='gradationText'>Drill, Jersey club, and Rage</em> sounds.",
         "As one of the few girl groups that focus on hip-hop, they’ve drawn significant attention even within hip-hop communities.",
@@ -68,10 +60,8 @@
         "<em class='gradationText'>the daughters of Korean hip-hop</em>."
       ]
     },
-
     "section6": {
       "title": "Members",
-
       "members": {
         "member1": {
           "name": "SUNHYE",
@@ -116,10 +106,8 @@
         }
       }
     },
-
     "section7": {
       "title": "Albums",
-
       "albums": {
         "album1": {
           "name": "MACARONI CHEESE",
@@ -168,16 +156,13 @@
         }
       }
     },
-
     "section8": {
       "title": "Media"
     },
-
     "section9": {
       "text1": "TELE POSSE UP!",
       "text2": "Are you ready to join the fandom right now?"
     },
-
     "footer": {
       "title1": "Social Media",
       "title2": "Albums & Goods",
@@ -186,7 +171,6 @@
       "notice2": "TELE's will always cheer for you!",
       "caution1": "Copyrights for all images and logos (except the site logo) belong to DSP Media Co., Ltd.",
       "caution2": "Please note that this is a fan site and not the official YOUNG POSSE website.",
-
       "social": [
         {
           "url": "https://open.kakao.com/o/g1mpLjOf",
@@ -225,7 +209,6 @@
           "name": "TikTok"
         }
       ],
-
       "footerMenu": [
         {
           "url": "/privacy",
@@ -236,7 +219,6 @@
           "name": "Contact"
         }
       ],
-
       "footerLink": [
         {
           "url": "https://kr.ktown4u.com/searchList?goodsTextSearch=young%20posse",
@@ -249,12 +231,15 @@
       ]
     }
   },
-
   "subPage": {
     "about": {
       "hiddenText1": "Subpage title area",
       "hiddenText2": "Subpage content area",
       "description": "For inquiries, please contact us using the information below!"
+    },
+    "settings": {
+      "title": "Settings",
+      "description": "Placeholder layout for account and notification settings."
     }
   }
 }
