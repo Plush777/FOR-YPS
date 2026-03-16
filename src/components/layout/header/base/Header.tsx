@@ -9,10 +9,19 @@ import HeaderRight from "@/components/layout/header/base/HeaderRight";
 
 const SCROLL_THRESHOLD = 8;
 
-export default function Header() {
+type HeaderProps = {
+  useScrollHide?: boolean;
+};
+
+export default function Header({ useScrollHide = false }: HeaderProps) {
   const [isHidden, setIsHidden] = useState(false);
 
   useEffect(() => {
+    if (!useScrollHide) {
+      setIsHidden(false);
+      return;
+    }
+
     let previousScrollY = window.scrollY;
 
     const handleScroll = () => {
@@ -35,7 +44,7 @@ export default function Header() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [useScrollHide]);
 
   return (
     <header className={`${styles.header} ${isHidden ? styles.hidden : ""}`}>
