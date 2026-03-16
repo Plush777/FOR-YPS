@@ -30,10 +30,9 @@ export default function MyYpsContents({
   isBackground = true,
   hasMore,
 }: Props) {
-  const isNineItems = items.length > 9;
-  const isItems = items.length < 0;
+  const isNineItems = items.length >= 9;
+  const isItems = items.length === 0;
   const rotateArray = ["5deg", "-22deg", "15deg", "-14deg", "24deg", "-11deg"];
-  const shouldShowLoadMore = items.length >= 9 && hasMore;
 
   const HeartCanvas = dynamic(
     () => import("@/components/page/sub/canvas/HeartCanvas"),
@@ -94,7 +93,7 @@ export default function MyYpsContents({
               )}
 
               {/* item이 9개 이상이면 더보기 버튼 표출 */}
-              {isNineItems && (
+              {isNineItems && hasMore && (
                 <LoadMoreButton
                   showAllLoadedNotice={showAllLoadedNotice}
                   onLoadMore={onLoadMore}
