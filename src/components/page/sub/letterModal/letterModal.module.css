@@ -1,15 +1,16 @@
 .overlay {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: auto;
+  left: 0;
+  bottom: 0;
   z-index: 1000;
   width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--rgba-black-50);
+  background-color: var(--theme-modal-dimmed);
+  backdrop-filter: var(--modal-blur);
 }
 
 .modal {
@@ -19,7 +20,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 12px;
-  background-color: var(--color-zinc-800);
+  background-color: var(--theme-modal-background);
 }
 
 .modal.widthLarge {
@@ -55,9 +56,7 @@
   flex-direction: column;
   border-radius: 8px;
   width: 100%;
-  margin-top: 18px;
-  margin-bottom: 30px;
-  padding: 0 120px;
+  padding: 0 120px 64px 120px;
   overflow-y: auto;
   max-height: calc(100vh - 100px);
 }
@@ -73,14 +72,14 @@
   flex-direction: column;
   align-items: center;
   row-gap: 12px;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 
 .username {
   display: flex;
   justify-content: center;
   font-weight: 700;
-  color: var(--theme-title);
+  color: var(--theme-sub-title);
 }
 
 .modalBodyButtons {

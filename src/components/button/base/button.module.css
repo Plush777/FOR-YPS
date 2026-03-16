@@ -1,17 +1,17 @@
 .roundedFull {
-  border-radius: 9999px;
+  border-radius: var(--rounded-full);
 }
 
 .roundedLg {
-  border-radius: 12px;
+  border-radius: var(--rounded-lg);
 }
 
 .roundedMd {
-  border-radius: 8px;
+  border-radius: var(--rounded-md);
 }
 
 .roundedSm {
-  border-radius: 4px;
+  border-radius: var(--rounded-sm);
 }
 
 .button {
@@ -72,8 +72,8 @@
 }
 
 .buttonBgGray2 {
-  color: var(--color-zinc-100);
-  background-color: var(--color-zinc-800);
+  color: var(--theme-button-gray2-color);
+  background-color: var(--theme-button-gray2-background);
 }
 
 .buttonBorder2White {
@@ -98,8 +98,7 @@
 }
 
 .buttonOutlineWhite {
-  border: 1px solid var(--theme-header-border);
-  box-shadow: var(--theme-button-box-shadow);
+  border: 1px solid var(--theme-menu-dropdown-border);
   color: var(--theme-white-button-svg);
   background-color: var(--theme-menu-dropdown-background);
 }
@@ -125,14 +124,6 @@
 
 .buttonTransparentGray svg {
   color: var(--theme-white-button-svg);
-}
-
-.button.buttonTransparentGray.active {
-  background-color: var(--color-zinc-700);
-}
-
-.buttonTransparentGray.active svg {
-  color: var(--color-white);
 }
 
 .buttonRed {
@@ -244,10 +235,38 @@
 
 @media (hover: hover) {
   .buttonTransparentGray:not(.active):hover {
-    background-color: var(--color-zinc-700);
+    background-color: var(--color-zinc-100);
   }
 
   .buttonTransparentGray:not(.active):hover svg {
+    color: var(--color-zinc-700);
+  }
+}
+
+.button.buttonTransparentGray.active {
+  background-color: var(--color-zinc-100);
+}
+
+.buttonTransparentGray.active svg {
+  color: var(--color-zinc-700);
+}
+
+@media (prefers-color-scheme: dark) {
+  @media (hover: hover) {
+    .buttonTransparentGray:not(.active):hover {
+      background-color: var(--color-zinc-700);
+    }
+
+    .buttonTransparentGray:not(.active):hover svg {
+      color: var(--color-white);
+    }
+  }
+
+  .button.buttonTransparentGray.active {
+    background-color: var(--color-zinc-700);
+  }
+
+  .buttonTransparentGray.active svg {
     color: var(--color-white);
   }
 }

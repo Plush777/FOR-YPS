@@ -37,7 +37,7 @@
   padding-bottom: 4px;
   font-size: 14px;
   color: var(--theme-sub-title);
-  border-bottom: 1px solid var(--theme-header-border);
+  border-bottom: 1px solid var(--theme-form-border);
 }
 
 .textareaCounter {

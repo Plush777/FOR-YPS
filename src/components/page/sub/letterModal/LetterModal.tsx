@@ -92,8 +92,8 @@ export function LetterModal({
           width === "large"
             ? styles.widthLarge
             : width === "small"
-            ? styles.widthSmall
-            : styles.widthDefault
+              ? styles.widthSmall
+              : styles.widthDefault
         }`}
       >
         {isLoading ? (

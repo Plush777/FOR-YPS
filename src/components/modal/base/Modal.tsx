@@ -252,7 +252,7 @@ export function Modal({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className={styles.motionDiv}
+              className={`${styles.motionDiv} ${modalStyles.motionDiv}`}
               onClick={() => setIsVideoOpen(false)}
             >
               <motion.div

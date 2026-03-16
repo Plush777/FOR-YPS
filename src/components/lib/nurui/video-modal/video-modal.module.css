@@ -44,7 +44,7 @@
   height: 112px;
   border-radius: 9999px;
   background-color: oklch(0.606 0.25 292.72 / 50%);
-  backdrop-filter: blur(12px);
+  backdrop-filter: var(--modal-blur);
 }
 
 .hasPlayBox {
@@ -77,15 +77,15 @@
 .motionDiv {
   position: fixed;
   width: 100vw;
-  height: 100vh;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  height: 100svh;
+  top: auto;
+  bottom: 0;
+  left: 0;
   z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(12px);
+  backdrop-filter: var(--modal-blur);
 }
 
 .motionTransitionDiv {
@@ -115,7 +115,7 @@
     0 0 0 0px #fff,
     0 0 0 calc(1px + 0px) rgba(142, 81, 255, 0.5),
     0 0 #0000;
-  backdrop-filter: blur(12px);
+  backdrop-filter: var(--modal-blur);
   background-color: var(--color-violet-400);
 }
 

@@ -1,8 +1,7 @@
 .dropdownSurface {
-  border: 1px solid var(--theme-header-border);
+  border: 1px solid var(--theme-menu-dropdown-border);
   border-radius: 8px;
   background-color: var(--theme-menu-dropdown-background);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
 }
 
 .dropdownItem {

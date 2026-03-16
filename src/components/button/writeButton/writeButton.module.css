@@ -1,10 +1,28 @@
-.writeButtonSkeleton {
+.writeButtonSkeletonWrapper {
   position: sticky;
   bottom: 20px;
-  margin-top: 30px;
-  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.writeButtonSkeleton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 56px;
   height: 56px;
-  border-radius: 50%;
-  background-color: var(--color-stone-700);
+  border-radius: 20px;
+  border: 1px solid var(--theme-menu-dropdown-border);
+  color: var(--theme-white-button-svg);
+  background-color: var(--theme-menu-dropdown-background);
+}
+
+/* 기본이 다크라서 light로 */
+@media (prefers-color-scheme: light) {
+  .writeButtonSkeleton {
+    background-color: var(--color-gray-300);
+  }
 }

@@ -3,11 +3,16 @@
   aspect-ratio: inherit;
 }
 
+.motionDiv {
+  background-color: var(--theme-modal-dimmed);
+}
+
 .myypsModalStyle {
   border-radius: 12px;
   padding: 16px;
   background-color: var(--theme-modal-background);
   max-width: 448px;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.09);
 }
 
 .stickyWrap {

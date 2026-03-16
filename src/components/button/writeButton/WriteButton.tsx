@@ -35,7 +35,9 @@ export default function WriteButton() {
           }}
         />
       ) : (
-        <div className={styles.writeButtonSkeleton}></div>
+        <div className={styles.writeButtonSkeletonWrapper}>
+          <div className={styles.writeButtonSkeleton}></div>
+        </div>
       )}
     </>
   );

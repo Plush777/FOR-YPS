@@ -244,6 +244,12 @@ body {
   --black-transparent: #0000008f;
   --svg-gray: rgba(255, 255, 255, 0.6);
   --letter-size: 225px;
+
+  --modal-blur: blur(12px);
+  --rounded-sm: 4px;
+  --rounded-md: 8px;
+  --rounded-lg: 12px;
+  --rounded-full: 9999px;
 }
 
 @media (max-width: 1440px) {

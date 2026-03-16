@@ -36,7 +36,7 @@
   height: 40px;
   border-radius: 50%;
   object-position: center;
-  background-color: var(--color-stone-700);
+  background-color: var(--color-gray-700);
 }
 
 @media (hover: hover) {
@@ -53,5 +53,12 @@
   .profileSkeleton {
     width: 36px;
     height: 36px;
+  }
+}
+
+/* 기본이 다크라서 light로 */
+@media (prefers-color-scheme: light) {
+  .profileSkeleton {
+    background-color: var(--color-gray-300);
   }
 }
