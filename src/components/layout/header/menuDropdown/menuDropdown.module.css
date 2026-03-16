@@ -16,13 +16,12 @@
 }
 
 .letterModalMenu {
+  composes: dropdownSurface from "../../../common/dropdown/sharedDropdown.module.css";
+  composes: dropdownEnter from "../../../common/dropdown/sharedDropdown.module.css";
   left: auto;
   top: 52px;
   right: 0;
   z-index: 1000;
-  border-radius: 8px;
-  border: 1px solid var(--theme-menu-dropdown-border);
-  background-color: var(--theme-menu-dropdown-background);
 }
 
 .profileMenuItem {
