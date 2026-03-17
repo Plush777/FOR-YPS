@@ -15,9 +15,7 @@
   width: 56px;
   height: 56px;
   border-radius: 20px;
-  border: 1px solid var(--theme-menu-dropdown-border);
-  color: var(--theme-white-button-svg);
-  background-color: var(--theme-menu-dropdown-background);
+  background-color: var(--color-zinc-700);
 }
 
 /* 기본이 다크라서 light로 */

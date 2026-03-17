@@ -38,7 +38,7 @@
     --theme-header-border: rgba(255, 255, 255, 0.5);
     --theme-footer-border: var(--color-gray-700);
     --theme-footer-border2: var(--color-gray-800);
-    --theme-form-border: var(--color-gray-800);
+    --theme-form-border: var(--color-gray-500);
     --theme-title: var(--color-gray-100);
     --theme-date: var(--color-gray-300);
     --theme-button-border2-svg: var(--color-white);
