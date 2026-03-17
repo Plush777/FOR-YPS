@@ -40,7 +40,6 @@ export default function LocaleDropdown({
     useType === "header"
       ? headerInStyles.localeMenuItem
       : styles.localeMenuItem;
-  const active = useType === "header" ? headerInStyles.active : styles.active;
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -85,10 +84,12 @@ export default function LocaleDropdown({
               <li key={value}>
                 <button
                   type="button"
-                  className={`${menuItem} ${isCurrent ? active : ""}`}
+                  className={menuItem}
                   onClick={() => handleLocaleChange(value)}
                   role="menuitemradio"
                   aria-checked={isCurrent}
+                  aria-current={isCurrent ? "true" : undefined}
+                  data-active={isCurrent}
                 >
                   {label}
                 </button>
