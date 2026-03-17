@@ -42,7 +42,9 @@
   composes: dropdownTextButton from "../../common/dropdown/sharedDropdown.module.css";
 }
 
-.active {
+.active,
+.localeMenuItem[data-active="true"],
+.localeMenuItem[aria-checked="true"] {
   font-weight: 700;
   background-color: var(--theme-menu-dropdown-hover-background);
 }
