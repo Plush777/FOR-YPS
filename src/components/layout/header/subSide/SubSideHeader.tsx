@@ -3,7 +3,6 @@
 import Image from "next/image";
 
 import { Link, usePathname } from "@/i18n/routing";
-import AuthArea from "@/components/layout/header/auth/AuthArea";
 import logo from "../../../../../public/icons/logo/logo-for-yps.svg";
 import styles from "@/components/layout/header/subSide/subSideHeader.module.css";
 
@@ -53,10 +52,6 @@ export default function SubSideHeader() {
             })}
           </ul>
         </nav>
-      </div>
-
-      <div className={styles.bottomArea}>
-        <AuthArea />
       </div>
     </aside>
   );
