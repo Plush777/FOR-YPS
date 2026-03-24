@@ -1,0 +1,62 @@
+.sidebar {
+  width: 220px;
+  flex-shrink: 0;
+}
+
+.menuGroup + .menuGroup {
+  margin-top: 14px;
+}
+
+.mainMenu {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #31343f;
+  background: transparent;
+}
+
+.active {
+  background-color: #ffffff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.subMenu {
+  margin-top: 8px;
+  padding-left: 10px;
+}
+
+.subMenuButton {
+  width: 100%;
+  text-align: left;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #5e6577;
+}
+
+.subMenuButton:hover {
+  background-color: rgba(255, 255, 255, 0.55);
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 100%;
+  }
+
+  .subMenu {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .subMenu {
+    grid-template-columns: 1fr;
+  }
+}
