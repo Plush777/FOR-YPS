@@ -9,7 +9,7 @@ export default function ListLayout({ children }: any) {
 
   return (
     <PageBackground styleType="sub">
-      <Inner>
+      <Inner type="common">
         <TitleArea
           gapName="myLetters"
           title={t("title")}

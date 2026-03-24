@@ -53,6 +53,7 @@ export default function LetterCard({
                 maxLength={CHARACTER_LIMIT}
                 value={editedText ?? ""}
                 onChange={(e) => setEditedText?.(e.target.value)}
+                isBorder={true}
               />
               <TextCounter
                 value={editedText ?? ""}
@@ -71,7 +72,7 @@ export default function LetterCard({
               />
               <Button
                 size="xs"
-                color="gray"
+                color="white"
                 onlyIcon={false}
                 text="취소"
                 minWidth="sm"

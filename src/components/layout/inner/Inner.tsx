@@ -1,5 +1,15 @@
 import styles from "@/components/layout/inner/inner.module.css";
 
-export default function Inner({ children }: { children: React.ReactNode }) {
-  return <div className={styles.inner}>{children}</div>;
+type Props = {
+  type: "common" | "onlyTop";
+  children: React.ReactNode;
+};
+
+export default function Inner({ type, children }: Props) {
+  function getInnerStyle() {
+    if (type === "common") return styles.inner;
+    if (type === "onlyTop") return `${styles.inner} ${styles.onlyTopInner}`;
+  }
+
+  return <div className={getInnerStyle()}>{children}</div>;
 }

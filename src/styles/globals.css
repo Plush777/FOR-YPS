@@ -214,6 +214,11 @@ body {
 }
 
 :root {
+  --brand-color: linear-gradient(
+    90deg,
+    rgba(160, 43, 228, 1) 0%,
+    rgba(221, 70, 229, 1) 100%
+  );
   --sub-inner-max-width1: 1600px;
   --sub-inner-max-width2: 968px;
   --sub-inner-max-width3: 768px;
