@@ -2,17 +2,9 @@
 
 import { usePathname } from "@/i18n/routing";
 import { Modal } from "@/components/modal/base/Modal";
-import { useEffect, useState } from "react";
-import styles from "@/components/button/writeButton/writeButton.module.css";
 
 export default function WriteButton() {
   const pathname = usePathname();
-  const [mounted, setMounted] = useState(false);
-
-  // ✅ hydration mismatch 방지 (SSR 고려)
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   // if (!mounted) return null;
 
@@ -24,21 +16,13 @@ export default function WriteButton() {
   if (isDetailPage) return null;
 
   return (
-    <>
-      {mounted ? (
-        <Modal
-          useType="fixedButton"
-          onSubmitMyYps={(message) => {
-            window.dispatchEvent(
-              new CustomEvent("yps-add-message", { detail: message }),
-            );
-          }}
-        />
-      ) : (
-        <div className={styles.writeButtonSkeletonWrapper}>
-          <div className={styles.writeButtonSkeleton}></div>
-        </div>
-      )}
-    </>
+    <Modal
+      useType="fixedButton"
+      onSubmitMyYps={(message) => {
+        window.dispatchEvent(
+          new CustomEvent("yps-add-message", { detail: message }),
+        );
+      }}
+    />
   );
 }

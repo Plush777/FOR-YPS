@@ -9,3 +9,7 @@
 .onlyTopInner {
   padding-bottom: 0;
 }
+
+.wide {
+  padding-bottom: 160px;
+}

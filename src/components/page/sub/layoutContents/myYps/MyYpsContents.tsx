@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 
 import styles from "@/components/page/sub/layoutContents/myYps/myYpsContents.module.css";
 import EmptyLetter from "@/components/page/sub/letters/EmptyLetter";
-import Skeleton from "@/components/layout/skeleton/base/Skeleton";
+import { Skeleton } from "@/components/layout/skeleton/base/Skeleton";
 import LetterCard from "@/components/page/sub/letterCard/LetterCard";
 import LoadMoreButton from "@/components/button/loadMoreButton/LoadMoreButton";
 import FixedImage from "@/components/page/sub/fixedImage/FixedImage";

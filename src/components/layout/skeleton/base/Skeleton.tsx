@@ -1,11 +1,12 @@
 import styles from "@/components/layout/skeleton/base/skeleton.module.css";
+import writeButtonStyles from "@/components/button/writeButton/writeButton.module.css";
 
 interface Props {
   length?: number;
   rotate?: string[];
 }
 
-export default function Skeleton({ length = 9, rotate = [] }: Props) {
+export function Skeleton({ length = 9, rotate = [] }: Props) {
   return (
     <ul className={styles.list}>
       {Array.from({ length }).map((_, i) => (
@@ -19,5 +20,13 @@ export default function Skeleton({ length = 9, rotate = [] }: Props) {
         </li>
       ))}
     </ul>
+  );
+}
+
+export function WriteButtonSkeleton() {
+  return (
+    <div className={writeButtonStyles.writeButtonSkeletonWrapper}>
+      <div className={writeButtonStyles.writeButtonSkeleton}></div>
+    </div>
   );
 }

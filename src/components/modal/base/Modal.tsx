@@ -6,9 +6,11 @@ import { AnimatePresence, motion } from "motion/react";
 
 import styles from "@/components/lib/nurui/video-modal/video-modal.module.css";
 import modalStyles from "@/components/modal/base/modal.module.css";
-import writeButtonStyles from "@/components/button/writeButton/writeButton.module.css";
+
 import Portal from "@/components/common/portal/Portal";
 import FixedButton from "@/components/button/fixedButton/FixedButton";
+import { WriteButtonSkeleton } from "@/components/layout/skeleton/base/Skeleton";
+
 import { useTranslations } from "next-intl";
 
 import AuthArea from "@/components/layout/header/auth/AuthArea";
@@ -174,11 +176,7 @@ export function Modal({
   function clickContentsCondition() {
     if (useType === "fixedButton") {
       if (isAuthLoading) {
-        return (
-          <div className={writeButtonStyles.writeButtonSkeletonWrapper}>
-            <div className={writeButtonStyles.writeButtonSkeleton}></div>
-          </div>
-        );
+        return <WriteButtonSkeleton />;
       }
 
       return <FixedButton onClickModal={handleFixedButtonClick} type="write" />;
