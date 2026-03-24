@@ -1,9 +1,8 @@
 "use client";
 
 import React from "react";
-import { useLocale } from "next-intl";
-import Link from "next/link";
 import styles from "./mobileNavigation.module.css";
+import { Link } from "@/i18n/routing";
 
 type NavItem = {
   name: string;
@@ -16,17 +15,8 @@ type Props = {
   onClose: () => void;
 };
 
-const localeList = [
-  { code: "ko", label: "한국어" },
-  { code: "en", label: "English" },
-  { code: "jp", label: "日本語" },
-  { code: "zh-CN", label: "简体中文" },
-  { code: "zh-TW", label: "繁體中文" },
-];
 
 export default function MobileNavigation({ data, isOpen, onClose }: Props) {
-  const currentLocale = useLocale();
-
   return (
     <div
       className={`
@@ -42,22 +32,6 @@ export default function MobileNavigation({ data, isOpen, onClose }: Props) {
             </Link>
           </li>
         ))}
-
-        <li className={`${styles.item} ${styles.localeItem}`}>
-          {localeList.map(({ code, label }) => (
-            <Link
-              key={code}
-              href={`/${code}`}
-              // locale={code}
-              className={`${styles.localeLink} ${
-                currentLocale === code ? styles.active : ""
-              }`}
-              onClick={onClose}
-            >
-              {label}
-            </Link>
-          ))}
-        </li>
       </ul>
     </div>
   );

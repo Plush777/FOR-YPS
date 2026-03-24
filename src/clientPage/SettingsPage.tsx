@@ -1,9 +1,12 @@
 "use client";
 
+import { useState } from "react";
+import { useLocale } from "next-intl";
+import { usePathname, useRouter } from "next/navigation";
+
 import SettingsSidebar from "@/components/page/sub/settings/SettingsSidebar";
 import { useAuth } from "@/contexts/AuthContext";
 import styles from "@/clientPage/settingsPage.module.css";
-import { useLocale } from "next-intl";
 
 type SettingsSection = "profile" | "account" | "service" | "notification";
 
@@ -13,13 +16,24 @@ type SettingsPageProps = {
   isNotificationMenuDisabled?: boolean;
 };
 
+const localeOptions = [
+  { code: "ko", label: "한국어" },
+  { code: "en", label: "English" },
+  { code: "jp", label: "日本語" },
+  { code: "zh-CN", label: "简体中文" },
+  { code: "zh-TW", label: "繁體中文" },
+];
+
 export default function SettingsPage({
   currentSection,
   isCommentFeatureEnabled = false,
   isNotificationMenuDisabled = false,
 }: SettingsPageProps) {
   const locale = useLocale();
+  const pathname = usePathname();
+  const router = useRouter();
   const { user } = useAuth();
+  const [isLocalePopupOpen, setIsLocalePopupOpen] = useState(false);
 
   const basePath = `/${locale}/settings`;
 
@@ -42,6 +56,16 @@ export default function SettingsPage({
 
   const activePath = `${basePath}/${currentSection}`;
   const nicknameValue = user?.name || user?.email || "";
+  const selectedLocaleLabel = localeOptions.find((item) => item.code === locale)?.label || locale;
+
+  const moveLocale = (nextLocale: string) => {
+    const segments = pathname.split("/").filter(Boolean);
+    if (segments.length === 0) return;
+
+    segments[0] = nextLocale;
+    router.push(`/${segments.join("/")}`);
+    setIsLocalePopupOpen(false);
+  };
 
   return (
     <div className={styles.wrapper}>
@@ -122,6 +146,18 @@ export default function SettingsPage({
                 <h2 className={styles.sectionTitle}>서비스 설정</h2>
 
                 <div className={styles.row}>
+                  <div className={styles.rowLabel}>언어 설정</div>
+                  <button
+                    type="button"
+                    className={styles.localeSelectButton}
+                    onClick={() => setIsLocalePopupOpen(true)}
+                  >
+                    <span>{selectedLocaleLabel}</span>
+                    <span className={styles.localeArrow}>▾</span>
+                  </button>
+                </div>
+
+                <div className={styles.row}>
                   <div className={styles.rowLabel}>내 편지 모아보기</div>
                   <button type="button" className={styles.secondaryButton}>
                     편지함 바로가기
@@ -169,6 +205,32 @@ export default function SettingsPage({
           </div>
         </div>
       </div>
+
+      {isLocalePopupOpen && (
+        <div className={styles.localePopupBackdrop} role="presentation" onClick={() => setIsLocalePopupOpen(false)}>
+          <div className={styles.localePopup} role="dialog" aria-modal="true" onClick={(event) => event.stopPropagation()}>
+            <h3 className={styles.localePopupTitle}>언어 선택</h3>
+
+            <ul className={styles.localeList}>
+              {localeOptions.map((item) => (
+                <li key={item.code}>
+                  <button
+                    type="button"
+                    className={`${styles.localeOption} ${item.code === locale ? styles.localeActive : ""}`}
+                    onClick={() => moveLocale(item.code)}
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+
+            <button type="button" className={styles.localeCloseButton} onClick={() => setIsLocalePopupOpen(false)}>
+              닫기
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

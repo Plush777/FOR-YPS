@@ -51,6 +51,7 @@
 .row {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 16px;
   padding: 18px 0;
   border-top: 1px solid #e6e8f0;
@@ -144,6 +145,83 @@
   font-size: 14px;
 }
 
+.localeSelectButton {
+  width: min(100%, 320px);
+  height: 44px;
+  border: 1px solid #d8dce8;
+  border-radius: 10px;
+  padding: 0 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #2f3545;
+  background-color: #fff;
+}
+
+.localeArrow {
+  color: #6f7688;
+}
+
+.localePopupBackdrop {
+  position: fixed;
+  z-index: 1200;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.38);
+  padding: 16px;
+}
+
+.localePopup {
+  width: min(100%, 440px);
+  border-radius: 16px;
+  background: #fff;
+  padding: 20px;
+}
+
+.localePopupTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: #222835;
+}
+
+.localeList {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 6px;
+}
+
+.localeOption {
+  width: 100%;
+  text-align: left;
+  border: 1px solid #e3e7f0;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: #394055;
+  background: #fff;
+}
+
+.localeActive {
+  border-color: #5170ff;
+  background-color: #eef2ff;
+  font-weight: 700;
+}
+
+.localeCloseButton {
+  margin-top: 14px;
+  width: 100%;
+  height: 42px;
+  border-radius: 10px;
+  background-color: #f2f4fa;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2b3242;
+}
+
 .disabled {
   opacity: 0.45;
 }
@@ -169,10 +247,12 @@
 
   .row {
     flex-direction: column;
+    align-items: flex-start;
   }
 
   .rowContent,
-  .rowContentInline {
+  .rowContentInline,
+  .localeSelectButton {
     width: 100%;
     align-items: flex-start;
   }
