@@ -31,11 +31,23 @@
 
 .subMenuButton {
   width: 100%;
+  display: inline-flex;
   text-align: left;
   padding: 8px 10px;
   border-radius: 8px;
   font-size: 13px;
   color: #5e6577;
+}
+
+.subActive {
+  color: #2f56ff;
+  background-color: rgba(255, 255, 255, 0.7);
+  font-weight: 700;
+}
+
+.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
 .subMenuButton:hover {
