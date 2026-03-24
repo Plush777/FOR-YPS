@@ -22,7 +22,9 @@ export default function SettingsSidebar({ menu, activePath }: SettingsSidebarPro
   return (
     <aside className={styles.sidebar}>
       {menu.map((section) => {
-        const isMainActive = section.href ? activePath === section.href : false;
+        const isMainActive = section.href
+          ? activePath === section.href || section.items?.some((item) => item.href === activePath)
+          : false;
 
         return (
           <div key={section.title} className={styles.menuGroup}>
