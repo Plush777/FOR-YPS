@@ -19,9 +19,15 @@ export default function SubSideHeader() {
   return (
     <aside className={styles.sidebar}>
       <div className={styles.topArea}>
-        <h1 className={styles.logoWrap}>
+        <h1>
           <Link href="/">
-            <Image width={120} height={36} src={logo} alt="for yps logo" priority />
+            <Image
+              width={120}
+              height={36}
+              src={logo}
+              alt="for yps logo"
+              priority
+            />
           </Link>
         </h1>
 
@@ -31,7 +37,8 @@ export default function SubSideHeader() {
               const isActive =
                 menu.href === "/"
                   ? pathname === "/"
-                  : pathname === menu.href || pathname.startsWith(`${menu.href}/`);
+                  : pathname === menu.href ||
+                    pathname.startsWith(`${menu.href}/`);
 
               return (
                 <li key={menu.href}>

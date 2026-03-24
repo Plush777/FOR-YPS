@@ -18,10 +18,6 @@
   row-gap: 28px;
 }
 
-.logoWrap {
-  padding: 8px 10px;
-}
-
 .menuList {
   display: flex;
   flex-direction: column;
@@ -46,8 +42,7 @@
 
 .bottomArea {
   display: flex;
-  justify-content: center;
-  padding-bottom: 8px;
+  align-items: center;
 }
 
 @media (max-width: 1024px) {
