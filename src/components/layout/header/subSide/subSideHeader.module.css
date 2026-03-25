@@ -1,19 +1,25 @@
 .sidebar {
-  position: sticky;
-  top: 0;
+  position: fixed;
+  top: var(--sub-header-height);
+  left: 0;
   display: flex;
-  width: 220px;
   min-width: 220px;
-  height: 100vh;
-  padding: 20px 14px;
-  border-right: 1px solid #d7dbe5;
-  background-color: #f8f9fc;
+  height: calc(100vh - var(--sub-header-height));
+  padding: 12px;
+  background-color: var(--theme-body-sub);
+  z-index: 10;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    scrollbar-width: thin;
+  }
 }
 
 .topArea {
   display: flex;
   flex-direction: column;
   row-gap: 28px;
+  width: 100%;
 }
 
 .menuList {
@@ -23,19 +29,32 @@
 }
 
 .menuLink {
-  display: inline-flex;
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
   width: 100%;
-  border-radius: 10px;
-  padding: 11px 12px;
+  border-radius: 8px;
+  padding: 12px;
   font-size: 16px;
   font-weight: 600;
-  color: #3a4152;
+  color: var(--theme-title);
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
 }
 
-.menuLink.active,
-.menuLink:hover {
-  background-color: #eceff6;
-  color: #202431;
+.menuLink.active {
+  background-color: var(--theme-sub-side-header-active-bg);
+  color: var(--theme-title);
+}
+
+@media (hover: hover) {
+  .menuLink:hover {
+    background-color: var(--theme-sub-side-header-active-bg);
+    color: var(--theme-title);
+  }
 }
 
 @media (max-width: 1024px) {

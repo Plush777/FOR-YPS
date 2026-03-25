@@ -4,7 +4,7 @@ import Inner from "@/components/layout/inner/Inner";
 export default function SettingsLayout({ children }: any) {
   return (
     <PageBackground styleType="sub">
-      <Inner type="common">{children}</Inner>
+      <Inner>{children}</Inner>
     </PageBackground>
   );
 }

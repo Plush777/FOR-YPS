@@ -243,7 +243,7 @@ export function Modal({
 
   return (
     <div
-      className={`${styles.wrap} ${useType === "fixedButton" ? modalStyles.stickyWrap : ""}`}
+      className={`${useType === "fixedButton" ? modalStyles.stickyWrap : styles.wrap}`}
     >
       <div className={`${styles.inner} ${modalStyles.inner}`}>
         {clickContentsCondition()}

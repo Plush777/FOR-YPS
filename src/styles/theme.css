@@ -1,11 +1,12 @@
 /* light*/
 :root {
   --theme-body: var(--color-white);
-  --theme-body-sub: var(--color-zinc-50);
+  --theme-body-sub: var(--color-white);
   --theme-header: #fff6;
-  --theme-header-border: var(--color-gray-300);
-  --theme-footer-border: var(--color-gray-300);
-  --theme-footer-border2: var(--color-gray-300);
+  --theme-header-border: var(--color-gray-200);
+  --theme-header-glass: #ffffffa9;
+  --theme-footer-border: var(--color-zinc-200);
+  --theme-footer-border2: var(--color-gray-200);
   --theme-form-border: var(--color-gray-300);
   --theme-title: var(--color-gray-900);
   --theme-date: var(--color-gray-500);
@@ -13,7 +14,7 @@
   --theme-button-border2-border: var(--color-zinc-600);
   --theme-button-gray2-color: var(--color-zinc-900);
   --theme-button-gray2-background: var(--color-white);
-  --theme-footer: var(--color-gray-200);
+  --theme-footer: var(--color-zinc-50);
   --theme-footer-text: var(--color-gray-950);
   --theme-footer-hover-svg: var(--color-gray-900);
   --theme-menu-dropdown-border: var(--color-gray-300);
@@ -27,17 +28,20 @@
   --theme-button-box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.06);
   --theme-modal-background: var(--color-white);
   --theme-modal-dimmed: rgba(255, 255, 255, 0.5);
+  --theme-sub-side-header-background: var(--color-white);
+  --theme-sub-side-header-active-bg: var(--color-zinc-100);
 }
 
 /* dark */
 @media (prefers-color-scheme: dark) {
   :root {
     --theme-body: var(--color-zinc-800);
-    --theme-body-sub: var(--color-zinc-800);
+    --theme-body-sub: var(--color-zinc-950);
     --theme-header: rgba(255, 255, 255, 0.2);
-    --theme-header-border: rgba(255, 255, 255, 0.5);
-    --theme-footer-border: var(--color-gray-700);
-    --theme-footer-border2: var(--color-gray-800);
+    --theme-header-border: var(--color-zinc-800);
+    --theme-header-glass: #09090ba8;
+    --theme-footer-border: var(--color-zinc-800);
+    --theme-footer-border2: var(--color-zinc-800);
     --theme-form-border: var(--color-gray-500);
     --theme-title: var(--color-gray-100);
     --theme-date: var(--color-gray-300);
@@ -59,5 +63,7 @@
     --theme-button-box-shadow: 0 2px 16px 0 #28292c;
     --theme-modal-background: var(--color-zinc-800);
     --theme-modal-dimmed: rgba(0, 0, 0, 0.5);
+    --theme-sub-side-header-background: var(--color-zinc-950);
+    --theme-sub-side-header-active-bg: var(--color-zinc-800);
   }
 }

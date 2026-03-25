@@ -8,7 +8,7 @@ export default function DetailLayout({
 }) {
   return (
     <PageBackground styleType="sub">
-      <Inner type="common">{children}</Inner>
+      <Inner>{children}</Inner>
     </PageBackground>
   );
 }

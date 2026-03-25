@@ -1,11 +1,10 @@
 .writeButtonSkeletonWrapper {
   position: sticky;
-  bottom: 20px;
+  bottom: var(--sub-margin);
+  margin-right: var(--sub-margin);
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  margin-right: 20px;
-  margin-bottom: 20px;
 }
 
 .writeButtonSkeleton {

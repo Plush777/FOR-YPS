@@ -11,10 +11,6 @@
   background-color: var(--theme-menu-dropdown-background);
 }
 
-.dropdownItem:hover {
-  background-color: var(--theme-menu-dropdown-hover-background);
-}
-
 .dropdownTextButton {
   width: 100%;
   padding: 8px 10px;
@@ -26,10 +22,6 @@
   background-color: transparent;
 }
 
-.dropdownTextButton:hover {
-  background-color: var(--theme-menu-dropdown-hover-background);
-}
-
 .dropdownLink {
   display: flex;
   align-items: center;
@@ -39,10 +31,6 @@
   white-space: nowrap;
   font-size: 14px;
   color: var(--theme-menu-dropdown-text);
-}
-
-.dropdownLink:hover {
-  background-color: var(--theme-menu-dropdown-hover-background);
 }
 
 .dropdownEnter {
@@ -58,5 +46,19 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (hover: hover) {
+  .dropdownItem:hover {
+    background-color: var(--theme-menu-dropdown-hover-background);
+  }
+
+  .dropdownTextButton:hover {
+    background-color: var(--theme-menu-dropdown-hover-background);
+  }
+
+  .dropdownLink:hover {
+    background-color: var(--theme-menu-dropdown-hover-background);
   }
 }

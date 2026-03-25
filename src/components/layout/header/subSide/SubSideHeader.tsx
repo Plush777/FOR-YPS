@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
-
 import { Link, usePathname } from "@/i18n/routing";
-import logo from "../../../../../public/icons/logo/logo-for-yps.svg";
+import Home from "@/components/common/svg/Home";
+import Compass from "@/components/common/svg/Compass";
+import User from "@/components/common/svg/User";
 import styles from "@/components/layout/header/subSide/subSideHeader.module.css";
 
 const sideMenus = [
@@ -15,24 +15,18 @@ const sideMenus = [
 export default function SubSideHeader() {
   const pathname = usePathname();
 
+  function getSvg(i: number) {
+    if (i === 0) return <Home />;
+    if (i === 1) return <Compass />;
+    if (i === 2) return <User />;
+  }
+
   return (
     <aside className={styles.sidebar}>
       <div className={styles.topArea}>
-        <h1>
-          <Link href="/">
-            <Image
-              width={120}
-              height={36}
-              src={logo}
-              alt="for yps logo"
-              priority
-            />
-          </Link>
-        </h1>
-
         <nav>
           <ul className={styles.menuList}>
-            {sideMenus.map((menu) => {
+            {sideMenus.map((menu, i) => {
               const isActive =
                 menu.href === "/"
                   ? pathname === "/"
@@ -45,6 +39,7 @@ export default function SubSideHeader() {
                     href={menu.href}
                     className={`${styles.menuLink} ${isActive ? styles.active : ""}`}
                   >
+                    {getSvg(i)}
                     {menu.label}
                   </Link>
                 </li>

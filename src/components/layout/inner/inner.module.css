@@ -1,15 +1,6 @@
 .inner {
-  padding-inline: 16px;
-  padding-block: 60px;
   max-width: var(--sub-inner-max-width2);
   width: 100%;
   margin: 0 auto;
-}
-
-.onlyTopInner {
-  padding-bottom: 0;
-}
-
-.wide {
-  padding-bottom: 160px;
+  padding-top: calc(var(--sub-header-height) + var(--sub-margin));
 }

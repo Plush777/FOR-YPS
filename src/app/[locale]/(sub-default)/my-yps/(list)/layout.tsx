@@ -11,7 +11,7 @@ export default function ListLayout({ children, modal }: any) {
 
   return (
     <PageBackground styleType="sub">
-      <Inner type="onlyTop">
+      <Inner>
         <TitleArea gapName="myYps" title={t("title")} desc={t("description")} />
         <MyYpsContentsClient initialMessages={[]} />
         {children}
